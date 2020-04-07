@@ -1,3 +1,0 @@
-Repository:	https://github.com/NCAR/MET
-Revision:	development
-Change Date:	development 

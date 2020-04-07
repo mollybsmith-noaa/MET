@@ -1,6 +1,0 @@
-tc_dland
-*.o
-*.a
-.deps
-Makefile
-Makefile.in
