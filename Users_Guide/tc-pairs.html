@@ -65,6 +65,10 @@
           
             
             
+              <div class="version">
+                9.1
+              </div>
+            
           
 
           
@@ -287,7 +291,7 @@ version      = &quot;VN.N&quot;;
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model = [ &quot;DSHP&quot;, &quot;LGEM&quot;, &quot;HWRF&quot; ];
 </pre></div>
 </div>
-<p>The <strong>model</strong> variable contains a list of comma-separated models to be used. Each model is identified with an ATCF TECH ID (normally four unique characters). This model identifier should match the model column in the ATCF format input file. An empty list indicates that all models in the input file(s) will be processed.</p>
+<p>The <strong>model</strong> variable contains a list of comma-separated models to be used. Each model is identified with an ATCF TECH ID (normally four unique characters). This model identifier should match the model column in the ATCF format input file. An empty list indicates that all models in the input file(s) will be processed. Note that when reading ATCF track data, all instances of the string AVN are automatically replaced with GFS.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>check_dup = FALSE;
 </pre></div>
@@ -785,7 +789,7 @@ parameter will result in missed matches.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, NCAR
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA
 
     </p>
   </div>

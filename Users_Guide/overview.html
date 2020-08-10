@@ -65,6 +65,10 @@
           
             
             
+              <div class="version">
+                9.1
+              </div>
+            
           
 
           
@@ -96,9 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#met-goals-and-design-philosophy">1.3. MET goals and design philosophy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#met-components">1.4. MET components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#met-release-notes">1.5. MET release notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#version-9-1-beta3-release-notes">1.5.1. Version 9.1 BETA3 release notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#version-9-1-beta2-release-notes">1.5.2. Version 9.1 BETA2 release notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#version-9-1-beta1-release-notes">1.5.3. Version 9.1 BETA1 release notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#version-version-release-notes-release-date">1.5.1. Version 9.1 release notes (20200810)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#future-development-plans">1.6. Future development plans</a></li>
@@ -232,9 +234,9 @@
 <h2><span class="section-number">1.4. </span>MET components<a class="headerlink" href="#met-components" title="Permalink to this headline">¶</a></h2>
 <p>The major components of the MET package are represented in <a class="reference internal" href="#overview-figure"><span class="std std-numref">Figure 1.1</span></a>. The main stages represented are input, reformatting, plotting, intermediate output, statistical analyses, and output and aggregation/analysis. The MET-TC package functions independently of the other MET modules, as indicated in the Figure. Each of these stages is described further in later sections. For example, the input and output formats are discussed in <a class="reference internal" href="data_io.html#data-io"><span class="std std-numref">Section 3</span></a> as well as in the sections associated with each of the statistics modules. MET input files are represented on the far left.</p>
 <p>The reformatting stage of MET consists of the Gen-Vx-Mask, PB2NC, ASCII2NC, Pcp-Combine, MADIS2NC, MODIS regrid, WWMCA Regrid, and Ensemble-Stat tools. The PB2NC tool is used to create NetCDF files from input PrepBUFR files containing point observations. Likewise, the ASCII2NC tool is used to create NetCDF files from input ASCII point observations. Many types of data from the MADIS network can be formatted for use in MET by the MADIS2NC tool. MODIS and WWMCA files are regridded and formatted into NetCDF files by their respective tools. These NetCDF files are then used in the statistical analysis step. The Gen-Vx-Mask and Pcp-Combine tools are optional. The Gen-Vx-Mask tool will create a bitmapped masking area in a variety of ways. The output mask can then be used to efficiently limit verification to the interior of a user specified region. The Pcp-Combine tool can be used to add, subtract, or derive fields across multiple time steps. Often it is run to accumulate precipitation amounts into the time interval selected by the user - if a user would like to verify over a different time interval than is included in their forecast or observational dataset. The Ensemble-Stat tool will combine many forecasts into an ensemble mean or probability forecast. Additionally, if gridded or point observations are included, ensemble verification statistics are produced.</p>
-<div class="figure align-default" id="id42">
+<div class="figure align-default" id="id57">
 <span id="overview-figure"></span><img alt="../_images/overview-figure.png" src="../_images/overview-figure.png" />
-<p class="caption"><span class="caption-number">Figure 1.1 </span><span class="caption-text">Basic representation of current MET structure and modules. Gray areas represent input and output files. Dark green areas represent reformatting and pre-processing tools. Light green areas represent plotting utilities. Blue areas represent statistical tools. Yellow areas represent aggregation and analysis tools.</span><a class="headerlink" href="#id42" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 1.1 </span><span class="caption-text">Basic representation of current MET structure and modules. Gray areas represent input and output files. Dark green areas represent reformatting and pre-processing tools. Light green areas represent plotting utilities. Blue areas represent statistical tools. Yellow areas represent aggregation and analysis tools.</span><a class="headerlink" href="#id57" title="Permalink to this image">¶</a></p>
 </div>
 <p>Several optional plotting utilities are provided to assist users in checking their output from the data preprocessing step. Plot-Point-Obs creates a postscript plot showing the locations of point observations. This can be quite useful for assessing whether the latitude and longitude of observation stations was specified correctly. Plot-Data-Plane produces a similar plot for gridded data. For users of the MODE object based verification methods, the Plot-MODE-Field utility will create graphics of the MODE object output. Finally, WWMCA-Plot produces a plot of the raw WWMCA data file.</p>
 <p>The main statistical analysis components of the current version of MET are: Point-Stat, Grid-Stat, Series-Analysis, Ensemble-Stat, MODE, MODE-TD (MTD), Grid-Diag, and Wavelet-Stat. The Point-Stat tool is used for grid-to-point verification, or verification of a gridded forecast field against a point-based observation (i.e., surface observing stations, ACARS, rawinsondes, and other observation types that could be described as a point observation). In addition to providing traditional forecast verification scores for both continuous and categorical variables, confidence intervals are also produced using parametric and non-parametric methods. Confidence intervals take into account the uncertainty associated with verification statistics due to sampling variability and limitations in sample size. These intervals provide more meaningful information about forecast performance. For example, confidence intervals allow credible comparisons of performance between two models when a limited number of model runs is available.</p>
@@ -255,102 +257,185 @@
 <p>When applicable, release notes are followed by the GitHub issue number which
 describes the bugfix, enhancement, or new feature:
 <a class="reference external" href="https://github.com/NCAR/MET/issues">https://github.com/NCAR/MET/issues</a></p>
-<div class="section" id="version-9-1-beta3-release-notes">
-<h3><span class="section-number">1.5.1. </span>Version 9.1 BETA3 release notes<a class="headerlink" href="#version-9-1-beta3-release-notes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="version-version-release-notes-release-date">
+<h3><span class="section-number">1.5.1. </span>Version 9.1 release notes (20200810)<a class="headerlink" href="#version-version-release-notes-release-date" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><strong>Date: 20200729</strong></p></li>
 <li><dl class="simple">
 <dt>Bugfixes:</dt><dd><ul>
-<li><p>Fix TC-Gen to correctly apply the genesis event definition criteria from
-the configuration file to BEST and operational tracks (<a class="reference external" href="http://github.com/NCAR/MET/issues/1427">#1427</a>).</p></li>
+<li><p>All changes included in the <a class="reference external" href="https://github.com/NCAR/MET/milestone/64?closed=1">met-9.0.1</a>, <a class="reference external" href="https://github.com/NCAR/MET/milestone/65?closed=1">met-9.0.2</a>, and <a class="reference external" href="https://github.com/NCAR/MET/milestone/66?closed=1">met-9.0.3</a> bugfix releases.</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Enhancements to Existing Tools:</dt><dd><ul>
-<li><p>Enhance Grid-Diag to support multiple input file lists, improve the log
-messages, and write additional output variables and attributes (<a class="reference external" href="http://github.com/NCAR/MET/issues/1391">#1391</a>).</p></li>
-<li><p>Enhance the parsing of ASCII file lists with Python embedding (<a class="reference external" href="http://github.com/NCAR/MET/issues/1432">#1432</a>).</p></li>
-<li><p>Update the formatting of the colorbar values in plot_data_plane to show
-more significant digits (<a class="reference external" href="http://github.com/NCAR/MET/issues/1423">#1423</a>).</p></li>
-<li><p>Enhance Series-Analysis to print a warning message about a common
-misconfiguration (<a class="reference external" href="http://github.com/NCAR/MET/issues/1372">#1372</a>).</p></li>
-<li><p>Enhance the GRIB2 library to print a warning message about inconsistent
-usage of the -D__64BIT__ compilation flag (<a class="reference external" href="http://github.com/NCAR/MET/issues/1416">#1416</a>).</p></li>
-<li><p>Continued reduction of Fortify findings (<a class="reference external" href="http://github.com/NCAR/MET/issues/1417">#1417</a>).</p></li>
-<li><p>Various documentation updates (<a class="reference external" href="http://github.com/NCAR/MET/issues/1325">#1325</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1431">#1431</a>).</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div>
-<div class="section" id="version-9-1-beta2-release-notes">
-<h3><span class="section-number">1.5.2. </span>Version 9.1 BETA2 release notes<a class="headerlink" href="#version-9-1-beta2-release-notes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Date: 20200714</strong></p></li>
-<li><dl class="simple">
-<dt>Bugfixes:</dt><dd><ul>
-<li><p>All changes included in the met-9.0.2 and met-9.0.3 bugfix releases:
-<a class="reference external" href="https://github.com/NCAR/MET/milestone/65?closed=1">https://github.com/NCAR/MET/milestone/65?closed=1</a>
-<a class="reference external" href="https://github.com/NCAR/MET/milestone/66?closed=1">https://github.com/NCAR/MET/milestone/66?closed=1</a></p></li>
+<dt>Output format changes:</dt><dd><ul>
+<li><p>Add new CNT line type columns (ANOM_CORR_UNCNTR) for the anomaly correlation without the mean error (<a class="reference external" href="http://github.com/NCAR/MET/issues/1399">#1399</a>).</p></li>
+<li><p>Add new RPS line type column (RPS_COMP) for the complement of RPS (<a class="reference external" href="http://github.com/NCAR/MET/issues/1280">#1280</a>).</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Enhancements to Existing Tools:</dt><dd><ul>
-<li><p>Update HiRA configuration options in Point-Stat for computing RPS (<a class="reference external" href="http://github.com/NCAR/MET/issues/1400">#1400</a>).</p></li>
-<li><p>Add new anomaly correlation without the mean error (ANOM_CORR_UNCNTR) to
-the CNT line type (<a class="reference external" href="http://github.com/NCAR/MET/issues/1399">#1399</a>).</p></li>
-<li><p>Fix Ensemble-Stat runtime error when obs_thresh results in 0 pairs being
-retained (<a class="reference external" href="http://github.com/NCAR/MET/issues/1397">#1397</a>).</p></li>
-<li><p>Enhance point2grid to process multiple fields (<a class="reference external" href="http://github.com/NCAR/MET/issues/1396">#1396</a>).</p></li>
-<li><p>Add new basin_map configuration option for TC-Pairs (<a class="reference external" href="http://github.com/NCAR/MET/issues/1390">#1390</a>).</p></li>
+<dt>Configuration file changes:</dt><dd><ul>
+<li><p>Add various set_attr configuration options to override metadata read from input gridded data files (<a class="reference external" href="http://github.com/NCAR/MET/issues/1020">#1020</a>).</p></li>
+<li><p>Enhance the regrid dictionary to support data censoring and conversion (<a class="reference external" href="http://github.com/NCAR/MET/issues/1293">#1293</a>).</p></li>
+<li><p>For Grid-Diag, replace model entry with desc (<a class="reference external" href="http://github.com/NCAR/MET/issues/1391">#1391</a>).</p></li>
+<li><p>For TC-Pairs, add new basin_map configuration option (<a class="reference external" href="http://github.com/NCAR/MET/issues/1390">#1390</a>).</p></li>
+<li><p>For TC-RMW, add many track filtering configuration options (<a class="reference external" href="http://github.com/NCAR/MET/issues/1315">#1315</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Documentation changes:</dt><dd><ul>
+<li><p>Migrate this User’s Guide from Lyx to Sphinx and publish the result (<a class="reference external" href="http://github.com/NCAR/MET/issues/1217">#1217</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1321">#1321</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1322">#1322</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1323">#1323</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1325">#1325</a>).</p></li>
+<li><p>Correct Uniform Fractions Skill Score documentation (<a class="reference external" href="http://github.com/NCAR/MET/issues/1431">#1431</a>).</p></li>
+<li><p>Clarify Point2Grid documentation about Gaussian methods (<a class="reference external" href="http://github.com/NCAR/MET/issues/1413">#1413</a>).</p></li>
+<li><p>Resolve Point-Stat compiler warning messages (<a class="reference external" href="http://github.com/NCAR/MET/issues/1435">#1435</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Build process changes:</dt><dd><ul>
+<li><p>Fix the compilation of the make_mapfiles development utility (<a class="reference external" href="http://github.com/NCAR/MET/issues/1364">#1364</a>).</p></li>
+<li><p>Run valgrind to search for memory issues (<a class="reference external" href="http://github.com/NCAR/MET/issues/816">#816</a>).</p></li>
 <li><p>Fix valgrind warnings (<a class="reference external" href="http://github.com/NCAR/MET/issues/1387">#1387</a>).</p></li>
 <li><p>Fix uninitialized ConcatString variable (<a class="reference external" href="http://github.com/NCAR/MET/issues/1386">#1386</a>).</p></li>
-<li><p>Add Series-Analysis verbosity level warning (<a class="reference external" href="http://github.com/NCAR/MET/issues/1382">#1382</a>).</p></li>
-<li><p>Add TC-Gen warning for duplicate genesis events (<a class="reference external" href="http://github.com/NCAR/MET/issues/1380">#1380</a>).</p></li>
-<li><p>Fix the compilation of the make_mapfiles development utility (<a class="reference external" href="http://github.com/NCAR/MET/issues/1364">#1364</a>).</p></li>
+<li><p>Enhance the GRIB2 library to print a warning message about inconsistent usage of the -D__64BIT__ compilation flag (<a class="reference external" href="http://github.com/NCAR/MET/issues/1416">#1416</a>).</p></li>
+<li><p>Enhance various log message, error messages, and usage statements (<a class="reference external" href="http://github.com/NCAR/MET/issues/1350">#1350</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1347">#1347</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1339">#1339</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1338">#1338</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1333">#1333</a>).</p></li>
+<li><p>Remove MET_BASE references from Rscripts (<a class="reference external" href="http://github.com/NCAR/MET/issues/1289">#1289</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fority changes:</dt><dd><ul>
+<li><p>Address Fortify findings for Point2Grid (<a class="reference external" href="http://github.com/NCAR/MET/issues/1352">#1352</a>).</p></li>
 <li><p>Address Fortify findings from met-9.0.2 (<a class="reference external" href="http://github.com/NCAR/MET/issues/1359">#1359</a>).</p></li>
+<li><p>Address Fortify findings for met-9.1_beta2 (<a class="reference external" href="http://github.com/NCAR/MET/issues/1417">#1417</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Enhancements to existing tools:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Common utility libraries</dt><dd><ul>
+<li><p>Enhance the regrid dictionary with data censoring and conversion (<a class="reference external" href="http://github.com/NCAR/MET/issues/1293">#1293</a>).</p></li>
 <li><p>Make the ConcatString class more efficient (<a class="reference external" href="http://github.com/NCAR/MET/issues/1358">#1358</a>).</p></li>
 <li><p>Make the StringArray class more efficient (<a class="reference external" href="http://github.com/NCAR/MET/issues/1357">#1357</a>).</p></li>
-<li><p>Address Fortify findings for point2grid (<a class="reference external" href="http://github.com/NCAR/MET/issues/1352">#1352</a>).</p></li>
-<li><p>Enhance various log message, error messages, and usage statements (<a class="reference external" href="http://github.com/NCAR/MET/issues/1350">#1350</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1347">#1347</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1339">#1339</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1338">#1338</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1333">#1333</a>).</p></li>
 <li><p>Fix parsing of CF-compliant time stamps from CDO (<a class="reference external" href="http://github.com/NCAR/MET/issues/1331">#1331</a>).</p></li>
-<li><p>Update attributes in the Grid-Stat NetCDF matched pairs file (<a class="reference external" href="http://github.com/NCAR/MET/issues/1324">#1324</a>).</p></li>
-<li><p>Updates to the MET User’s Guide (<a class="reference external" href="http://github.com/NCAR/MET/issues/1321">#1321</a>).</p></li>
-<li><p>Add track filtering to the TC-RMW tool (<a class="reference external" href="http://github.com/NCAR/MET/issues/1315">#1315</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Python library</dt><dd><ul>
 <li><p>Update Python embedding scripts (<a class="reference external" href="http://github.com/NCAR/MET/issues/1265">#1265</a>).</p></li>
-<li><p>Add various set_attr configuration options (<a class="reference external" href="http://github.com/NCAR/MET/issues/1020">#1020</a>).</p></li>
-<li><p>Run valgrind to search for memory issues (<a class="reference external" href="http://github.com/NCAR/MET/issues/816">#816</a>).</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div>
-<div class="section" id="version-9-1-beta1-release-notes">
-<h3><span class="section-number">1.5.3. </span>Version 9.1 BETA1 release notes<a class="headerlink" href="#version-9-1-beta1-release-notes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><strong>Date: 20200626</strong></p></li>
-<li><dl class="simple">
-<dt>Bugfixes:</dt><dd><ul>
-<li><p>All changes included in the met-9.0.1 bugfix release:
-<a class="reference external" href="https://github.com/NCAR/MET/milestone/64?closed=1">https://github.com/NCAR/MET/milestone/64?closed=1</a></p></li>
+<li><p>Enhance the parsing of ASCII file lists with Python embedding (<a class="reference external" href="http://github.com/NCAR/MET/issues/1432">#1432</a>).</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Enhancements to Existing Tools:</dt><dd><ul>
-<li><p>Initial version of Sphinx documentation (<a class="reference external" href="http://github.com/NCAR/MET/issues/1217">#1217</a>).</p></li>
-<li><p>Add the complement of RPS to the existing RPS line type (<a class="reference external" href="http://github.com/NCAR/MET/issues/1280">#1280</a>).</p></li>
-<li><p>Remove MET_BASE references from Rscripts (<a class="reference external" href="http://github.com/NCAR/MET/issues/1289">#1289</a>).</p></li>
-<li><p>Enhance Point2Grid to enable Gaussian filtering for GOES16/17 data (<a class="reference external" href="http://github.com/NCAR/MET/issues/1291">#1291</a>).</p></li>
+<dt>Tropical cyclone library</dt><dd><ul>
+<li><p>Alert users of the automatic renaming of AVN to GFS in MET tropical cyclone tools (<a class="reference external" href="http://github.com/NCAR/MET/issues/1444">#1444</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Plot-Data-Plane</dt><dd><ul>
+<li><p>Update the formatting of the colorbar values to show more significant digits (<a class="reference external" href="http://github.com/NCAR/MET/issues/1423">#1423</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Gen-Vx-Mask</dt><dd><ul>
 <li><p>Enhance Gen-Vx-Mask with python embedding and named input grids (<a class="reference external" href="http://github.com/NCAR/MET/issues/1292">#1292</a>).</p></li>
-<li><p>Enhance the regrid dictionary with data censoring and conversion (<a class="reference external" href="http://github.com/NCAR/MET/issues/1293">#1293</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Grid-Diag</dt><dd><ul>
+<li><p>Enhancements, refinement, and testing of the Grid-Diag tool (<a class="reference external" href="http://github.com/NCAR/MET/issues/1391">#1391</a>, <a class="reference external" href="http://github.com/NCAR/MET/issues/1279">#1279</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Point2Grid</dt><dd><ul>
+<li><p>Enhance Point2Grid to process multiple fields (<a class="reference external" href="http://github.com/NCAR/MET/issues/1396">#1396</a>).</p></li>
+<li><p>Enhance Point2Grid to enable Gaussian filtering for GOES16/17 data (<a class="reference external" href="http://github.com/NCAR/MET/issues/1291">#1291</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Point-Stat and Grid-Stat</dt><dd><ul>
+<li><p>Add new CNT line type columns (ANOM_CORR_UNCNTR) for the anomaly correlation without the mean error (<a class="reference external" href="http://github.com/NCAR/MET/issues/1399">#1399</a>).</p></li>
+<li><p>Add new RPS line type column (RPS_COMP) for the complement of RPS (<a class="reference external" href="http://github.com/NCAR/MET/issues/1280">#1280</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Point-Stat</dt><dd><ul>
+<li><p>Update Point-Stat HiRA configuration options for computing RPS (<a class="reference external" href="http://github.com/NCAR/MET/issues/1400">#1400</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Grid-Stat</dt><dd><ul>
+<li><p>Update Grid-Stat attributes written to the NetCDF matched pairs file (<a class="reference external" href="http://github.com/NCAR/MET/issues/1324">#1324</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Ensemble-Stat</dt><dd><ul>
+<li><p>Fix Ensemble-Stat runtime error when obs_thresh results in 0 pairs being retained (<a class="reference external" href="http://github.com/NCAR/MET/issues/1397">#1397</a>).</p></li>
+<li><p>Enhance Ensemble-Stat log messages (<a class="reference external" href="http://github.com/NCAR/MET/issues/1440">#1440</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Series-Analysis</dt><dd><ul>
+<li><p>Enhance Series-Analysis to print a warning message about a common misconfiguration (<a class="reference external" href="http://github.com/NCAR/MET/issues/1372">#1372</a>).</p></li>
+<li><p>Add Series-Analysis verbosity level warning (<a class="reference external" href="http://github.com/NCAR/MET/issues/1382">#1382</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TC-Pairs</dt><dd><ul>
+<li><p>Add TC-Pairs new basin_map configuration option (<a class="reference external" href="http://github.com/NCAR/MET/issues/1390">#1390</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TC-Gen</dt><dd><ul>
+<li><p>Fix TC-Gen BEST track genesis event definition (<a class="reference external" href="http://github.com/NCAR/MET/issues/1447">#1447</a>).</p></li>
+<li><p>Fix TC-Gen to correctly apply the genesis event definition criteria from the configuration file to BEST and operational tracks (<a class="reference external" href="http://github.com/NCAR/MET/issues/1427">#1427</a>).</p></li>
+<li><p>Add TC-Gen warning for duplicate genesis events (<a class="reference external" href="http://github.com/NCAR/MET/issues/1380">#1380</a>).</p></li>
+<li><p>Enhance TC-Gen to support file lists for teh -genesis and -track command line options (<a class="reference external" href="http://github.com/NCAR/MET/issues/1442">#1442</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>TC-RMW</dt><dd><ul>
+<li><p>Add many TC-RMW track filtering configuration options (<a class="reference external" href="http://github.com/NCAR/MET/issues/1315">#1315</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </dd>
 </dl>
@@ -397,7 +482,7 @@ retained (<a class="reference external" href="http://github.com/NCAR/MET/issues/
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, NCAR
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA
 
     </p>
   </div>
