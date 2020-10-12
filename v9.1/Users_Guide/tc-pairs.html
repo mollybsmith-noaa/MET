@@ -1,0 +1,870 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>20. TC-Pairs Tool &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/tc-pairs.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="21. TC-Stat Tool" href="tc-stat.html"/>
+        <link rel="prev" title="19. TC-Dland Tool" href="tc-dland.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">20. TC-Pairs Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">20.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">20.2. Practical information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tc-pairs-usage">20.2.1. tc_pairs usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tc-pairs-configuration-file">20.2.2. tc_pairs configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tc-pairs-output">20.2.3. tc_pairs output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">20. </span>TC-Pairs Tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/tc-pairs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tc-pairs-tool">
+<span id="tc-pairs"></span><h1><span class="section-number">20. </span>TC-Pairs Tool<a class="headerlink" href="#tc-pairs-tool" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">20.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The TC-Pairs tool provides verification for tropical cyclone forecasts in ATCF file format. It matches an ATCF format tropical cyclone (TC) forecast with a second ATCF format reference TC dataset (most commonly the Best Track analysis). The TC-Pairs tool processes both track and intensity adeck data and probabilistic edeck data. The adeck matched pairs contain position errors, as well as wind, sea level pressure, and distance to land values for each TC dataset. The edeck matched pairs contain probabilistic forecast values and the verifying observation values. The pair generation can be subset based on user-defined filtering criteria. Practical aspects of the TC-Pairs tool are described in <a class="reference internal" href="#tc-pairs-practical-information"><span class="std std-numref">Section 20.2</span></a>.</p>
+</div>
+<div class="section" id="practical-information">
+<span id="tc-pairs-practical-information"></span><h2><span class="section-number">20.2. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<p>This section describes how to configure and run the TC-Pairs tool. The TC-Pairs tool is used to match a tropical cyclone model forecast to a corresponding reference dataset. Both tropical cyclone forecast/reference data must be in ATCF format. Output from the TC-dland tool (NetCDF gridded distance file) is also a required input for the TC-Pairs tool. It is recommended to run <strong>tc_pairs</strong> on a storm-by-storm basis, rather than over multiple storms or seasons to avoid memory issues.</p>
+<div class="section" id="tc-pairs-usage">
+<h3><span class="section-number">20.2.1. </span>tc_pairs usage<a class="headerlink" href="#tc-pairs-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for tc_pairs is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: tc_pairs
+       -adeck source and/or -edeck source
+       -bdeck source
+       -config file
+       [-out base]
+       [-log file]
+       [-v level]
+</pre></div>
+</div>
+<p>tc_pairs has required arguments and can accept several optional arguments.</p>
+<div class="section" id="required-arguments-for-tc-pairs">
+<h4><span class="section-number">20.2.1.1. </span>Required arguments for tc_pairs<a class="headerlink" href="#required-arguments-for-tc-pairs" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>-adeck source</strong> argument indicates the adeck ATCF format data source containing tropical cyclone model forecast (output from tracker) data to be verified. It specifies the name of an ATCF format file or top-level directory containing ATCF format files ending in “.dat” to be processed. The <strong>-adeck</strong> or <strong>-edeck</strong> option must be used at least once.</p></li>
+<li><p>The <strong>-edeck source</strong> argument indicates the edeck ATCF format data source containing probabilistic track data to be verified. It specifies the name of an ATCF format file or top-level directory containing ATCF format files ending in “.dat” to be processed. The <strong>-adeck</strong> or <strong>-edeck</strong> option must be used at least once.</p></li>
+<li><p>The <strong>-bdeck source</strong> argument indicates the ATCF format data source containing the tropical cyclone reference dataset to be used for verifying the adeck source. It specifies the name of an ATCF format file or top-level directory containing ATCF format files ending in “.dat” to be processed. This source is expected to be the NHC Best Track Analysis, but could also be any ATCF-formatted reference.</p></li>
+<li><p>The <strong>-config file</strong> argument indicates the name of the configuration file to be used. The contents of the configuration file are discussed below.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-tc-pairs">
+<h4><span class="section-number">20.2.1.2. </span>Optional arguments for tc_pairs<a class="headerlink" href="#optional-arguments-for-tc-pairs" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="5">
+<li><p>The -<strong>out base</strong> argument indicates the path of the output file base. This argument overrides the default output file base (<strong>./out_tcmpr</strong>).</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
+</ol>
+<p>This tool currently only supports the rapid intensification (<strong>RI</strong>) edeck probability type but support for additional edeck probability types will be added in future releases. At least one <strong>-adeck</strong> or <strong>-edeck</strong> option must be specified. The <strong>-adeck, -edeck</strong>, and <strong>-bdeck</strong> options may optionally be followed with <strong>suffix=string</strong> to append that string to all model names found within that data source. This option may be useful when processing track data from two different sources which reuse the same model names.</p>
+<p>An example of the tc_pairs calling sequence is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tc_pairs -adeck aal092010.dat -bdeck bal092010.dat -config TCPairsConfig
+</pre></div>
+</div>
+<p>In this example, the TC-Pairs tool matches the model track (aal092010.dat) and the best track analysis (bal092010.dat) for the 9th Atlantic Basin storm in 2010. The track matching and subsequent error information is generated with configuration options specified in the <strong>TCPairsConfig</strong> file.</p>
+<p>The TC-Pairs tool implements the following logic:</p>
+<ul class="simple">
+<li><p>Parse the adeck, edeck, and bdeck data files and store them as track objects.</p></li>
+<li><p>Apply configuration file settings to filter the adeck, edeck, and bdeck track data down to a subset of interest.</p></li>
+<li><p>Apply configuration file settings to derive additional adeck track data, such as interpolated tracks, consensus tracks, time-lagged tracks, and statistical track and intensity models.</p></li>
+<li><p>For each adeck track that was parsed or derived, search for a matching bdeck track with the same basin and cyclone number and overlapping valid times. If not matching against the BEST track, also ensure that the model initialization times match.</p></li>
+<li><p>For each adeck/bdeck track pair, match up their track points in time, lookup distances to land, compute track location errors, and write an output TCMPR line for each track point.</p></li>
+<li><p>For each set of edeck probabilities that were parsed, search for a matching bdeck track.</p></li>
+<li><p>For each edeck/bdeck pair, write paired edeck probabilities and matching bdeck values to output PROBRIRW lines.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tc-pairs-configuration-file">
+<h3><span class="section-number">20.2.2. </span>tc_pairs configuration file<a class="headerlink" href="#tc-pairs-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The default configuration file for the TC-Pairs tool named <strong>‘TCPairsConfig_default’</strong> can be found in the installed <strong>share/met/config/</strong> directory. Users are encouraged to copy these default files before modifying their contents. The contents of the configuration file are described in the subsections below.</p>
+<p>The contents of the tc_pairs configuration file are described below.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>storm_id     = [];
+basin        = [];
+cyclone      = [];
+storm_name   = [];
+init_beg     = &quot;&quot;;
+init_end     = &quot;&quot;;
+init_inc     = [];
+init_exc     = [];
+valid_beg    = &quot;&quot;;
+valid_end    = &quot;&quot;;
+init_hour    = [];
+init_mask    = [];
+lead_req     = [];
+valid_mask   = [];
+match_points = TRUE;
+version      = &quot;VN.N&quot;;
+</pre></div>
+</div>
+<p>The configuration options listed above are common to multiple MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-tc-configuration-file-options"><span class="std std-numref">Section 3.5.2</span></a>.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model = [ &quot;DSHP&quot;, &quot;LGEM&quot;, &quot;HWRF&quot; ];
+</pre></div>
+</div>
+<p>The <strong>model</strong> variable contains a list of comma-separated models to be used. Each model is identified with an ATCF TECH ID (normally four unique characters). This model identifier should match the model column in the ATCF format input file. An empty list indicates that all models in the input file(s) will be processed. Note that when reading ATCF track data, all instances of the string AVN are automatically replaced with GFS.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>check_dup = FALSE;
+</pre></div>
+</div>
+<p>The <strong>check_dup</strong> flag expects either TRUE and FALSE, indicating whether the code should check for duplicate ATCF lines when building tracks. Setting <strong>check_dup</strong> to TRUE will check for duplicated lines, and produce output information regarding the duplicate. Any duplicated ATCF line will not be processed in the tc_pairs output. Setting <strong>check_dup</strong> to FALSE, will still exclude tracks that decrease with time, and will overwrite repeated lines, but specific duplicate log information will not be output. Setting <strong>check_dup</strong> to FALSE will make parsing the track quicker.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>interp12 = NONE;
+</pre></div>
+</div>
+<p>The <strong>interp12</strong> flag expects the entry NONE, FILL, or REPLACE, indicating whether special processing should be performed for interpolated forecasts. The NONE option indicates no changes are made to the interpolated forecasts. The FILL and REPLACE (default) options determine when the 12-hour interpolated forecast (normally indicated with a “2” or “3” at the end of the ATCF ID) will be renamed with the 6-hour interpolated ATCF ID (normally indicated with the letter “I” at the end of the ATCF ID). The FILL option renames the 12-hour interpolated forecasts with the 6-hour interpolated forecast ATCF ID only when the 6-hour interpolated forecasts is missing (in the case of a 6-hour interpolated forecast which only occurs every 12-hours (e.g. EMXI, EGRI), the 6-hour interpolated forecasts will be “filled in” with the 12-hour interpolated forecasts in order to provide a record every 6-hours). The REPLACE option renames all 12-hour interpolated forecasts with the 6-hour interpolated forecasts ATCF ID regardless of whether the 6-hour interpolated forecast exists. The original 12-hour ATCF ID will also be retained in the output file (all modified ATCF entries will appear at the end of the TC-Pairs output file). This functionality expects both the 12-hour and 6-hour early (interpolated) ATCF IDs to be listed in the model field.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>consensus = [
+   {
+      name     = &quot;CON1&quot;;
+      members  = [ &quot;MOD1&quot;, &quot;MOD2&quot;, &quot;MOD3&quot; ];
+      required = [   true,  false, false  ];
+      min_req  = 2;
+   }
+];
+</pre></div>
+</div>
+<p>The <strong>consensus</strong> field allows the user to generate a user-defined consensus forecasts from any number of models. All models used in the consensus forecast need to be included in the <strong>model</strong> field (first entry in <strong>TCPairsConfig_default</strong>). The name field is the desired consensus model name. The <strong>members</strong> field is a comma-separated list of model IDs that make up the members of the consensus. The <strong>required</strong> field is a comma-separated list of true/false values associated with each consensus member. If a member is designated as true, the member is required to be present in order for the consensus to be generated. If a member is false, the consensus will be generated regardless of whether the member is present. The length of the required array must be the same length as the members array. The <strong>min_req</strong> field is the number of members required in order for the consensus to be computed. The required and min_req field options are applied at each forecast lead time. If any member of the consensus has a non-valid position or intensity value, the consensus for that valid time will not be generated.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lag_time = [ “06”, “12” ];
+</pre></div>
+</div>
+<p>The <strong>lag_time</strong> field is a comma-separated list of forecast lag times to be used in HH[MMSS] format. For each adeck track identified, a lagged track will be derived for each entry. In the tc_pairs output, the original adeck record will be retained, with the lagged entry listed as the adeck name with “_LAG_HH” appended.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>best_technique = [ &quot;BEST&quot; ];
+best_baseline  = [ &quot;BCLP&quot;, &quot;BCD5&quot;, &quot;BCLA&quot; ];
+</pre></div>
+</div>
+<p>The <strong>best_technique</strong> field specifies a comma-separated list of technique name(s) to be interpreted as BEST track data. The default value (BEST) should suffice for most users. The <strong>best_baseline</strong> field specifies a comma-separated list of CLIPER/SHIFOR baseline forecasts to be derived from the best tracks. Specifying multiple <strong>best_technique</strong> values and at least one <strong>best_baseline</strong> value results in a warning since the derived baseline forecast technique names may be used multiple times.</p>
+<p>The following are valid baselines for the <strong>best_baseline</strong> field:</p>
+<p><strong>BTCLIP</strong>: Neumann original 3-day CLIPER in best track mode. Used for the Atlantic basin only. Specify model as BCLP.</p>
+<p><strong>BTCLIP5</strong>: 5-day CLIPER (<a class="reference internal" href="refs.html#aberson-1998"><span class="std std-ref">Aberson, 1998</span></a>)/SHIFOR (<a class="reference internal" href="refs.html#knaff-2003"><span class="std std-ref">DeMaria and Knaff, 2003</span></a> in best track mode for either Atlantic or eastern North Pacific basins. Specify model as BCS5.</p>
+<p><strong>BTCLIPA</strong>: Sim Aberson’s recreation of Neumann original 3-day CLIPER in best-track mode. Used for Atlantic basin only. Specify model as BCLA.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>oper_technique = [ &quot;CARQ&quot; ];
+oper_baseline  = [ &quot;OCLP&quot;, &quot;OCS5&quot;, &quot;OCD5&quot; ];
+</pre></div>
+</div>
+<p>The <strong>oper_technique</strong> field specifies a comma-separated list of technique name(s) to be interpreted as operational track data. The default value (CARQ) should suffice for most users. The <strong>oper_baseline</strong> field specifies a comma-separated list of CLIPER/SHIFOR baseline forecasts to be derived from the operational tracks. Specifying multiple <strong>oper_technique</strong> values and at least one <strong>oper_baseline</strong> value results in a warning since the derived baseline forecast technique names may be used multiple times.</p>
+<p>The following are valid baselines for the <strong>oper_baseline</strong> field:</p>
+<p><strong>OCLIP</strong>: Merrill modified (operational) 3-day CLIPER run in operational mode. Used for Atlantic basin only. Specify model as OCLP.</p>
+<p><strong>OCLIP5</strong>: 5-day CLIPER (<a class="reference internal" href="refs.html#aberson-1998"><span class="std std-ref">Aberson, 1998</span></a>)/ SHIFOR (<a class="reference internal" href="refs.html#knaff-2003"><span class="std std-ref">DeMaria and Knaff, 2003</span></a>) in operational mode, rerun using CARQ data. Specify model as OCS5.</p>
+<p><strong>OCLIPD5</strong>: 5-day CLIPER (<a class="reference internal" href="refs.html#aberson-1998"><span class="std std-ref">Aberson, 1998</span></a>)/ DECAY-SHIFOR (<a class="reference internal" href="refs.html#knaff-2003"><span class="std std-ref">DeMaria and Knaff, 2003</span></a>). Specify model as OCD5.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>anly_track = BDECK;
+</pre></div>
+</div>
+<p>Analysis tracks consist of multiple track points with a lead time of zero for the same storm. An analysis track may be generated by running model analysis fields through a tracking algorithm. The <strong>anly_track</strong> field specifies which datasets should be searched for analysis track data and may be set to <strong>NONE, ADECK, BDECK</strong>, or <strong>BOTH</strong>. Use <strong>BOTH</strong> to create pairs using two different analysis tracks.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>match_points = TRUE;
+</pre></div>
+</div>
+<p>The <strong>match_points</strong> field specifies whether only those track points common to both the adeck and bdeck tracks should be written out. If <strong>match_points</strong> is selected as FALSE, the union of the adeck and bdeck tracks will be written out, with “NA” listed for unmatched data.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dland_file = &quot;MET_BASE/tc_data/dland_global_tenth_degree.nc&quot;;
+</pre></div>
+</div>
+<p>The <strong>dland_file</strong> string specifies the path of the NetCDF format file (default file: dland_global_tenth_degree.nc) to be used for the distance to land check in the <strong>tc_pairs code</strong>. This file is generated using tc_dland (default file provided in installed <strong>share/met/tc_data</strong> directory).</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>watch_warn = {
+    file_name   = &quot;MET_BASE/tc_data/wwpts_us.txt&quot;;
+    time_offset = -14400;
+ }
+</pre></div>
+</div>
+<p>The <strong>watch_warn</strong> field specifies the file name and time applied offset to the <strong>watch_warn</strong> flag. The <strong>file_name</strong> string specifies the path of the watch/warning file to be used to determine when a watch or warning is in affect during the forecast initialization and verification times. The default file is named <strong>wwpts_us.txt</strong>, which is found in the installed <strong>share/met/tc_data/</strong> directory within the MET build. The <strong>time_offset</strong> string is the time window (in seconds) assigned to the watch/warning. Due to the non-uniform time watches and warnings are issued, a time window is assigned for which watch/warnings are included in the verification for each valid time. The default watch/warn file is static, and therefore may not include warned storms beyond the current MET code release date; therefore users may wish to contact <a class="reference external" href="mailto:met_help&#37;&#52;&#48;ucar&#46;edu">met_help<span>&#64;</span>ucar<span>&#46;</span>edu</a> to obtain the most recent watch/warning file if the static file does not contain storms of interest.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>basin_map = [
+   { key = &quot;SI&quot;; val = &quot;SH&quot;; },
+   { key = &quot;SP&quot;; val = &quot;SH&quot;; },
+   { key = &quot;AU&quot;; val = &quot;SH&quot;; },
+   { key = &quot;AB&quot;; val = &quot;IO&quot;; },
+   { key = &quot;BB&quot;; val = &quot;IO&quot;; }
+];
+</pre></div>
+</div>
+<p>The <strong>basin_map</strong> entry defines a mapping of input names to output values.
+Whenever the basin string matches “key” in the input ATCF files, it is
+replaced with “val”. This map can be used to modify basin names to make them
+consistent across the ATCF input files.</p>
+<p>Many global modeling centers use ATCF basin identifiers based on region
+(e.g., ‘SP’ for South Pacific Ocean, etc.), however the best track data
+provided by the Joint Typhoon Warning Center (JTWC) use just one basin
+identifier ‘SH’ for all of the Southern Hemisphere basins. Additionally,
+some modeling centers may report basin identifiers separately for the Bay
+of Bengal (BB) and Arabian Sea (AB) whereas JTWC uses ‘IO’.</p>
+<p>The basin mapping allows MET to map the basin identifiers to the expected
+values without having to modify your data. For example, the first entry
+in the list below indicates that any data entries for ‘SI’ will be matched
+as if they were ‘SH’. In this manner, all verification results for the
+Southern Hemisphere basins will be reported together as one basin.</p>
+<p>An empty list indicates that no basin mapping should be used. Use this if
+you are not using JTWC best tracks and you would like to match explicitly
+by basin or sub-basin. Note that if your model data and best track do not
+use the same basin identifier conventions, using an empty list for this
+parameter will result in missed matches.</p>
+</div>
+<div class="section" id="tc-pairs-output">
+<span id="id1"></span><h3><span class="section-number">20.2.3. </span>tc_pairs output<a class="headerlink" href="#tc-pairs-output" title="Permalink to this headline">¶</a></h3>
+<p>TC-Pairs produces output in TCST format. The default output file name can be overwritten using the -out file argument in the usage statement. The TCST file output from TC-Pairs may be used as input into the TC-Stat tool. The header column in the TC-Pairs output is described in <a class="reference internal" href="#tcst-header"><span class="std std-numref">Table 20.1</span></a>.</p>
+<span id="tcst-header"></span><table class="colwidths-auto docutils align-default" id="id2">
+<caption><span class="caption-number">Table 20.1 </span><span class="caption-text">Header information for TC-Pairs TCST output.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>HEADER</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Column Number</p></th>
+<th class="head"><p>Header Column Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>VERSION</p></td>
+<td><p>Version number</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>AMODEL</p></td>
+<td><p>User provided text string designating model name</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>BMODEL</p></td>
+<td><p>User provided text string designating model name</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>STORM_ID</p></td>
+<td><p>BBCCYYY designation of storm</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>BASIN</p></td>
+<td><p>Basin (BB in STORM_ID)</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>CYCLONE</p></td>
+<td><p>Cyclone number (CC in STORM_ID)</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>STORM_NAME</p></td>
+<td><p>Name of Storm</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>INIT</p></td>
+<td><p>Initialization time of forecast in YYYYMMDD_HHMMSS format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>LEAD</p></td>
+<td><p>Forecast lead time in HHMMSS format.</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>VALID</p></td>
+<td><p>Forecast valid time in YYYYMMDD_HHMMSS format.</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>INIT_MASK</p></td>
+<td><p>Initialization time masking grid applied</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>VALID_MASK</p></td>
+<td><p>Valid time masking grid applied</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>LINE_TYPE</p></td>
+<td><p>Output line type (TCMPR or PROBRI)</p></td>
+</tr>
+</tbody>
+</table>
+<span id="tcmpr-line-type"></span><table class="colwidths-auto docutils align-default" id="id3">
+<caption><span class="caption-number">Table 20.2 </span><span class="caption-text">Format information for TCMPR (Tropical Cyclone Matched Pairs) output line type.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>TCMPR OUTPUT FORMAT</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Column Number</p></th>
+<th class="head"><p>Header Column Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>TCMPR</p></td>
+<td><p>Tropical Cyclone Matched Pair line type</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>TOTAL</p></td>
+<td><p>Total number of pairs in track</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>INDEX</p></td>
+<td><p>Index of the current track pair</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>LEVEL</p></td>
+<td><p>Level of storm classification</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>WATCH_WARN</p></td>
+<td><p>HU or TS watch or warning in effect</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>INITIALS</p></td>
+<td><p>Forecaster initials</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>ALAT</p></td>
+<td><p>Latitude position of adeck model</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>ALON</p></td>
+<td><p>Longitude position of adeck model</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>BLAT</p></td>
+<td><p>Latitude position of bdeck model</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>BLON</p></td>
+<td><p>Longitude position of bdeck model</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>TK_ERR</p></td>
+<td><p>Track error of adeck relative to bdeck (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>X_ERR</p></td>
+<td><p>X component position error (nm)</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>Y_ERR</p></td>
+<td><p>Y component position error (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>ALTK_ERR</p></td>
+<td><p>Along track error (nm)</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>CRTK_ERR</p></td>
+<td><p>Cross track error (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>ADLAND</p></td>
+<td><p>adeck distance to land (nm)</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>BDLAND</p></td>
+<td><p>bdeck distance to land (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>AMSLP</p></td>
+<td><p>adeck mean sea level pressure</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>BMSLP</p></td>
+<td><p>bdeck mean sea level pressure</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>AMAX_WIND</p></td>
+<td><p>adeck maximum wind speed</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>BMAX_WIND</p></td>
+<td><p>bdeck maximum wind speed</p></td>
+</tr>
+<tr class="row-even"><td><p>34, 35</p></td>
+<td><p>A/BAL_WIND_34</p></td>
+<td><p>a/bdeck 34-knot radius winds in full circle</p></td>
+</tr>
+<tr class="row-odd"><td><p>36, 37</p></td>
+<td><p>A/BNE_WIND_34</p></td>
+<td><p>a/bdeck 34-knot radius winds in NE quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p>38, 39</p></td>
+<td><p>A/BSE_WIND_34</p></td>
+<td><p>a/bdeck 34-knot radius winds in SE quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p>40, 41</p></td>
+<td><p>A/BSW_WIND_34</p></td>
+<td><p>a/bdeck 34-knot radius winds in SW quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p>42, 43</p></td>
+<td><p>A/BNW_WIND_34</p></td>
+<td><p>a/bdeck 34-knot radius winds in NW quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p>44, 45</p></td>
+<td><p>A/BAL_WIND_50</p></td>
+<td><p>a/bdeck 50-knot radius winds in full circle</p></td>
+</tr>
+<tr class="row-even"><td><p>46, 47</p></td>
+<td><p>A/BNE_WIND_50</p></td>
+<td><p>a/bdeck 50-knot radius winds in NE quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p>48, 49</p></td>
+<td><p>A/BSE_WIND_50</p></td>
+<td><p>a/bdeck 50-knot radius winds in SE quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p>50, 51</p></td>
+<td><p>A/BSW_WIND_50</p></td>
+<td><p>a/bdeck 50-knot radius winds in SW quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p>52, 53</p></td>
+<td><p>A/BNW_WIND_50</p></td>
+<td><p>a/bdeck 50-knot radius winds in NW quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p>54, 55</p></td>
+<td><p>A/BAL_WIND_64</p></td>
+<td><p>a/bdeck 64-knot radius winds in full circle</p></td>
+</tr>
+<tr class="row-odd"><td><p>56, 57</p></td>
+<td><p>A/BNE_WIND_64</p></td>
+<td><p>a/bdeck 64-knot radius winds in NE quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p>58, 59</p></td>
+<td><p>A/BSE_WIND_64</p></td>
+<td><p>a/bdeck 64-knot radius winds in SE quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p>60, 61</p></td>
+<td><p>A/BSW_WIND_64</p></td>
+<td><p>a/bdeck 64-knot radius winds in SW quadrant</p></td>
+</tr>
+<tr class="row-even"><td><p>62, 63</p></td>
+<td><p>A/BNW_WIND_64</p></td>
+<td><p>a/bdeck 64-knot radius winds in NW quadrant</p></td>
+</tr>
+<tr class="row-odd"><td><p>64, 65</p></td>
+<td><p>A/BRADP</p></td>
+<td><p>pressure in millibars of the last closed isobar, 900 - 1050 mb</p></td>
+</tr>
+<tr class="row-even"><td><p>66, 67</p></td>
+<td><p>A/BRRP</p></td>
+<td><p>radius of the last closed isobar in nm, 0 - 9999 nm</p></td>
+</tr>
+<tr class="row-odd"><td><p>68, 69</p></td>
+<td><p>A/BMRD</p></td>
+<td><p>radius of max winds, 0 - 999 nm</p></td>
+</tr>
+<tr class="row-even"><td><p>70, 71</p></td>
+<td><p>A/BGUSTS</p></td>
+<td><p>gusts, 0 through 995 kts</p></td>
+</tr>
+<tr class="row-odd"><td><p>72, 73</p></td>
+<td><p>A/BEYE</p></td>
+<td><p>eye diameter, 0 through 999 nm</p></td>
+</tr>
+<tr class="row-even"><td><p>74, 75</p></td>
+<td><p>A/BDIR</p></td>
+<td><p>storm direction in compass coordinates, 0 - 359 degrees</p></td>
+</tr>
+<tr class="row-odd"><td><p>76, 77</p></td>
+<td><p>A/BSPEED</p></td>
+<td><p>storm speed, 0 - 999 kts</p></td>
+</tr>
+<tr class="row-even"><td><p>78, 79</p></td>
+<td><p>A/BDEPTH</p></td>
+<td><p>system depth, D-deep, M-medium, S-shallow, X-unknown</p></td>
+</tr>
+</tbody>
+</table>
+<span id="probri-line-type"></span><table class="colwidths-auto docutils align-default" id="id4">
+<caption><span class="caption-number">Table 20.3 </span><span class="caption-text">Format information for PROBRIRW (Probability of Rapid Intensification) output line type.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"></th>
+<th class="head"><p>PROBRIRW OUTPUT FORMAT</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Column Number</p></th>
+<th class="head"><p>Header Column Name</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>PROBRI</p></td>
+<td><p>Probability of Rapid Intensification line type</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>ALAT</p></td>
+<td><p>Latitude position of edeck model</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>ALON</p></td>
+<td><p>Longitude position of edeck model</p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p>BLAT</p></td>
+<td><p>Latitude position of bdeck model</p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p>BLON</p></td>
+<td><p>Longitude position of bdeck model</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>INITIALS</p></td>
+<td><p>Forecaster initials</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>TK_ERR</p></td>
+<td><p>Track error of adeck relative to bdeck (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>X_ERR</p></td>
+<td><p>X component position error (nm)</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>Y_ERR</p></td>
+<td><p>Y component position error (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p>ADLAND</p></td>
+<td><p>adeck distance to land (nm)</p></td>
+</tr>
+<tr class="row-odd"><td><p>23</p></td>
+<td><p>BDLAND</p></td>
+<td><p>bdeck distance to land (nm)</p></td>
+</tr>
+<tr class="row-even"><td><p>24</p></td>
+<td><p>RI_BEG</p></td>
+<td><p>Start of RI time window in HH format</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>RI_END</p></td>
+<td><p>End of RI time window in HH format</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>RI_WINDOW</p></td>
+<td><p>Width of RI time window in HH format</p></td>
+</tr>
+<tr class="row-odd"><td><p>27</p></td>
+<td><p>AWIND_END</p></td>
+<td><p>Forecast maximum wind speed at RI end</p></td>
+</tr>
+<tr class="row-even"><td><p>28</p></td>
+<td><p>BWIND_BEG</p></td>
+<td><p>Best track maximum wind speed at RI begin</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>BWIND_END</p></td>
+<td><p>Best track maximum wind speed at RI end</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>BDELTA</p></td>
+<td><p>Exact Best track wind speed change in RI window</p></td>
+</tr>
+<tr class="row-odd"><td><p>31</p></td>
+<td><p>BDELTA_MAX</p></td>
+<td><p>Maximum Best track wind speed change in RI window</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>BLEVEL_BEG</p></td>
+<td><p>Best track storm classification at RI begin</p></td>
+</tr>
+<tr class="row-odd"><td><p>33</p></td>
+<td><p>BLEVEL_END</p></td>
+<td><p>Best track storm classification at RI end</p></td>
+</tr>
+<tr class="row-even"><td><p>34</p></td>
+<td><p>N_THRESH</p></td>
+<td><p>Number of probability thresholds</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>THRESH_i</p></td>
+<td><p>The ith probability threshold value (repeated)</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>PROB_i</p></td>
+<td><p>The ith probability value (repeated)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tc-stat.html" class="btn btn-neutral float-right" title="21. TC-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tc-dland.html" class="btn btn-neutral" title="19. TC-Dland Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

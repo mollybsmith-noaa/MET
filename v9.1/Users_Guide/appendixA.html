@@ -1,0 +1,398 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>27. Appendix A FAQs &amp; How do I … ? &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/appendixA.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="28. Appendix B Map Projections, Grids, and Polylines" href="appendixB.html"/>
+        <link rel="prev" title="26. References" href="refs.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">27. Appendix A FAQs &amp; How do I … ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frequently-asked-questions">27.1. Frequently Asked Questions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">27.2. Troubleshooting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#where-to-get-help">27.3. Where to get help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-contribute-code">27.4. How to contribute code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">27. </span>Appendix A FAQs &amp; How do I … ?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/appendixA.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-a-faqs-how-do-i">
+<span id="appendixa"></span><h1><span class="section-number">27. </span>Appendix A FAQs &amp; How do I … ?<a class="headerlink" href="#appendix-a-faqs-how-do-i" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="frequently-asked-questions">
+<h2><span class="section-number">27.1. </span>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
+<p><strong>Q. Why was the MET written largely in C++ instead of FORTRAN?</strong></p>
+<ol class="upperalpha simple">
+<li><p>MET relies upon the object-oriented aspects of C++, particularly in using the MODE tool. Due to time and budget constraints, it also makes use of a pre-existing forecast verification library that was developed at NCAR.</p></li>
+</ol>
+<p><strong>Q. Why is PrepBUFR used?</strong></p>
+<ol class="upperalpha simple">
+<li><p>The first goal of MET was to replicate the capabilities of existing verification packages and make these capabilities available to both the DTC and the public.</p></li>
+</ol>
+<p><strong>Q. Why is GRIB used?</strong></p>
+<ol class="upperalpha simple">
+<li><p>Forecast data from both WRF cores can be processed into GRIB format, and it is a commonly accepted output format for many NWP models.</p></li>
+</ol>
+<p><strong>Q. Is GRIB2 supported?</strong></p>
+<ol class="upperalpha simple">
+<li><p>Yes, forecast output in GRIB2 format can be read by MET. Be sure to compile the GRIB2 code by setting the appropriate configuration file options (see Chapter 2).</p></li>
+</ol>
+<p><strong>Q. How does MET differ from the previously mentioned existing verification packages?</strong></p>
+<ol class="upperalpha simple">
+<li><p>MET is an actively maintained, evolving software package that is being made freely available to the public through controlled version releases.</p></li>
+</ol>
+<p><strong>Q. How does the MODE tool differ from the Grid-Stat tool?</strong></p>
+<ol class="upperalpha simple">
+<li><p>They offer different ways of viewing verification. The Grid-Stat tool provides traditional verification statistics, while MODE provides specialized spatial statistics.</p></li>
+</ol>
+<p><strong>Q. Will the MET work on data in native model coordinates?</strong></p>
+<ol class="upperalpha simple">
+<li><p>No - it will not. In the future, we may add options to allow additional model grid coordinate systems.</p></li>
+</ol>
+<p><strong>Q. How do I get help if my questions are not answered in the User’s Guide?</strong></p>
+<ol class="upperalpha simple">
+<li><p>First, look on our website <a class="reference external" href="https://dtcenter.org/community-code/model-evaluation-tools-met">https://dtcenter.org/community-code/model-evaluation-tools-met</a>. If that doesn’t answer your question, then email: <a class="reference external" href="mailto:met_help&#37;&#52;&#48;ucar&#46;edu">met_help<span>&#64;</span>ucar<span>&#46;</span>edu</a>.</p></li>
+</ol>
+<p><strong>Q. Where are the graphics?</strong></p>
+<ol class="upperalpha simple">
+<li><p>Currently, very few graphics are included. The plotting tools (plot_point_obs, plot_data_plane, and plot_mode_field) can help you visualize your raw data. Also, ncview can be used with the NetCDF output from MET tools to visualize results. Further graphics support will be made available in the future on the MET website.</p></li>
+</ol>
+<p><strong>Q. How do I find the version of the tool I am using?</strong></p>
+<ol class="upperalpha simple">
+<li><p>Type the name of the tool followed by -version. For example, type “pb2nc -version”.</p></li>
+</ol>
+<p><strong>Q. What are MET’s conventions for latitude, longitude, azimuth and bearing angles?</strong></p>
+<ol class="upperalpha simple">
+<li><p>MET considers north latitude and east longitude positive. Latitudes have range from <span class="math notranslate nohighlight">\(-90^\circ\)</span> to <span class="math notranslate nohighlight">\(+90^\circ\)</span>. Longitudes have range from <span class="math notranslate nohighlight">\(-180^\circ\)</span> to <span class="math notranslate nohighlight">\(+180^\circ\)</span>. Plane angles such as azimuths and bearing (example: horizontal wind direction) have range <span class="math notranslate nohighlight">\(0^\circ\)</span> to <span class="math notranslate nohighlight">\(360^\circ\)</span> and are measured clockwise from north.</p></li>
+</ol>
+</div>
+<div class="section" id="troubleshooting">
+<span id="id1"></span><h2><span class="section-number">27.2. </span>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>The first place to look for help with individual commands is this user’s guide or the usage statements that are provided with the tools. Usage statements for the individual MET tools are available by simply typing the name of the executable in MET’s <strong>bin/</strong> directory. Example scripts available in the MET’s <strong>scripts/</strong> directory show examples of how one might use these commands on example datasets. Here are suggestions on other things to check if you are having problems installing or running MET.</p>
+<p><strong>MET won’t compile</strong></p>
+<ul class="simple">
+<li><p>Have you specified the locations of NetCDF, GNU Scientific Library, and BUFRLIB, and optional additional libraries using corresponding MET_ environment variables prior to running configure?</p></li>
+<li><p>Have these libraries been compiled and installed using the same set of compilers used to build MET?</p></li>
+<li><p>Are you using NetCDF version 3.4 or version 4? Currently, only NetCDF version 3.6 can be used with MET.</p></li>
+</ul>
+<p><strong>Grid_stat won’t run</strong></p>
+<ul class="simple">
+<li><p>Are both the observational and forecast datasets on the same grid?</p></li>
+</ul>
+<p><strong>MODE won’t run</strong></p>
+<ul class="simple">
+<li><p>If using precipitation, do you have the same accumulation periods for both the forecast and observations? (If you aren’t sure, run pcp_combine.)</p></li>
+<li><p>Are both the observation and forecast datasets on the same grid?</p></li>
+</ul>
+<p><strong>Point-Stat won’t run</strong></p>
+<ul class="simple">
+<li><p>Have you run pb2nc first on your PrepBUFR observation data?</p></li>
+</ul>
+<p><strong>Error while loading shared libraries</strong></p>
+<ul class="simple">
+<li><p>Add the lib dir to your LD_LIBRARY_PATH. For example, if you receive the following error: “./mode_analysis: error while loading shared libraries: libgsl.so.19: cannot open shared object file: No such file or directory”, you should add the path to the gsl lib (for example, /home/user/MET/gsl-2.1/lib) to your LD_LIBRARY_PATH.</p></li>
+</ul>
+<p><strong>General troubleshooting</strong></p>
+<ul class="simple">
+<li><p>For configuration files used, make certain to use empty square brackets (e.g. [ ]) to indicate no stratification is desired. Do NOT use empty double quotation marks inside square brackets (e.g. [“”]).</p></li>
+<li><p>Have you designated all the required command line arguments?</p></li>
+<li><p>Try rerunning with a higher verbosity level. Increasing the verbosity level to 4 or 5 prints much more diagnostic information to the screen.</p></li>
+</ul>
+</div>
+<div class="section" id="where-to-get-help">
+<h2><span class="section-number">27.3. </span>Where to get help<a class="headerlink" href="#where-to-get-help" title="Permalink to this headline">¶</a></h2>
+<p>If none of the above suggestions have helped solve your problem, help is available through: <a class="reference external" href="mailto:met_help&#37;&#52;&#48;ucar&#46;edu">met_help<span>&#64;</span>ucar<span>&#46;</span>edu</a></p>
+</div>
+<div class="section" id="how-to-contribute-code">
+<h2><span class="section-number">27.4. </span>How to contribute code<a class="headerlink" href="#how-to-contribute-code" title="Permalink to this headline">¶</a></h2>
+<p>If you have code you would like to contribute, we will gladly consider your contribution. Please send email to: <a class="reference external" href="mailto:met_help&#37;&#52;&#48;ucar&#46;edu">met_help<span>&#64;</span>ucar<span>&#46;</span>edu</a></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendixB.html" class="btn btn-neutral float-right" title="28. Appendix B Map Projections, Grids, and Polylines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="refs.html" class="btn btn-neutral" title="26. References" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Regional Verification using Spatial Masking &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/masking.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="7. Point-Stat Tool" href="point-stat.html"/>
+        <link rel="prev" title="5. Re-Formatting of Gridded Fields" href="reformat_grid.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Regional Verification using Spatial Masking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gen-vx-mask-tool">6.1. Gen-Vx-Mask tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gen-vx-mask-usage">6.1.1. gen_vx_mask usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#feature-relative-methods">6.2. Feature-Relative Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">6. </span>Regional Verification using Spatial Masking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/masking.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="regional-verification-using-spatial-masking">
+<span id="masking"></span><h1><span class="section-number">6. </span>Regional Verification using Spatial Masking<a class="headerlink" href="#regional-verification-using-spatial-masking" title="Permalink to this headline">¶</a></h1>
+<p>Verification over a particular region or area of interest may be performed using “masking”. Defining a masking region is simply selecting the desired set of grid points to be used. The Gen-Vx-Mask tool automates this process and replaces the Gen-Poly-Mask and Gen-Circle-Mask tools from previous releases. It may be run to create a bitmap verification masking region to be used by many of the statistical tools. This tool enables the user to generate a masking region once for a domain and apply it to many cases. It has been enhanced to support additional types of masking region definition (e.g. tropical-cyclone track over water only). An iterative approach may be used to define complex areas by combining multiple masking regions together.</p>
+<div class="section" id="gen-vx-mask-tool">
+<h2><span class="section-number">6.1. </span>Gen-Vx-Mask tool<a class="headerlink" href="#gen-vx-mask-tool" title="Permalink to this headline">¶</a></h2>
+<p>The Gen-Vx-Mask tool may be run to create a bitmap verification masking region to be used by the the MET statistics tools. This tool enables the user to generate a masking region once for a domain and apply it to many cases. While the MET statistics tools can define some masking regions on the fly use polylines, doing so can be slow, especially for complex polylines containing hundreds of vertices. Using the Gen-Vx-Mask tool to create a bitmap masking region before running the other MET tools will make them run more efficiently.</p>
+<div class="section" id="gen-vx-mask-usage">
+<h3><span class="section-number">6.1.1. </span>gen_vx_mask usage<a class="headerlink" href="#gen-vx-mask-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the Gen-Vx-Mask tool is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: gen_vx_mask
+       input_grid
+       mask_file
+       out_file
+       [-type str]
+       [-input_field string]
+       [-mask_field string]
+       [-complement]
+       [-union | -intersection | -symdiff]
+       [-thresh string]
+       [-height n]
+       [-width n]
+       [-shapeno n]
+       [-value n]
+       [-name string]
+       [-log file]
+       [-v level]
+       [-compress level]
+</pre></div>
+</div>
+<p>gen_vx_mask has three required arguments and can take optional ones.</p>
+<div class="section" id="required-arguments-for-gen-vx-mask">
+<h4><span class="section-number">6.1.1.1. </span>Required arguments for gen_vx_mask<a class="headerlink" href="#required-arguments-for-gen-vx-mask" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>input_file</strong> argument is a gridded data file which specifies the grid definition for the domain over which the masking bitmap is to be defined. If output from gen_vx_mask, automatically read mask data as the <strong>input_field</strong>.</p></li>
+<li><p>The <strong>mask_file</strong> argument defines the masking information, see below.</p></li>
+</ol>
+<ul class="simple">
+<li><p>For “poly”, “box”, “circle”, and “track” masking, specify an ASCII Lat/Lon file.</p></li>
+<li><p>For “grid” and “data” masking, specify a gridded data file.</p></li>
+<li><p>For “solar_alt” and “solar_azi” masking, specify a gridded data file or a time string in YYYYMMDD[_HH[MMSS]] format.</p></li>
+<li><p>For “lat” and “lon” masking, no “mask_file” needed, simply repeat the path for “input_file”.</p></li>
+<li><p>For “shape” masking, specify an ESRI shapefile (.shp).</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>The <strong>out_file</strong> argument is the output NetCDF mask file to be written.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-gen-vx-mask">
+<h4><span class="section-number">6.1.1.2. </span>Optional arguments for gen_vx_mask<a class="headerlink" href="#optional-arguments-for-gen-vx-mask" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="4">
+<li><p>The <strong>-type string</strong> option can be used to override the default masking type (poly). See description of supported types below.</p></li>
+<li><p>The <strong>-input_field string</strong> option can be used to read existing mask data from “input_file”.</p></li>
+<li><p>The <strong>-mask_field string</strong> option can be used to define the field from “mask_file” to be used for “data” masking.</p></li>
+<li><p>The <strong>-complement</strong> option can be used to to compute the complement of the area defined by “mask_file”.</p></li>
+<li><p>The <strong>-union | -intersection | -symdiff</strong> option can be used to specify how to combine the masks from “input_file” and “mask_file”.</p></li>
+<li><p>The <strong>-thresh string</strong> option can be used to define the threshold to be applied.</p></li>
+</ol>
+<ul class="simple">
+<li><p>For “circle” and “track” masking, threshold the distance (km).</p></li>
+<li><p>For “data” masking, threshold the values of “mask_field”.</p></li>
+<li><p>For “solar_alt” and “solar_azi” masking, threshold the computed solar values.</p></li>
+<li><p>For “lat” and “lon” masking, threshold the latitude and longitude values.</p></li>
+</ul>
+<ol class="arabic simple" start="10">
+<li><p>The <strong>-height n</strong> and <strong>-width n</strong> options set the size in grid units for “box”masking.</p></li>
+<li><p>The <strong>-shapeno n</strong> option is only used for shapefile masking. (See description of shapefile masking below).</p></li>
+<li><p>The <strong>-value n</strong> option can be used to override the default output mask data value (1).</p></li>
+<li><p>The <strong>-name string</strong> option can be used to specify the output variable name for the mask.</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The value of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity will increase the amount of logging.</p></li>
+<li><p>The <strong>-compress level</strong> option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+<p>The Gen-Vx-Mask tool supports the following types of masking region definition selected using the <strong>-type</strong> command line option:</p>
+<ol class="arabic simple">
+<li><p>Polyline (<strong>poly</strong>) masking reads an input ASCII file containing Lat/Lon locations, connects the first and last points, and selects grid points falling inside that polyline. This option is useful when defining geographic sub-regions of a domain.</p></li>
+<li><p>Box (<strong>box</strong>) masking reads an input ASCII file containing Lat/Lon locations and draws a box around each point. The height and width of the box is specified by the <strong>-height</strong> and <strong>-width</strong> command line options in grid units. For a square, only one of <strong>-height</strong> or <strong>-width</strong> needs to be used.</p></li>
+<li><p>Circle (<strong>circle</strong>) masking reads an input ASCII file containing Lat/Lon locations and for each grid point, computes the minimum great-circle arc distance in kilometers to those points. If the <strong>-thresh</strong> command line option is not used, the minimum distance value for each grid point will be written to the output. If it is used, only those grid points whose minimum distance meets the threshold criteria will be selected. This option is useful when defining areas within a certain radius of radar locations.</p></li>
+<li><p>Track (<strong>track</strong>) masking reads an input ASCII file containing Lat/Lon locations and for each grid point, computes the minimum great-circle arc distance in kilometers to the track defined by those points. The first and last track points are not connected. As with <strong>circle</strong> masking the output for each grid points depends on the use of the <strong>-thresh</strong> command line option. This option is useful when defining the area within a certain distance of a hurricane track.</p></li>
+<li><p>Grid (<strong>grid</strong>) masking reads an input gridded data file, extracts the field specified using the its grid definition, and selects grid points falling inside that grid. This option is useful when using a model nest to define the corresponding area of the parent domain.</p></li>
+<li><p>Data (<strong>data</strong>) masking reads an input gridded data file, extracts the field specified using the <strong>-mask_field</strong> command line option, thresholds the data using the <strong>-thresh</strong> command line option, and selects grid points which meet that threshold criteria. The option is useful when thresholding topography to define a mask based on elevation or when threshold land use to extract a particular category.</p></li>
+<li><p>Solar altitude (<strong>solar_alt</strong>) and solar azimuth (<strong>solar_azi</strong>) masking computes the solar altitude and azimuth values at each grid point for the time defined by the <strong>mask_file</strong> setting. <strong>mask_file</strong> may either to set to an explicit time string in YYYYMMDD[_HH[MMSS]] format or to a gridded data file. If set to a gridded data file, the <strong>-mask_field</strong> command line option specifies the field of data whose valid time should be used. If the <strong>-thresh</strong> command line option is not used, the raw solar altitude or azimuth value for each grid point will be written to the output. If it is used, the resulting binary mask field will be written. This option is useful when defining a day/night mask.</p></li>
+<li><p>Latitude (<strong>lat</strong>) and longitude (<strong>lon</strong>) masking computes the latitude and longitude value at each grid point. This logic only requires the definition of the grid, specified by the <strong>input_file</strong>. Technically, the <strong>mask_file</strong> is not needed, but a value must be specified for the command line to parse correctly. Users are advised to simple repeat the <strong>input_file</strong> setting twice. If the <strong>-thresh</strong> command line option is not used, the raw latitude or longitude values for each grid point will be written to the output. This option is useful when defining latitude or longitude bands over which to compute statistics.</p></li>
+<li><p>Shapefile (<strong>shape</strong>) masking uses a closed polygon taken from an ESRI shapefile to define the masking region. Gen-Vx-Mask reads the shapefile with the “.shp” suffix and extracts the latitude and longitudes of the vertices. The other types of shapefiles (index file, suffix “.shx”, and dBASE file, suffix “.dbf”) are not currently used. The shapefile must consist of closed polygons rather than polylines, points, or any of the other data types that shapefiles support. Shapefiles usually contain more than one polygon, and the <strong>-shape n</strong> command line option enables the user to select one polygon from the shapefile. The integer <strong>n</strong> tells which shape number to use from the shapefile. Note that this value is zero-based, so that the first polygon in the shapefile is polygon number 0, the second polygon in the shapefile is polygon number 1, etc. For the user’s convenience, some utilities that perform human-readable screen dumps of shapefile contents are provided. The <strong>gis_dump_shp, gis_dump_shx</strong> and <strong>gis_dump_dbf</strong> tools enable the user to examine the contents of her shapefiles. As an example, if the user knows the name of the particular polygon he wishes to use but not the number of the polygon in the shapefile, he can use the gis_dump_dbf utility to examine the names of the polygons in the shapefile, and the information written to the screen will tell him what the corresponding polygon number is.</p></li>
+</ol>
+<p>The polyline, box, circle, and track masking methods all read an ASCII file containing Lat/Lon locations. Those files must contain a string, which defines the name of the masking region, followed by a series of whitespace-separated latitude (degrees north) and longitude (degree east) values.</p>
+<p>The Gen-Vx-Mask tool performs three main steps, described below.</p>
+<ol class="arabic simple">
+<li><p>Determine the <strong>input_field</strong> and grid definition.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Read the <strong>input_file</strong> to determine the grid over which the mask should be defined.</p></li>
+<li><p>By default, initialize the <strong>input_field</strong> at each grid point to a value of zero.</p></li>
+<li><p>If the <strong>-input_field</strong> option was specified, initialize the <strong>input_field</strong> at each grid point to the value of that field.</p></li>
+<li><p>If the <strong>input_file</strong> is the output from a previous run of Gen-Vx-Mask, automatically initialize each grid point with the <strong>input_field</strong> value.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Determine the <strong>mask_field</strong>.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Read the <strong>mask_file</strong>, process it based on the <strong>-type</strong> setting (as described above), and define the <strong>mask_field</strong> value for each grid point to specify whether or not it is included in the mask.</p></li>
+<li><p>By default, store the mask value as 1 unless the <strong>-value</strong> option was specified to override that default value.</p></li>
+<li><p>If the <strong>-complement</strong> option was specified, the opposite of the masking area is selected.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Apply logic to combine the <strong>input_field</strong> and <strong>mask_field</strong> and write the <strong>out_file</strong>.</p></li>
+</ol>
+<ul class="simple">
+<li><p>By default, the output value at each grid point is set to the value of <strong>mask_field</strong> if included in the mask, or the value of <strong>input_field</strong> if not included.</p></li>
+<li><p>If the <strong>-union, -intersection</strong>, or <strong>-symdiff</strong> option was specified, apply that logic to the <strong>input_field</strong> and <strong>mask_field</strong> values at each grid point to determine the output value.</p></li>
+<li><p>Write the output value for each grid point to the <strong>out_file</strong>.</p></li>
+</ul>
+<p>This three step process enables the Gen-Vx-Mask tool to be run iteratively on its own output to generate complex masking areas. Additionally, the <strong>-union, -intersection</strong>, and <strong>-symdiff</strong> options control the logic for combining the input data value and current mask value at each grid point. For example, one could define a complex masking region by selecting grid points with an elevation greater than 1000 meters within a specified geographic region by doing the following:</p>
+<ul>
+<li><p>Run the Gen-Vx-Mask tool to apply data masking by thresholding a field of topography greater than 1000 meters.</p></li>
+<li><p>Rerun the Gen-Vx-Mask tool passing in the output of the first call and applying polyline masking to define the geographic area of interest.</p>
+<p>– Use the <strong>-intersection</strong> option to only select grid points whose value is non-zero in both the input field and the current mask.</p>
+</li>
+</ul>
+<p>An example of the gen_vx_mask calling sequence is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gen_vx_mask sample_fcst.grb \
+CONUS.poly CONUS_poly.nc
+</pre></div>
+</div>
+<p>In this example, the Gen-Vx-Mask tool will read the ASCII Lat/Lon file named <strong>CONUS.poly</strong> and apply the default polyline masking method to the domain on which the data in the file <strong>sample_fcst.grib</strong> resides. It will create a NetCDF file containing a bitmap for the domain with a value of 1 for all grid points inside the CONUS polyline and a value of 0 for all grid points outside. It will write an output NetCDF file named <strong>CONUS_poly.nc</strong>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="feature-relative-methods">
+<h2><span class="section-number">6.2. </span>Feature-Relative Methods<a class="headerlink" href="#feature-relative-methods" title="Permalink to this headline">¶</a></h2>
+<p>This section contains a description of several methods that may be used to perform feature-relative (or event -based) evaluation. The methodology pertains to examining the environment surrounding a particular feature or event such as a tropical, extra-tropical cyclone, convective cell, snow-band, etc. Several approaches are available for these types of investigations including applying masking described above (e.g. circle or box) or using the “FORCE” interpolation method in the regrid configuration option (see <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>). These methods generally require additional scripting, including potentially storm-track identification, outside of MET to be paired with the features of the MET tools. METplus may be used to execute this type of analysis.  Please refer to the <a class="reference external" href="https://dtcenter.github.io/METplus/">METplus User’s Guide</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="point-stat.html" class="btn btn-neutral float-right" title="7. Point-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reformat_grid.html" class="btn btn-neutral" title="5. Re-Formatting of Gridded Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

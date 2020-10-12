@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>28. Appendix B Map Projections, Grids, and Polylines &mdash; MET develop documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/appendixB.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="29. Appendix C Verification Measures" href="appendixC.html"/>
+        <link rel="prev" title="27. Appendix A FAQs &amp; How do I … ?" href="appendixA.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">28. Appendix B Map Projections, Grids, and Polylines</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#map-projections">28.1. Map Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grids">28.2. Grids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polylines-for-ncep-regions">28.3. Polylines for NCEP Regions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">28. </span>Appendix B Map Projections, Grids, and Polylines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/appendixB.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-b-map-projections-grids-and-polylines">
+<span id="appendixb"></span><h1><span class="section-number">28. </span>Appendix B Map Projections, Grids, and Polylines<a class="headerlink" href="#appendix-b-map-projections-grids-and-polylines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="map-projections">
+<h2><span class="section-number">28.1. </span>Map Projections<a class="headerlink" href="#map-projections" title="Permalink to this headline">¶</a></h2>
+<p>The following map projections are currently supported in MET:</p>
+<ul class="simple">
+<li><p>Lambert Conformal Projection</p></li>
+<li><p>Polar Stereographic Projection (Northern)</p></li>
+<li><p>Polar Stereographic Projection (Southern)</p></li>
+<li><p>Mercator Projection</p></li>
+<li><p>Lat/Lon Projection</p></li>
+<li><p>Rotated Lat/Lon Projection</p></li>
+<li><p>Gaussian Projection</p></li>
+</ul>
+</div>
+<div class="section" id="grids">
+<h2><span class="section-number">28.2. </span>Grids<a class="headerlink" href="#grids" title="Permalink to this headline">¶</a></h2>
+<p>All of NCEP’s pre-defined grids that reside on one of the projections listed above are implemented in MET. The user may specify one of these NCEP grids in the configuration files as “GNNN” where NNN is the 3-digit NCEP grid number. Defining a new masking grid in MET would involve modifying the vx_data_grids library and recompiling.</p>
+<p>Please see <a class="reference external" href="http://www.nco.ncep.noaa.gov/pmb/docs/on388/tableb.html">NCEP’s website for a description and plot of these predefined grids</a>.</p>
+</div>
+<div class="section" id="polylines-for-ncep-regions">
+<h2><span class="section-number">28.3. </span>Polylines for NCEP Regions<a class="headerlink" href="#polylines-for-ncep-regions" title="Permalink to this headline">¶</a></h2>
+<p>Many of NCEP’s pre-defined verification regions are implemented in MET as lat/lon polyline files. The user may specify one of these NCEP verification regions in the configuration files by pointing to the lat/lon polyline file in the installed share/met/poly directory. Users may also easily define their own lat/lon polyline files.</p>
+<p>See <a class="reference external" href="http://www.emc.ncep.noaa.gov/mmb/research/nearsfc/nearsfc.verf.html">NCEP’s website for a description and plot of these predefined verification regions</a>.</p>
+<p>The NCEP verification regions that are implemented in MET as lat/lon polylines are listed below:</p>
+<ul class="simple">
+<li><p>APL.poly for the Appalachians</p></li>
+<li><p>ATC.poly for the Arctic Region</p></li>
+<li><p>CAM.poly for Central America</p></li>
+<li><p>CAR.poly for the Caribbean Sea</p></li>
+<li><p>ECA.poly for Eastern Canada</p></li>
+<li><p>GLF.poly for the Gulf of Mexico</p></li>
+<li><p>GMC.poly for the Gulf of Mexico Coast</p></li>
+<li><p>GRB.poly for the Great Basin</p></li>
+<li><p>HWI.poly for Hawaii</p></li>
+<li><p>LMV.poly for the Lower Mississippi Valley</p></li>
+<li><p>MDW.poly for the Midwest</p></li>
+<li><p>MEX.poly for Mexico</p></li>
+<li><p>NAK.poly for Northern Alaska</p></li>
+<li><p>NAO.poly for Northern Atlantic Ocean</p></li>
+<li><p>NEC.poly for the Northern East Coast</p></li>
+<li><p>NMT.poly for the Northern Mountain Region</p></li>
+<li><p>NPL.poly for the Northern Plains</p></li>
+<li><p>NPO.poly for the Northern Pacific Ocean</p></li>
+<li><p>NSA.poly for Northern South America</p></li>
+<li><p>NWC.poly for Northern West Coast</p></li>
+<li><p>PRI.poly for Puerto Rico and Islands</p></li>
+<li><p>SAK.poly for Southern Alaska</p></li>
+<li><p>SAO.poly for the Southern Atlantic Ocean</p></li>
+<li><p>SEC.poly for the Southern East Coast</p></li>
+<li><p>SMT.poly for the Southern Mountain Region</p></li>
+<li><p>SPL.poly for the Southern Plains</p></li>
+<li><p>SPO.poly for the Southern Pacific Ocean</p></li>
+<li><p>SWC.poly for the Southern West Coast</p></li>
+<li><p>SWD.poly for the Southwest Desert</p></li>
+<li><p>WCA.poly for Western Canada</p></li>
+<li><p>EAST.poly for the Eastern United States (consisting of APL, GMC, LMV, MDW, NEC, and SEC)</p></li>
+<li><p>WEST.poly for the Western United States (consisting of GRB, NMT, NPL, NWC, SMT, SPL, SWC, and SWD)</p></li>
+<li><p>CONUS.poly for the Continental United States (consisting of EAST and WEST)</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendixC.html" class="btn btn-neutral float-right" title="29. Appendix C Verification Measures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="appendixA.html" class="btn btn-neutral" title="27. Appendix A FAQs &amp; How do I … ?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'develop',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

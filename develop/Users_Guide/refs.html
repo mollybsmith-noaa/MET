@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>26. References &mdash; MET develop documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/refs.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="27. Appendix A FAQs &amp; How do I … ?" href="appendixA.html"/>
+        <link rel="prev" title="25. Plotting and Graphics Support" href="plotting.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">26. </span>References</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/refs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="references">
+<span id="refs"></span><h1><span class="section-number">26. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<p id="aberson-1998">Aberson, S.D., 1998: Five-day Tropical cyclone track forecasts in the North Atlantic Basin. <em>Weather &amp; Forecasting</em>,  13, 1005-1015.</p>
+<p id="barker-1991">Barker, T. W., 1991: The relationship between spread and forecast error in extended-range forecasts. <em>Journal of Climate</em>, 4, 733–742.</p>
+<p id="bradley-2008">Bradley, A.A., S.S. Schwartz, and T. Hashino, 2008: Sampling Uncertainty and Confidence Intervals for the Brier Score and Brier Skill Score. <em>Weather and Forecasting</em>, 23, 992-1006.</p>
+<p id="brill-2009">Brill, K. F., and F. Mesinger, 2009: Applying a general analytic method for assessing bias sensitivity to bias-adjusted threat and equitable threat scores. <em>Weather and Forecasting</em>, 24, 1748–1754.</p>
+<p id="brown-2007">Brown, B.G., R. Bullock, J. Halley Gotway, D. Ahijevych, C. Davis, E. Gilleland, and L. Holland, 2007: Application of the MODE object-based verification tool for the evaluation of model precipitation fields. <em>AMS 22nd Conference on Weather Analysis and Forecasting and 18th Conference on Numerical Weather Prediction</em>, 25-29 June, Park City, Utah, American Meteorological Society (Boston), Available at <a class="reference external" href="http://ams.confex.com/ams/pdfpapers/124856.pdf">http://ams.confex.com/ams/pdfpapers/124856.pdf</a>.</p>
+<p id="buizza-1997">Buizza, R., 1997: Potential forecast skill of ensemble prediction and spread and skill distributions of the ECMWF ensemble prediction system. <em>Monthly Weather Review</em>,125, 99–119.</p>
+<p id="bullock-2016">Bullock, R., T. Fowler, and B. Brown, 2016: Method for Object-Based Diagnostic Evaluation. <em>NCAR Technical Note</em> NCAR/TN-532+STR, 66 pp.</p>
+<p id="candille-2008">Candille, G., and O. Talagrand, 2008: Impact of observational error on the validation of ensemble prediction systems. <em>Quarterly Journal of the Royal Meteorological Society</em> 134: 959–971.</p>
+<p id="casati-2004">Casati, B., G. Ross, and D. Stephenson, 2004: A new intensity-scale approach for the verification of spatial precipitation forecasts. <em>Meteorological Applications</em> 11, 141-154.</p>
+<p id="davis-2006">Davis, C.A., B.G. Brown, and R.G. Bullock, 2006a: Object-based verification of precipitation forecasts, Part I: Methodology and application to mesoscale rain areas. <em>Monthly Weather Review</em>, 134, 1772-1784.</p>
+<p>Davis, C.A., B.G. Brown, and R.G. Bullock, 2006b: Object-based verification of precipitation forecasts, Part II: Application to convective rain systems. <em>Monthly Weather Review</em>, 134, 1785-1795.</p>
+<p id="dawid-1984">Dawid, A.P., 1984: Statistical theory: The prequential approach. <em>Journal of the Royal Statistical Society</em> A147, 278-292.</p>
+<p id="ebert-2008">Ebert, E.E., 2008: Fuzzy verification of high-resolution gridded forecasts: a review and proposed framework. <em>Meteorological Applications,</em> 15, 51-64.</p>
+<p id="eckel-2012">Eckel, F. A., M.S. Allen, M. C. Sittel, 2012: Estimation of Ambiguity in Ensemble Forecasts. <em>Weather Forecasting,</em> 27, 50-69. doi: <a class="reference external" href="http://dx.doi.org/10.1175/WAF-D-11-00015.1">http://dx.doi.org/10.1175/WAF-D-11-00015.1</a></p>
+<p id="efron-2007">Efron, B. 2007: Correlation and large-scale significance testing. <em>Journal of the American Statistical Association,</em> 102(477), 93-103.</p>
+<p id="gilleland-2010">Gilleland, E., 2010: Confidence intervals for forecast verification. <em>NCAR Technical Note</em> NCAR/TN-479+STR, 71pp.</p>
+<p id="gilleland-2019">Gilleland, E., 2019: Bootstrap methods for statistical inference. Part II: Extreme-value analysis. Submitted to the Journal of Atmospheric and Oceanic Technology on 2 December 2019. Re-submitted on 12 May 2020</p>
+<p id="gneiting-2004">Gneiting, T., A. Westveld, A. Raferty, and T. Goldman, 2004: <em>Calibrated Probabilistic Forecasting Using Ensemble Model Output Statistics and Minimum CRPS Estimation</em>. Technical Report no. 449, Department of Statistics, University of Washington. Available at <a class="reference external" href="http://www.stat.washington.edu/www/research/reports/">http://www.stat.washington.edu/www/research/reports/</a></p>
+<p id="hamill-2001">Hamill, T. M., 2001: Interpretation of rank histograms for verifying ensemble forecasts. <em>Monthly Weather Review</em>, 129, 550-560.</p>
+<p id="hogan-2009">Hogan, R., E. O’Connor, and A. Illingworth, 2009: Verification of cloud-fraction forecasts. <em>Quarterly Journal of the Royal Meteorological Society</em>, 135, 1494-1511.</p>
+<p id="jolliffe-2012">Jolliffe, I.T., and D.B. Stephenson, 2012: <em>Forecast verification. A practitioner’s guide in atmospheric science.</em> Wiley and Sons Ltd, 240 pp.</p>
+<p id="knaff-2003">Knaff, J.A., M. DeMaria, C.R. Sampson, and J.M. Gross, 2003: Statistical, Five-Day Tropical Cyclone Intensity Forecasts Derived from Climatology and Persistence. <em>Weather &amp; Forecasting,</em> Vol. 18 Issue 2, p. 80-92.</p>
+<p id="mason-2004">Mason, S. J., 2004: On Using “Climatology” as a Reference Strategy in the Brier and Ranked Probability Skill Scores. <em>Monthly Weather Review</em>, 132, 1891–1895.</p>
+<p id="mittermaier-2014">Mittermaier, M., 2014: A strategy for verifying near-convection-resolving model forecasts at observing sites. <em>Weather Forecasting</em>, 29, 185-204.</p>
+<p id="mood-1974">Mood, A. M., F. A. Graybill and D. C. Boes, 1974: <em>Introduction to the Theory of Statistics</em>, McGraw-Hill, 299-338.</p>
+<p id="murphy-1987">Murphy, A.H., and R.L. Winkler, 1987: A general framework for forecast verification. <em>Monthly Weather Review</em>, 115, 1330-1338.</p>
+<p id="roberts-2008">Roberts, N.M., and H.W. Lean, 2008: Scale-selective verification of rainfall accumulations from high-resolution forecasts of convective events. <em>Monthly Weather Review,</em> 136, 78-97.</p>
+<p id="saetra-2004">Saetra O., H. Hersbach, J-R Bidlot, D. Richardson, 2004: Effects of observation errors on the statistics for ensemble spread and reliability. <em>Monthly Weather Review</em> 132: 1487–1501.</p>
+<p id="santos-2012">Santos C. and A. Ghelli, 2012: Observational probability method to assess ensemble precipitation forecasts. <em>Quarterly Journal of the Royal Meteorological Society</em> 138: 209–221.</p>
+<p id="schwartz-2017">Schwartz C. and Sobash R., 2017: Generating Probabilistic Forecasts from Convection-Allowing Ensembles Using Neighborhood Approaches: A Review and Recommendations. <em>Monthly Weather Review</em>, 145, 3397-3418.</p>
+<p id="stephenson-2000">Stephenson, D.B., 2000: Use of the “Odds Ratio” for diagnosing forecast skill. <em>Weather and Forecasting</em>, 15, 221-232.</p>
+<p id="stephenson-2008">Stephenson, D.B., B. Casati, C.A.T. Ferro, and C.A. Wilson, 2008: The extreme dependency score: A non-vanishing measure for forecasts of rare events. <em>Meteorological Applications</em> 15, 41-50.</p>
+<p id="weniger-2016">Weniger, M., F. Kapp, and P. Friederichs, 2016: Spatial Verification Using Wavelet Transforms: A Review. <em>Quarterly Journal of the Royal Meteorological Society,</em> 143, 120-136.</p>
+<p id="wilks-2010">Wilks, D.S. 2010: Sampling distributions of the Brier score and Brier skill score under serial dependence. <em>Quarterly Journal of the Royal Meteorological Society,</em>, 136, 2109–2118. doi:10.1002/qj.709</p>
+<p id="wilks-2011">Wilks, D., 2011: <em>Statistical methods in the atmospheric sciences.</em> Elsevier, San Diego.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendixA.html" class="btn btn-neutral float-right" title="27. Appendix A FAQs &amp; How do I … ?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plotting.html" class="btn btn-neutral" title="25. Plotting and Graphics Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'develop',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

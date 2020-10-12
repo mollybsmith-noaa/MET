@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>24. RMW-Analysis Tool &mdash; MET develop documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/rmw-analysis.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="25. Plotting and Graphics Support" href="plotting.html"/>
+        <link rel="prev" title="23. TC-RMW Tool" href="tc-rmw.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">24. RMW-Analysis Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">24.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">24.2. Practical information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rmw-analysis-usage">24.2.1. rmw_analysis usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rmw-analysis-configuration-file">24.2.2. rmw_analysis configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rmw-analysis-output-file">24.2.3. rmw_analysis output file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">24. </span>RMW-Analysis Tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/rmw-analysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rmw-analysis-tool">
+<span id="rmw-analysis"></span><h1><span class="section-number">24. </span>RMW-Analysis Tool<a class="headerlink" href="#rmw-analysis-tool" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">24.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The RMW-Analysis tool analyzes a set of output files generated by the TC-RMW tool. For each grid cell it aggregates variable statistics across the set and across the track points of the tc_rmw output files. The statistics are mean, standard deviation, minimum and maximum. Note that tc_rmw should be set to use the same scale factor of the radius of maximum winds (RMW) as the unit of range for its range-azimuth grid. The specified data variables on the range-azimuth-vertical grid then share a common range scale of RMW before aggregation by rmw_analysis.</p>
+</div>
+<div class="section" id="practical-information">
+<h2><span class="section-number">24.2. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rmw-analysis-usage">
+<h3><span class="section-number">24.2.1. </span>rmw_analysis usage<a class="headerlink" href="#rmw-analysis-usage" title="Permalink to this headline">¶</a></h3>
+<p>The following sections describe the usage statement, required arguments, and optional arguments for <strong>rmw_analysis</strong>.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: rmw_analysis
+       -data file_1 ... file_n | data_file_list
+       -config file
+       -out file
+       [-log file]
+       [-v level]
+</pre></div>
+</div>
+<p><strong>rmw_analysis</strong> has required arguments and can accept several optional arguments.</p>
+<div class="section" id="required-arguments-for-rmw-analysis">
+<h4><span class="section-number">24.2.1.1. </span>Required arguments for rmw_analysis<a class="headerlink" href="#required-arguments-for-rmw-analysis" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>-data file_1 … file_n | data_file_list</strong> argument is the NetCDF output of TC-RMW to be processed or an ASCII file containing a list of files.</p></li>
+<li><p>The <strong>-config file</strong> argument is the RMWAnalysisConfig to be used. The contents of the configuration file are discussed below.</p></li>
+<li><p>The <strong>-out</strong> file argument is the NetCDF output file to be written.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-rmw-analysis">
+<h4><span class="section-number">24.2.1.2. </span>Optional arguments for rmw_analysis<a class="headerlink" href="#optional-arguments-for-rmw-analysis" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="4">
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no logfile.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="rmw-analysis-configuration-file">
+<h3><span class="section-number">24.2.2. </span>rmw_analysis configuration file<a class="headerlink" href="#rmw-analysis-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The default configuration file for the RMW-Analysis tool named ‘RMWAnalysisConfig_default’ can be found in the installed <strong>share/met/config/</strong> directory. It is encouraged for users to copy these default files before modifying their contents. The contents of the configuration file are described in the subsections below.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model = &quot;GFS&quot;;
+data  = {
+   level = [ &quot;&quot; ];
+   field = [
+      { name = &quot;PRMSL&quot;; },
+      { name = &quot;TMP&quot;;   }
+   ];
+}
+</pre></div>
+</div>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>basin      = &quot;&quot;;
+storm_name = &quot;&quot;;
+storm_id   = &quot;&quot;;
+cyclone    = &quot;&quot;;
+init_beg   = &quot;&quot;;
+init_end   = &quot;&quot;;
+valid_beg  = &quot;&quot;;
+valid_end  = &quot;&quot;;
+init_mask  = &quot;&quot;;
+valid_mask = &quot;&quot;;
+version    = &quot;VN.N&quot;;
+</pre></div>
+</div>
+<p>The track filter options available in rmw_analysis and listed above are described in <a class="reference internal" href="data_io.html#data-io-met-tc-configuration-file-options"><span class="std std-numref">Section 3.5.2</span></a>.</p>
+</div>
+<div class="section" id="rmw-analysis-output-file">
+<h3><span class="section-number">24.2.3. </span>rmw_analysis output file<a class="headerlink" href="#rmw-analysis-output-file" title="Permalink to this headline">¶</a></h3>
+<p>The NetCDF output file will inherit the spatial grid from the first tc_rmw output file in the output file list. All tc_rmw files in this list must have the same grid dimension sizes. A NetCDF output error will result if that is not the case. For each data variable specified in the config file, four corresponding NetCDF variables will be written, e.g. TMP_mean, TMP_stdev, TMP_min, TMP_max. No track point dimension is retained in the rmw_analysis output.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plotting.html" class="btn btn-neutral float-right" title="25. Plotting and Graphics Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tc-rmw.html" class="btn btn-neutral" title="23. TC-RMW Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'develop',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

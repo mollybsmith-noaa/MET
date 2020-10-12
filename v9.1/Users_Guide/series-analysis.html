@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13. Series-Analysis Tool &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/series-analysis.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="14. Grid-Diag Tool" href="grid-diag.html"/>
+        <link rel="prev" title="12. Stat-Analysis Tool" href="stat-analysis.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">13. Series-Analysis Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">13.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">13.2. Practical Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#series-analysis-usage">13.2.1. series_analysis usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#series-analysis-output">13.2.2. series_analysis output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#series-analysis-configuration-file">13.2.3. series_analysis configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">13. </span>Series-Analysis Tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/series-analysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="series-analysis-tool">
+<span id="series-analysis"></span><h1><span class="section-number">13. </span>Series-Analysis Tool<a class="headerlink" href="#series-analysis-tool" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">13.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Series-Analysis Tool accumulates statistics separately for each horizontal grid location over a series. Often, this series is over time or height, though any type of series is possible. This differs from the Grid-Stat tool in that Grid-Stat verifies all grid locations together as a group. Thus, the Series-Analysis Tool can be used to find verification information specific to certain locations or see how model performance varies over the domain.</p>
+</div>
+<div class="section" id="practical-information">
+<h2><span class="section-number">13.2. </span>Practical Information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<p>This Series-Analysis tool performs verification of gridded model fields using matching gridded observation fields. It computes a variety of user-selected statistics. These statistics are a subset of those produced by the Grid-Stat tool, with options for statistic types, thresholds, and conditional verification options as discussed in the <a class="reference internal" href="grid-stat.html#grid-stat"><span class="std std-numref">Section 8</span></a>. However, these statistics are computed separately for each grid location and accumulated over some series such as time or height, rather than accumulated over the whole domain for a single time or height as is done by Grid-Stat.</p>
+<p>This tool computes statistics for exactly one series each time it is run. Multiple series may be processed by running the tool multiple times. The length of the series to be processed is determined by the first of the following that is greater than one: the number of forecast fields in the configuration file, the number of observation fields in the configuration file, the number of input forecast files, the number of input observation files. Several examples of defining series are described below.</p>
+<p>To define a time series of forecasts where the valid time changes for each time step, set the forecast and observation fields in the configuration file to single values and pass the tool multiple forecast and observation files. The tool will loop over the forecast files, extract the specified field from each, and then search the observation files for a matching record with the same valid time.</p>
+<p>To define a time series of forecasts that all have the same valid time, set the forecast and observation fields in the configuration file to single values. Pass the tool multiple forecast files and a single observation file containing the verifying observations. The tool will loop over the forecast files, extract the specified field from each, and then retrieve the verifying observations.</p>
+<p>To define a series of vertical levels all contained in a single input file, set the forecast and observation fields to a list of the vertical levels to be used. Pass the tool single forecast and observation files containing the vertical level data. The tool will loop over the forecast field entries, extract that field from the input forecast file, and then search the observation file for a matching record.</p>
+<div class="section" id="series-analysis-usage">
+<h3><span class="section-number">13.2.1. </span>series_analysis usage<a class="headerlink" href="#series-analysis-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the Series-Analysis tool is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: series_analysis
+       -fcst  file_1 ... file_n | fcst_file_list
+       -obs   file_1 ... file_n | obs_file_list
+       [-both file_1 ... file_n | both_file_list]
+       [-paired]
+       -out file
+       -config file
+       [-log file]
+       [-v level]
+       [-compress level]
+</pre></div>
+</div>
+<p>series_analysis has four required arguments and accepts several optional ones.</p>
+<div class="section" id="required-arguments-series-stat">
+<h4><span class="section-number">13.2.1.1. </span>Required arguments series_stat<a class="headerlink" href="#required-arguments-series-stat" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>-fcst file_1 … file_n | fcst_file_list</strong> options specify the gridded forecast files or ASCII files containing lists of file names to be used.</p></li>
+<li><p>The <strong>-obs file_1 … file_n | obs_file_list</strong> are the gridded observation files or ASCII files containing lists of file names to be used.</p></li>
+<li><p>The <strong>-out file</strong> is the NetCDF output file containing computed statistics.</p></li>
+<li><p>The <strong>-config file</strong> is a Series-Analysis Configuration file containing the desired settings.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-series-analysis">
+<h4><span class="section-number">13.2.1.2. </span>Optional arguments for series_analysis<a class="headerlink" href="#optional-arguments-for-series-analysis" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="5">
+<li><p>To set both the forecast and observations to the same set of files, use the optional -both file_1 … file_n | both_file_list option to the same set of files. This is useful when reading the NetCDF matched pair output of the Grid-Stat tool which contains both forecast and observation data.</p></li>
+<li><p>The -paired option indicates that the -fcst and -obs file lists are already paired, meaning there is a one-to-one correspondence between the files in those lists. This option affects how missing data is handled. When -paired is not used, missing or incomplete files result in a runtime error with no output file being created. When -paired is used, missing or incomplete files result in a warning with output being created using the available data.</p></li>
+<li><p>The -log file outputs log messages to the specified file.</p></li>
+<li><p>The -v level overrides the default level of logging (2).</p></li>
+<li><p>The -compress level option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+<p>An example of the series_analysis calling sequence is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>series_analysis \
+-fcst   myfcstfilelist.txt \
+-obs    myobsfilelist.txt \
+-config SeriesAnalysisConfig \
+-out    out/my_series_statistics.nc
+</pre></div>
+</div>
+<p>In this example, the Series-Analysis tool will process the list of forecast and observation files specified in the text file lists into statistics for each grid location using settings specified in the configuration file. Series-Analysis will create an output NetCDF file containing requested statistics.</p>
+</div>
+</div>
+<div class="section" id="series-analysis-output">
+<h3><span class="section-number">13.2.2. </span>series_analysis output<a class="headerlink" href="#series-analysis-output" title="Permalink to this headline">¶</a></h3>
+<p>The Series-Analysis tool produces NetCDF files containing output statistics for each grid location from the input files. The details about the output statistics available from each output line type are detailed in Chapter 5 since they are also produced by the Grid-Stat Tool. A subset of these can be produced by this tool, with the most notable exceptions being the wind vector and neighborhood statistics. Users can inventory the contents of the Series-Analysis output files using the ncdump -h command to view header information. Additionally, ncview or the plot_data_plane tool can be used to visualize the output. An example of Series-Analysis output is shown in <a class="reference internal" href="#series-analysis-glibert-precip"><span class="std std-numref">Figure 13.1</span></a> below.</p>
+<div class="figure align-default" id="id1">
+<span id="series-analysis-glibert-precip"></span><img alt="../_images/series-analysis_Glibert_precip.png" src="../_images/series-analysis_Glibert_precip.png" />
+<p class="caption"><span class="caption-number">Figure 13.1 </span><span class="caption-text">An example of the Gilbert Skill Score for precipitation forecasts at each grid location for a month of files.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="series-analysis-configuration-file">
+<h3><span class="section-number">13.2.3. </span>series_analysis configuration file<a class="headerlink" href="#series-analysis-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The default configuration file for the Series-Analysis tool named <em>SeriesAnalysisConfig_default</em> can be found in the installed <em>share/met/config</em> directory. The contents of the configuration file are described in the subsections below.</p>
+<p>Note that environment variables may be used when editing configuration files, as described in the <a class="reference internal" href="reformat_point.html#pb2nc-configuration-file"><span class="std std-numref">Section 4.1.2</span></a> for the PB2NC tool.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model          = &quot;WRF&quot;;
+desc           = &quot;NA&quot;;
+obtype         = &quot;ANALYS&quot;;
+regrid         = { ... }
+fcst           = { ... }
+obs            = { ... }
+climo_mean     = { ... }
+climo_stdev    = { ... }
+ci_alpha       = [ 0.05 ];
+boot           = { interval = PCTILE; rep_prop = 1.0; n_rep = 1000;
+                   rng = &quot;mt19937&quot;; seed = &quot;&quot;; }
+mask           = { grid = [ &quot;FULL&quot; ]; poly = []; }
+rank_corr_flag = TRUE;
+tmp_dir        = &quot;/tmp&quot;;
+version        = &quot;VN.N&quot;;
+</pre></div>
+</div>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>block_size = 1024;
+</pre></div>
+</div>
+<p>Number of grid points to be processed concurrently. Set smaller to use less memory but increase the number of passes through the data. The amount of memory the Series-Analysis tool consumes is determined by the size of the grid, the length of the series, and the block_size entry defined above. The larger this entry is set the faster the tool will run, subject to the amount of memory available on the machine.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>vld_thresh = 1.0;
+</pre></div>
+</div>
+<p>Ratio of valid matched pairs for the series of values at each grid point required to compute statistics. Set to a lower proportion to allow some missing values. Setting it to 1.0 requires that every data point be valid over the series to compute statistics.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>output_stats = {
+   fho    = [];
+   ctc    = [];
+   cts    = [];
+   mctc   = [];
+   mcts   = [];
+   cnt    = [&quot;RMSE&quot;, &quot;FBAR&quot;, &quot;OBAR&quot;];
+   sl1l2  = [];
+   sal1l2 = [];
+   pct    = [];
+   pstd   = [];
+   pjc    = [];
+   prc    = [];
+}
+</pre></div>
+</div>
+<p>The output_stats array controls the type of output that the Series-Analysis tool generates. Each flag corresponds to an output line type in the STAT file and is used to specify the comma-separated list of statistics to be computed. Use the column names from the tables listed below to specify the statistics. The output flags correspond to the following types of output line types:</p>
+<ol class="arabic simple">
+<li><p>FHO for Forecast, Hit, Observation Rates (See <a class="reference internal" href="point-stat.html#table-ps-format-info-fho"><span class="std std-numref">Table 7.2</span></a>)</p></li>
+<li><p>CTC for Contingency Table Counts (See <a class="reference internal" href="point-stat.html#table-ps-format-info-ctc"><span class="std std-numref">Table 7.3</span></a>)</p></li>
+<li><p>CTS for Contingency Table Statistics (See <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a>)</p></li>
+<li><p>MCTC for Multi-Category Contingency Table Counts (See <a class="reference internal" href="point-stat.html#table-ps-format-info-mctc"><span class="std std-numref">Table 7.8</span></a>)</p></li>
+<li><p>MCTS for Multi-Category Contingency Table Statistics (See <a class="reference internal" href="point-stat.html#table-ps-format-info-mcts"><span class="std std-numref">Table 7.9</span></a>)</p></li>
+<li><p>CNT for Continuous Statistics (See <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a>)</p></li>
+<li><p>SL1L2 for Scalar L1L2 Partial Sums (See <a class="reference internal" href="point-stat.html#table-ps-format-info-sl1l2"><span class="std std-numref">Table 7.15</span></a>)</p></li>
+<li><p>SAL1L2 for Scalar Anomaly L1L2 Partial Sums climatological data is supplied (See <a class="reference internal" href="point-stat.html#table-ps-format-info-sal1l2"><span class="std std-numref">Table 7.16</span></a>)</p></li>
+<li><p>PCT for Contingency Table Counts for Probabilistic forecasts (See <a class="reference internal" href="point-stat.html#table-ps-format-info-pct"><span class="std std-numref">Table 7.10</span></a>)</p></li>
+<li><p>PSTD for Contingency Table Statistics for Probabilistic forecasts (See <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a>)</p></li>
+<li><p>PJC for Joint and Conditional factorization for Probabilistic forecasts (See <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a>)</p></li>
+<li><p>PRC for Receiver Operating Characteristic for Probabilistic forecasts (See <a class="reference internal" href="point-stat.html#table-ps-format-info-prc"><span class="std std-numref">Table 7.13</span></a>)</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="grid-diag.html" class="btn btn-neutral float-right" title="14. Grid-Diag Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="stat-analysis.html" class="btn btn-neutral" title="12. Stat-Analysis Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>30. Appendix D Confidence Intervals &mdash; MET develop documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/appendixD.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="31. Appendix E WWMCA Tools" href="appendixE.html"/>
+        <link rel="prev" title="29. Appendix C Verification Measures" href="appendixC.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">30. </span>Appendix D Confidence Intervals</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/appendixD.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-d-confidence-intervals">
+<span id="app-d-confidence-intervals"></span><span id="appendixd"></span><h1><span class="section-number">30. </span>Appendix D Confidence Intervals<a class="headerlink" href="#appendix-d-confidence-intervals" title="Permalink to this headline">¶</a></h1>
+<p>A single verification statistic is statistically meaningless without associated uncertainty information in accompaniment. There can be numerous sources of uncertainty associated with such a statistic including observational, physical uncertainties about the underlying processes governing the equation, sample uncertainty, etc. Although all of the sources of uncertainty can be important, the most heavily researched, and easiest to calculate, is that of sampling uncertainty. It is this source of uncertainty that can presently be obtained with MET, and the techniques for deriving these estimates are described here. Sampling uncertainty through MET is gleaned by way of confidence intervals (CIs) as these are generally most informative. A <span class="math notranslate nohighlight">\((1 - \alpha) \cdot 100\%\)</span> confidence interval is interpreted, somewhat awkwardly, in the following way. If the test were repeated 100 times (so that we have 100 such intervals), then we expect the true value of the statistics to fall inside <span class="math notranslate nohighlight">\((1-\alpha)\cdot 100\)</span> of these intervals. For example, if <span class="math notranslate nohighlight">\(\alpha=0.05\)</span> then we expect the true value to fall within 95 of the intervals.</p>
+<p>There are two main types of CIs available with MET: parametric and non-parametric. All of the parametric intervals used with MET rely on the underlying sample (or the errors, <span class="math notranslate nohighlight">\(F - O\)</span>) to be at least approximately independent and normally distributed. Future releases will allow for some types of dependency in the sample. The non-parametric techniques utilize what is known in the statistical literature as bootstrap resampling, which does not rely on any distributional assumptions for the sample; the assumption is that the sample is representative of the population. Bootstrap CIs can be inaccurate if the sample is not independent, but there are ways of accounting for dependence with the bootstrap, some of which will be added to MET in future releases. Details about which verification statistics have parametric CIs in MET are described next, and it should be noted that the bootstrap can be used for any statistic, though care should be taken in how it is carried out, and this is described subsequently.</p>
+<p>The most commonly used confidence interval about an estimate for a statistic (or parameter), <span class="math notranslate nohighlight">\(\theta\)</span>, is given by the normal approximation</p>
+<div class="math notranslate nohighlight">
+\[\theta \pm z_{\alpha / 2} \cdot V(\theta )\]</div>
+<p>where <span class="math notranslate nohighlight">\(z_{\alpha / 2}\)</span> is the <span class="math notranslate nohighlight">\(\alpha - \text{th}\)</span> quantile of the standard normal distribution, and <span class="math notranslate nohighlight">\(V(\theta )\)</span> is the standard error of the statistic (or parameter), <span class="math notranslate nohighlight">\(\theta\)</span>. For example, the most common example is for the mean of a sample, <span class="math notranslate nohighlight">\(X_1,\cdots,X_n\)</span>, of independent and identically distributed (iid) normal random variables with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma\)</span>. Here, the mean is estimated by <span class="math notranslate nohighlight">\(\frac{1}{n} \sum_{i=1}^n X_i = \bar{X}\)</span>, and the standard error is just the standard deviation of the random variables divided by the square root of the sample size. That is, <span class="math notranslate nohighlight">\(V( \theta ) = V ( \bar{X} ) = \frac{\sigma}{\sqrt{n}}\)</span>, and this must be estimated by <span class="math notranslate nohighlight">\(\hat{V} (\bar{X} )\)</span>, which is obtained here by replacing <span class="math notranslate nohighlight">\(\sigma\)</span> by its estimate, <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span>, where <span class="math notranslate nohighlight">\(\hat{\sigma} = \frac{1}{n - 1} \sum_{i=1}^n (X_i - \bar{X})^2\)</span>.</p>
+<p>Mostly, the normal approximation is used as an asymptotic approximation. That is, the interval for <span class="math notranslate nohighlight">\(\theta\)</span> may only be appropriate for large <strong>n</strong>. For small <strong>n</strong>, the mean has an interval based on the Student’s <strong>t</strong> distribution with <strong>n-1</strong> degrees of freedom. Essentially, <span class="math notranslate nohighlight">\(z_{\alpha / 2}\)</span> of the question is replaced with the quantile of this <strong>t</strong> distribution. That is, the interval is given by</p>
+<div class="math notranslate nohighlight">
+\[\mu \pm t_{\alpha / 2,\nu - 1} \cdot \frac{\sigma}{\sqrt{n}}\]</div>
+<p>where again, <span class="math notranslate nohighlight">\(\sigma\)</span> is replaced by its estimate, <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span>, as described above.</p>
+<p><a class="reference internal" href="#verif-stat-approx-ci"><span class="std std-numref">Table 30.1</span></a> summarizes the verification statistics in MET that have normal approximation CIs given by <span class="math notranslate nohighlight">\(\theta\)</span> along with their corresponding standard error estimates, . It should be noted that for the first two rows of this table (i.e., Forecast/Observation Mean and Mean error) MET also calculates the interval around <span class="math notranslate nohighlight">\(\mu\)</span> for small sample sizes.</p>
+<span id="verif-stat-approx-ci"></span><table class="colwidths-auto docutils align-default" id="id1">
+<caption><span class="caption-number">Table 30.1 </span><span class="caption-text">Verification statistics with normal approximation CIs given by the equation for <span class="math notranslate nohighlight">\(\theta\)</span> provided in MET along with their associated standard error estimate.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\hat{\theta}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(V(\theta)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Forecast / Observation Mean</p></td>
+<td><p><span class="math notranslate nohighlight">\(V(\bar{X}) = \frac{\sigma_x}{\sqrt{n}}\)</span> where <span class="math notranslate nohighlight">\(\sigma_x\)</span> emphasizes that this is the estimated standard deviation of the underlying sample.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mean error</p></td>
+<td><p><span class="math notranslate nohighlight">\(V(\bar{F} - \bar{O}) = \frac{\sigma_{F - O}}{\sqrt{n}}\)</span>, where <span class="math notranslate nohighlight">\(\sigma_{F - O}\)</span> emphasizes that this is the estimated standard deviation of the errors, <span class="math notranslate nohighlight">\(F - O\)</span>.</p></td>
+</tr>
+<tr class="row-even"><td><p>Brier Score (BS)</p></td>
+<td><p><span class="math notranslate nohighlight">\(V(\text{BS}) = \frac{1}{T} [\sum F^4 + \bar{O} (1 - 4 \sum F_{F | O=1}^3 + 6 \sum F_{F | O=1}^2 - 4 \sum F_{F | O=1}) - \text{BS}^2]\)</span> where <strong>F</strong> is the <strong>probability</strong> forecast and <strong>O</strong> is the observation. See <a class="reference internal" href="refs.html#bradley-2008"><span class="std std-ref">Bradley et al, 2008</span></a> for derivation and details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Peirce Skill Score (PSS)</p></td>
+<td><p><span class="math notranslate nohighlight">\(V(\text{PSS}) = \sqrt{\frac{H(1 - H)}{n_H} + \frac{F(1 - F)}{n_F}}\)</span>, where <strong>H</strong> is the hit rate, <strong>F</strong> the false alarm rate, <span class="math notranslate nohighlight">\(n_h\)</span> the number of hits and misses, and <span class="math notranslate nohighlight">\(n_F\)</span> the number of false alarms and correct negatives.</p></td>
+</tr>
+<tr class="row-even"><td><p>Logarithm of the odds ratio (OR)</p></td>
+<td><p><span class="math notranslate nohighlight">\(V(\ln(\text{OR})) = \sqrt{\frac{1}{a} + \frac{1}{b} + \frac{1}{c} + \frac{1}{d}}\)</span>, where the values in the denominators are the usual contingency table counts.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Other statistics in MET having parametric CIs that rely on the underlying sample to be at least approximately iid normal, but have a different form derived from the normality assumption on the sample include the variance, standard deviation, and the linear correlation coefficient. These are addressed subsequently.</p>
+<p>Generally, the normal interval around <span class="math notranslate nohighlight">\(\theta\)</span> is appropriate for statistics of continuous variables, but a limit law for the binomial distribution allows for use of this interval with proportions. The most intuitive estimate for <span class="math notranslate nohighlight">\(V(\theta )\)</span> in this case is given by <span class="math notranslate nohighlight">\(V(p) = \sqrt{\hat{p} (1 - \hat{p}) / n}\)</span>. However, this only applies when the sample size is large. A better approximation to the CI for proportions is given by Wilson’s interval, which is</p>
+<div class="math notranslate nohighlight">
+\[\frac{\hat{p} + z_{\alpha / 2}^2 + z_{\alpha / 2} \sqrt{\hat{p} (1 - \hat{p}) / 4n}}{1 + z_{\alpha / 2}^2 / n}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{p}\)</span> is the estimated proportion (e.g., hit rate, false alarm rate, PODy, PODn, etc.). Because this interval around <span class="math notranslate nohighlight">\(\hat{p}\)</span> generally works better than the more intuitive normal approximation interval for both large and small sample sizes, this is the interval employed by MET.</p>
+<p>The forecast/observation variance has CIs derived from the underlying sample being approximately iid normal with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma\)</span>. The lower and upper limits for the interval are given by</p>
+<div class="math notranslate nohighlight">
+\[l(\sigma^2) = \frac{(n - 1)s^2}{\chi_{\alpha / 2,n - 1}^2} \text{ and } u(\sigma^2) = \frac{(n - 1)s^2}{\chi_{1 - \alpha / 2, n - 1}^2}\]</div>
+<p>respectively, where <span class="math notranslate nohighlight">\(\chi_{\alpha , \nu}^2\)</span> is the <span class="math notranslate nohighlight">\(\alpha - \text{th}\)</span> quantile of the chi-square distribution with <strong>n-1</strong> degrees of freedom. Taking the square roots of the limits of <span class="math notranslate nohighlight">\(l\)</span> yields the CI for the forecast/observation standard deviation.</p>
+<p>Finally, the linear correlation coefficient has limits given by</p>
+<div class="math notranslate nohighlight">
+\[(\frac{e^{2c_l} - 1}{e^{2c_l} + 1}, \frac{e^{2c_u} - 1}{e^{2c_u} + 1})\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_l = v - \frac{z_{\alpha / 2}}{\sqrt{n - 3}}\)</span> and <span class="math notranslate nohighlight">\(c_u = v + \frac{z_{\alpha / 2}}{\sqrt{n - 3}}\)</span>.</p>
+<p>All other verification scores with CIs in MET must be obtained through bootstrap resampling. However, it is also possible to obtain bootstrap CIs for any of the statistics given above, and indeed it has been proven that the bootstrap intervals have better accuracy for the mean than the normal approximation. The bootstrap algorithm is described below.</p>
+<ol class="arabic simple">
+<li><p>Assume the sample is representative of the population.</p></li>
+<li><p>Resample with replacement from the sample (see text below).</p></li>
+<li><p>Estimate the parameter(s) of interest for the current replicated sample.</p></li>
+<li><p>Repeat steps 2 and 3 numerous times, say B times, so that you now have a sample of size B of the parameter(s).</p></li>
+<li><p>Calculate CIs for the parameters directly from the sample (see text below for more details)</p></li>
+</ol>
+<p>Typically, a simple random sample is taken for step 2, and that is how it is done in MET. As an example of what happens in this step, suppose our sample is <span class="math notranslate nohighlight">\(X_1,X_2,X_3,X_4\)</span>. Then, one possible replicate might be <span class="math notranslate nohighlight">\(X_2,X_2,X_2,X_4\)</span>. Usually one samples <span class="math notranslate nohighlight">\(m = n\)</span> points in this step, but there are cases where one should use <span class="math notranslate nohighlight">\(m &lt; n\)</span>. For example, when the underlying distribution is heavy-tailed, one should use a smaller size m than n (e.g., the closest integer value to the square root of the original sample size).</p>
+<p>There are numerous ways to construct CIs from the sample obtained in step 4. MET allows for two of these procedures: the percentile and the BCa. The percentile is the most commonly known method, and the simplest to understand. It is merely the <span class="math notranslate nohighlight">\(\alpha / 2\)</span> and <span class="math notranslate nohighlight">\(1 - \alpha / 2\)</span> percentiles from the sample of statistics. Unfortunately, however, it has been shown that this interval is too optimistic in practice (i.e., it doesn’t have accurate coverage). One solution is to use the BCa method, which is very accurate, but it is also computationally intensive. This method adjusts for bias and non-constant variance, and yields the percentile interval in the event that the sample is unbiased with constant variance.</p>
+<p>If there is dependency in the sample, then it is prudent to account for this dependency in some way. One method that does not make a lot of assumptions is circular block bootstrapping. This is not currently implemented in MET, but will be available in a future release. At that time, the method will be explained more fully here, but until then consult <a class="reference internal" href="refs.html#gilleland-2010"><span class="std std-ref">Gilleland (2010)</span></a> for more details.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendixE.html" class="btn btn-neutral float-right" title="31. Appendix E WWMCA Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="appendixC.html" class="btn btn-neutral" title="29. Appendix C Verification Measures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'develop',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

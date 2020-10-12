@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>22. TC-Gen Tool &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/tc-gen.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="23. TC-RMW Tool" href="tc-rmw.html"/>
+        <link rel="prev" title="21. TC-Stat Tool" href="tc-stat.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">22. TC-Gen Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">22.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statistical-aspects">22.2. Statistical aspects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">22.3. Practical information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tc-gen-usage">22.3.1. tc_gen usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tc-gen-configuration-file">22.3.2. tc_gen configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tc-gen-output">22.3.3. tc_gen output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">22. </span>TC-Gen Tool</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/tc-gen.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tc-gen-tool">
+<span id="tc-gen"></span><h1><span class="section-number">22. </span>TC-Gen Tool<a class="headerlink" href="#tc-gen-tool" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">22.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The TC-Gen tool provides verification of tropical cyclone genesis forecasts in ATCF file format. Producing reliable tropical cyclone genesis forecasts is an important metric for global numerical weather prediction models. This tool ingests deterministic model output post-processed by a genesis tracking software (e.g. GFDL vortex tracker) and ATCF format reference dataset(s) (e.g. Best Track analysis and CARQ operational tracks) and outputs categorical counts and statistics. The capability to modify the spatial and temporal tolerances that define a “hit” forecast is included to give users the ability to condition the criteria based on model performance and/or conduct sensitivity analyses. Statistical aspects are outlines in Section 21.2 and practical aspects of the TC-Gen tool are described in Section 21.3.</p>
+</div>
+<div class="section" id="statistical-aspects">
+<h2><span class="section-number">22.2. </span>Statistical aspects<a class="headerlink" href="#statistical-aspects" title="Permalink to this headline">¶</a></h2>
+<p>The TC-Gen tool populates a contingency table with hits, misses, and false alarms. As with other extreme events (where the event occurs much less frequently than the non-event), the correct negative category is not computed the non-events would dominate the contingency table. Therefore, only statistics that do not include correct negatives should be considered for this tool. The following CTS statistics are relevant: Base rate (BASER), Mean forecast (FMEAN), Frequency Bias (FBIAS), Probability of Detection (PODY), False Alarm Ratio (FAR), Critical Success Index (CSI), Gilbert Skill Score (GSS), Extreme Dependency Score (EDS), Symmetric Extreme Dependency Score (SEDS), Bias Adjusted Gilbert Skill Score (BAGSS).</p>
+<p>Other considerations for interpreting the output of the TC-Gen tool involve the size of the contingency table output. The size of the contingency table will change depending on the number of matches. Additionally, the number of misses is based on the forecast duration and interval (specified in the configuration file). This change is due to the number of model opportunities to forecast the event, which is determined by the specified duration/interval.</p>
+<p>Care should be taken when interpreting the statistics for filtered data. In some cases, variables (e.g. storm name) are only available in either the forecast or reference datasets, rather than both. When filtering on a field that is only present in one dataset, the contingency table counts will be impacted. Similarly, the initialization field only impacts the model forecast data. If the valid time (which will impact the reference dataset) isn’t also specified, the forecasts will be filtered and matched such that the number of misses will erroneously increase. See section 21.3 for more detail.</p>
+</div>
+<div class="section" id="practical-information">
+<h2><span class="section-number">22.3. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<p>This section describes how to configure and run the TC-Gen tool. The TC-Gen tool identifies tropical cyclone genesis events in both genesis forecasts and ATCF track datasets. It applies configurable logic to process the forecast and observed genesis events, classify them, and populate a contingency table with hits, misses, and false alarms. It writes the categorical counts and statistics to the output file(s). The tool can be configured to apply one or more sets of filtering criteria in a single run. The following sections describe the usage statement, required arguments, and optional arguments for <strong>tc_gen</strong>.</p>
+<div class="section" id="tc-gen-usage">
+<h3><span class="section-number">22.3.1. </span>tc_gen usage<a class="headerlink" href="#tc-gen-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for <strong>tc_gen</strong> is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: tc_gen
+       -genesis path
+       -track path
+       -config file
+       [-out base]
+       [-log file]
+       [-v level]
+</pre></div>
+</div>
+<p>TC-Gen has three required arguments and accepts optional ones.</p>
+<div class="section" id="required-arguments-for-tc-gen">
+<h4><span class="section-number">22.3.1.1. </span>Required arguments for tc_gen<a class="headerlink" href="#required-arguments-for-tc-gen" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>-genesis path</strong> argument is the path to one or more ATCF or fort.66 (see documentation listed below) files generated by the Geophysical Fluid Dynamics Laboratory (GFDL) Vortex Tracker when run in tcgen mode or an ASCII file list or a top-level directory containing them. The <strong>-genesis</strong> option must be used at least once. The required file format is described in the “Output formats” section of the GFDL Vortex Tracker users guide located at <a class="reference external" href="https://dtcenter.org/sites/default/files/community-code/gfdl/standalone_tracker_UG_v3.9a.pdf">https://dtcenter.org/sites/default/files/community-code/gfdl/standalone_tracker_UG_v3.9a.pdf</a>.</p></li>
+<li><p>The <strong>-track path</strong> argument is one or more ATCF reference track files or an ASCII file list or top-level directory containing them, with files ending in “.dat”. This tool processes either BEST track data from bdeck files, or operational track data (e.g. CARQ) from adeck files, or both. Providing both bdeck and adeck files will result in a richer dataset to match with the <strong>-genesis</strong> files.  Both adeck and bdeck data should be provided using the <strong>-track</strong> option. The <strong>-track</strong> option must be used at least once.</p></li>
+<li><p>The <strong>-config</strong> file argument indicates the name of the configuration file to be used. The contents of the configuration file are discussed below.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-tc-gen">
+<h4><span class="section-number">22.3.1.2. </span>Optional arguments for tc_gen<a class="headerlink" href="#optional-arguments-for-tc-gen" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="4">
+<li><p>The <strong>-out base</strong> argument indicates the path of the output file base. This argument overrides the default output file base (./tc_gen)</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
+</ol>
+<p>The TC-Gen tool implements the following logic:</p>
+<ul class="simple">
+<li><p>Parse the genesis data and identify forecast genesis events separately for each model present.</p></li>
+<li><p>Parse the BEST and operational track data and identify observed genesis events.</p></li>
+<li><p>Loop over the filters defined in the configuration file and apply the following logic for each.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>For each forecast genesis event, search the BEST genesis events for a match that is close enough in time and space. If not found, search the operational genesis events for a match. If a match is found, classify the forecast genesis event as a <strong>hit</strong>. Otherwise, classify it as a <strong>false alarm</strong>.</p></li>
+<li><p>For each BEST track genesis event, determine the initialization and lead times for which the model had an opportunity to forecast that genesis event. If the model opportunity is not classified in the previous step, then classify as a <strong>miss</strong>.</p></li>
+<li><p>Do not count any correct negatives.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Report the contingency table hits, misses, and false alarms separately for each forecast model and configuration file filter.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="tc-gen-configuration-file">
+<h3><span class="section-number">22.3.2. </span>tc_gen configuration file<a class="headerlink" href="#tc-gen-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The default configuration file for the <strong>TC-Gen</strong> tool named <strong>TCGenConfig_default</strong> can be found in the installed share/met/config directory. Like the other configuration files described in this document, it is recommended that users make a copy of these files prior to modifying their contents.</p>
+<p>The tc_gen configuration file is divided into three main sections: criteria to define genesis events, options to subset and filter those events, and options to control the output. The contents of this configuration file are described below.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>init_freq = 6;
+</pre></div>
+</div>
+<p>The <strong>init_freq</strong> variable is an integer specifying the model initialization frequency in hours, starting at 00Z. The default value of 6 indicates that the model is initialized every day at 00Z, 06Z, 12Z, and 18Z. The same frequency is applied to all models processed. Models initialized at different frequencies should be processed with separate calls to tc_gen. The initialization frequency is used when defining the model opportunities to forecast the BEST track genesis events.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>lead_window = {
+   beg = 24;
+   end = 120;
+}
+</pre></div>
+</div>
+<p>The <strong>lead_window</strong> option is a dictionary defining the beginning (<strong>beg</strong>) and ending (<strong>end</strong>) model forecast hours to be searched for genesis events. Model genesis events occurring outside of this window are ignored. This lead window is also used when defining the model opportunities to forecast the BEST track genesis events.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>min_duration = 12;
+</pre></div>
+</div>
+<p>The <strong>min_duration</strong> variable is an integer specifying the minimum number of hours a track must persist for its initial point to be counted as a genesis event. Some models spin up many short-lived storms, and this setting enables them to be excluded from the analysis.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fcst_genesis = {
+   vmax_thresh = NA;
+   mslp_thresh = NA;
+}
+</pre></div>
+</div>
+<p>The <strong>fcst_genesis</strong> dictionary defines the conditions required for a model track’s genesis point to be included in the analysis. Thresholds for the maximum wind speed (<strong>vmax_thresh</strong>) and minimum sea level pressure (<strong>mslp_thresh</strong>) may be defined. These conditions must be satisfied for at least one track point for the genesis event to be included in the analysis. The default thresholds (<strong>NA</strong>) always evaluate to true.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>best_genesis = {
+   technique   = &quot;BEST&quot;;
+   category    = [ &quot;TD&quot;, &quot;TS&quot; ];
+   vmax_thresh = NA;
+   mslp_thresh = NA;
+}
+oper_genesis = {
+   technique   = &quot;CARQ&quot;;
+   category    = [ &quot;DB&quot;, &quot;LO&quot;, &quot;WV&quot; ];
+   vmax_thresh = NA;
+   mslp_thresh = NA;
+}
+</pre></div>
+</div>
+<p>The <strong>best_genesis</strong> and <strong>oper_genesis</strong> dictionaries defines genesis criteria for the BEST and operational tracks, respectively. Like the <strong>fcst_genesis</strong> dictionary, the <strong>vmax_thresh</strong> and <strong>mslp_thresh</strong> thresholds define required genesis criteria. In addition, the <strong>category</strong> array defines the ATCF storm categories that should qualify as genesis events. The <strong>technique</strong> string defines the ATCF ID for the BEST and operational tracks.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>filter = [];
+</pre></div>
+</div>
+<p>The <strong>filter</strong> entry is an array of dictionaries defining genesis filtering criteria to be applied. Each of the entries listed below (from <strong>desc</strong> to <strong>genesis_radius</strong>) may be specified separately within each filter dictionary. If left empty, the default setting, a single filter is applied using the top-level filtering criteria. If multiple filtering dictionaries are defined, the <strong>desc</strong> entry must be specified for each to differentiate the output data. Output is written for each combination of filter dictionary and model ATCF ID encountered in the data.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>desc = &quot;NA&quot;;
+</pre></div>
+</div>
+<p>The <strong>desc</strong> configuration option is common to many MET tools and is described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model = [];
+</pre></div>
+</div>
+<p>The <strong>model</strong> entry is an array defining the model ATCF ID’s for which output should be computed. If left empty, the default setting, output will be computed for each model encountered in the data. Otherwise, output will be computed only for the ATCF ID’s listed. Note that when reading ATCF track data, all instances of the string AVN are automatically replaced with GFS.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>storm_id   = [];
+storm_name = [];
+</pre></div>
+</div>
+<p>The <strong>storm_id</strong> and <strong>storm_name</strong> entries are arrays indicating the ATCF storm ID’s and storm names to be processed. If left empty, all tracks will be processed. Otherwise, only those tracks which meet these criteria will be included. Note that these strings only appear in the BEST and operational tracks, not the forecast genesis data. Therefore, these filters only apply to the BEST and operational tracks. Care should be given when interpreting the contingency table results for filtered data.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>init_beg = &quot;&quot;;
+init_end = &quot;&quot;;
+</pre></div>
+</div>
+<p>The <strong>init_beg</strong> and <strong>init_end</strong> entries are strings in YYYYMMDD[_HH[MMSS]] format which defining which forecast and operational tracks initializations to be processed. If left empty, all tracks will be used. Otherwise, only those tracks whose initialization time falls within the window will be included. Note that these settings only apply to the forecast and operational tracks, not the BEST tracks, for which the initialization time is undefined. Care should be given when interpreting the contingency table results for filtered data.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>valid_beg = &quot;&quot;;
+valid_end = &quot;&quot;;
+</pre></div>
+</div>
+<p>The <strong>valid_beg</strong> and <strong>valid_end</strong> entries are similar to <strong>init_beg</strong> and <strong>init_end</strong>, described above. However, they are applied to all genesis data sources. Only those tracks falling completely inside this window are included in the analysis.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>init_hour = [];
+lead      = [];
+</pre></div>
+</div>
+<p>The <strong>init_hour</strong> and <strong>lead</strong> entries are arrays of strings in HH[MMSS] format defining which forecast and operational tracks should be included. If left empty, all tracks will be used. Otherwise, only those forecast and operational tracks whose initialization hour and lead times appear in the list will be used. Note that these settings only apply to the forecast and operational tracks, not the BEST tracks, for which the initialization time is undefined. Care should be given when interpreting the contingency table results for filtered data.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>vx_mask = &quot;MET_BASE/tc_data/basin_global_tenth_degree.nc \
+           { &#39;name=\”basin\”;level=\”(*,*)\”; } ==1&quot;;
+</pre></div>
+</div>
+<p>The <strong>vx_mask</strong> entry is a string defining the path to a Lat/Lon polyline file or a gridded data file that MET can read to subset the results spatially. If specified, only those genesis events whose Lat/Lon location falls within the specified area will be included. The MET code includes the file <strong>basin_global_tenth_degree.nc</strong>, which contains a global definition of the Regional Specialized Meteorology Centers (RSMC) and hurricane basin regions. The above example uses this file to stratify genesis results for the Atlantic Basin, where the <strong>basin</strong> variable equals ones.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dland_thresh = NA;
+</pre></div>
+</div>
+<p>The <strong>dland_thresh</strong> entry is a threshold defining whether the genesis event should be included based on it’s distance to land. The default threshold (<strong>NA</strong>) always evaluate to true.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>genesis_window = {
+   beg = -24;
+   end =  24;
+}
+</pre></div>
+</div>
+<p>The <strong>genesis_window</strong> entry defines a matching time window, in hours, relative to the forecast genesis time. When searching for a match, only those BEST/operational genesis events which occur within this time window will be considered. Increasing this time window should lead to an increase in hits.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>genesis_radius = 300;
+</pre></div>
+</div>
+<p>The <strong>genesis_radius</strong> entry defines a search radius, in km, relative to the forecast genesis location. When searching for a match, only those BEST/operational genesis events which occur within this radius will be considered. Increasing this search radius should lead to an increase in hits.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ci_alpha = 0.05;
+output_flag = {
+   fho = BOTH;
+   ctc = BOTH;
+   cts = BOTH;
+}
+dland_file = &quot;MET_BASE/tc_data/dland_global_tenth_degree.nc&quot;;
+version    = &quot;V9.0&quot;;
+</pre></div>
+</div>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>. Note that TC-Gen writes output for 2x2 contingency tables to the <strong>FHO, CTC</strong>, and <strong>CTS</strong> line types.</p>
+</div>
+<div class="section" id="tc-gen-output">
+<h3><span class="section-number">22.3.3. </span>tc_gen output<a class="headerlink" href="#tc-gen-output" title="Permalink to this headline">¶</a></h3>
+<p>TC-Gen produces output in STAT and, optionally, ASCII format. The ASCII output duplicates the STAT output but has the data organized by line type. The output files are created based on the <strong>-out</strong> command line argument. The default output base name, “./tc_gen” writes output files in the current working directory named “tc_gen.stat” and, optionally, “tc_gen_fho.txt”, “tc_gen_ctc.txt”, and “tc_gen_cts.txt”. The contents of these output files are described in section <a class="reference internal" href="point-stat.html#point-stat-output"><span class="std std-numref">Section 7.3.3</span></a>.</p>
+<p>Like all STAT output, the output of TC-Gen may be further processed using the Stat-Analysis tool, described in <a class="reference internal" href="stat-analysis.html#stat-analysis"><span class="std std-numref">Section 12</span></a>.</p>
+<p>Future development will include writing out a NetCDF file with total counts of events, hits, misses, false alarms, and pertinent information for plotting the density of genesis events.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tc-rmw.html" class="btn btn-neutral float-right" title="23. TC-RMW Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tc-stat.html" class="btn btn-neutral" title="21. TC-Stat Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

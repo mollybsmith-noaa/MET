@@ -1,0 +1,1212 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>29. Appendix C Verification Measures &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/appendixC.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="30. Appendix D Confidence Intervals" href="appendixD.html"/>
+        <link rel="prev" title="28. Appendix B Map Projections, Grids, and Polylines" href="appendixB.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">29. Appendix C Verification Measures</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#which-statistics-are-the-same-but-with-different-names">29.1. Which statistics are the same, but with different names?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-categorical-dichotomous-variables">29.2. MET verification measures for categorical (dichotomous) variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#total">29.2.1. TOTAL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base-rate">29.2.2. Base rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-forecast">29.2.3. Mean forecast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#accuracy">29.2.4. Accuracy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#frequency-bias">29.2.5. Frequency Bias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#probability-of-detection-pod">29.2.6. Probability of Detection (POD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#probability-of-false-detection-pofd">29.2.7. Probability of False Detection (POFD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#probability-of-detection-of-the-non-event-podn">29.2.8. Probability of Detection of the non-event (PODn)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#false-alarm-ratio-far">29.2.9. False Alarm Ratio (FAR)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#critical-success-index-csi">29.2.10. Critical Success Index (CSI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gilbert-skill-score-gss">29.2.11. Gilbert Skill Score (GSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hanssen-kuipers-discriminant-hk">29.2.12. Hanssen-Kuipers Discriminant (HK)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heidke-skill-score-hss">29.2.13. Heidke Skill Score (HSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#odds-ratio-or">29.2.14. Odds Ratio (OR)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logarithm-of-the-odds-ratio-lodds">29.2.15. Logarithm of the Odds Ratio (LODDS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#odds-ratio-skill-score-orss">29.2.16. Odds Ratio Skill Score (ORSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extreme-dependency-score-eds">29.2.17. Extreme Dependency Score (EDS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extreme-dependency-index-edi">29.2.18. Extreme Dependency Index (EDI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#symmetric-extreme-dependency-score-seds">29.2.19. Symmetric Extreme Dependency Score (SEDS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#symmetric-extremal-dependency-index-sedi">29.2.20. Symmetric Extremal Dependency Index (SEDI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bias-adjusted-gilbert-skill-score-gss">29.2.21. Bias Adjusted Gilbert Skill Score (GSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#economic-cost-loss-relative-value-eclv">29.2.22. Economic Cost Loss Relative Value (ECLV)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-continuous-variables">29.3. MET verification measures for continuous variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">29.3.1. Mean forecast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-observation">29.3.2. Mean observation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forecast-standard-deviation">29.3.3. Forecast standard deviation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#observation-standard-deviation">29.3.4. Observation standard deviation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pearson-correlation-coefficient">29.3.5. Pearson Correlation Coefficient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spearman-rank-correlation-coefficient-rho-s">29.3.6. Spearman rank correlation coefficient <span class="math notranslate nohighlight">\((\rho_{s})\)</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#kendall-s-tau-statistic-tau">29.3.7. Kendall’s Tau statistic ( <span class="math notranslate nohighlight">\(\tau\)</span>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-error-me">29.3.8. Mean Error (ME)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-error-squared-me2">29.3.9. Mean Error Squared (ME2)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#multiplicative-bias">29.3.10. Multiplicative Bias</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-squared-error-mse">29.3.11. Mean-squared error (MSE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#root-mean-squared-error-rmse">29.3.12. Root-mean-squared error (RMSE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-deviation-of-the-error">29.3.13. Standard deviation of the error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bias-corrected-mse">29.3.14. Bias-Corrected MSE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-absolute-error-mae">29.3.15. Mean Absolute Error (MAE)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#inter-quartile-range-of-the-errors-iqr">29.3.16. Inter Quartile Range of the Errors (IQR)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#median-absolute-deviation-mad">29.3.17. Median Absolute Deviation (MAD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-squared-error-skill-score">29.3.18. Mean Squared Error Skill Score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#root-mean-squared-forecast-anomaly">29.3.19. Root-mean-squared Forecast Anomaly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#root-mean-squared-observation-anomaly">29.3.20. Root-mean-squared Observation Anomaly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#percentiles-of-the-errors">29.3.21. Percentiles of the errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#anomaly-correlation-coefficient">29.3.22. Anomaly Correlation Coefficient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#partial-sums-lines-sl1l2-sal1l2-vl1l2-val1l2">29.3.23. Partial Sums lines (SL1L2, SAL1L2, VL1L2, VAL1L2)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scalar-l1-and-l2-values">29.3.24. Scalar L1 and L2 values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scalar-anomaly-l1-and-l2-values">29.3.25. Scalar anomaly L1 and L2 values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector-l1-and-l2-values">29.3.26. Vector L1 and L2 values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vector-anomaly-l1-and-l2-values">29.3.27. Vector anomaly L1 and L2 values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gradient-values">29.3.28. Gradient values</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-probabilistic-forecasts">29.4. MET verification measures for probabilistic forecasts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reliability">29.4.1. Reliability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resolution">29.4.2. Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uncertainty">29.4.3. Uncertainty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#brier-score">29.4.4. Brier score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#brier-skill-score-bss">29.4.5. Brier Skill Score (BSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oy-tp-observed-yes-total-proportion">29.4.6. OY_TP - Observed Yes Total Proportion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-tp-observed-no-total-proportion">29.4.7. ON_TP - Observed No Total Proportion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#calibration">29.4.8. Calibration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refinement">29.4.9. Refinement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#likelihood">29.4.10. Likelihood</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">29.4.11. Base Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reliability-diagram">29.4.12. Reliability diagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#receiver-operating-characteristic">29.4.13. Receiver operating characteristic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#area-under-the-roc-curve-auc">29.4.14. Area Under the ROC curve (AUC)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-ensemble-forecasts">29.5. MET verification measures for ensemble forecasts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#crps">29.5.1. CRPS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crps-skill-score">29.5.2. CRPS Skill Score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ign">29.5.3. IGN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pit">29.5.4. PIT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rank">29.5.5. RANK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spread">29.5.6. SPREAD</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-neighborhood-methods">29.6. MET verification measures for neighborhood methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#fractions-brier-score">29.6.1. Fractions Brier Score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fractions-skill-score">29.6.2. Fractions Skill Score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#asymptotic-fractions-skill-score">29.6.3. Asymptotic Fractions Skill Score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uniform-fractions-skill-score">29.6.4. Uniform Fractions Skill Score</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#forecast-rate">29.6.5. Forecast Rate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#observation-rate">29.6.6. Observation Rate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-distance-map-methods">29.7. MET verification measures for distance map methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#baddeley-s-delta-metric-and-hausdorff-distance">29.7.1. Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> Metric and Hausdorff Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mean-error-distance">29.7.2. Mean-error Distance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pratt-s-figure-of-merit">29.7.3. Pratt’s Figure of Merit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zhu-s-measure">29.7.4. Zhu’s Measure</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#calculating-percentiles">29.8. Calculating Percentiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">29. </span>Appendix C Verification Measures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/appendixC.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="appendix-c-verification-measures">
+<span id="appendixc"></span><h1><span class="section-number">29. </span>Appendix C Verification Measures<a class="headerlink" href="#appendix-c-verification-measures" title="Permalink to this headline">¶</a></h1>
+<p>This appendix provides specific information about the many verification statistics and measures that are computed by MET. These measures are categorized into measures for categorical (dichotomous) variables; measures for continuous variables; measures for probabilistic forecasts and measures for neighborhood methods. While the continuous, categorical, and probabilistic statistics are computed by both the Point-Stat and Grid-Stat tools, the neighborhood verification measures are only provided by the Grid-Stat tool.</p>
+<div class="section" id="which-statistics-are-the-same-but-with-different-names">
+<h2><span class="section-number">29.1. </span>Which statistics are the same, but with different names?<a class="headerlink" href="#which-statistics-are-the-same-but-with-different-names" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-auto docutils align-default" id="id3">
+<caption><span class="caption-number">Table 29.1 </span><span class="caption-text">Statistics in MET and other names they have been published under.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Statitistic in MET</p></th>
+<th class="head"><p>Other names for the same statistic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Probability of Detection</p></td>
+<td><p>Hit Rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Probability of False Detection</p></td>
+<td><p>False Alarm Rate (not Ratio)</p></td>
+</tr>
+<tr class="row-even"><td><p>Critical Success Index</p></td>
+<td><p>Threat Score</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gilbert Skill Score</p></td>
+<td><p>Equitable Threat Score</p></td>
+</tr>
+<tr class="row-even"><td><p>Hanssen and Kuipers Discriminant</p></td>
+<td><p>True Skill Statistic, Pierce’s Skill Score</p></td>
+</tr>
+<tr class="row-odd"><td><p>Heidke Skill Score</p></td>
+<td><p>Cohen’s K</p></td>
+</tr>
+<tr class="row-even"><td><p>Odds Ratio Skill Score</p></td>
+<td><p>Yule’s Q</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mean Error</p></td>
+<td><p>Magnitude Bias</p></td>
+</tr>
+<tr class="row-even"><td><p>Mean Error Squared (ME2)</p></td>
+<td><p>MSE by Mean Difference</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bias Corrected MSE</p></td>
+<td><p>MSE by Pattern Variation</p></td>
+</tr>
+<tr class="row-even"><td><p>MSESS</p></td>
+<td><p>Murphy’s MSESS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pearson Correlation</p></td>
+<td><p>Anomolous Pattern Correlation</p></td>
+</tr>
+<tr class="row-even"><td><p>Anomoly Correlation</p></td>
+<td><p>Anomolous Correction</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rank Histogram</p></td>
+<td><p>Talagrand Diagram</p></td>
+</tr>
+<tr class="row-even"><td><p>Reliability Diagram</p></td>
+<td><p>Attributes Diagram</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ignorance Score</p></td>
+<td><p>Logarithmic Scoring Rule</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="met-verification-measures-for-categorical-dichotomous-variables">
+<span id="categorical-variables"></span><h2><span class="section-number">29.2. </span>MET verification measures for categorical (dichotomous) variables<a class="headerlink" href="#met-verification-measures-for-categorical-dichotomous-variables" title="Permalink to this headline">¶</a></h2>
+<p>The verification statistics for dichotomous variables are formulated using a contingency table such as the one shown in <a class="reference internal" href="#table-2x2"><span class="std std-numref">Table 29.2</span></a>. In this table f represents the forecasts and o represents the observations; the two possible forecast and observation values are represented by the values 0 and 1. The values in <a class="reference internal" href="#table-2x2"><span class="std std-numref">Table 29.2</span></a> are counts of the number of occurrences of the four possible combinations of forecasts and observations.</p>
+<span id="table-2x2"></span><table class="colwidths-auto docutils align-default" id="id4">
+<caption><span class="caption-number">Table 29.2 </span><span class="caption-text">2x2 contingency table in terms of counts. The <span class="math notranslate nohighlight">\(\mathbf{n}_\mathbf{ij}\)</span> values in the table represent the counts in each forecast-observation category, where <span class="math notranslate nohighlight">\(\mathbf{i}\)</span> represents the forecast and <span class="math notranslate nohighlight">\(\mathbf{j}\)</span> represents the observations. The “.” symbols in the total cells represent sums across categories.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Forecast</p></th>
+<th class="head"><p>Observation</p></th>
+<th class="head"></th>
+<th class="head"><p>Total</p></th>
+</tr>
+<tr class="row-even"><th class="head"></th>
+<th class="head"><p>o = 1 (e.g., “Yes”)</p></th>
+<th class="head"><p>o = 0 (e.g., “No”)</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>f = 1 (e.g., “Yes”)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{11}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{10}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{1.} = \mathbf{n}_{11} + \mathbf{n}_{10}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>f = 0 (e.g., “No”)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{01}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{00}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{0.} = \mathbf{n}_{01} + \mathbf{n}_{00}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{.1} = \mathbf{n}_{11} + \mathbf{n}_{01}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{n}_{.0} = \mathbf{n}_{10} + \mathbf{n}_{00}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(T = \mathbf{n}_{11} + \mathbf{n}_{10} + \mathbf{n}_{01} + \mathbf{n}_{00}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The counts, <span class="math notranslate nohighlight">\(n_{11}, n_{10}, n_{01}, \text{and } n_{00},\)</span> are sometimes called the “Hits”, “False alarms”, “Misses”, and “Correct rejections”, respectively.</p>
+<p>By dividing the counts in the cells by the overall total, T, the joint proportions, <span class="math notranslate nohighlight">\(\mathbf{p}_{11}, \mathbf{p}_{10}, \mathbf{p}_{01}, \text{and } \mathbf{p}_{00}\)</span> can be computed. Note that <span class="math notranslate nohighlight">\(\mathbf{p}_{11} + \mathbf{p}_{10} + \mathbf{p}_{01} + \mathbf{p}_{00} = 1.\)</span> Similarly, if the counts are divided by the row (column) totals, conditional proportions, based on the forecasts (observations) can be computed. All of these combinations and the basic counts can be produced by the Point-Stat tool.</p>
+<p>The values in <a class="reference internal" href="#table-2x2"><span class="std std-numref">Table 29.2</span></a> can also be used to compute the F, O, and H relative frequencies that are produced by the NCEP Verification System, and the Point-Stat tool provides an option to produce the statistics in this form. In terms of the other statistics computed by the Point-Stat tool, F is equivalent to the Mean Forecast; H is equivalent to POD; and O is equivalent to the Base Rate. All of these statistics are defined in the subsections below. The Point-Stat tool also provides the total number of observations, <strong>T</strong>.</p>
+<p>The categorical verification measures produced by the Point-Stat and Grid-Stat tools are described in the following subsections. They are presented in the order shown in <a class="reference internal" href="point-stat.html#table-ps-format-info-fho"><span class="std std-numref">Table 7.2</span></a> through <a class="reference internal" href="point-stat.html#table-ps-format-info-cts-cont"><span class="std std-numref">Table 7.5</span></a>.</p>
+<div class="section" id="total">
+<h3><span class="section-number">29.2.1. </span>TOTAL<a class="headerlink" href="#total" title="Permalink to this headline">¶</a></h3>
+<p>The total number of forecast-observation pairs, <strong>T</strong>.</p>
+</div>
+<div class="section" id="base-rate">
+<h3><span class="section-number">29.2.2. </span>Base rate<a class="headerlink" href="#base-rate" title="Permalink to this headline">¶</a></h3>
+<p>Called “O_RATE” in FHO output <a class="reference internal" href="point-stat.html#table-ps-format-info-fho"><span class="std std-numref">Table 7.2</span></a></p>
+<p>Called “BASER” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>The base rate is defined as <span class="math notranslate nohighlight">\(\bar{o} = \frac{n_{11} + n_{01}}{T} = \frac{n_{.1}}{T}.\)</span> This value is also known as the sample climatology, and is the relative frequency of occurrence of the event (i.e., o = 1). The base rate is equivalent to the “O” value produced by the NCEP Verification System.</p>
+</div>
+<div class="section" id="mean-forecast">
+<h3><span class="section-number">29.2.3. </span>Mean forecast<a class="headerlink" href="#mean-forecast" title="Permalink to this headline">¶</a></h3>
+<p>Called “F_RATE” in FHO output <a class="reference internal" href="point-stat.html#table-ps-format-info-fho"><span class="std std-numref">Table 7.2</span></a></p>
+<p>Called “FMEAN” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>The mean forecast value is defined as <span class="math notranslate nohighlight">\(\bar{f} = \frac{n_{11} + n_{10}}{T} = \frac{n_{1.}}{T}.\)</span></p>
+<p>This statistic is comparable to the base rate and is the relative frequency of occurrence of a forecast of the event (i.e., <strong>f = 1</strong>). The mean forecast is equivalent to the “F” value computed by the NCEP Verification System.</p>
+</div>
+<div class="section" id="accuracy">
+<h3><span class="section-number">29.2.4. </span>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h3>
+<p>Called “ACC” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>Accuracy for a 2x2 contingency table is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{ACC } = \frac{n_{11} + n_{00}}{T}.\]</div>
+<p>That is, it is the proportion of forecasts that were either hits or correct rejections - the fraction that were correct. Accuracy ranges from 0 to 1; a perfect forecast would have an accuracy value of 1. Accuracy should be used with caution, especially for rare events, because it can be strongly influenced by large values of <span class="math notranslate nohighlight">\(\mathbf{n_{00}}\)</span>.</p>
+</div>
+<div class="section" id="frequency-bias">
+<h3><span class="section-number">29.2.5. </span>Frequency Bias<a class="headerlink" href="#frequency-bias" title="Permalink to this headline">¶</a></h3>
+<p>Called “FBIAS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>Frequency Bias is the ratio of the total number of forecasts of an event to the total number of observations of the event. It is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{Bias } = \frac{n_{11} + n_{10}}{n_{11} + n_{01}} = \frac{n_{1.}}{n_1}.\]</div>
+<p>A “good” value of Frequency Bias is close to 1; a value greater than 1 indicates the event was forecasted too frequently and a value less than 1 indicates the event was not forecasted frequently enough.</p>
+</div>
+<div class="section" id="probability-of-detection-pod">
+<h3><span class="section-number">29.2.6. </span>Probability of Detection (POD)<a class="headerlink" href="#probability-of-detection-pod" title="Permalink to this headline">¶</a></h3>
+<p>Called “H_RATE” in FHO output <a class="reference internal" href="point-stat.html#table-ps-format-info-fho"><span class="std std-numref">Table 7.2</span></a></p>
+<p>Called “PODY” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>POD is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{POD } = \frac{n_{11}}{n_{11} + n_{01}} = \frac{n_{11}}{n_1}.\]</div>
+<p>It is the fraction of events that were correctly forecasted to occur. POD is equivalent to the H value computed by the NCEP verification system and is also known as the hit rate. POD ranges from 0 to 1; a perfect forecast would have POD = 1.</p>
+</div>
+<div class="section" id="probability-of-false-detection-pofd">
+<h3><span class="section-number">29.2.7. </span>Probability of False Detection (POFD)<a class="headerlink" href="#probability-of-false-detection-pofd" title="Permalink to this headline">¶</a></h3>
+<p>Called “POFD” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>POFD is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{POFD } = \frac{n_{10}}{n_{10} + n_{00}} = \frac{n_{10}}{n_{.0}}.\]</div>
+<p>It is the proportion of non-events that were forecast to be events. POFD is also often called the False Alarm Rate. POFD ranges from 0 to 1; a perfect forecast would have POFD = 0.</p>
+</div>
+<div class="section" id="probability-of-detection-of-the-non-event-podn">
+<h3><span class="section-number">29.2.8. </span>Probability of Detection of the non-event (PODn)<a class="headerlink" href="#probability-of-detection-of-the-non-event-podn" title="Permalink to this headline">¶</a></h3>
+<p>Called “PODN” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>PODn is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{PODN } = \frac{n_{00}}{n_{10} + n_{00}} = \frac{n_{00}}{n_{.0}}.\]</div>
+<p>It is the proportion of non-events that were correctly forecasted to be non-events. Note that PODn = 1 - POFD. PODn ranges from 0 to 1. Like POD, a perfect forecast would have PODn = 1.</p>
+</div>
+<div class="section" id="false-alarm-ratio-far">
+<h3><span class="section-number">29.2.9. </span>False Alarm Ratio (FAR)<a class="headerlink" href="#false-alarm-ratio-far" title="Permalink to this headline">¶</a></h3>
+<p>Called “FAR” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>FAR is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{FAR } = \frac{n_{10}}{n_{10} + n_{11}} = \frac{n_{10}}{n_{1.}}.\]</div>
+<p>It is the proportion of forecasts of the event occurring for which the event did not occur. FAR ranges from 0 to 1; a perfect forecast would have FAR = 0.</p>
+</div>
+<div class="section" id="critical-success-index-csi">
+<h3><span class="section-number">29.2.10. </span>Critical Success Index (CSI)<a class="headerlink" href="#critical-success-index-csi" title="Permalink to this headline">¶</a></h3>
+<p>Called “CSI” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>CSI is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{CSI } = \frac{n_{11}}{n_{11} + n_{10} + n_{01}}.\]</div>
+<p>It is the ratio of the number of times the event was correctly forecasted to occur to the number of times it was either forecasted or occurred. CSI ignores the “correct rejections” category (i.e., <span class="math notranslate nohighlight">\(\mathbf{n_{00}}\)</span>). CSI is also known as the Threat Score (TS). CSI can also be written as a nonlinear combination of POD and FAR, and is strongly related to Frequency Bias and the Base Rate.</p>
+</div>
+<div class="section" id="gilbert-skill-score-gss">
+<h3><span class="section-number">29.2.11. </span>Gilbert Skill Score (GSS)<a class="headerlink" href="#gilbert-skill-score-gss" title="Permalink to this headline">¶</a></h3>
+<p>Called “GSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>GSS is based on the CSI, corrected for the number of hits that would be expected by chance. In particular,</p>
+<div class="math notranslate nohighlight">
+\[\text{GSS } = \frac{n_{11} - C_1}{n_{11} + n_{10} + n_{01} - C_1},\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[C = \frac{(n_{11} + n_{10}) (n_{11} + n_{01})}{T}.\]</div>
+<p>GSS is also known as the Equitable Threat Score (ETS). GSS values range from -1/3 to 1. A no-skill forecast would have GSS = 0; a perfect forecast would have GSS = 1.</p>
+</div>
+<div class="section" id="hanssen-kuipers-discriminant-hk">
+<h3><span class="section-number">29.2.12. </span>Hanssen-Kuipers Discriminant (HK)<a class="headerlink" href="#hanssen-kuipers-discriminant-hk" title="Permalink to this headline">¶</a></h3>
+<p>Called “HK” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>HK is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{HK } = \frac{n_{11} n_{00} - n_{10} n_{01}}{(n_{11} + n_{01}) (n_{10} + n_{00})}.\]</div>
+<p>More simply, HK = POD <span class="math notranslate nohighlight">\(-\)</span> POFD.</p>
+<p>HK is also known as the True Skill Statistic (TSS) and less commonly (although perhaps more properly) as the Peirce Skill Score. HK measures the ability of the forecast to discriminate between (or correctly classify) events and non-events. HK values range between -1 and 1. A value of 0 indicates no skill; a perfect forecast would have HK = 1.</p>
+</div>
+<div class="section" id="heidke-skill-score-hss">
+<h3><span class="section-number">29.2.13. </span>Heidke Skill Score (HSS)<a class="headerlink" href="#heidke-skill-score-hss" title="Permalink to this headline">¶</a></h3>
+<p>Called “HSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>HSS is a skill score based on Accuracy, where the Accuracy is corrected by the number of correct forecasts that would be expected by chance. In particular,</p>
+<div class="math notranslate nohighlight">
+\[\text{HSS } = \frac{n_{11} + n_{00} - C_2}{T - C_2},\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[C_2 = \frac{(n_{11} + n_{10}) (n_{11} + n_{01}) + (n_{01} + n_{00}) (n_{10} + n_{00})}{T}.\]</div>
+<p>HSS can range from minus infinity to 1. A perfect forecast would have HSS = 1.</p>
+</div>
+<div class="section" id="odds-ratio-or">
+<h3><span class="section-number">29.2.14. </span>Odds Ratio (OR)<a class="headerlink" href="#odds-ratio-or" title="Permalink to this headline">¶</a></h3>
+<p>Called “ODDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>OR measures the ratio of the odds of a forecast of the event being correct to the odds of a forecast of the event being wrong. OR is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{OR } = \frac{n_{11} \times n_{00}}{n_{10} \times n_{01}} = \frac{(\frac{\text{POD}}{1 - \text{POD}})}{(\frac{\text{POFD}}{1 - \text{POFD}})}.\]</div>
+<p>OR can range from 0 to <span class="math notranslate nohighlight">\(\infty\)</span>. A perfect forecast would have a value of OR = infinity. OR is often expressed as the log Odds Ratio or as the Odds Ratio Skill Score (<a class="reference internal" href="refs.html#stephenson-2000"><span class="std std-ref">Stephenson 2000</span></a>).</p>
+</div>
+<div class="section" id="logarithm-of-the-odds-ratio-lodds">
+<h3><span class="section-number">29.2.15. </span>Logarithm of the Odds Ratio (LODDS)<a class="headerlink" href="#logarithm-of-the-odds-ratio-lodds" title="Permalink to this headline">¶</a></h3>
+<p>Called “LODDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>LODDS transforms the odds ratio via the logarithm, which tends to normalize the statistic for rare events (<a class="reference internal" href="refs.html#stephenson-2000"><span class="std std-ref">Stephenson 2000</span></a>). However, it can take values of <span class="math notranslate nohighlight">\(\pm\infty\)</span> when any of the contingency table counts is 0. LODDS is defined as <span class="math notranslate nohighlight">\(\text{LODDS} = ln(OR)\)</span>.</p>
+</div>
+<div class="section" id="odds-ratio-skill-score-orss">
+<h3><span class="section-number">29.2.16. </span>Odds Ratio Skill Score (ORSS)<a class="headerlink" href="#odds-ratio-skill-score-orss" title="Permalink to this headline">¶</a></h3>
+<p>Called “ORSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>ORSS is a skill score based on the odds ratio. ORSS is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{ORSS } = \frac{OR - 1}{OR + 1}.\]</div>
+<p>ORSS is sometime also referred to as Yule’s Q. (<a class="reference internal" href="refs.html#stephenson-2000"><span class="std std-ref">Stephenson 2000</span></a>).</p>
+</div>
+<div class="section" id="extreme-dependency-score-eds">
+<h3><span class="section-number">29.2.17. </span>Extreme Dependency Score (EDS)<a class="headerlink" href="#extreme-dependency-score-eds" title="Permalink to this headline">¶</a></h3>
+<p>Called “EDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>The extreme dependency score measures the association between forecast and observed rare events. EDS is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{EDS } = \frac{2 ln(\frac{n_{11} + n_{01}}{T})}{ln(\frac{n_{11}}{T})} - 1.\]</div>
+<p>EDS can range from -1 to 1, with 0 representing no skill. A perfect forecast would have a value of EDS = 1. EDS is independent of bias, so should be presented along with the frequency bias statistic (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Stephenson et al, 2008</span></a>).</p>
+</div>
+<div class="section" id="extreme-dependency-index-edi">
+<h3><span class="section-number">29.2.18. </span>Extreme Dependency Index (EDI)<a class="headerlink" href="#extreme-dependency-index-edi" title="Permalink to this headline">¶</a></h3>
+<p>Called “EDI” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>The extreme dependency index measures the association between forecast and observed rare events. EDI is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{EDI } = \frac{\log F - \log H}{\log F + \log H},\]</div>
+<p>where <em>H</em> and <em>F</em> are the Hit Rate and False Alarm Rate, respectively.</p>
+<p>EDI can range from <span class="math notranslate nohighlight">\(-\infty\)</span> to 1, with 0 representing no skill. A perfect forecast would have a value of EDI = 1 (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Ferro and Stephenson, 2011</span></a>).</p>
+</div>
+<div class="section" id="symmetric-extreme-dependency-score-seds">
+<h3><span class="section-number">29.2.19. </span>Symmetric Extreme Dependency Score (SEDS)<a class="headerlink" href="#symmetric-extreme-dependency-score-seds" title="Permalink to this headline">¶</a></h3>
+<p>Called “SEDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>The symmetric extreme dependency score measures the association between forecast and observed rare events. SEDS is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{SEDS } = \frac{2 \ln [\frac{(n_{11} + n_{01}) (n_{11} + n_{10})}{T^2}]}{\ln (\frac{n_{11}}{T})} - 1.\]</div>
+<p>SEDS can range from <span class="math notranslate nohighlight">\(-\infty\)</span> to 1, with 0 representing no skill. A perfect forecast would have a value of SEDS = 1 (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Ferro and Stephenson, 2011</span></a>).</p>
+</div>
+<div class="section" id="symmetric-extremal-dependency-index-sedi">
+<h3><span class="section-number">29.2.20. </span>Symmetric Extremal Dependency Index (SEDI)<a class="headerlink" href="#symmetric-extremal-dependency-index-sedi" title="Permalink to this headline">¶</a></h3>
+<p>Called “SEDI” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>The symmetric extremal dependency index measures the association between forecast and observed rare events. SEDI is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{SEDI } = \frac{\ln F - \ln H + \ln (1 - H) - \ln (1 - F)}{\ln F + \ln H + \ln (1 - H) + \ln (1 - F)},\]</div>
+<p>where <span class="math notranslate nohighlight">\(H = \frac{n_{11}}{n_{11} + n_{01}}\)</span> and <span class="math notranslate nohighlight">\(F = \frac{n_{10}}{n_{00} + n_{10}}\)</span> are the Hit Rate and False Alarm Rate, respectively.</p>
+<p>SEDI can range from <span class="math notranslate nohighlight">\(-\infty\)</span> to 1, with 0 representing no skill. A perfect forecast would have a value of SEDI = 1. SEDI approaches 1 only as the forecast approaches perfection (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Ferro and Stephenson, 2011</span></a>).</p>
+</div>
+<div class="section" id="bias-adjusted-gilbert-skill-score-gss">
+<h3><span class="section-number">29.2.21. </span>Bias Adjusted Gilbert Skill Score (GSS)<a class="headerlink" href="#bias-adjusted-gilbert-skill-score-gss" title="Permalink to this headline">¶</a></h3>
+<p>Called “BAGSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 7.4</span></a></p>
+<p>BAGSS is based on the GSS, but is corrected as much as possible for forecast bias (<a class="reference internal" href="refs.html#brill-2009"><span class="std std-ref">Brill and Mesinger, 2009</span></a>).</p>
+</div>
+<div class="section" id="economic-cost-loss-relative-value-eclv">
+<h3><span class="section-number">29.2.22. </span>Economic Cost Loss Relative Value (ECLV)<a class="headerlink" href="#economic-cost-loss-relative-value-eclv" title="Permalink to this headline">¶</a></h3>
+<p>Included in ECLV output <a class="reference internal" href="point-stat.html#table-ps-format-info-eclv"><span class="std std-numref">Table 7.14</span></a></p>
+<p>The Economic Cost Loss Relative Value (ECLV) applies a weighting to the contingency table counts to determine the relative value of a forecast based on user-specific information. The cost is incurred to protect against an undesirable outcome, whether that outcome occurs or not. No cost is incurred if no protection is undertaken. Then, if the event occurs, the user sustains a loss. If the event does not occur, there is neither a cost nor a loss. The maximum forecast value is achieved when the cost/loss ratio equals the climatological probability. When this occurs, the ECLV is equal to the Hanssen and Kuipers discriminant. The Economic Cost Loss Relative Value is defined differently depending on whether the cost / loss ratio is lower than the base rate or higher. The ECLV is a function of the cost / loss ratio (cl), the hit rate (h), the false alarm rate (f), the miss rate (m), and the base rate (b).</p>
+<p>For cost / loss ratio below the base rate, the ECLV is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{ECLV } = \frac{(cl \ast (h + f - 1)) + m}{cl \ast (b - 1)}.\]</div>
+<p>For cost / loss ratio above the base rate, the ECLV is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{ECLV } = \frac{(cl \ast (h + f)) + m - b}{b \ast (cl - 1)}.\]</div>
+</div>
+</div>
+<div class="section" id="met-verification-measures-for-continuous-variables">
+<h2><span class="section-number">29.3. </span>MET verification measures for continuous variables<a class="headerlink" href="#met-verification-measures-for-continuous-variables" title="Permalink to this headline">¶</a></h2>
+<p>For continuous variables, many verification measures are based on the forecast error (i.e., <strong>f - o</strong>). However, it also is of interest to investigate characteristics of the forecasts, and the observations, as well as their relationship. These concepts are consistent with the general framework for verification outlined by <a class="reference internal" href="refs.html#murphy-1987"><span class="std std-ref">Murphy and Winkler (1987)</span></a>. The statistics produced by MET for continuous forecasts represent this philosophy of verification, which focuses on a variety of aspects of performance rather than a single measure.</p>
+<p>The verification measures currently evaluated by the Point-Stat tool are defined and described in the subsections below. In these definitions, <strong>f</strong> represents the forecasts, <strong>o</strong> represents the observation, and <strong>n</strong> is the number of forecast-observation pairs.</p>
+<div class="section" id="id1">
+<h3><span class="section-number">29.3.1. </span>Mean forecast<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Called “FBAR” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>Called “FBAR” in SL1L2 output <a class="reference internal" href="point-stat.html#table-ps-format-info-sl1l2"><span class="std std-numref">Table 7.15</span></a></p>
+<p>The sample mean forecast, FBAR, is defined as <span class="math notranslate nohighlight">\(\bar{f} = \frac{1}{n} \sum_{i=1}^{n} f_i\)</span>.</p>
+</div>
+<div class="section" id="mean-observation">
+<h3><span class="section-number">29.3.2. </span>Mean observation<a class="headerlink" href="#mean-observation" title="Permalink to this headline">¶</a></h3>
+<p>Called “OBAR” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>Called “OBAR” in SL1L2 output <a class="reference internal" href="point-stat.html#table-ps-format-info-sl1l2"><span class="std std-numref">Table 7.15</span></a></p>
+<p>The sample mean observation is defined as <span class="math notranslate nohighlight">\(\bar{o} = \frac{1}{n} \sum_{i=1}^{n} o_i\)</span>.</p>
+</div>
+<div class="section" id="forecast-standard-deviation">
+<h3><span class="section-number">29.3.3. </span>Forecast standard deviation<a class="headerlink" href="#forecast-standard-deviation" title="Permalink to this headline">¶</a></h3>
+<p>Called “FSTDEV” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The sample variance of the forecasts is defined as</p>
+<div class="math notranslate nohighlight">
+\[s_f^2 = \frac{1}{T - 1} \sum_{i=1}^T (f_i - \bar{f})^2 .\]</div>
+<p>The forecast standard deviation is defined as <span class="math notranslate nohighlight">\(s_f = \sqrt{s_f^2}\)</span>.</p>
+</div>
+<div class="section" id="observation-standard-deviation">
+<h3><span class="section-number">29.3.4. </span>Observation standard deviation<a class="headerlink" href="#observation-standard-deviation" title="Permalink to this headline">¶</a></h3>
+<p>Called “OSTDEV” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The sample variance of the observations is defined as</p>
+<div class="math notranslate nohighlight">
+\[s_o^2 = \frac{1}{T-1} \sum_{i=1}^T (o_i - \bar{o})^2 .\]</div>
+<p>The observed standard deviation is defined as <span class="math notranslate nohighlight">\(s_o = \sqrt{s_o^2}\)</span>.</p>
+</div>
+<div class="section" id="pearson-correlation-coefficient">
+<h3><span class="section-number">29.3.5. </span>Pearson Correlation Coefficient<a class="headerlink" href="#pearson-correlation-coefficient" title="Permalink to this headline">¶</a></h3>
+<p>Called “PR_CORR” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Pearson correlation coefficient, <strong>r</strong>, measures the strength of linear association between the forecasts and observations. The Pearson correlation coefficient is defined as:</p>
+<div class="math notranslate nohighlight">
+\[r = \frac{\sum_{i=1}^T (f_i - \bar{f})(o_i - \bar{o})}{\sqrt{\sum(f_i - \bar{f})^2} \sqrt{\sum(o_i - \bar{o})^2 }}\]</div>
+<p><strong>r</strong> can range between -1 and 1; a value of 1 indicates perfect correlation and a value of -1 indicates perfect negative correlation. A value of 0 indicates that the forecasts and observations are not correlated.</p>
+</div>
+<div class="section" id="spearman-rank-correlation-coefficient-rho-s">
+<h3><span class="section-number">29.3.6. </span>Spearman rank correlation coefficient <span class="math notranslate nohighlight">\((\rho_{s})\)</span><a class="headerlink" href="#spearman-rank-correlation-coefficient-rho-s" title="Permalink to this headline">¶</a></h3>
+<p>Called “SP_CORR” in CNT <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Spearman rank correlation coefficient (<span class="math notranslate nohighlight">\(\rho_{s}\)</span>) is a robust measure of association that is based on the ranks of the forecast and observed values rather than the actual values. That is, the forecast and observed samples are ordered from smallest to largest and rank values (from 1 to <strong>n</strong>, where <strong>n</strong> is the total number of pairs) are assigned. The pairs of forecast-observed ranks are then used to compute a correlation coefficient, analogous to the Pearson correlation coefficient, <strong>r</strong>.</p>
+<p>A simpler formulation of the Spearman-rank correlation is based on differences between the each of the pairs of ranks (denoted as <span class="math notranslate nohighlight">\(d_{i}\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\rho_{s} = \frac{6}{n(n^2 - 1)} \sum_{i=1}^n d_i^2\]</div>
+<p>Like <strong>r</strong>, the Spearman rank correlation coefficient ranges between -1 and 1; a value of 1 indicates perfect correlation and a value of -1 indicates perfect negative correlation. A value of 0 indicates that the forecasts and observations are not correlated.</p>
+</div>
+<div class="section" id="kendall-s-tau-statistic-tau">
+<h3><span class="section-number">29.3.7. </span>Kendall’s Tau statistic ( <span class="math notranslate nohighlight">\(\tau\)</span>)<a class="headerlink" href="#kendall-s-tau-statistic-tau" title="Permalink to this headline">¶</a></h3>
+<p>Called “KT_CORR” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>Kendall’s Tau statistic ( <span class="math notranslate nohighlight">\(\tau\)</span>) is a robust measure of the level of association between the forecast and observation pairs. It is defined as</p>
+<div class="math notranslate nohighlight">
+\[\tau = \frac{N_C - N_D}{n(n - 1) / 2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_C\)</span> is the number of “concordant” pairs and <span class="math notranslate nohighlight">\(N_D\)</span> is the number of “discordant” pairs. Concordant pairs are identified by comparing each pair with all other pairs in the sample; this can be done most easily by ordering all of the ( <span class="math notranslate nohighlight">\(f_{i}, o_{i}\)</span>) pairs according to <span class="math notranslate nohighlight">\(f_{i}\)</span>, in which case the <span class="math notranslate nohighlight">\(o_{i}\)</span> values won’t necessarily be in order. The number of concordant matches of a particular pair with other pairs is computed by counting the number of pairs (with larger values) for which the value of <span class="math notranslate nohighlight">\(o_i\)</span> for the current pair is exceeded (that is, pairs for which the values of <strong>f</strong> and <strong>o</strong> are both larger than the value for the current pair). Once this is done, <span class="math notranslate nohighlight">\(N_C\)</span> is computed by summing the counts for all pairs. The total number of possible pairs is <span class="math notranslate nohighlight">\(N_C\)</span>; thus, the number of discordant pairs is <span class="math notranslate nohighlight">\(N_D\)</span>.</p>
+<p>Like <strong>r</strong> and <span class="math notranslate nohighlight">\(\rho_{s}\)</span>, Kendall’s Tau ( <span class="math notranslate nohighlight">\(\tau\)</span>) ranges between -1 and 1; a value of 1 indicates perfect association (concordance) and a value of -1 indicates perfect negative association. A value of 0 indicates that the forecasts and observations are not associated.</p>
+</div>
+<div class="section" id="mean-error-me">
+<h3><span class="section-number">29.3.8. </span>Mean Error (ME)<a class="headerlink" href="#mean-error-me" title="Permalink to this headline">¶</a></h3>
+<p>Called “ME” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Mean Error, ME, is a measure of overall bias for continuous variables; in particular ME = Bias. It is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{ME} = \frac{1}{n} \sum_{i=1}^n (f_i - o_i) = \bar{f} - \bar{o} .\]</div>
+<p>A perfect forecast has ME = 0.</p>
+</div>
+<div class="section" id="mean-error-squared-me2">
+<h3><span class="section-number">29.3.9. </span>Mean Error Squared (ME2)<a class="headerlink" href="#mean-error-squared-me2" title="Permalink to this headline">¶</a></h3>
+<p>Called “ME2” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Mean Error Squared, ME2, is provided to give a complete breakdown of MSE in terms of squared Bias plus estimated variance of the error, as detailed below in the section on BCMSE. It is defined as <span class="math notranslate nohighlight">\(\text{ME2} = \text{ME}^2\)</span>.</p>
+<p>A perfect forecast has ME2 = 0.</p>
+</div>
+<div class="section" id="multiplicative-bias">
+<h3><span class="section-number">29.3.10. </span>Multiplicative Bias<a class="headerlink" href="#multiplicative-bias" title="Permalink to this headline">¶</a></h3>
+<p>Called “MBIAS” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>Multiplicative bias is simply the ratio of the means of the forecasts and the observations: <span class="math notranslate nohighlight">\(\text{MBIAS} = \bar{f} / \bar{o}\)</span></p>
+</div>
+<div class="section" id="mean-squared-error-mse">
+<h3><span class="section-number">29.3.11. </span>Mean-squared error (MSE)<a class="headerlink" href="#mean-squared-error-mse" title="Permalink to this headline">¶</a></h3>
+<p>Called “MSE” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>MSE measures the average squared error of the forecasts. Specifically, <span class="math notranslate nohighlight">\(\text{MSE} = \frac{1}{n}\sum (f_{i} - o_{i})^{2}\)</span>.</p>
+</div>
+<div class="section" id="root-mean-squared-error-rmse">
+<h3><span class="section-number">29.3.12. </span>Root-mean-squared error (RMSE)<a class="headerlink" href="#root-mean-squared-error-rmse" title="Permalink to this headline">¶</a></h3>
+<p>Called “RMSE” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>RMSE is simply the square root of the MSE, <span class="math notranslate nohighlight">\(\text{RMSE} = \sqrt{\text{MSE}}\)</span>.</p>
+</div>
+<div class="section" id="standard-deviation-of-the-error">
+<h3><span class="section-number">29.3.13. </span>Standard deviation of the error<a class="headerlink" href="#standard-deviation-of-the-error" title="Permalink to this headline">¶</a></h3>
+<p>Called “ESTDEV” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+</div>
+<div class="section" id="bias-corrected-mse">
+<h3><span class="section-number">29.3.14. </span>Bias-Corrected MSE<a class="headerlink" href="#bias-corrected-mse" title="Permalink to this headline">¶</a></h3>
+<p>Called “BCMSE” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>MSE and RMSE are strongly impacted by large errors. They also are strongly impacted by large bias (ME) values. MSE and RMSE can range from 0 to infinity. A perfect forecast would have MSE = RMSE = 0.</p>
+<p>MSE can be re-written as <span class="math notranslate nohighlight">\(\text{MSE} = (\bar{f} - \bar{o})^{2} + s_{f}^{2} + s_{o}^{2} - 2s_{f} s_{o} r_{fo}\)</span>, where <span class="math notranslate nohighlight">\(\bar{f} - \bar{o} = \text{ME}\)</span> and <span class="math notranslate nohighlight">\(s_f^2 + s_o^2 - 2 s_f s_o r_{fo}\)</span> is the estimated variance of the error, <span class="math notranslate nohighlight">\(s_{fo}^2\)</span>. Thus, <span class="math notranslate nohighlight">\(\text{MSE} = \text{ME}^2 + s_{f-o}^2\)</span>. To understand the behavior of MSE, it is important to examine both of the terms of MSE, rather than examining MSE alone. Moreover, MSE can be strongly influenced by ME, as shown by this decomposition.</p>
+<p>The standard deviation of the error, <span class="math notranslate nohighlight">\(s_{f-o}\)</span>, is <span class="math notranslate nohighlight">\(s_{f-o} = \sqrt{s_{f-o}^{2}} = \sqrt{s_{f}^{2} + s_{o}^{2} - 2 s_{f} s_{o} r_{fo}}\)</span>.</p>
+<p>Note that the square of the standard deviation of the error (ESTDEV2) is sometimes called the “Bias-corrected MSE” (BCMSE) because it removes the effect of overall bias from the forecast-observation squared differences.</p>
+</div>
+<div class="section" id="mean-absolute-error-mae">
+<h3><span class="section-number">29.3.15. </span>Mean Absolute Error (MAE)<a class="headerlink" href="#mean-absolute-error-mae" title="Permalink to this headline">¶</a></h3>
+<p>Called “MAE” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Mean Absolute Error (MAE) is defined as <span class="math notranslate nohighlight">\(\text{MAE} = \frac{1}{n} \sum|f_{i} - o_{i}|\)</span>.</p>
+<p>MAE is less influenced by large errors and also does not depend on the mean error. A perfect forecast would have MAE = 0.</p>
+</div>
+<div class="section" id="inter-quartile-range-of-the-errors-iqr">
+<h3><span class="section-number">29.3.16. </span>Inter Quartile Range of the Errors (IQR)<a class="headerlink" href="#inter-quartile-range-of-the-errors-iqr" title="Permalink to this headline">¶</a></h3>
+<p>Called “IQR” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Inter Quartile Range of the Errors (IQR) is the difference between the 75th and 25th percentiles of the errors. It is defined as <span class="math notranslate nohighlight">\(\text{IQR} = p_{75} (f_i - o_i) - p_{25} (f_i - o_i)\)</span>.</p>
+<p>IQR is another estimate of spread, similar to standard error, but is less influenced by large errors and also does not depend on the mean error. A perfect forecast would have IQR = 0.</p>
+</div>
+<div class="section" id="median-absolute-deviation-mad">
+<h3><span class="section-number">29.3.17. </span>Median Absolute Deviation (MAD)<a class="headerlink" href="#median-absolute-deviation-mad" title="Permalink to this headline">¶</a></h3>
+<p>Called “MAD” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Median Absolute Deviation (MAD) is defined as <span class="math notranslate nohighlight">\(\text{MAD} = \text{median}|f_i - o_i|\)</span>.</p>
+<p>MAD is an estimate of spread, similar to standard error, but is less influenced by large errors and also does not depend on the mean error. A perfect forecast would have MAD = 0.</p>
+</div>
+<div class="section" id="mean-squared-error-skill-score">
+<h3><span class="section-number">29.3.18. </span>Mean Squared Error Skill Score<a class="headerlink" href="#mean-squared-error-skill-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “MSESS” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The Mean Squared Error Skill Score is one minus the ratio of the forecast MSE to some reference MSE, usually climatology. It is sometimes referred to as Murphy’s Mean Squared Error Skill Score.</p>
+<div class="math notranslate nohighlight">
+\[\text{MSESS} = 1 - \frac{\text{MSE}_f}{\text{MSE}_r}\]</div>
+</div>
+<div class="section" id="root-mean-squared-forecast-anomaly">
+<h3><span class="section-number">29.3.19. </span>Root-mean-squared Forecast Anomaly<a class="headerlink" href="#root-mean-squared-forecast-anomaly" title="Permalink to this headline">¶</a></h3>
+<p>Called “RMSFA” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>RMSFA is the square root of the average squared forecast anomaly. Specifically, <span class="math notranslate nohighlight">\(\text{RMSFA} = \sqrt{\frac{1}{n} \sum(f_{i} - c_{i})^2}\)</span>.</p>
+</div>
+<div class="section" id="root-mean-squared-observation-anomaly">
+<h3><span class="section-number">29.3.20. </span>Root-mean-squared Observation Anomaly<a class="headerlink" href="#root-mean-squared-observation-anomaly" title="Permalink to this headline">¶</a></h3>
+<p>Called “RMSOA” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>RMSOA is the square root of the average squared observation anomaly. Specifically, <span class="math notranslate nohighlight">\(\text{RMSOA} = \sqrt{\frac{1}{n} \sum(o_{i} - c_{i})^2}\)</span>.</p>
+</div>
+<div class="section" id="percentiles-of-the-errors">
+<h3><span class="section-number">29.3.21. </span>Percentiles of the errors<a class="headerlink" href="#percentiles-of-the-errors" title="Permalink to this headline">¶</a></h3>
+<p>Called “E10”, “E25”, “E50”, “E75”, “E90” in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>Percentiles of the errors provide more information about the distribution of errors than can be obtained from the mean and standard deviations of the errors. Percentiles are computed by ordering the errors from smallest to largest and computing the rank location of each percentile in the ordering, and matching the rank to the actual value. Percentiles can also be used to create box plots of the errors. In MET, the 0.10th, 0.25th, 0.50th, 0.75th, and 0.90th quantile values of the errors are computed.</p>
+</div>
+<div class="section" id="anomaly-correlation-coefficient">
+<h3><span class="section-number">29.3.22. </span>Anomaly Correlation Coefficient<a class="headerlink" href="#anomaly-correlation-coefficient" title="Permalink to this headline">¶</a></h3>
+<p>Called “ANOM_CORR” and “ANOM_CORR_UNCNTR” for centered and uncentered versions in CNT output <a class="reference internal" href="point-stat.html#table-ps-format-info-cnt"><span class="std std-numref">Table 7.6</span></a></p>
+<p>The anomaly correlation coefficient is equivalent to the Pearson correlation coefficient, except that both the forecasts and observations are first adjusted according to a climatology value. The anomaly is the difference between the individual forecast or observation and the typical situation, as measured by a climatology (<strong>c</strong>) of some variety. It measures the strength of linear association between the forecast anomalies and observed anomalies. The anomaly correlation coefficient is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{Anomaly Correlation} = \frac{\sum(f_i - c)(o_i - c)}{\sqrt{\sum(f_i - c)^2} \sqrt{\sum(o_i -c)^2}} .\]</div>
+<p>The centered anomaly correlation coefficient (ANOM_CORR) which includes the mean error is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{ANOM_CORR } = \frac{ \bar{[(f - c) - \bar{(f - c)}][(a - c) - \bar{(a - c)}]}}{ \sqrt{ \bar{( (f - c) - \bar{(f - c)})^2} \bar{( (a - c) - \bar{(a - c)})^2}}}\]</div>
+<p>The uncentered anomaly correlation coefficient (ANOM_CORR_UNCNTR) which does not include the mean errors is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\text{Anomaly Correlation Raw } = \frac{ \bar{(f - c)(a - c)}}{ \sqrt{\bar{(f - c)^2} \bar{(a - c)^2}}}\]</div>
+<p>Anomaly correlation can range between -1 and 1; a value of 1 indicates perfect correlation and a value of -1 indicates perfect negative correlation. A value of 0 indicates that the forecast and observed anomalies are not correlated.</p>
+</div>
+<div class="section" id="partial-sums-lines-sl1l2-sal1l2-vl1l2-val1l2">
+<h3><span class="section-number">29.3.23. </span>Partial Sums lines (SL1L2, SAL1L2, VL1L2, VAL1L2)<a class="headerlink" href="#partial-sums-lines-sl1l2-sal1l2-vl1l2-val1l2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="point-stat.html#table-ps-format-info-sl1l2"><span class="std std-numref">Table 7.15</span></a>, <a class="reference internal" href="point-stat.html#table-ps-format-info-sal1l2"><span class="std std-numref">Table 7.16</span></a>, <a class="reference internal" href="point-stat.html#table-ps-format-info-vl1l2"><span class="std std-numref">Table 7.17</span></a>, and <a class="reference internal" href="point-stat.html#table-ps-format-info-val1l2"><span class="std std-numref">Table 7.18</span></a></p>
+<p>The SL1L2, SAL1L2, VL1L2, and VAL1L2 line types are used to store data summaries (e.g. partial sums) that can later be accumulated into verification statistics. These are divided according to scalar or vector summaries (S or V). The climate anomaly values (A) can be stored in place of the actuals, which is just a re-centering of the values around the climatological average. L1 and L2 refer to the L1 and L2 norms, the distance metrics commonly referred to as the “city block” and “Euclidean” distances. The city block is the absolute value of a distance while the Euclidean distance is the square root of the squared distance.</p>
+<p>The partial sums can be accumulated over individual cases to produce statistics for a longer period without any loss of information because these sums are <em>sufficient</em> for resulting statistics such as RMSE, bias, correlation coefficient, and MAE (<a class="reference internal" href="refs.html#mood-1974"><span class="std std-ref">Mood et al, 1974</span></a>). Thus, the individual errors need not be stored, all of the information relevant to calculation of statistics are contained in the sums. As an example, the sum of all data points and the sum of all squared data points (or equivalently, the sample mean and sample variance) are <em>jointly sufficient</em> for estimates of the Gaussian distribution mean and variance.</p>
+<p><em>Minimally sufficient</em> statistics are those that condense the data most, with no loss of information. Statistics based on L1 and L2 norms allow for good compression of information. Statistics based on other norms, such as order statistics, do not result in good compression of information. For this reason, statistics such as RMSE are often preferred to statistics such as the median absolute deviation. The partial sums are not sufficient for order statistics, such as the median or quartiles.</p>
+</div>
+<div class="section" id="scalar-l1-and-l2-values">
+<h3><span class="section-number">29.3.24. </span>Scalar L1 and L2 values<a class="headerlink" href="#scalar-l1-and-l2-values" title="Permalink to this headline">¶</a></h3>
+<p>Called “FBAR”, “OBAR”, “FOBAR”, “FFBAR”, and “OOBAR” in SL1L2 output <a class="reference internal" href="point-stat.html#table-ps-format-info-sl1l2"><span class="std std-numref">Table 7.15</span></a></p>
+<p>These statistics are simply the 1st and 2nd moments of the forecasts, observations and errors:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{FBAR} = \text{Mean}(f) = \bar{f} = \frac{1}{n} \sum_{i=1}^n f_i\\\text{OBAR} = \text{Mean}(o) = \bar{o} = \frac{1}{n} \sum_{i=1}^n o_i\\\text{FOBAR} = \text{Mean}(fo) = \bar{fo} = \frac{1}{n} \sum_{i=1}^n f_i o_i\\\text{FFBAR} = \text{Mean}(f^2) = \bar{f}^2 = \frac{1}{n} \sum_{i=1}^n f_i^2\\\text{OOBAR} = \text{Mean}(o^2) = \bar{o}^2 = \frac{1}{n} \sum_{i=1}^n o_i^2\end{aligned}\end{align} \]</div>
+<p>Some of the other statistics for continuous forecasts (e.g., RMSE) can be derived from these moments.</p>
+</div>
+<div class="section" id="scalar-anomaly-l1-and-l2-values">
+<h3><span class="section-number">29.3.25. </span>Scalar anomaly L1 and L2 values<a class="headerlink" href="#scalar-anomaly-l1-and-l2-values" title="Permalink to this headline">¶</a></h3>
+<p>Called “FABAR”, “OABAR”, “FOABAR”, “FFABAR”, “OOABAR” in SAL1L2 output <a class="reference internal" href="point-stat.html#table-ps-format-info-sal1l2"><span class="std std-numref">Table 7.16</span></a></p>
+<p>Computation of these statistics requires a climatological value, c. These statistics are the 1st and 2nd moments of the scalar anomalies. The moments are defined as:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{FABAR} = \text{Mean}(f - c) = \bar{f - c} = \frac{1}{n} \sum_{i=1}^n (f_i - c)\\\text{OABAR} = \text{Mean}(o - c) = \bar{o - c} = \frac{1}{n} \sum_{i=1}^n (o_i - c)\\\text{FOABAR} = \text{Mean}[(f - c)(o - c)] = \bar{(f - c)(o - c)} = \frac{1}{n} \sum_{i=1}^n (f_i - c)(o_i - c)\\\text{FFABAR} = \text{Mean}[(f - c)^2] = \bar{(f - c)}^2 = \frac{1}{n} \sum_{i=1}^n (f_i - c)^2\\\text{OOABAR} = \text{Mean}[(o - c)^2] = \bar{(o - c)}^2 = \frac{1}{n} \sum_{i=1}^n (o_i - c)^2\end{aligned}\end{align} \]</div>
+</div>
+<div class="section" id="vector-l1-and-l2-values">
+<h3><span class="section-number">29.3.26. </span>Vector L1 and L2 values<a class="headerlink" href="#vector-l1-and-l2-values" title="Permalink to this headline">¶</a></h3>
+<p>Called “UFBAR”, “VFBAR”, “UOBAR”, “VOBAR”, “UVFOBAR”, “UVFFBAR”, “UVOOBAR” in VL1L2 output <a class="reference internal" href="point-stat.html#table-ps-format-info-vl1l2"><span class="std std-numref">Table 7.17</span></a></p>
+<p>These statistics are the moments for wind vector values, where <strong>u</strong> is the E-W wind component and <strong>v</strong> is the N-S wind component ( <span class="math notranslate nohighlight">\(u_f\)</span> is the forecast E-W wind component; <span class="math notranslate nohighlight">\(u_o\)</span> is the observed E-W wind component; <span class="math notranslate nohighlight">\(v_f\)</span> is the forecast N-S wind component; and <span class="math notranslate nohighlight">\(v_o\)</span> is the observed N-S wind component). The following measures are computed:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{UFBAR} = \text{Mean}(u_f) = \bar{u}_f = \frac{1}{n} \sum_{i=1}^n u_{fi}\\\text{VFBAR} = \text{Mean}(v_f) = \bar{v}_f = \frac{1}{n} \sum_{i=1}^n v_{fi}\\\text{UOBAR} = \text{Mean}(u_o) = \bar{u}_o = \frac{1}{n} \sum_{i=1}^n u_{oi}\\\text{VOBAR} = \text{Mean}(v_o) = \bar{v}_o = \frac{1}{n} \sum_{i=1}^n v_{oi}\\\text{UVFOBAR} = \text{Mean}(u_f u_o + v_f v_o) = \frac{1}{n} \sum_{i=1}^n (u_{fi} u_{oi} + v_{fi} v_{oi})\\\text{UVFFBAR} = \text{Mean}(u_f^2 + v_f^2) = \frac{1}{n} \sum_{i=1}^n (u_{fi}^2 + v_{fi}^2)\\\text{UVOOBAR} = \text{Mean}(u_o^2 + v_o^2) = \frac{1}{n} \sum_{i=1}^n (u_{oi}^2 + v_{oi}^2)\end{aligned}\end{align} \]</div>
+</div>
+<div class="section" id="vector-anomaly-l1-and-l2-values">
+<h3><span class="section-number">29.3.27. </span>Vector anomaly L1 and L2 values<a class="headerlink" href="#vector-anomaly-l1-and-l2-values" title="Permalink to this headline">¶</a></h3>
+<p>Called “UFABAR”, “VFABAR”, “UOABAR”, “VOABAR”, “UVFOABAR”, “UVFFABAR”, “UVOOABAR” in VAL1L2 output <a class="reference internal" href="point-stat.html#table-ps-format-info-val1l2"><span class="std std-numref">Table 7.18</span></a></p>
+<p>These statistics require climatological values for the wind vector components, <span class="math notranslate nohighlight">\(u_c \text{ and } v_c\)</span>. The measures are defined below:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{UFABAR} = \text{Mean}(u_f - u_c) = \frac{1}{n} \sum_{i=1}^n (u_{fi} - u_c)\\\text{VFBAR} = \text{Mean}(v_f - v_c) = \frac{1}{n} \sum_{i=1}^n (v_{fi} - v_c)\\\text{UOABAR} = \text{Mean}(u_o - u_c) = \frac{1}{n} \sum_{i=1}^n (u_{oi} - u_c)\\\text{VOABAR} = \text{Mean}(v_o - v_c) = \frac{1}{n} \sum_{i=1}^n (v_{oi} - v_c)\\\begin{split}\text{UVFOABAR} &amp;= \text{Mean}[(u_f - u_c)(u_o - u_c) + (v_f - v_c)(v_o - v_c)] \\
+                &amp;= \frac{1}{n} \sum_{i=1}^n (u_{fi} - u_c) + (u_{oi} - u_c) + (v_{fi} - v_c)(v_{oi} - v_c)\end{split}\\\text{UVFFABAR} = \text{Mean}[(u_f - u_c)^2 + (v_f - v_c)^2] = \frac{1}{n} \sum_{i=1}^n ((u_{fi} - u_c)^2 + (v_{fi} - v_c)^2)\\\text{UVOOABAR} = \text{Mean}[(u_o - u_c)^2 + (v_o - v_c)^2] = \frac{1}{n} \sum_{i=1}^n ((u_{oi} - u_c)^2 + (v_{oi} - v_c)^2)\end{aligned}\end{align} \]</div>
+</div>
+<div class="section" id="gradient-values">
+<h3><span class="section-number">29.3.28. </span>Gradient values<a class="headerlink" href="#gradient-values" title="Permalink to this headline">¶</a></h3>
+<p>Called “TOTAL”, “FGBAR”, “OGBAR”, “MGBAR”, “EGBAR”, “S1”, “S1_OG”, and “FGOG_RATIO” in GRAD output <a class="reference internal" href="grid-stat.html#table-gs-format-info-grad"><span class="std std-numref">Table 8.6</span></a></p>
+<p>These statistics are only computed by the Grid_Stat tool and require vectors. Here <span class="math notranslate nohighlight">\(\nabla\)</span> is the gradient operator, which in this applications signifies the difference between adjacent grid points in both the grid-x and grid-y directions. TOTAL is the count of grid locations used in the calculations. The remaining measures are defined below:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\text{FGBAR} = \text{Mean}|\nabla f| = \frac{1}{n} \sum_{i=1}^n | \nabla f_i|\\\text{OGBAR} = \text{Mean}|\nabla o| = \frac{1}{n} \sum_{i=1}^n | \nabla o_i|\\\text{MGBAR} = \text{Max(FGBAR, OGBAR)}\\\text{EGBAR} = \text{Mean}|\nabla f - \nabla o| = \frac{1}{n} \sum_{i=1}^n | \nabla f_i - \nabla o_i|\\\text{S1} = 100 \frac{\sum_{i=1}^n (w_i (e_g))}{\sum_{i=1}^n (w_i (G_L))}_i ,\end{aligned}\end{align} \]</div>
+<p>where the weights are applied at each grid location, with values assigned according to the weight option specified in the configuration file. The components of the <span class="math notranslate nohighlight">\(S1\)</span> equation are as follows:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}e_g = (| \frac{\delta}{\delta x}(f - o)| + | \frac{\delta}{\delta y}(f - o)|)\\G_L = \text{max}(| \frac{\delta f}{\delta x}|,| \frac{\delta o}{\delta x}|) + \text{max}(| \frac{\delta f}{\delta y}|,| \frac{\delta o}{\delta y}|)\\\text{S1_OG} = \frac{\text{EGBAR}}{\text{OGBAR}}\\\text{FGOG_RATIO} = \frac{\text{FGBAR}}{\text{OGBAR}}\end{aligned}\end{align} \]</div>
+</div>
+</div>
+<div class="section" id="met-verification-measures-for-probabilistic-forecasts">
+<h2><span class="section-number">29.4. </span>MET verification measures for probabilistic forecasts<a class="headerlink" href="#met-verification-measures-for-probabilistic-forecasts" title="Permalink to this headline">¶</a></h2>
+<p>The results of the probabilistic verification methods that are included in the Point-Stat, Grid-Stat, and Stat-Analysis tools are summarized using a variety of measures. MET treats probabilistic forecasts as categorical, divided into bins by user-defined thresholds between zero and one. For the categorical measures, if a forecast probability is specified in a formula, the mid-point value of the bin is used. These measures include the Brier Score (BS) with confidence bounds (<a class="reference internal" href="refs.html#bradley-2008"><span class="std std-ref">Bradley, 2008</span></a>); the joint distribution, calibration-refinement, likelihood-base rate (<a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks, 2011</span></a>); and receiver operating characteristic information. Using these statistics, reliability and discrimination diagrams can be produced.</p>
+<p>The verification statistics for probabilistic forecasts of dichotomous variables are formulated using a contingency table such as the one shown in <a class="reference internal" href="#table-cont-table-counts"><span class="std std-numref">Table 29.3</span></a>. In this table f represents the forecasts and o represents the observations; the two possible forecast and observation values are represented by the values 0 and 1. The values in <a class="reference internal" href="#table-cont-table-counts"><span class="std std-numref">Table 29.3</span></a> are counts of the number of occurrences of all possible combinations of forecasts and observations.</p>
+<span id="table-cont-table-counts"></span><table class="colwidths-auto docutils align-default" id="id5">
+<caption><span class="caption-number">Table 29.3 </span><span class="caption-text">2x2 contingency table in terms of counts. The <span class="math notranslate nohighlight">\(\mathbf{n_{ij}}\)</span> values in the table represent the counts in each forecast-observation category, where <strong>i</strong> represents the forecast and <strong>j</strong> represents the observations. The “.” symbols in the total cells represent sums across categories.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Forecast</p></th>
+<th class="head"><p>Observation</p></th>
+<th class="head"></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td><p><strong>o = 1</strong> (e.g., “Yes”)</p></td>
+<td><p><strong>o = 0</strong> (e.g., “No”)</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_1\)</span> = midpoint of (0 and threshold1)</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{11}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{10}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{1.} = n_{11} + n_{10}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_2\)</span> = midpoint of (threshold1 and threshold2)</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{21}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{20}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{2.} = n_{21} + n_{20}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_j\)</span> = midpoint of (threshold <strong>i</strong> and 1)</p></td>
+<td><p><strong>n</strong></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{i0}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_j = n_{j1} + n_{j0}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{.1} = \sum n_{i1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(n_{.0} = \sum n_{i0}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf{T} = \sum n_i\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="reliability">
+<h3><span class="section-number">29.4.1. </span>Reliability<a class="headerlink" href="#reliability" title="Permalink to this headline">¶</a></h3>
+<p>Called “RELIABILITY” in PSTD output <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a></p>
+<p>A component of the Brier score. Reliability measures the average difference between forecast probability and average observed frequency. Ideally, this measure should be zero as larger numbers indicate larger differences. For example, on occasions when rain is forecast with 50% probability, it should actually rain half the time.</p>
+<div class="math notranslate nohighlight">
+\[\text{Reliability} = \frac{1}{T} \sum n_i (p_i - \bar{o}_i)^2\]</div>
+</div>
+<div class="section" id="resolution">
+<h3><span class="section-number">29.4.2. </span>Resolution<a class="headerlink" href="#resolution" title="Permalink to this headline">¶</a></h3>
+<p>Called “RESOLUTION” in PSTD output <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a></p>
+<p>A component of the Brier score that measures how well forecasts divide events into subsets with different outcomes. Larger values of resolution are best since it is desirable for event frequencies in the subsets to be different than the overall event frequency.</p>
+<div class="math notranslate nohighlight">
+\[\text{Resolution} = \frac{1}{T} n_{i.}(\bar{o}_i - \bar{o})^2\]</div>
+</div>
+<div class="section" id="uncertainty">
+<h3><span class="section-number">29.4.3. </span>Uncertainty<a class="headerlink" href="#uncertainty" title="Permalink to this headline">¶</a></h3>
+<p>Called “UNCERTAINTY” in PSTD output <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a></p>
+<p>A component of the Brier score. For probabilistic forecasts, uncertainty is a function only of the frequency of the event. It does not depend on the forecasts, thus there is no ideal or better value. Note that uncertainty is equivalent to the variance of the event occurrence.</p>
+<div class="math notranslate nohighlight">
+\[\text{Uncertainty} = \frac{n_{.1}}{T}(1 - \frac{n_{.1}}{T})\]</div>
+</div>
+<div class="section" id="brier-score">
+<h3><span class="section-number">29.4.4. </span>Brier score<a class="headerlink" href="#brier-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “BRIER” in PSTD output <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a></p>
+<p>The Brier score is the mean squared probability error. In MET, the Brier Score (BS) is calculated from the <strong>nx2</strong> contingency table via the following equation:</p>
+<div class="math notranslate nohighlight">
+\[\text{BS} = \frac{1}{T} \sum_{i=1}^K [n_{i1} (1 - p_i)^2 + n_{i0} p_i^2]\]</div>
+<p>The equation you will most often see in references uses the individual probability forecasts ( <span class="math notranslate nohighlight">\(\rho_{i}\)</span>) and the corresponding observations ( <span class="math notranslate nohighlight">\(o_{i}\)</span>), and is given as <span class="math notranslate nohighlight">\(\text{BS} = \frac{1}{T}\sum (p_i - o_i)^2\)</span>. This equation is equivalent when the midpoints of the binned probability values are used as the <span class="math notranslate nohighlight">\(p_i\)</span> .</p>
+<p>BS can be partitioned into three terms: (1) reliability, (2) resolution, and (3) uncertainty (<a class="reference internal" href="refs.html#murphy-1987"><span class="std std-ref">Murphy, 1987</span></a>).</p>
+<div class="math notranslate nohighlight">
+\[\text{BS} = \frac{1}{T} \sum_i (p_i - o_i)^2 = \frac{1}{T} \sum n_{i.} (p_i - \bar{o}_i)^2 - \frac{1}{T} \sum n_{i.} (\bar{o}_i - \bar{o})^2 + \bar{o}(1 - \bar{o})\]</div>
+<p>This score is sensitive to the base rate or climatological frequency of the event. Forecasts of rare events can have a good BS without having any actual skill. Since Brier score is a measure of error, smaller values are better.</p>
+</div>
+<div class="section" id="brier-skill-score-bss">
+<h3><span class="section-number">29.4.5. </span>Brier Skill Score (BSS)<a class="headerlink" href="#brier-skill-score-bss" title="Permalink to this headline">¶</a></h3>
+<p>Called “BSS” and “BSS_SMPL” in PSTD output <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a></p>
+<p>BSS is a skill score based on the Brier Scores of the forecast and a reference forecast, such as climatology. BSS is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{BSS} = 1 - \frac{\text{BS}_{fcst}}{\text{BS}_{ref}}.\]</div>
+<p>BSS is computed using the climatology specified in the configuration file while BSS_SMPL is computed using the sample climatology of the current set of observations.</p>
+</div>
+<div class="section" id="oy-tp-observed-yes-total-proportion">
+<h3><span class="section-number">29.4.6. </span>OY_TP - Observed Yes Total Proportion<a class="headerlink" href="#oy-tp-observed-yes-total-proportion" title="Permalink to this headline">¶</a></h3>
+<p>Called “OY_TP” in PJC output <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a></p>
+<p>This is the cell probability for row <strong>i</strong>, column <strong>j=1</strong> (observed event), a part of the joint distribution (<a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks, 2011</span></a>). Along with ON_TP, this set of measures provides information about the joint distribution of forecasts and events. There are no ideal or better values.</p>
+<div class="math notranslate nohighlight">
+\[\text{OYTP}(i) = \frac{n_{i1}}{T} = \text{probability}(o_{i1})\]</div>
+</div>
+<div class="section" id="on-tp-observed-no-total-proportion">
+<h3><span class="section-number">29.4.7. </span>ON_TP - Observed No Total Proportion<a class="headerlink" href="#on-tp-observed-no-total-proportion" title="Permalink to this headline">¶</a></h3>
+<p>Called “ON_TP” in PJC output <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a></p>
+<p>This is the cell probability for row <strong>i</strong>, column <strong>j=0</strong> (observed non-event), a part of the joint distribution (<a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks, 2011</span></a>). Along with OY_TP, this set of measures provides information about the joint distribution of forecasts and events. There are no ideal or better values.</p>
+<div class="math notranslate nohighlight">
+\[\text{ONTP}(i) = \frac{n_{i0}}{T} = \text{probability}(o_{i0})\]</div>
+</div>
+<div class="section" id="calibration">
+<h3><span class="section-number">29.4.8. </span>Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">¶</a></h3>
+<p>Called “CALIBRATION” in PJC output <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a></p>
+<p>Calibration is the conditional probability of an event given each probability forecast category (i.e. each row in the <strong>nx2</strong> contingency table). This set of measures is paired with refinement in the calibration-refinement factorization discussed in <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a>. A well-calibrated forecast will have calibration values that are near the forecast probability. For example, a 50% probability of precipitation should ideally have a calibration value of 0.5. If the calibration value is higher, then the probability has been underestimated, and vice versa.</p>
+<div class="math notranslate nohighlight">
+\[\text{Calibration}(i) = \frac{n_{i1}}{n_{1.}} = \text{probability}(o_1|p_i)\]</div>
+</div>
+<div class="section" id="refinement">
+<h3><span class="section-number">29.4.9. </span>Refinement<a class="headerlink" href="#refinement" title="Permalink to this headline">¶</a></h3>
+<p>Called “REFINEMENT” in PJC output <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a></p>
+<p>The relative frequency associated with each forecast probability, sometimes called the marginal distribution or row probability. This measure ignores the event outcome, and simply provides information about the frequency of forecasts for each probability category. This set of measures is paired with the calibration measures in the calibration-refinement factorization discussed by <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a>.</p>
+<div class="math notranslate nohighlight">
+\[\text{Refinement}(i) = \frac{n_{i.}}{T} = \text{probability}(p_i)\]</div>
+</div>
+<div class="section" id="likelihood">
+<h3><span class="section-number">29.4.10. </span>Likelihood<a class="headerlink" href="#likelihood" title="Permalink to this headline">¶</a></h3>
+<p>Called “LIKELIHOOD” in PJC output <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a></p>
+<p>Likelihood is the conditional probability for each forecast category (row) given an event and a component of the likelihood-base rate factorization; see <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a> for details. This set of measures considers the distribution of forecasts for only the cases when events occur. Thus, as the forecast probability increases, so should the likelihood. For example, 10% probability of precipitation forecasts should have a much smaller likelihood value than 90% probability of precipitation forecasts.</p>
+<div class="math notranslate nohighlight">
+\[\text{Likelihood}(i) = \frac{n_{i1}}{n_{.1}} = \text{probability}(p_i|o_1)\]</div>
+<p>Likelihood values are also used to create “discrimination” plots that compare the distribution of forecast values for events to the distribution of forecast values for non-events. These plots show how well the forecasts categorize events and non-events. The distribution of forecast values for non-events can be derived from the POFD values computed by MET for the user-specified thresholds.</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">29.4.11. </span>Base Rate<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Called “BASER” in PJC output <a class="reference internal" href="point-stat.html#table-ps-format-info-pjc"><span class="std std-numref">Table 7.12</span></a></p>
+<p>This is the probability of an event for each forecast category <span class="math notranslate nohighlight">\(p_i\)</span> (row), i.e. the conditional base rate. This set of measures is paired with likelihood in the likelihood-base rate factorization, see <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a> for further information. This measure is calculated for each row of the contingency table. Ideally, the event should become more frequent as the probability forecast increases.</p>
+<div class="math notranslate nohighlight">
+\[\text{Base Rate}(i) = \frac{n_{i1}}{n_{i.}} = \text{probability}(o_{i1})\]</div>
+</div>
+<div class="section" id="reliability-diagram">
+<h3><span class="section-number">29.4.12. </span>Reliability diagram<a class="headerlink" href="#reliability-diagram" title="Permalink to this headline">¶</a></h3>
+<p>The reliability diagram is a plot of the observed frequency of events versus the forecast probability of those events, with the range of forecast probabilities divided into categories.</p>
+<p>The ideal forecast (i.e., one with perfect reliability) has conditional observed probabilities that are equivalent to the forecast probability, on average. On a reliability plot, this equivalence is represented by the one-to-one line (the solid line in the figure below). So, better forecasts are closer to the diagonal line and worse ones are farther away. The distance of each point from the diagonal gives the conditional bias. Points that lie below the diagonal line indicate over-forecasting; in other words, the forecast probabilities are too large. The forecast probabilities are too low when the points lie above the line. The reliability diagram is conditioned on the forecasts so it is often used in combination with the ROC, which is conditioned on the observations, to provide a “complete” representation of the performance of probabilistic forecasts.</p>
+<div class="figure align-default" id="id6">
+<span id="appendixc-rel-diag"></span><img alt="../_images/appendixC-rel_diag.jpg" src="../_images/appendixC-rel_diag.jpg" />
+<p class="caption"><span class="caption-number">Figure 29.1 </span><span class="caption-text">Example of Reliability Diagram</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="receiver-operating-characteristic">
+<h3><span class="section-number">29.4.13. </span>Receiver operating characteristic<a class="headerlink" href="#receiver-operating-characteristic" title="Permalink to this headline">¶</a></h3>
+<p>MET produces hit rate (POD) and false alarm rate (POFD) values for each user-specified threshold. This information can be used to create a scatter plot of POFD vs. POD. When the points are connected, the plot is generally referred to as the receiver operating characteristic (ROC) curve (also called the “relative operating characteristic” curve). See the area under the ROC curve (AUC) entry for related information.</p>
+<p>A ROC plot is shown for an example set of forecasts, with a solid line connecting the points for six user-specified thresholds (0.25, 0.35, 0.55, 0.65, 0.75, 0.85). The diagonal dashed line indicates no skill while the dash-dot line shows the ROC for a perfect forecast.</p>
+<p>An ROC curve shows how well the forecast discriminates between two outcomes, so it is a measure of resolution. The ROC is invariant to linear transformations of the forecast, and is thus unaffected by bias. An unbiased (i.e., well-calibrated) forecast can have the same ROC as a biased forecast, though most would agree that an unbiased forecast is “better”. Since the ROC is conditioned on the observations, it is often paired with the reliability diagram, which is conditioned on the forecasts.</p>
+<div class="figure align-default" id="id7">
+<span id="appendixc-roc-example"></span><img alt="../_images/appendixC-roc_example.jpg" src="../_images/appendixC-roc_example.jpg" />
+<p class="caption"><span class="caption-number">Figure 29.2 </span><span class="caption-text">Example of ROC Curve</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="area-under-the-roc-curve-auc">
+<h3><span class="section-number">29.4.14. </span>Area Under the ROC curve (AUC)<a class="headerlink" href="#area-under-the-roc-curve-auc" title="Permalink to this headline">¶</a></h3>
+<p>Called “ROC_AUC” in PSTD output <a class="reference internal" href="point-stat.html#table-ps-format-info-pstd"><span class="std std-numref">Table 7.11</span></a></p>
+<p>The area under the receiver operating characteristic (ROC) curve is often used as a single summary measure. A larger AUC is better. A perfect forecast has AUC=1. Though the minimum value is 0, an AUC of 0.5 indicates no skill.</p>
+<p>The area under the curve can be estimated in a variety of ways. In MET, the simplest trapezoid method is used to calculate the area. AUC is calculated from the series of hit rate (POD) and false alarm rate (POFD) values (see the ROC entry below) for each user-specified threshold.</p>
+<div class="math notranslate nohighlight">
+\[\text{AUC} = \frac{1}{2} \sum_{i=1}^{Nthresh} (\text{POD}_{i+1} + \text{POD}_i)(\text{POFD}_{i+1} - \text{POFD}_i)\]</div>
+</div>
+</div>
+<div class="section" id="met-verification-measures-for-ensemble-forecasts">
+<span id="app-c-ensemble"></span><h2><span class="section-number">29.5. </span>MET verification measures for ensemble forecasts<a class="headerlink" href="#met-verification-measures-for-ensemble-forecasts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="crps">
+<h3><span class="section-number">29.5.1. </span>CRPS<a class="headerlink" href="#crps" title="Permalink to this headline">¶</a></h3>
+<p>Called “CRPS” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 9.2</span></a></p>
+<p>The continuous ranked probability score (CRPS) is the integral, over all possible thresholds, of the Brier scores (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al, 2004</span></a>). In MET, the CRPS calculation uses a normal distribution fit to the ensemble forecasts. In many cases, use of other distributions would be better.</p>
+<p>WARNING: The normal distribution is probably a good fit for temperature and pressure, and possibly a not horrible fit for winds. However, the normal approximation will not work on most precipitation forecasts and may fail for many other atmospheric variables.</p>
+<p>Closed form expressions for the CRPS are difficult to define when using data rather than distribution functions. However, if a normal distribution can be assumed, then the following equation gives the CRPS for each individual observation (denoted by a lowercase crps) and the corresponding distribution of forecasts.</p>
+<div class="math notranslate nohighlight">
+\[\text{crps}_i (N( \mu, \sigma^2),y) = \sigma ( \frac{y - \mu}{\sigma} (2 \Phi (\frac{y - \mu}{\sigma}) -1) + 2 \phi (\frac{y - \mu}{\sigma}) - \frac{1}{\sqrt{\pi}})\]</div>
+<p>In this equation, the y represents the event threshold. The estimated mean and standard deviation of the ensemble forecasts ( <span class="math notranslate nohighlight">\(\mu \text{ and } \sigma\)</span>) are used as the parameters of the normal distribution. The values of the normal distribution are represented by the probability density function (PDF) denoted by <span class="math notranslate nohighlight">\(\Phi\)</span> and the cumulative distribution function (CDF), denoted in the above equation by <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<p>The overall CRPS is calculated as the average of the individual measures. In equation form: <span class="math notranslate nohighlight">\(\text{CRPS} = \text{average(crps) } = \frac{1}{N} \sum_i^N \text{crps}_i\)</span>.</p>
+<p>The score can be interpreted as a continuous version of the mean absolute error (MAE). Thus, the score is negatively oriented, so smaller is better. Further, similar to MAE, bias will inflate the CRPS. Thus, bias should also be calculated and considered when judging forecast quality using CRPS.</p>
+</div>
+<div class="section" id="crps-skill-score">
+<h3><span class="section-number">29.5.2. </span>CRPS Skill Score<a class="headerlink" href="#crps-skill-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “CRPSS” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 9.2</span></a></p>
+<p>The continuous ranked probability skill score (CRPSS) is similar to the MSESS and the BSS, in that it compares its namesake score to that of a reference forecast to produce a positively oriented score between 0 and 1.</p>
+<div class="math notranslate nohighlight">
+\[\text{CRPSS} = 1 - \frac{\text{CRPS}_{fcst}}{ \text{CRPS}_{ref}}\]</div>
+</div>
+<div class="section" id="ign">
+<h3><span class="section-number">29.5.3. </span>IGN<a class="headerlink" href="#ign" title="Permalink to this headline">¶</a></h3>
+<p>Called “IGN” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 9.2</span></a></p>
+<p>The ignorance score (IGN) is the negative logarithm of a predictive probability density function (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al, 2004</span></a>). In MET, the IGN is calculated based on a normal approximation to the forecast distribution (i.e. a normal pdf is fit to the forecast values). This approximation may not be valid, especially for discontinuous forecasts like precipitation, and also for very skewed forecasts. For a single normal distribution <strong>N</strong> with parameters <span class="math notranslate nohighlight">\(\mu \text{ and } \sigma\)</span>, the ignorance score is</p>
+<div class="math notranslate nohighlight">
+\[\text{ign} (N( \mu, \sigma),y) = \frac{1}{2} \ln (2 \pi \sigma^2 ) + \frac{(y - \mu)^2}{\sigma^2}.\]</div>
+<p>Accumulation of the ignorance score for many forecasts is via the average of individual ignorance scores. This average ignorance score is the value output by the MET software. Like many error statistics, the IGN is negatively oriented, so smaller numbers indicate better forecasts.</p>
+</div>
+<div class="section" id="pit">
+<h3><span class="section-number">29.5.4. </span>PIT<a class="headerlink" href="#pit" title="Permalink to this headline">¶</a></h3>
+<p>Called “PIT” in ORANK output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-orank"><span class="std std-numref">Table 9.7</span></a></p>
+<p>The probability integral transform (PIT) is the analog of the rank histogram for a probability distribution forecast (<a class="reference internal" href="refs.html#dawid-1984"><span class="std std-ref">Dawid, 1984</span></a>). Its interpretation is the same as that of the verification rank histogram: Calibrated probabilistic forecasts yield PIT histograms that are flat, or uniform. Under-dispersed (not enough spread in the ensemble) forecasts have U-shaped PIT histograms while over-dispersed forecasts have bell-shaped histograms. In MET, the PIT calculation uses a normal distribution fit to the ensemble forecasts. In many cases, use of other distributions would be better.</p>
+</div>
+<div class="section" id="rank">
+<h3><span class="section-number">29.5.5. </span>RANK<a class="headerlink" href="#rank" title="Permalink to this headline">¶</a></h3>
+<p>Called “RANK” in ORANK output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-orank"><span class="std std-numref">Table 9.7</span></a></p>
+<p>The rank of an observation, compared to all members of an ensemble forecast, is a measure of dispersion of the forecasts (<a class="reference internal" href="refs.html#hamill-2001"><span class="std std-ref">Hamill, 2001</span></a>). When ensemble forecasts possesses the same amount of variability as the corresponding observations, then the rank of the observation will follow a discrete uniform distribution. Thus, a rank histogram will be approximately flat.</p>
+<p>The rank histogram does not provide information about the accuracy of ensemble forecasts. Further, examination of “rank” only makes sense for ensembles of a fixed size. Thus, if ensemble members are occasionally unavailable, the rank histogram should not be used. The PIT may be used instead.</p>
+</div>
+<div class="section" id="spread">
+<h3><span class="section-number">29.5.6. </span>SPREAD<a class="headerlink" href="#spread" title="Permalink to this headline">¶</a></h3>
+<p>Called “SPREAD” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 9.2</span></a></p>
+<p>Called “SPREAD” in ORANK output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-orank"><span class="std std-numref">Table 9.7</span></a></p>
+<p>The ensemble spread for a single observation is the standard deviation of the ensemble member forecast values at that location. When verifying against point observations, these values are written to the SPREAD column of the Observation Rank (ORANK) line type. The ensemble spread for a spatial masking region is computed as the square root of the mean of the ensemble variance for all observations falling within that mask. These values are written to the SPREAD column of the Ensemble Continuous Statistics (ECNT) line type.</p>
+<p>Note that prior to met-9.0.1, the ensemble spread of a spatial masking region was computed as the average of the spread values within that region. This algorithm was corrected in met-9.0.1 to average the ensemble variance values prior to computing the square root.</p>
+</div>
+</div>
+<div class="section" id="met-verification-measures-for-neighborhood-methods">
+<h2><span class="section-number">29.6. </span>MET verification measures for neighborhood methods<a class="headerlink" href="#met-verification-measures-for-neighborhood-methods" title="Permalink to this headline">¶</a></h2>
+<p>The results of the neighborhood verification approaches that are included in the Grid-Stat tool are summarized using a variety of measures. These measures include the Fractions Skill Score (FSS) and the Fractions Brier Score (FBS). MET also computes traditional contingency table statistics for each combination of threshold and neighborhood window size.</p>
+<p>The traditional contingency table statistics computed by the Grid-Stat neighborhood tool, and included in the NBRCTS output, are listed below:</p>
+<ul class="simple">
+<li><p>Base Rate (called “BASER” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Mean Forecast (called “FMEAN” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Accuracy (called “ACC” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Frequency Bias (called “FBIAS” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Probability of Detection (called “PODY” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Probability of Detection of the non-event (called “PODN” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Probability of False Detection (called “POFD” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>False Alarm Ratio (called “FAR” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Critical Success Index (called “CSI” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Gilbert Skill Score (called “GSS” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Hanssen-Kuipers Discriminant (called “HK” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Heidke Skill Score (called “HSS” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+<li><p>Odds Ratio (called “ODDS” in <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcts"><span class="std std-numref">Table 8.3</span></a>)</p></li>
+</ul>
+<p>All of these measures are defined in <a class="reference internal" href="#categorical-variables"><span class="std std-numref">Section 29.2</span></a>.</p>
+<p>In addition to these standard statistics, the neighborhood analysis provides additional continuous measures, the Fractions Brier Score and the Fractions Skill Score. For reference, the Asymptotic Fractions Skill Score and Uniform Fractions Skill Score are also calculated. These measures are defined here, but are explained in much greater detail in <a class="reference internal" href="refs.html#ebert-2008"><span class="std std-ref">Ebert (2008)</span></a> and <a class="reference internal" href="refs.html#roberts-2008"><span class="std std-ref">Roberts and Lean 2008</span></a>. Roberts and Lean (2008) also present an application of the methodology.</p>
+<div class="section" id="fractions-brier-score">
+<h3><span class="section-number">29.6.1. </span>Fractions Brier Score<a class="headerlink" href="#fractions-brier-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “FBS” in NBRCNT output <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcnt"><span class="std std-numref">Table 8.5</span></a></p>
+<p>The Fractions Brier Score (FBS) is defined as <span class="math notranslate nohighlight">\(\text{FBS} = \frac{1}{N} \sum_N [\langle P_f\rangle_s - \langle P_o\rangle_s]^2\)</span>, where N is the number of neighborhoods; <span class="math notranslate nohighlight">\(\langle P_{f} \rangle_{s}\)</span> is the proportion of grid boxes within a forecast neighborhood where the prescribed threshold was exceeded (i.e., the proportion of grid boxes that have forecast events); and <span class="math notranslate nohighlight">\(\langle P_{o}\rangle_{s}\)</span> is the proportion of grid boxes within an observed neighborhood where the prescribed threshold was exceeded (i.e., the proportion of grid boxes that have observed events).</p>
+</div>
+<div class="section" id="fractions-skill-score">
+<h3><span class="section-number">29.6.2. </span>Fractions Skill Score<a class="headerlink" href="#fractions-skill-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “FSS” in NBRCNT output <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcnt"><span class="std std-numref">Table 8.5</span></a></p>
+<p>The Fractions Skill Score (FSS) is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{FSS} = 1 - \frac{\text{FBS}}{\frac{1}{N} [\sum_N \langle P_f \rangle_s^2 + \sum_N \langle P_o \rangle_s^2 ]} ,\]</div>
+<p>where the denominator represents the worst possible forecast (i.e., with no overlap between forecast and observed events). FSS ranges between 0 and 1, with 0 representing no overlap and 1 representing complete overlap between forecast and observed events, respectively.</p>
+</div>
+<div class="section" id="asymptotic-fractions-skill-score">
+<h3><span class="section-number">29.6.3. </span>Asymptotic Fractions Skill Score<a class="headerlink" href="#asymptotic-fractions-skill-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “AFSS” in NBRCNT output <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcnt"><span class="std std-numref">Table 8.5</span></a></p>
+<p>The Asymptotic Fractions Skill Score (AFSS) is a special case of the Fractions Skill score where the entire domain is used as the single neighborhood. This provides the user with information about the overall frequency bias of forecasts versus observations. The formula is the same as for FSS above, but with N=1 and the neighborhood size equal to the domain.</p>
+</div>
+<div class="section" id="uniform-fractions-skill-score">
+<h3><span class="section-number">29.6.4. </span>Uniform Fractions Skill Score<a class="headerlink" href="#uniform-fractions-skill-score" title="Permalink to this headline">¶</a></h3>
+<p>Called “UFSS” in NBRCNT output <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcnt"><span class="std std-numref">Table 8.5</span></a></p>
+<p>The Uniform Fractions Skill Score (UFSS) is a reference statistic for the Fractions Skill score based on a uniform distribution of the total observed events across the grid. UFSS represents the FSS that would be obtained at the grid scale from a forecast with a fraction/probability equal to the total observed event proportion at every point. The formula is <span class="math notranslate nohighlight">\(UFSS = (1 + f_o)/2\)</span> (i.e., halfway between perfect skill and random forecast skill) where <span class="math notranslate nohighlight">\(f_o\)</span> is the total observed event proportion (i.e. observation rate).</p>
+</div>
+<div class="section" id="forecast-rate">
+<h3><span class="section-number">29.6.5. </span>Forecast Rate<a class="headerlink" href="#forecast-rate" title="Permalink to this headline">¶</a></h3>
+<p>Called “F_rate” in NBRCNT output <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcnt"><span class="std std-numref">Table 8.5</span></a></p>
+<p>The overall proportion of grid points with forecast events to total grid points in the domain. The forecast rate will match the observation rate in unbiased forecasts.</p>
+</div>
+<div class="section" id="observation-rate">
+<h3><span class="section-number">29.6.6. </span>Observation Rate<a class="headerlink" href="#observation-rate" title="Permalink to this headline">¶</a></h3>
+<p>Called “O_rate” in NBRCNT output <a class="reference internal" href="grid-stat.html#table-gs-format-info-nbrcnt"><span class="std std-numref">Table 8.5</span></a></p>
+<p>The overall proportion of grid points with observed events to total grid points in the domain. The forecast rate will match the observation rate in unbiased forecasts. This quantity is sometimes referred to as the base rate.</p>
+</div>
+</div>
+<div class="section" id="met-verification-measures-for-distance-map-methods">
+<span id="app-c-distance-maps"></span><h2><span class="section-number">29.7. </span>MET verification measures for distance map methods<a class="headerlink" href="#met-verification-measures-for-distance-map-methods" title="Permalink to this headline">¶</a></h2>
+<p>The distance map statistics include Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> Metric, a statistic which is a true mathematical metric. The definition of a mathematical metric is included below.</p>
+<p>A mathematical metric, <span class="math notranslate nohighlight">\(m(A,B)\geq 0\)</span>, must have the following three properties:</p>
+<ol class="arabic simple">
+<li><p>Identity: <span class="math notranslate nohighlight">\(m(A,B)=0\)</span> if and only if <span class="math notranslate nohighlight">\(A = B\)</span>.</p></li>
+<li><p>Symmetry: <span class="math notranslate nohighlight">\(m(A,B) = m(B,A)\)</span></p></li>
+<li><p>Triangle inequality: <span class="math notranslate nohighlight">\(m(A,C) \leq m(A,B) + m(B,C)\)</span></p></li>
+</ol>
+<p>The first establishes that a perfect score is zero and that the only way to obtain a perfect score is if the two sets are identical according to the metric. The second requirement ensures that the order by which the two sets are evaluated will not change the result. The third property ensures that if <em>C</em> is closer to <em>A</em> than <em>B</em> is to <em>A</em>, then <span class="math notranslate nohighlight">\(m(A,C) &lt; m(A,B)\)</span>.</p>
+<p>It has been argued in <a class="reference internal" href="refs.html#gilleland-2019"><span class="std std-ref">Gilleland (2019)</span></a> that the second property of symmetry is not necessarily an important quality to have for a summary measure for verification purposes because lack of symmetry allows for information about false alarms and misses.</p>
+<p>The results of the distance map verification approaches that are included in the Grid-Stat tool are summarized using a variety of measures. These measures include Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> Metric, the Hausdorff Distance, the Mean-error Distance, Pratt’s Figure of Merit, and Zhu’s Measure. Their equations are listed below.</p>
+<div class="section" id="baddeley-s-delta-metric-and-hausdorff-distance">
+<h3><span class="section-number">29.7.1. </span>Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> Metric and Hausdorff Distance<a class="headerlink" href="#baddeley-s-delta-metric-and-hausdorff-distance" title="Permalink to this headline">¶</a></h3>
+<p>Called “BADDELEY” and “HAUSDORFF” in the DMAP output <a class="reference internal" href="grid-stat.html#table-gs-format-info-dmap"><span class="std std-numref">Table 8.7</span></a></p>
+<p>The Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> Metric is given by</p>
+<div class="math notranslate nohighlight">
+\[\Delta_{p,w} (A,B) = [ \frac{1}{N} \sum_{s \in D} | w(d(s,A)) - w(d(s,B))|]^{\frac{1}{P}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d(s,\cdot)\)</span> is the distance map for the respective event area, <span class="math notranslate nohighlight">\(w(\cdot)\)</span> is an optional concave function (i.e., <span class="math notranslate nohighlight">\(w( t + u) \leq w(t)+w(u))\)</span> that is strictly increasing at zero with <span class="math notranslate nohighlight">\(w(t)=0\)</span> if and only if <span class="math notranslate nohighlight">\(t=0\)</span>, <em>N</em> is the size of the domain, and <em>p</em> is a user chosen parameter for the <span class="math notranslate nohighlight">\(L_{p}\)</span> norm. The default choice of <span class="math notranslate nohighlight">\(p = 2\)</span> corresponds to a Euclidean average, <span class="math notranslate nohighlight">\(p = 1\)</span> is a simple average of the difference in distance maps, and the limiting case of <span class="math notranslate nohighlight">\(p= \infty\)</span> gives the maximum difference between the two distance maps and is called the Hausdorff distance, denoted as <span class="math notranslate nohighlight">\(H(A,B)\)</span>, and is the metric that motivated the development of Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> metric. A typical choice, and the only available with MET, for <span class="math notranslate nohighlight">\(w(\cdot) \text{ is } w(t)= \min\{t,c\}\)</span>, where <em>c</em> is a user-chosen constant with <span class="math notranslate nohighlight">\(c = \infty\)</span> meaning that <span class="math notranslate nohighlight">\(w(\cdot)\)</span> is not applied. This choice of <span class="math notranslate nohighlight">\(w(\cdot)\)</span> provides a cutoff for distances beyond the pre-specified amount given by <em>c</em>.</p>
+<p>In terms of distance maps, Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> is the <span class="math notranslate nohighlight">\(L_{p}\)</span> norm of the top left panel in <a class="reference internal" href="grid-stat.html#grid-stat-fig4"><span class="std std-numref">Figure 8.4</span></a> provided <span class="math notranslate nohighlight">\(c= \infty\)</span>. If <span class="math notranslate nohighlight">\(0&lt;c&lt; \infty\)</span>, then the distance maps in the bottom row of <a class="reference internal" href="grid-stat.html#grid-stat-fig3"><span class="std std-numref">Figure 8.3</span></a> would be replaced by <em>c</em> wherever they would otherwise exceed <em>c</em> before calculating their absolute differences in the top left panel of <a class="reference internal" href="grid-stat.html#grid-stat-fig4"><span class="std std-numref">Figure 8.4</span></a>.</p>
+<p>The range for BADDELEY and HAUSDORFF is 0 to infinity, with a score of 0 indicating a perfect forecast.</p>
+</div>
+<div class="section" id="mean-error-distance">
+<h3><span class="section-number">29.7.2. </span>Mean-error Distance<a class="headerlink" href="#mean-error-distance" title="Permalink to this headline">¶</a></h3>
+<p>Called “MED_FO”, “MED_OF”, “MED_MIN”, “MED_MAX”, and “MED_MEAN” in the DMAP output <a class="reference internal" href="grid-stat.html#table-gs-format-info-dmap"><span class="std std-numref">Table 8.7</span></a></p>
+<p>The mean-error distance (MED) is given by</p>
+<div class="math notranslate nohighlight">
+\[\text{MED }(A,B) = \frac{1}{n_B} \sum_{s \in B}d(x,A)\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_{B}\)</span> is the number of non-zero grid points that fall in the event set <em>B</em>. That is, it is the average of the distance map for the event set <em>A</em> calculated only over those grid points that fall inside the event set <em>B</em>. It gives the average shortest-distance from every point in <em>B</em> to the nearest point in <em>A</em>.</p>
+<p>Unlike Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> metric, the MED is not a mathematical metric because it fails the symmetry property. However, if a metric is desired, then any of the following modifications, which are metrics, can be employed instead, and all are available through MET.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}min \text{MED}(A,B) = min( \text{MED}(A,B),\text{MED}(B,A))\\max \text{MED}(A,B) = max( \text{MED}(A,B), \text{MED}(B,A))\\mean \text{MED}(A,B) = \frac{1}{2}(\text{MED}(A,B) + \text{MED}(B,A))\end{aligned}\end{align} \]</div>
+<p>From the distance map perspective, MED <em>(A,B)</em> is the average of the values in <a class="reference internal" href="grid-stat.html#grid-stat-fig4"><span class="std std-numref">Figure 8.4</span></a> (top right), and MED <em>(B,A)</em> is the average of the values in <a class="reference internal" href="grid-stat.html#grid-stat-fig4"><span class="std std-numref">Figure 8.4</span></a> (bottom left). Note that the average is only over the circular regions depicted in the figure.</p>
+<p>The range for MED is 0 to infinity, with a score of 0 indicating a perfect forecast.</p>
+</div>
+<div class="section" id="pratt-s-figure-of-merit">
+<h3><span class="section-number">29.7.3. </span>Pratt’s Figure of Merit<a class="headerlink" href="#pratt-s-figure-of-merit" title="Permalink to this headline">¶</a></h3>
+<p>Called “FOM_FO”, “FOM_OF”, “FOM_MIN”, “FOM_MAX”, and “FOM_MEAN” in the DMAP output <a class="reference internal" href="grid-stat.html#table-gs-format-info-dmap"><span class="std std-numref">Table 8.7</span></a></p>
+<p>Pratt’s Figure of Merit (FOM) is given by</p>
+<div class="math notranslate nohighlight">
+\[\text{FOM }(A,B) = \frac{1}{max(n_A , n_B)} \sum_{s \in B} \frac{1}{1 + \alpha d(s,A)^2 }\]</div>
+<p>where <span class="math notranslate nohighlight">\(n_{A} \text{and } n_{B}\)</span> are the number of events within event areas <em>A</em> and <em>B</em>, respectively, <span class="math notranslate nohighlight">\(d(s,A)\)</span> is the distance map related to the event area <em>A</em>, and <span class="math notranslate nohighlight">\(\alpha\)</span> is a user-defined scaling constant. The default, and usual choice, is <span class="math notranslate nohighlight">\(\alpha = \frac{1}{9}\)</span> when the distances of the distance map are normalized so that the smallest nonzero distance between grid point neighbors equals one. Clearly, FOM is not a metric because like MED, it is not symmetric. Like MED, MET computes the minimum, maximum, and average of FOM_FO and FOM_OF.</p>
+<p>Note that <span class="math notranslate nohighlight">\(d(s,A)\)</span> in the denominator is summed only over the grid squares falling within the event set <em>B</em>. That is, it represents the circular area in the top right panel of <a class="reference internal" href="grid-stat.html#grid-stat-fig4"><span class="std std-numref">Figure 8.4</span></a>.</p>
+<p>The range for FOM is 0 to 1, with a score of 1 indicating a perfect forecast.</p>
+</div>
+<div class="section" id="zhu-s-measure">
+<h3><span class="section-number">29.7.4. </span>Zhu’s Measure<a class="headerlink" href="#zhu-s-measure" title="Permalink to this headline">¶</a></h3>
+<p>Called “ZHU_FO”, “ZHU_OF”, “ZHU_MIN”, “ZHU_MAX”, and “ZHU_MEAN” in the DMAP output <a class="reference internal" href="grid-stat.html#table-gs-format-info-dmap"><span class="std std-numref">Table 8.7</span></a></p>
+<p>Another measure incorporates the amount of actual overlap between the event sets across the fields in addition to the MED from above and was proposed by Zhu et al. (2011). Their main proposed measure was a comparative forecast performance measure of two competing forecasts against the same observation, which is not included here, but as defined is a true mathematical metric. They also proposed a similar measure of only the forecast against the observation, which is included in MET. It is simply</p>
+<div class="math notranslate nohighlight">
+\[Z(A,B) = \lambda \sqrt{ \frac{1}{N} \sum_{s \in D} (I_F (s) - I_O (s))^2} + (1 - \lambda ) \cdot \text{MED} (A,B)\]</div>
+<p>where MED <em>(A,B)</em> is as in the Mean-error distance, <em>N</em> is the total number of grid squares as in Baddeley’s <span class="math notranslate nohighlight">\(\Delta\)</span> metric, <span class="math notranslate nohighlight">\(I_{F}(s) ((I_{O}(s))\)</span> is the binary field derived from the forecast (observation), and <span class="math notranslate nohighlight">\(\lambda\)</span> is a user-chosen weight. The first term is just the RMSE of the binary forecast and observed fields, so it measures the average amount of overlap of event areas where zero would be a perfect score. It is not a metric because of the MED in the second term. A user might choose different weights depending on whether they want to emphasize the overlap or the MED terms more, but generally equal weight <span class="math notranslate nohighlight">\((\lambda=\frac{1}{2})\)</span> is sufficient. In Zhu et al (2011), they actually only consider <span class="math notranslate nohighlight">\(Z(F,O)\)</span> and not <span class="math notranslate nohighlight">\(Z(O,F)\)</span>, but both are included in MET for the same reasons as argued with MED. Similar to MED, the average of these two directions (avg Z), as well as the min and max are also provided for convenience.</p>
+<p>The range for ZHU is 0 to infinity, with a score of 0 indicating a perfect forecast.</p>
+</div>
+</div>
+<div class="section" id="calculating-percentiles">
+<h2><span class="section-number">29.8. </span>Calculating Percentiles<a class="headerlink" href="#calculating-percentiles" title="Permalink to this headline">¶</a></h2>
+<p>Several of the MET tools make use of percentiles in one way or another. Percentiles can be used as part of the internal computations of a tool, or can be written out as elements of some of the standard verification statistics. There are several widely-used conventions for calculating percentiles however, so in this section we describe how percentiles are calculated in MET.</p>
+<p>The explanation makes use of the <em>floor</em> function. The floor of a real number <em>x</em>, denoted <span class="math notranslate nohighlight">\(\lfloor x \rfloor\)</span>, is defined to be the greatest integer <span class="math notranslate nohighlight">\(\leq x\)</span>. For example, <span class="math notranslate nohighlight">\(\lfloor 3.01 \rfloor = 3, \lfloor 3.99 \rfloor = 3, \lfloor -3.01 \rfloor = -4, \lfloor -3.99 \rfloor = -4\)</span>. These examples show that the floor function does <em>not</em> simply round its argument to the nearest integer. Note also that <span class="math notranslate nohighlight">\(\lfloor x \rfloor = x\)</span> if and only if <em>x</em> is an integer.</p>
+<p>Suppose now that we have a collection of <em>N</em> data points <span class="math notranslate nohighlight">\(x_i \text{for } i = 0, 1, 2, \ldots, N - 1\)</span>. (Note that we’re using the C/C++ convention here, where array indices start at zero by default.) We will assume that the data are sorted in increasing (strictly speaking, <em>nondecreasing</em>) order, so that <span class="math notranslate nohighlight">\(i \leq j \text{ implies } x_i \leq x_j\)</span>. Suppose also that we wish to calculate the <em>t</em> percentile of the data, where <span class="math notranslate nohighlight">\(0 \leq t &lt; 1\)</span>. For example, <span class="math notranslate nohighlight">\(t = 0.25\)</span> for the 25th percentile of the data. Define</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}I = \lfloor (N - 1)t \rfloor\\\Delta = (N - 1)t - I\end{aligned}\end{align} \]</div>
+<p>Then the value <em>p</em> of the percentile is</p>
+<div class="math notranslate nohighlight">
+\[p = (1 - \Delta) x_I + \Delta x_{I+1}\]</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="appendixD.html" class="btn btn-neutral float-right" title="30. Appendix D Confidence Intervals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="appendixB.html" class="btn btn-neutral" title="28. Appendix B Map Projections, Grids, and Polylines" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

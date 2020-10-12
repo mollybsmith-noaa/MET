@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>18. MET-TC Overview &mdash; MET develop documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/met-tc_overview.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="19. TC-Dland Tool" href="tc-dland.html"/>
+        <link rel="prev" title="17. MODE Time Domain Tool" href="mode-td.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">18. MET-TC Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">18.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#met-tc-components">18.2. MET-TC components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-data-format">18.3. Input data format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-data-format">18.4. Output data format</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">18. </span>MET-TC Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/met-tc_overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="met-tc-overview">
+<span id="id1"></span><h1><span class="section-number">18. </span>MET-TC Overview<a class="headerlink" href="#met-tc-overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2><span class="section-number">18.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this User’s Guide is to provide basic information to the users of the Model Evaluation Tools - Tropical Cyclone (MET-TC) to enable users to apply MET-TC to their tropical cyclone datasets and evaluation studies. MET-TC is intended for use with model forecasts run through a vortex tracking software or with operational model forecasts in Automated Tropical Cyclone Forecast (ATCF) file format.</p>
+<p>The following sections provide an overview of MET-TC and its components, as well as basic information on the software build. The required input, including file format and the MET-TC are discussed followed by a description of the TC-Dland tool, TC-Pairs, and TC-Stat tools. Each section covers the input, output and practical usage including a description of the configuration files. This is followed by a short overview of graphical utilities available within the MET-TC release.</p>
+</div>
+<div class="section" id="met-tc-components">
+<h2><span class="section-number">18.2. </span>MET-TC components<a class="headerlink" href="#met-tc-components" title="Permalink to this headline">¶</a></h2>
+<p>The MET tools used in the verification of Tropical Cyclones are referred to as MET-TC. These tools are shown across the bottom of the flowchart in <a class="reference internal" href="overview.html#overview-figure"><span class="std std-numref">Figure 1.1</span></a>. The MET-TC tools are described in more detail in later sections.</p>
+<p>The TC-Dland tool is used to generate a gridded file that determines the location of coastlines and islands, and is used as input to the TC-Pairs tool to determine the distance from land of a particular track point. The TC-Pairs tool matches pairs of input model data and BEST track (or any reference forecast) and calculates position errors. The TC-Stat tool uses the TC-Pairs output to perform filter and summary jobs over the matched pair dataset. The TC-Gen tool performs a categorical analysis for tropical cyclone genesis forecasts. The TC-RMW tool performs a coordinate transformation of gridded model data, centered on the storm’s location. The RMW-Analysis tool aggregates TC-RMW output across multiple cases.</p>
+</div>
+<div class="section" id="input-data-format">
+<h2><span class="section-number">18.3. </span>Input data format<a class="headerlink" href="#input-data-format" title="Permalink to this headline">¶</a></h2>
+<p>This section discusses the input and output file formats expected and produced by MET-TC. When discussing the input data, it is expected that users have run model output through vortex tracking software in order to obtain position and intensity information in Automated Tropical Cyclone Forecasting System (ATCF) file format. Best track and aids files in Automated Tropical Cyclone Forecasting System (ATCF) format (hereafter referred to as ATCF format) are necessary for model data input into the TC-Pairs tool. The ATCF format was first developed at the Naval Oceanographic and Atmospheric Research Laboratory (NRL), and is currently used for the National Hurricane Center (NHC) operations. ATCF format must be adhered to in order for the MET-TC tools to properly parse the input data.</p>
+<p>The ATCF file format includes a section with common fields:</p>
+<p>BASIN, CY, YYYYMMDDHH, TECHNUM/MIN, TECH, TAU, LatN/S, LonE/W, VMAX, MSLP, TY, RAD, WINDCODE, RAD1, RAD2, RAD3, RAD4, POUTER, ROUTER, RMW, GUSTS, EYE, SUBREGION, MAXSEAS, INITIALS, DIR, SPEED, STORMNAME, DEPTH, SEAS, SEASCODE, SEAS1, SEAS2, SEAS3, SEAS4</p>
+<p><strong>BASIN</strong>: basin</p>
+<p><strong>CY</strong>: annual cyclone number: 1 - 99</p>
+<p><strong>YYYYMMDDHH</strong>: Warning Date-Time-Group.</p>
+<p><strong>TECHNUM/MIN</strong>: objective technique sorting number, minutes for best track: 00 - 99</p>
+<p><strong>TECH</strong>: acronym for each objective technique or CARQ or WRNG, BEST for best track</p>
+<p><strong>TAU</strong>: forecast period: -24 through 240 hours, 0 for best-track</p>
+<p><strong>LatN/S</strong>: Latitude for the date time group (DTG)</p>
+<p><strong>LonE/W</strong>: Longitude for the DTG</p>
+<p><strong>VMAX</strong>: Maximum sustained wind speed in knots</p>
+<p><strong>MSLP</strong>: Minimum sea level pressure, 850 - 1050 mb.</p>
+<p><strong>TY</strong>: Highest level of tropical cyclone development</p>
+<p><strong>RAD</strong>: Wind intensity for the radii defined in this record: 34, 50 or 64 kt.</p>
+<p><strong>WINDCODE</strong>: Radius code</p>
+<p><strong>RAD1</strong>: If full circle, radius of specified wind intensity, or radius of first quadrant wind intensity</p>
+<p><strong>RAD2</strong>: If full circle this field not used, or radius of 2nd quadrant wind intensity</p>
+<p><strong>RAD3</strong>: If full circle this field not used, or radius of 3rd quadrant wind intensity</p>
+<p><strong>RAD4</strong>: If full circle this field not used, or radius of 4th quadrant wind intensity</p>
+<p><strong>POUTER</strong>: pressure in millibars of the last closed isobar</p>
+<p><strong>ROUTER</strong>: radius of the last closed isobar</p>
+<p><strong>RMW</strong>: radius of max winds</p>
+<p><strong>GUSTS</strong>: gusts</p>
+<p><strong>EYE</strong>: eye diameter</p>
+<p><strong>SUBREGION</strong>: subregion</p>
+<p><strong>MAXSEAS</strong>: max seas</p>
+<p><strong>INITIALS</strong>: Forecaster’s initials</p>
+<p><strong>DIR</strong>: storm direction</p>
+<p><strong>SPEED</strong>: storm speed</p>
+<p><strong>STORMNAME</strong>: literal storm name, number, NONAME or INVEST, or TCcyx</p>
+<p><strong>DEPTH</strong>: system depth</p>
+<p><strong>SEAS</strong>: Wave height for radii defined in SEAS1 - SEAS4</p>
+<p><strong>SEASCODE</strong> - Radius code</p>
+<p><strong>SEAS1</strong>: first quadrant seas radius as defined by SEASCODE</p>
+<p><strong>SEAS2</strong>: second quadrant seas radius as defined by SEASCODE</p>
+<p><strong>SEAS3</strong>: third quadrant seas radius as defined by SEASCODE</p>
+<p><strong>SEAS4</strong>: fourth quadrant seas radius as defined by SEASCODE</p>
+<p><strong>Of the above common fields in the ATCF file format, MET-TC requires the input file to have the first 8 comma-separated columns present.</strong> Although all 8 columns must exist, valid data in each field is not required. In order to ensure proper matching, unique data in the BASIN, CY, YYYYMMDDHH, and TAU fields should be present.</p>
+<p>The TC-Pairs tool expects two input data sources in order to generate matched pairs and subsequent error statistics. The expected input for MET-TC is an ATCF format file from model output, or the operational aids files with the operational model output for the ‘adeck’ and the NHC best track analysis (BEST) for the ‘bdeck’. The BEST is a subjectively smoothed representation of the storm’s location and intensity over its lifetime. The track and intensity values are based on a retrospective assessment of all available observations of the storm.</p>
+<p>The BEST is in ATCF file format and contains all the above listed common fields. Given the reference dataset is expected in ATCF file format, any second ATCF format file from model output or operational model output from the NHC aids files can be supplied as well. The expected use of the TC-Pairs tool is to generate matched pairs between model output and the BEST. Note that some of the columns in the TC-Pairs output are populated based on the BEST information (e.g. storm category), therefore use of a different baseline may reduce the available filtering options.</p>
+<p>All operational model aids and the BEST can be obtained from the <a class="reference external" href="ftp://ftp.nhc.noaa.gov/atcf/archive/">NHC ftp server.</a></p>
+<p><a class="reference external" href="http://www.nrlmry.navy.mil/atcf_web/docs/database/new/abdeck.txt">Click here for detailed information on the ATCF format description and specifications.</a></p>
+<p>If a user has gridded model output, the model data must be run through a vortex tracking algorithm in order to obtain the ATCF-formatted input that MET-TC requires. Many vortex tracking algorithms have been developed in order to obtain basic position, maximum wind, and minimum sea level pressure information from model forecasts. One vortex tracking algorithm that is supported and freely available is the <a class="reference external" href="https://dtcenter.org/community-code/gfdl-vortex-tracker">GFDL vortex tracker package.</a></p>
+</div>
+<div class="section" id="output-data-format">
+<h2><span class="section-number">18.4. </span>Output data format<a class="headerlink" href="#output-data-format" title="Permalink to this headline">¶</a></h2>
+<p>The MET package produces output in four basic file formats: STAT files, ASCII files, NetCDF files, and Postscript plots. The MET-TC tool produces output in TCSTAT, which stands for Tropical Cyclone - STAT. This output format consists of tabular ASCII data that can be easily read by many analysis tools and software packages, making the output from MET-TC very versatile. Like STAT, TCSTAT is a specialized ASCII format containing one record on each line. Currently, the only line type available in MET-TC is TCMPR (Tropical Cyclone Matched Pairs). As more line types are included in future releases, all line types will be included in a single TCSTAT file. MET-TC also outputs a NetCDF format file in the TC-Dland tool, as input to the TC-Pairs tool.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tc-dland.html" class="btn btn-neutral float-right" title="19. TC-Dland Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mode-td.html" class="btn btn-neutral" title="17. MODE Time Domain Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'develop',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

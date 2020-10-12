@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Re-Formatting of Gridded Fields &mdash; MET 9.1 documentation</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://jprestop.github.io/VersionTest/latest/Users_Guide/reformat_grid.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET 9.1 documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="6. Regional Verification using Spatial Masking" href="masking.html"/>
+        <link rel="prev" title="4. Re-Formatting of Point Observations" href="reformat_point.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MET
+          
+
+          
+            
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>9.1</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                          <option value="../develop">develop</option>
+                        
+                      
+                    </select>
+                  </div>
+                
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Model Evaluation Tools</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Re-Formatting of Gridded Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pcp-combine-tool">5.1. Pcp-Combine tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pcp-combine-usage">5.1.1. pcp_combine usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pcp-combine-output">5.1.2. pcp_combine output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#regrid-data-plane-tool">5.2. Regrid_data_plane tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#regrid-data-plane-usage">5.2.1. regrid_data_plane usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automated-regridding-within-tools">5.2.2. Automated regridding within tools</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#shift-data-plane-tool">5.3. Shift_data_plane tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#shift-data-plane-usage">5.3.1. shift_data_plane usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modis-regrid-tool">5.4. MODIS regrid tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modis-regrid-usage">5.4.1. modis_regrid usage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#wwmca-tool-documentation">5.5. WWMCA Tool Documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#wwmca-plot-usage">5.5.1. wwmca_plot usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wwmca-regrid-usage">5.5.2. wwmca_regrid usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wwmca-regrid-configuration-file">5.5.3. wwmca_regrid configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Contributors_Guide/index.html">Contributor’s Guide</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MET</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">User’s Guide</a> &raquo;</li>
+        
+      <li><span class="section-number">5. </span>Re-Formatting of Gridded Fields</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Users_Guide/reformat_grid.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="re-formatting-of-gridded-fields">
+<span id="reformat-grid"></span><h1><span class="section-number">5. </span>Re-Formatting of Gridded Fields<a class="headerlink" href="#re-formatting-of-gridded-fields" title="Permalink to this headline">¶</a></h1>
+<p>Several MET tools exist for the purpose of reformatting gridded fields, and they are described in this section. These tools are represented by the reformatting column of MET flowchart depicted in <a class="reference internal" href="overview.html#overview-figure"><span class="std std-numref">Figure 1.1</span></a>.</p>
+<div class="section" id="pcp-combine-tool">
+<h2><span class="section-number">5.1. </span>Pcp-Combine tool<a class="headerlink" href="#pcp-combine-tool" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the Pcp-Combine tool which summarizes data across multiple input gridded data files and writes the results to a single NetCDF output file. It is often used to modify precipitation accumulation intervals in the forecast and/or observation datasets to make them comparable. However it can also be used to derive summary fields, such as daily min/max temperature or average precipitation rate.</p>
+<p>The Pcp-Combine tool supports four types of commands (“sum”, “add”, “subtract”, and “derive”) which may be run on any gridded data files supported by MET.</p>
+<ol class="arabic simple">
+<li><p>The “sum” command is the default command and therefore specifying “-sum” on the command line is optional. Using the sum arguments described below, Pcp-Combine searches the input directories (“-pcpdir” option) for data that matches the requested time stamps and accumulation intervals. Pcp-Combine only considers files from the input data directory which match the specified regular expression (“-pcprx” option). While “sum” searches for matching data, all the other commands are run on the explicit set of input files specified.</p></li>
+<li><p>The “add” command reads the requested data from the input data files and adds them together.</p></li>
+<li><p>The “subtract” command reads the requested data from exactly two input files and computes their difference.</p></li>
+<li><p>The “derive” command reads the requested data from the input data files and computes the requested summary fields.</p></li>
+</ol>
+<p>By default, the Pcp-Combine tool processes data for <strong>APCP</strong>, the GRIB string for accumulated precipitation. When requesting data using time strings (i.e. [HH]MMSS), Pcp-Combine searches for accumulated precipitation for that accumulation interval. Alternatively, use the “-field” option to process fields other than <strong>APCP</strong> or for non-GRIB files. The “-field” option may be used multiple times to process multiple fields in a single run. Since the Pcp-Combine tool does not support automated regridding, all input data must be on the same grid. In general the input files should have the same initialization time unless the user has indicated that it should ignore the initialization time for the “sum” command. The “subtract” command produces a warning when the input initialization times differ or the subtraction results in a negative accumulation interval.</p>
+<div class="section" id="pcp-combine-usage">
+<h3><span class="section-number">5.1.1. </span>pcp_combine usage<a class="headerlink" href="#pcp-combine-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the Pcp-Combine tool is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: pcp_combine
+       [-sum] sum_args |
+       -add input_files |
+       -subtract input_files |
+       -derive stat_list input_files
+       out_file
+       [-field string]
+       [-name list]
+       [-vld_thresh n]
+       [-log file]
+       [-v level]
+       [-compress level]
+</pre></div>
+</div>
+<p>The arguments to pcp_combine vary depending on the run command. Listed below are the arguments for the sum command:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SUM_ARGS:
+      init_time
+      in_accum
+      valid_time
+      out_accum
+      out_file
+      [-pcpdir path]
+      [-pcprx reg_exp]
+</pre></div>
+</div>
+<p>The add, subtract, and derive commands all require that the input files be explicitly listed:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INPUT_FILES:
+       file_1 config_str_1 ... file_n config_str_n |
+       file_1 ... file_n |
+       input_file_list
+</pre></div>
+</div>
+<div class="section" id="required-arguments-for-the-pcp-combine">
+<h4><span class="section-number">5.1.1.1. </span>Required arguments for the pcp_combine<a class="headerlink" href="#required-arguments-for-the-pcp-combine" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The Pcp-Combine tool must be run with exactly one run command (-sum, -add, -subtract, or -derive) with the corresponding additional arguments.</p></li>
+<li><p>The <strong>out_file</strong> argument indicates the name for the NetCDF file to be written.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-pcp-combine">
+<h4><span class="section-number">5.1.1.2. </span>Optional arguments for pcp_combine<a class="headerlink" href="#optional-arguments-for-pcp-combine" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="3">
+<li><p>The <strong>-field string</strong> option defines the data to be extracted from the input files. Use this option when processing fields other than <strong>APCP</strong> or non-GRIB files. This option may be used multiple times and output will be created for each.</p></li>
+<li><p>The <strong>-name list</strong> option is a comma-separated list of output variable names which override the default choices. If specified, the number of names must match the number of variables to written to the output file.</p></li>
+<li><p>The <strong>-vld_thresh n</strong> option overrides the default required ratio of valid data for at each grid point for an output value to be written. The default is 1.0.</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
+<li><p>The <strong>-compress level</strong> option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+</div>
+<div class="section" id="required-arguments-for-the-pcp-combine-sum-command">
+<h4><span class="section-number">5.1.1.3. </span>Required arguments for the pcp_combine sum command<a class="headerlink" href="#required-arguments-for-the-pcp-combine-sum-command" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>init_time</strong> argument, provided in YYYYMMDD[_HH[MMSS]] format, indicates the initialization time for model data to be summed. Only files found with this initialization time will be processed. If combining observation files, Stage II or Stage IV data for example, the initialization time is not applicable. Providing a string of all zeros (00000000_000000) indicates that all files, regardless of initialization time should be processed.</p></li>
+<li><p>The <strong>in_accum</strong> argument, provided in HH[MMSS] format, indicates the accumulation interval of the model or observation gridded files to be processed. This value must be specified, since a model output file may contain multiple accumulation periods for precipitation in a single file. The argument indicates which accumulation period to extract.</p></li>
+<li><p>The <strong>valid_time</strong> argument, in YYYYMMDD[_HH[MMSS]] format, indicates the desired valid time to which the accumulated precipitation is to be summed.</p></li>
+<li><p>The <strong>out_accum</strong> argument, in HH[MMSS] format, indicates the desired total accumulation period to be summed.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-pcp-combine-sum-command">
+<h4><span class="section-number">5.1.1.4. </span>Optional arguments for pcp_combine sum command<a class="headerlink" href="#optional-arguments-for-pcp-combine-sum-command" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="5">
+<li><p>The <strong>-pcpdir path</strong> option indicates the directories in which the input files reside. The contents of “<strong>path</strong>” will override the default setting. This option may be used multiple times and can accept multiple arguments, supporting the use of wildcards.</p></li>
+<li><p>The <strong>-pcprx reg_exp</strong> option indicates the regular expression to be used in matching files in the search directories specified. The contents of “reg_exp” will override the default setting that matches all file names. If the search directories contain a large number of files, the user may specify that only a subset of those files be processed using a regular expression which will speed up the run time.</p></li>
+</ol>
+</div>
+<div class="section" id="required-arguments-for-the-pcp-combine-derive-command">
+<h4><span class="section-number">5.1.1.5. </span>Required arguments for the pcp_combine derive command<a class="headerlink" href="#required-arguments-for-the-pcp-combine-derive-command" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The “derive” run command must be followed by <strong>stat_list</strong> which is a comma-separated list of summary fields to be computed. The <strong>stat_list</strong> may be set to sum, min, max, range, mean, stdev, and vld_count for the sum, minimum, maximum, range (max-min), average, standard deviation, and valid data count fields, respectively.</p></li>
+</ol>
+</div>
+<div class="section" id="input-files-for-pcp-combine-add-subtract-and-derive-commands">
+<h4><span class="section-number">5.1.1.6. </span>Input files for pcp_combine add, subtract, and derive commands<a class="headerlink" href="#input-files-for-pcp-combine-add-subtract-and-derive-commands" title="Permalink to this headline">¶</a></h4>
+<p>The input files for the add, subtract, and derive command can be specified in one of 3 ways:</p>
+<ol class="arabic simple">
+<li><p>Use <strong>file_1 config_str_1 … file_n config_str_n</strong> to specify the full path to each input file followed by a description of the data to be read from it. The <strong>config_str_i</strong> argument describing the data can be a set to a time string in HH[MMSS] format for accumulated precipitation or a full configuration string. For example, use <strong>‘name=”TMP”; level=”P500”;’</strong> to process temperature at 500mb.</p></li>
+<li><p>Use <strong>file_1 … file_n</strong> to specify the list of input files to be processed on the command line. Rather then specifying a separate configuration string for each input file, the “-field” command line option is required to specify the data to be processed.</p></li>
+<li><p>Use <strong>input_file_list</strong> to specify the name of an ASCII file which contains the paths for the gridded data files to be processed. As in the previous option, the “-field” command line option is required to specify the data to be processed.</p></li>
+</ol>
+<p>An example of the pcp_combine calling sequence is presented below:</p>
+<p><strong>Example 1:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pcp_combine -sum \
+20050807_000000 3 \
+20050808_000000 24 \
+sample_fcst.nc \
+-pcpdir ../data/sample_fcst/2005080700
+</pre></div>
+</div>
+<p>In Example 1, the Pcp-Combine tool will sum the values in model files initialized at 2005/08/07 00Z and containing 3-hourly accumulation intervals of precipitation. The requested valid time is 2005/08/08 00Z with a requested total accumulation interval of 24 hours. The output file is to be named sample_fcst.nc, and the Pcp-Combine tool is to search the directory indicated for the input files.</p>
+<p>The Pcp-Combine tool will search for 8 files containing 3-hourly accumulation intervals which meet the criteria specified. It will write out a single NetCDF file containing that 24 hours of accumulation.</p>
+<p>A second example of the pcp_combine calling sequence is presented below:</p>
+<p><strong>Example 2:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pcp_combine -sum \
+00000000_000000 1 \
+20050808_000000 24 \
+sample_obs.nc \
+-pcpdir ../data/sample_obs/ST2ml
+</pre></div>
+</div>
+<p>Example 2 shows an example of using the Pcp-Combine tool to sum observation data. The “init_time” has been set to all zeros to indicate that when searching through the files in precipitation directory, the initialization time should be ignored. The “in_accum” has been changed from 3 to 1 to indicate that the input observation files contain 1-hourly accumulations of precipitation. Lastly, -pcpdir provides a different directory to be searched for the input files.</p>
+<p>The Pcp-Combine tool will search for 24 files containing 1-hourly accumulation intervals which meet the criteria specified. It will write out a single NetCDF file containing that 24 hours of accumulation.</p>
+<p><strong>Example 3:</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pcp_combine -add input_pinterp.nc &#39;name=&quot;TT&quot;; level=&quot;(0,*,*)&quot;;&#39; tt_10.nc
+</pre></div>
+</div>
+<p>This command would grab the first level of the TT variable from a pinterp NetCDF file and write it to the output tt_10.nc file.</p>
+</div>
+</div>
+<div class="section" id="pcp-combine-output">
+<h3><span class="section-number">5.1.2. </span>pcp_combine output<a class="headerlink" href="#pcp-combine-output" title="Permalink to this headline">¶</a></h3>
+<p>The output NetCDF files contain the requested accumulation intervals as well as information about the grid on which the data lie. That grid projection information will be parsed out and used by the MET statistics tools in subsequent steps. One may use NetCDF utilities such as ncdump or ncview to view the contents of the output file. Alternatively, the MET Plot-Data-Plane tool described in <a class="reference internal" href="plotting.html#plot-data-plane-usage"><span class="std std-numref">Section 25.1.2</span></a> may be run to create a PostScript image of the data.</p>
+<p>Each NetCDF file generated by the Pcp-Combine tool contains the dimensions and variables shown in the following two tables.</p>
+<table class="colwidths-auto docutils align-default" id="id1">
+<caption><span class="caption-number">Table 5.1 </span><span class="caption-text">NetCDF file dimensions for pcp_combine output.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pcp_combine NetCDF dimensions</p></th>
+<th class="head"></th>
+</tr>
+<tr class="row-even"><th class="head"><p>NetCDF dimension</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>lat</p></td>
+<td><p>Dimension of the latitude (i.e. Number of grid points in the North-South direction)</p></td>
+</tr>
+<tr class="row-even"><td><p>lon</p></td>
+<td><p>Dimension of the longitude (i.e. Number of grid points in the East-West direction)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-auto docutils align-default" id="id2">
+<caption><span class="caption-number">Table 5.2 </span><span class="caption-text">NetCDF variables for pcp_combine output.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Pcp_combine NetCDF variables</p></th>
+<th class="head"></th>
+<th class="head"></th>
+</tr>
+<tr class="row-even"><th class="head"><p>NetCDF variable</p></th>
+<th class="head"><p>Dimension</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>lat</p></td>
+<td><p>lat, lon</p></td>
+<td><p>Latitude value for each point in the grid</p></td>
+</tr>
+<tr class="row-even"><td><p>lon</p></td>
+<td><p>lat, lon</p></td>
+<td><p>Longitude value for each point in the grid</p></td>
+</tr>
+<tr class="row-odd"><td><p>Name and level of the requested data or value of the -name option.</p></td>
+<td><p>lat, lon</p></td>
+<td><p>Data value (i.e. accumulated precipitation) for each point in the grid. The name of the variable describes the name and level and any derivation logic that was applied.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="regrid-data-plane-tool">
+<h2><span class="section-number">5.2. </span>Regrid_data_plane tool<a class="headerlink" href="#regrid-data-plane-tool" title="Permalink to this headline">¶</a></h2>
+<p>This section contains a description of running the regrid_data_plane tool. This tool may be run to read data from any gridded file MET supports, interpolate to a user-specified grid, and write the field(s) out in NetCDF format. The user may specify the method of interpolation used for regridding as well as which fields to regrid. This tool is particularly useful when dealing with GRIB2 and NetCDF input files that need to be regridded. For GRIB1 files, it has also been tested for compatibility with the copygb regridding utility mentioned in <a class="reference internal" href="installation.html#installation-of-optional"><span class="std std-numref">Section 2.7</span></a>.</p>
+<div class="section" id="regrid-data-plane-usage">
+<h3><span class="section-number">5.2.1. </span>regrid_data_plane usage<a class="headerlink" href="#regrid-data-plane-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the regrid_data_plane utility is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: regrid_data_plane
+       input_filename
+       to_grid
+       output_filename
+       -field string
+       [-method type]
+       [-width n]
+       [-gaussian_dx n]
+       [-gaussian_radius n]
+       [-shape type]
+       [-vld_thresh n]
+       [-name list]
+       [-log file]
+       [-v level]
+       [-compress level]
+</pre></div>
+</div>
+<div class="section" id="required-arguments-for-regrid-data-plane">
+<h4><span class="section-number">5.2.1.1. </span>Required arguments for regrid_data_plane<a class="headerlink" href="#required-arguments-for-regrid-data-plane" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>input_filename</strong> is the gridded data file to be read.</p></li>
+<li><p>The <strong>to_grid</strong> defines the output grid as a named grid, the path to a gridded data file, or an explicit grid specification string.</p></li>
+<li><p>The <strong>output_filename</strong> is the output NetCDF file to be written.</p></li>
+<li><p>The <strong>-field string</strong> may be used multiple times to define the field(s) to be regridded.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-regrid-data-plane">
+<h4><span class="section-number">5.2.1.2. </span>Optional arguments for regrid_data_plane<a class="headerlink" href="#optional-arguments-for-regrid-data-plane" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="5">
+<li><p>The <strong>-method type</strong> option overrides the default regridding method. Default is NEAREST.</p></li>
+<li><p>The <strong>-width n</strong> option overrides the default regridding width. Default is 1. In case of MAXGAUSS method, the width should be the ratio between from_grid and to_grid (for example, 27 if from_grid is 3km and to_grid is 81.271km).</p></li>
+<li><p>The <strong>-gaussian_dx</strong> option overrides the default delta distance for Gaussian smoothing. Default is 81.271. Ignored if not the MAXGAUSS method.</p></li>
+<li><p>The <strong>-gaussian_radius</strong> option overrides the default radius of influence for Gaussian interpolation. Default is 120. Ignored if not the MAXGAUSS method.</p></li>
+<li><p>The <strong>-shape</strong> option overrides the default interpolation shape. Default is SQUARE.</p></li>
+<li><p>The <strong>-vld_thresh n</strong> option overrides the default required ratio of valid data for regridding. Default is 0.5.</p></li>
+<li><p>The <strong>-name list</strong> specifies a comma-separated list of output variable names for each field specified.</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
+<li><p>The <strong>-compress level</strong> option specifies the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+<p>For more details on setting the <strong>to_grid, -method, -width,</strong> and <strong>-vld_thresh</strong> options, see the regrid entry in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>. An example of the regrid_data_plane calling sequence is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>regrid_data_plane \
+input.grb \
+togrid.grb \
+regridded.nc \
+-field &#39;name=&quot;APCP&quot;; level=&quot;A6&quot;;&#39;
+-field &#39;name=&quot;TMP&quot;;  level=&quot;Z2&quot;;&#39; \
+-field &#39;name=&quot;UGRD&quot;; level=&quot;Z10&quot;;&#39; \
+-field &#39;name=&quot;VGRD&quot;; level=&quot;Z10&quot;;&#39; \
+-field &#39;name=&quot;HGT&quot;;  level=&quot;P500&quot;;&#39; \
+-method BILIN -width 2 -v 1
+</pre></div>
+</div>
+<p>In this example, the regrid_data_plane tool will regrid data from the <strong>input.grb</strong> file to the grid on which the first record of the <strong>togrid.grb</strong> file resides using Bilinear Interpolation with a width of 2 and write the output in NetCDF format to a file named <strong>regridded.nc</strong>. The variables in <strong>regridded.nc</strong> will include 6-hour accumulated precipitation, 2m temperature, 10m U and V components of the wind, and the 500mb geopotential height.</p>
+</div>
+</div>
+<div class="section" id="automated-regridding-within-tools">
+<h3><span class="section-number">5.2.2. </span>Automated regridding within tools<a class="headerlink" href="#automated-regridding-within-tools" title="Permalink to this headline">¶</a></h3>
+<p>While the regrid_data_plane tool is useful as a stand-alone tool, the capability is also included to automatically <strong>regrid</strong> one or both fields in most of the MET tools that handle gridded data. See the regrid entry in <a class="reference internal" href="data_io.html#configuration-file-details"><span class="std std-numref">Section 3.5</span></a> for a description of the configuration file entries that control automated regridding.</p>
+</div>
+</div>
+<div class="section" id="shift-data-plane-tool">
+<h2><span class="section-number">5.3. </span>Shift_data_plane tool<a class="headerlink" href="#shift-data-plane-tool" title="Permalink to this headline">¶</a></h2>
+<p>The Shift-Data-Plane tool performs a rigid shift of the entire grid based on user-defined specifications and write the field(s) out in NetCDF format. This tool was originally designed to account for track error when comparing fields associated with tropical cyclones. The user specifies the latitude and longitude of the source and destination points to define the shift. Both points must fall within the domain and are used to define the X and Y direction grid unit shift. The shift is then applied to all grid points. The user may specify the method of interpolation and the field to be shifted. The effects of topography and land/water masks are ignored.</p>
+<div class="section" id="shift-data-plane-usage">
+<h3><span class="section-number">5.3.1. </span>shift_data_plane usage<a class="headerlink" href="#shift-data-plane-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the shift_data_plane utility is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: shift_data_plane
+       input_filename
+       output_filename
+       field_string
+       -from lat lon
+       -to lat lon
+       [-method type]
+       [-width n]
+       [-shape SHAPE]
+       [-log file]
+       [-v level]
+       [-compress level]
+</pre></div>
+</div>
+<p>shift_data_plane has five required arguments and can also take optional ones.</p>
+<div class="section" id="required-arguments-for-shift-data-plane">
+<h4><span class="section-number">5.3.1.1. </span>Required arguments for shift_data_plane<a class="headerlink" href="#required-arguments-for-shift-data-plane" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>input_filename</strong> is the gridded data file to be read.</p></li>
+<li><p>The <strong>output_filename</strong> is the output NetCDF file to be written.</p></li>
+<li><p>The <strong>field_string</strong> defines the data to be shifted from the input file.</p></li>
+<li><p>The <strong>-from lat lon</strong> specifies the starting location within the domain to define the shift. Latitude and longitude are defined in degrees North and East, respectively.</p></li>
+<li><p>The <strong>-to lat lon</strong> specifies the ending location within the domain to define the shift. Lat is deg N, Lon is deg E.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-shift-data-plane">
+<h4><span class="section-number">5.3.1.2. </span>Optional arguments for shift_data_plane<a class="headerlink" href="#optional-arguments-for-shift-data-plane" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="6">
+<li><p>The <strong>-method type</strong> overrides the default regridding method. Default is NEAREST.</p></li>
+<li><p>The <strong>-width n</strong> overrides the default regridding width. Default is 2.</p></li>
+<li><p>The <strong>-shape SHAPE</strong> overrides the default interpolation shape. Default is SQUARE.</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
+<li><p>The <strong>-compress level</strong> option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+<p>For more details on setting the <strong>-method</strong> and <strong>-width</strong> options, see the <strong>regrid</strong> entry in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>. An example of the shift_data_plane calling sequence is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>shift_data_plane \
+nam.grib \
+nam_shift_APCP_12.nc \
+&#39;name = &quot;APCP&quot;; level = &quot;A12&quot;;&#39; \
+-from 38.6272  -90.1978 \
+-to   40.1717 -105.1092 \
+-v 2
+</pre></div>
+</div>
+<p>In this example, the shift_data_plane tool reads 12-hour accumulated precipitation from the <strong>nam.grb</strong> file, applies a rigid shift defined by (38.6272, -90.1978) to (40.1717, -105.1092) and writes the output in NetCDF format to a file named <strong>nam_shift_APCP_12.nc</strong>. These <strong>-from</strong> and <strong>-to</strong> locations result in a grid shift of -108.30 units in the x-direction and 16.67 units in the y-direction.</p>
+</div>
+</div>
+</div>
+<div class="section" id="modis-regrid-tool">
+<h2><span class="section-number">5.4. </span>MODIS regrid tool<a class="headerlink" href="#modis-regrid-tool" title="Permalink to this headline">¶</a></h2>
+<p>This section contains a description of running the MODIS regrid tool. This tool may be run to create a NetCDF file for use in other MET tools from MODIS level 2 cloud product from NASA. The data browser for these files is: <a class="reference external" href="https://ladsweb.modaps.eosdis.nasa.gov">https://ladsweb.modaps.eosdis.nasa.gov</a></p>
+<div class="section" id="modis-regrid-usage">
+<h3><span class="section-number">5.4.1. </span>modis_regrid usage<a class="headerlink" href="#modis-regrid-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the modis_regrid utility is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: modis_regrid
+       -data_file path
+       -field name
+       -out path
+       -scale value
+       -offset value
+       -fill value
+       [-units text]
+       [-compress level]
+       modis_file
+</pre></div>
+</div>
+<p>modis_regrid has some required arguments and can also take optional ones.</p>
+<div class="section" id="required-arguments-for-modis-regrid">
+<h4><span class="section-number">5.4.1.1. </span>Required arguments for modis_regrid<a class="headerlink" href="#required-arguments-for-modis-regrid" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>-data_file path</strong> argument specifies the data files used to get the grid information.</p></li>
+<li><p>The <strong>-field name</strong> argument specifies the name of the field to use in the MODIS data file.</p></li>
+<li><p>The <strong>-out path</strong> argument specifies the name of the output NetCDF file.</p></li>
+<li><p>The <strong>-scale value</strong> argument specifies the scale factor to be used on the raw MODIS values.</p></li>
+<li><p>The <strong>-offset value</strong> argument specifies the offset value to be used on the raw MODIS values.</p></li>
+<li><p>The <strong>-fill value</strong> argument specifies the bad data value in the MODIS data.</p></li>
+<li><p>The <strong>modis_file</strong> argument is the name of the MODIS input file.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-modis-regrid">
+<h4><span class="section-number">5.4.1.2. </span>Optional arguments for modis_regrid<a class="headerlink" href="#optional-arguments-for-modis-regrid" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="8">
+<li><p>The <strong>-units text</strong> option specifies the units string in the global attributes section of the output file.</p></li>
+<li><p>The <strong>-compress level</strong> option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+<p>An example of the modis_regrid calling sequence is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>modis_regrid -field Cloud_Fraction \
+-data_file grid_file \
+-out t2.nc \
+-units percent \
+-scale 0.01 \
+-offset 0 \
+-fill 127 \
+modisfile
+</pre></div>
+</div>
+<p>In this example, the modis_regrid tool will process the Cloud_Fraction field from modisfile and write it out to the output NetCDF file t2.nc on the grid specified in grid_file using the appropriate scale, offset and fill values.</p>
+<div class="figure align-default" id="id3">
+<span id="reformat-grid-fig1"></span><img alt="../_images/reformat_grid_fig1.png" src="../_images/reformat_grid_fig1.png" />
+<p class="caption"><span class="caption-number">Figure 5.1 </span><span class="caption-text">Example plot showing surface temperature from a MODIS file.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wwmca-tool-documentation">
+<h2><span class="section-number">5.5. </span>WWMCA Tool Documentation<a class="headerlink" href="#wwmca-tool-documentation" title="Permalink to this headline">¶</a></h2>
+<p>There are two WWMCA tools available. The WWMCA-Plot tool makes a PostScript plot of one or more WWMCA cloud percent files and the WWMCA-Regrid tool regrids binary WWMCA data files and reformats them into NetCDF files that the other MET tools can read. The WWMCA-Regrid tool has been generalized to more broadly support any data stored in the WWMCA binary format.</p>
+<p>The WWMCA tools attempt to parse timing and hemisphere information from the file names. They tokenize the filename using underscores (_) and dots (.) and examine each element which need be in no particular order. A string of 10 or more numbers is interpreted as the valid time in YYYYMMDDHH[MMSS] format. The string NH indicates the northern hemisphere while SH indicates the southern hemisphere. While WWMCA data is an analysis and has no forecast lead time, other datasets following this format may. Therefore, a string of 1 to 4 numbers is interpreted as the forecast lead time in hours. While parsing the filename provides default values for this timing information, they can be overridden by explicitly setting their values in the WWMCA-Regrid configuration file.</p>
+<div class="section" id="wwmca-plot-usage">
+<h3><span class="section-number">5.5.1. </span>wwmca_plot usage<a class="headerlink" href="#wwmca-plot-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the WWMCA-Plot tool is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: wwmca_plot
+       [-outdir path]
+       [-max max_minutes]
+       [-log file]
+       [-v level]
+       wwmca_cloud_pct_file_list
+</pre></div>
+</div>
+<p>wmmca_plot has some required arguments and can also take optional ones.</p>
+<div class="section" id="required-arguments-for-wwmca-plot">
+<h4><span class="section-number">5.5.1.1. </span>Required arguments for wwmca_plot<a class="headerlink" href="#required-arguments-for-wwmca-plot" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>wwmca_cloud_pct_file_list</strong> argument represents one or more WWMCA cloud percent files given on the command line. As with any command given to a UNIX shell, the user can use meta-characters as a shorthand way to specify many filenames. For each input file specified, one output PostScript plot will be created.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-wwmca-plot">
+<h4><span class="section-number">5.5.1.2. </span>Optional arguments for wwmca_plot<a class="headerlink" href="#optional-arguments-for-wwmca-plot" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="2">
+<li><p>The <strong>-outdir path</strong> option specifies the directory where the output PostScript plots will be placed. If not specified, then the plots will be put in the current (working) directory.</p></li>
+<li><p>The <strong>-max minutes</strong> option specifies the maximum pixel age in minutes to be plotted.</p></li>
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The value of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity will increase the amount of logging.</p></li>
+</ol>
+<div class="figure align-default" id="id4">
+<img alt="../_images/reformat_grid_fig2.png" src="../_images/reformat_grid_fig2.png" />
+<p class="caption"><span class="caption-number">Figure 5.2 </span><span class="caption-text">Example output of wwmca_plot tool.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="wwmca-regrid-usage">
+<h3><span class="section-number">5.5.2. </span>wwmca_regrid usage<a class="headerlink" href="#wwmca-regrid-usage" title="Permalink to this headline">¶</a></h3>
+<p>The usage statement for the WWMCA-Regrid tool is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: wwmca_regrid
+       -out filename
+       -config filename
+       -nh filename [pt_filename]
+       -sh filename [pt_filename]
+       [-log file]
+       [-v level]
+       [-compress level]
+</pre></div>
+</div>
+<p>wmmca_regrid has some required arguments and can also take optional ones.</p>
+<div class="section" id="required-arguments-for-wwmca-regrid">
+<h4><span class="section-number">5.5.2.1. </span>Required arguments for wwmca_regrid<a class="headerlink" href="#required-arguments-for-wwmca-regrid" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple">
+<li><p>The <strong>-out filename</strong> argument specifies the name of the output netCDF file.</p></li>
+<li><p>The <strong>-config filename</strong> argument indicates the name of the configuration file to be used. The contents of the configuration file are discussed below.</p></li>
+<li><p>The <strong>-nh filename [pt_filename]</strong> argument specifies the northern hemisphere WWMCA binary file and, optionally, may be followed by a binary pixel age file. This switch is required if the output grid includes any portion of the northern hemisphere.</p></li>
+<li><p>The <strong>-sh filename [pt_filename]</strong> argument specifies the southern hemisphere WWMCA binary file and, optionally, may be followed by a binary pixel age file. This switch is required if the output grid includes any portion of the southern hemisphere.</p></li>
+</ol>
+</div>
+<div class="section" id="optional-arguments-for-wwmca-regrid">
+<h4><span class="section-number">5.5.2.2. </span>Optional arguments for wwmca_regrid<a class="headerlink" href="#optional-arguments-for-wwmca-regrid" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic simple" start="5">
+<li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
+<li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The value of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity will increase the amount of logging.</p></li>
+<li><p>The <strong>-compress level</strong> option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
+</ol>
+<p>In any regridding problem, there are two grids involved: the “From” grid, which is the grid the input data are on, and the “To” grid, which is the grid the data are to be moved onto. In <strong>WWMCA-Regrid</strong> the “From” grid is pre-defined by the hemisphere of the WWMCA binary files being processed. The “To” grid and corresponding regridding logic are specified using the <strong>regrid</strong> section of the configuration file. If the “To” grid is entirely confined to one hemisphere, then only the WWMCA data file for that hemisphere need be given. If the “To” grid or the interpolation box used straddles the equator the data files for both hemispheres need be given. Once the “To” grid is specified in the config file, the WWMCA-Regrid tool will know which input data files it needs and will complain if it is not given the right ones.</p>
+</div>
+</div>
+<div class="section" id="wwmca-regrid-configuration-file">
+<h3><span class="section-number">5.5.3. </span>wwmca_regrid configuration file<a class="headerlink" href="#wwmca-regrid-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The default configuration file for the WWMCA-Regrid tool named <strong>WWMCARegridConfig_default</strong> can be found in the installed <strong>share/met/config</strong> directory. We encourage users to make a copy of this file prior to modifying its contents. The contents of the configuration file are described in the subsections below.</p>
+<p>Note that environment variables may be used when editing configuration files, as described in <a class="reference internal" href="reformat_point.html#pb2nc-configuration-file"><span class="std std-numref">Section 4.1.2</span></a> for the PB2NC tool.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>regrid = { ... }
+</pre></div>
+</div>
+<p>See the <strong>regrid entry</strong> in :numref:Configuration File Details` for a description of the configuration file entries that control regridding.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>variable_name = &quot;Cloud_Pct&quot;;
+units         = &quot;percent&quot;;
+long_name     = &quot;cloud cover percent&quot;;
+level         = &quot;SFC&quot;;
+</pre></div>
+</div>
+<p>The settings listed above are strings which control the output netCDF variable name and specify attributes for that variable.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>init_time  = &quot;&quot;;
+valid_time = &quot;&quot;;
+accum_time = &quot;01&quot;;
+</pre></div>
+</div>
+<p>The settings listed above are strings which specify the timing information for the data being processed. The accumulation time is specified in HH[MMSS] format and, by default, is set to a value of 1 hour. The initialization and valid time strings are specified in YYYYMMDD[_HH[MMSS]] format. However, by default they are set to empty strings. If empty, the timing information parsed from the filename will be used. If not empty, these values override the times parsed from the filename.</p>
+<hr class="docutils" />
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>max_minutes     = 120;
+swap_endian     = TRUE;
+write_pixel_age = FALSE;
+</pre></div>
+</div>
+<p>The settings listed above are control the processing of the WWMCA pixel age data. This data is stored in binary data files in 4-byte blocks. The <strong>swap_endian</strong> option indicates whether the endian-ness of the data should be swapped after reading. The <strong>max_minutes</strong> option specifies a maximum allowed age for the cloud data in minutes. Any data values older than this value are set to bad data in the output. The <strong>write_pixel_age</strong> option writes the pixel age data, in minutes, to the output file instead of the cloud data.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="masking.html" class="btn btn-neutral float-right" title="6. Regional Verification using Spatial Masking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reformat_point.html" class="btn btn-neutral" title="4. Re-Formatting of Point Observations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, and CSU/CIRA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+     
+<script>var version_json_loc = "../../versions.json";</script>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'9.1',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/pop_ver.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
