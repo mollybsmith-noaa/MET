@@ -1,2 +1,5 @@
 # Ignore the met subdirectory
 met/
+
+#Ignore tilda files created by emacs
+*~
