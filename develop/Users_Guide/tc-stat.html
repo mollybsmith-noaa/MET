@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
-
-  
   
   
   
@@ -23,45 +19,54 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+  
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="../_static/pop_ver.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-    
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="22. TC-Gen Tool" href="tc-gen.html" />
-    <link rel="prev" title="20. TC-Pairs Tool" href="tc-pairs.html" /> 
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="22. TC-Gen Tool" href="tc-gen.html"/>
+        <link rel="prev" title="20. TC-Pairs Tool" href="tc-pairs.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MET
+            <a href="../index.html" class="icon icon-home"> MET
           
 
           
             
-            <img src="../_static/met_logo_2019_09.png" class="logo" alt="Logo"/>
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
           
           </a>
 
@@ -69,7 +74,20 @@
             
             
               <div class="version">
-                develop
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
               </div>
             
           
@@ -86,7 +104,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -137,14 +154,16 @@
 <li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration file overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">31. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">32. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">33. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">34. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">35. Appendix G Vectors and Vector Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
@@ -154,14 +173,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MET</a>
@@ -169,10 +187,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -193,7 +210,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
@@ -232,7 +249,7 @@
 <div class="section" id="summary-statistics-for-columns">
 <h3><span class="section-number">21.2.2. </span>Summary statistics for columns<a class="headerlink" href="#summary-statistics-for-columns" title="Permalink to this headline">¶</a></h3>
 <p>The TC-Stat tool can be used to produce summary information for a single column of data. After the user specifies the specific column of interest, and any other relevant search criteria, summary information is produced from values in that column of data. The summary statistics produced are listed in <a class="reference internal" href="#table-columnar-output-summary-tc-stat"><span class="std std-numref">Table 21.1</span></a>.</p>
-<p>Confidence intervals are computed for the mean of the column of data. Confidence intervals are computed using the assumption of normality for the mean. For further information on computing confidence intervals, refer to <a class="reference internal" href="appendixD.html#app-d-confidence-intervals"><span class="std std-numref">Section 30</span></a> of the MET user’s guide.</p>
+<p>Confidence intervals are computed for the mean of the column of data. Confidence intervals are computed using the assumption of normality for the mean. For further information on computing confidence intervals, refer to <a class="reference internal" href="appendixD.html#app-d-confidence-intervals"><span class="std std-numref">Section 32</span></a> of the MET user’s guide.</p>
 <p>When operating on columns, a specific column name can be listed (e.g. TK_ERR), as well as the differences of two columns (e.g. AMAX_WIND-BMAX_WIND), and the absolute difference of the column(s) (e.g. abs(AMAX_WIND-BMAX_WIND)). Additionally, several shortcuts can be applied to choose multiple columns with a single entry. Shortcut options for the -column entry are as follows:</p>
 <p><strong>TRACK:</strong> track error (TK_ERR), along-track error (ALTK_ERR), and cross-track error (CRTK_ERR)</p>
 <p><strong>WIND:</strong> all wind radii errors (34-, 50-, and 64-kt) for each quadrant</p>
@@ -562,7 +579,9 @@ e.g.: -job filter  -line_type TCMPR  -amodel HWFI   -dump_row ./tc_filter_job.tc
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -571,7 +590,7 @@ e.g.: -job filter  -line_type TCMPR  -amodel HWFI   -dump_row ./tc_filter_job.tc
         <a href="tc-gen.html" class="btn btn-neutral float-right" title="22. TC-Gen Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="tc-pairs.html" class="btn btn-neutral float-left" title="20. TC-Pairs Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="tc-pairs.html" class="btn btn-neutral" title="20. TC-Pairs Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -580,19 +599,11 @@ e.g.: -job filter  -line_type TCMPR  -amodel HWFI   -dump_row ./tc_filter_job.tc
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
      
 <script>var version_json_loc = "../../versions.json";</script>
 
@@ -607,15 +618,34 @@ e.g.: -job filter  -line_type TCMPR  -amodel HWFI   -dump_row ./tc_filter_job.tc
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/pop_ver.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

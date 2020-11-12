@@ -1,19 +1,15 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>32. Appendix F Python Embedding &mdash; MET develop documentation</title>
+  <title>34. Appendix F Python Embedding &mdash; MET develop documentation</title>
   
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
 
   
   
@@ -23,45 +19,54 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+  
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="../_static/pop_ver.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-    
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="33. Appendix G Vectors and Vector Statistics" href="appendixG.html" />
-    <link rel="prev" title="31. Appendix E WWMCA Tools" href="appendixE.html" /> 
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="35. Appendix G Vectors and Vector Statistics" href="appendixG.html"/>
+        <link rel="prev" title="33. Appendix E WWMCA Tools" href="appendixE.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MET
+            <a href="../index.html" class="icon icon-home"> MET
           
 
           
             
-            <img src="../_static/met_logo_2019_09.png" class="logo" alt="Logo"/>
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
           
           </a>
 
@@ -69,7 +74,20 @@
             
             
               <div class="version">
-                develop
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
               </div>
             
           
@@ -86,7 +104,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -122,22 +139,24 @@
 <li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">32. Appendix F Python Embedding</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">32.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#compiling-python-support">32.2. Compiling Python Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#met-python-exe">32.3. MET_PYTHON_EXE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-embedding-for-2d-data">32.4. Python Embedding for 2D data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-embedding-for-point-observations">32.5. Python Embedding for Point Observations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#python-embedding-for-mpr-data">32.6. Python Embedding for MPR data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration file overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">31. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">32. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">33. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">34. Appendix F Python Embedding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">34.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compiling-python-support">34.2. Compiling Python Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#met-python-exe">34.3. MET_PYTHON_EXE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-embedding-for-2d-data">34.4. Python Embedding for 2D data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-embedding-for-point-observations">34.5. Python Embedding for Point Observations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-embedding-for-mpr-data">34.6. Python Embedding for MPR data</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">35. Appendix G Vectors and Vector Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
@@ -147,14 +166,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MET</a>
@@ -162,10 +180,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -186,11 +203,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">32. </span>Appendix F Python Embedding</li>
+      <li><span class="section-number">34. </span>Appendix F Python Embedding</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -210,13 +227,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="appendix-f-python-embedding">
-<span id="appendixf"></span><h1><span class="section-number">32. </span>Appendix F Python Embedding<a class="headerlink" href="#appendix-f-python-embedding" title="Permalink to this headline">¶</a></h1>
+<span id="appendixf"></span><h1><span class="section-number">34. </span>Appendix F Python Embedding<a class="headerlink" href="#appendix-f-python-embedding" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">32.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>MET includes the ability to embed Python to a limited degree. Users may use Python scripts and whatever associated Python packages they wish in order to prepare 2D gridded data fields, point observations, and matched pairs as input to the MET tools. We fully expect that this degree of embedding will increase in the future. In addition, plans are in place to extend Python with MET in upcoming releases, allowing users to invoke MET tools directly from their Python script. While MET version 8.0 was built on Python 2.x, MET version 9.0 is built on Python 3.6+.</p>
 </div>
 <div class="section" id="compiling-python-support">
-<h2><span class="section-number">32.2. </span>Compiling Python Support<a class="headerlink" href="#compiling-python-support" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.2. </span>Compiling Python Support<a class="headerlink" href="#compiling-python-support" title="Permalink to this headline">¶</a></h2>
 <p>In order to use Python embedding, the user’s local Python installation must have the C-language Python header files and libraries. Sometimes when Python is installed locally, these header files and libraries are deleted at the end of the installation process, leaving only the binary executable and run-time shared object files. But the Python header files and libraries must be present to compile support in MET for Python embedding. Assuming the requisite Python files are present, and that Python embedding is enabled when building MET (which is done by passing the <strong>–enable-python</strong> option to the <strong>configure</strong> command line), the MET C++ code will use these in the compilation process to link directly to the Python libraries.</p>
 <p>In addition to the <strong>configure</strong> option mentioned above, two variables, <strong>MET_PYTHON_CC</strong> and <strong>MET_PYTHON_LD</strong>, must also be set for the configuration process. These may either be set as environment variables or as command line options to <strong>configure</strong>. These constants are passed as compiler command line options when building MET to enable the compiler to find the requisite Python header files and libraries in the user’s local filesystem. Fortunately, Python provides a way to set these variables properly. This frees the user from the necessity of having any expert knowledge of the compiling and linking process. Along with the <strong>Python</strong> executable, there should be another executable called <strong>python-config</strong>, whose output can be used to set these environment variables as follows:</p>
 <ul class="simple">
@@ -226,7 +243,7 @@
 <p>Make sure that these are set as environment variables or that you have included them on the command line prior to running <strong>configure</strong>.</p>
 </div>
 <div class="section" id="met-python-exe">
-<h2><span class="section-number">32.3. </span>MET_PYTHON_EXE<a class="headerlink" href="#met-python-exe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.3. </span>MET_PYTHON_EXE<a class="headerlink" href="#met-python-exe" title="Permalink to this headline">¶</a></h2>
 <p>When Python embedding support is compiled, MET instantiates the Python interpreter directly. However, for users of highly configurable Conda environments, the Python instance set at compilation time may not be sufficient. Users may want to switch between Conda environments for which different packages are available. MET version 9.0 has been enhanced to address this need.</p>
 <p>The types of Python embedding supported in MET are described below. In all cases, by default, the compiled Python instance is used to execute the Python script. If the packages that script imports are not available for the compiled Python instance, users will encounter a runtime error. In the event of a runtime error, users are advised to set the <strong>MET_PYTHON_EXE</strong> environment variable and rerun. This environment variable should be set to the full path to the version of Python you would like to use. See an example below.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export MET_PYTHON_EXE=/usr/local/python3/bin/python3
@@ -241,7 +258,7 @@
 <p>With this approach, users should be able to execute Python scripts in their own custom environments.</p>
 </div>
 <div class="section" id="python-embedding-for-2d-data">
-<h2><span class="section-number">32.4. </span>Python Embedding for 2D data<a class="headerlink" href="#python-embedding-for-2d-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.4. </span>Python Embedding for 2D data<a class="headerlink" href="#python-embedding-for-2d-data" title="Permalink to this headline">¶</a></h2>
 <p>We now describe how to write Python scripts so that the MET tools may extract 2D gridded data fields from them. Currently, MET offers two ways to interact with Python scripts: by using NumPy arrays or by using Xarray objects. The interface to be used (NumPy or Xarray) is specified on the command line (more on this later). The user’s scripts can use any Python libraries that are supported by the local Python installation, or any personal or institutional libraries or code that are desired in order to implement the Python script, so long as the data has been loaded into either a NumPy array or an Xarray object by the end of the script. This offers advantages when using data file formats that MET does not directly support. If there is Python code to read the data format, the user can use those tools to read the data, and then copy the data into a NumPy array or an Xarray object. MET can then ingest the data via the Python script. Note that whether a NumPy array or an Xarray object is used, the data should be stored as double precision floating point numbers. Using different data types, such as integers or single precision floating point numbers, will lead to unexpected results in MET.</p>
 <p><strong>Using NumPy</strong></p>
 <p>The data must be loaded into a 2D NumPy array named <strong>met_data</strong>. In addition there must be a Python dictionary named <strong>attrs</strong> which contains metadata such as timestamps, grid projection and other information. Here is an example <strong>attrs</strong> dictionary:</p>
@@ -317,7 +334,7 @@ DEBUG 1: Creating postscript file: fcst.ps
 </div>
 </div>
 <div class="section" id="python-embedding-for-point-observations">
-<h2><span class="section-number">32.5. </span>Python Embedding for Point Observations<a class="headerlink" href="#python-embedding-for-point-observations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.5. </span>Python Embedding for Point Observations<a class="headerlink" href="#python-embedding-for-point-observations" title="Permalink to this headline">¶</a></h2>
 <p>The ASCII2NC tool supports the “-format python” option. With this option, point observations may be passed as input. An example of this is provided in <a class="reference internal" href="reformat_point.html#ascii2nc-pyembed"><span class="std std-numref">Section 4.2.1.3</span></a>. That example uses the <strong>read_ascii_point.py</strong> sample script which is included with the MET code. It reads ASCII data in MET’s 11-column point observation format and stores it in a Pandas dataframe to be read by the ASCII2NC tool with Python.</p>
 <p>The <strong>read_ascii_point.py</strong> sample script can be found in:</p>
 <ul class="simple">
@@ -326,7 +343,7 @@ DEBUG 1: Creating postscript file: fcst.ps
 </ul>
 </div>
 <div class="section" id="python-embedding-for-mpr-data">
-<h2><span class="section-number">32.6. </span>Python Embedding for MPR data<a class="headerlink" href="#python-embedding-for-mpr-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">34.6. </span>Python Embedding for MPR data<a class="headerlink" href="#python-embedding-for-mpr-data" title="Permalink to this headline">¶</a></h2>
 <p>The Stat-Analysis tool supports the “-lookin python” option. With this option, matched pair (MPR) data may be passed as input. An example of this is provided in <a class="reference internal" href="stat-analysis.html#sta-pyembed"><span class="std std-numref">Section 12.3.1.3</span></a>. That example uses the <strong>read_ascii_mpr.py</strong> sample script which is included with the MET code. It reads MPR data and stores it in a Pandas dataframe to be read by the Stat-Analysis tool with Python.</p>
 <p>The <strong>read_ascii_mpr.py</strong> sample script can be found in:</p>
 <ul class="simple">
@@ -338,16 +355,18 @@ DEBUG 1: Creating postscript file: fcst.ps
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="appendixG.html" class="btn btn-neutral float-right" title="33. Appendix G Vectors and Vector Statistics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="appendixG.html" class="btn btn-neutral float-right" title="35. Appendix G Vectors and Vector Statistics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="appendixE.html" class="btn btn-neutral float-left" title="31. Appendix E WWMCA Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="appendixE.html" class="btn btn-neutral" title="33. Appendix E WWMCA Tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -356,19 +375,11 @@ DEBUG 1: Creating postscript file: fcst.ps
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
      
 <script>var version_json_loc = "../../versions.json";</script>
 
@@ -383,15 +394,34 @@ DEBUG 1: Creating postscript file: fcst.ps
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/pop_ver.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

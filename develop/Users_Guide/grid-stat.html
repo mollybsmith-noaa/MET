@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
-
-  
   
   
   
@@ -23,45 +19,54 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+  
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="../_static/pop_ver.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-    
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. Ensemble-Stat Tool" href="ensemble-stat.html" />
-    <link rel="prev" title="7. Point-Stat Tool" href="point-stat.html" /> 
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="9. Ensemble-Stat Tool" href="ensemble-stat.html"/>
+        <link rel="prev" title="7. Point-Stat Tool" href="point-stat.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MET
+            <a href="../index.html" class="icon icon-home"> MET
           
 
           
             
-            <img src="../_static/met_logo_2019_09.png" class="logo" alt="Logo"/>
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
           
           </a>
 
@@ -69,7 +74,20 @@
             
             
               <div class="version">
-                develop
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
               </div>
             
           
@@ -86,7 +104,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -141,14 +158,16 @@
 <li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration file overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">31. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">32. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">33. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">34. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">35. Appendix G Vectors and Vector Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
@@ -158,14 +177,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MET</a>
@@ -173,10 +191,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -197,7 +214,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
@@ -231,20 +248,20 @@
 <h2><span class="section-number">8.2. </span>Scientific and statistical aspects<a class="headerlink" href="#scientific-and-statistical-aspects" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="statistical-measures">
 <h3><span class="section-number">8.2.1. </span>Statistical measures<a class="headerlink" href="#statistical-measures" title="Permalink to this headline">¶</a></h3>
-<p>The Grid-Stat tool computes a wide variety of verification statistics. Broadly speaking, these statistics can be subdivided into three types of statistics: measures for categorical variables, measures for continuous variables, and measures for probabilistic forecasts. Further, when a climatology file is included, reference statistics for the forecasts compared to the climatology can be calculated. These categories of measures are briefly described here; specific descriptions of all measures are provided in <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 29</span></a>. Additional information can be found in <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a> and <a class="reference internal" href="refs.html#jolliffe-2012"><span class="std std-ref">Jolliffe and Stephenson (2012)</span></a>, and on the Collaboration for Australian Weather and Climate Research Forecast Verification - <a class="reference external" href="http://www.cawcr.gov.au/projects/verification/verif_web_page.html">Issues, Methods and FAQ web page</a>.</p>
-<p>In addition to these verification measures, the Grid-Stat tool also computes partial sums and other FHO statistics that are produced by the NCEP verification system. These statistics are also described in <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 29</span></a>.</p>
+<p>The Grid-Stat tool computes a wide variety of verification statistics. Broadly speaking, these statistics can be subdivided into three types of statistics: measures for categorical variables, measures for continuous variables, and measures for probabilistic forecasts. Further, when a climatology file is included, reference statistics for the forecasts compared to the climatology can be calculated. These categories of measures are briefly described here; specific descriptions of all measures are provided in <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 31</span></a>. Additional information can be found in <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a> and <a class="reference internal" href="refs.html#jolliffe-2012"><span class="std std-ref">Jolliffe and Stephenson (2012)</span></a>, and on the Collaboration for Australian Weather and Climate Research Forecast Verification - <a class="reference external" href="http://www.cawcr.gov.au/projects/verification/verif_web_page.html">Issues, Methods and FAQ web page</a>.</p>
+<p>In addition to these verification measures, the Grid-Stat tool also computes partial sums and other FHO statistics that are produced by the NCEP verification system. These statistics are also described in <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 31</span></a>.</p>
 <div class="section" id="measures-for-categorical-variables">
 <h4><span class="section-number">8.2.1.1. </span>Measures for categorical variables<a class="headerlink" href="#measures-for-categorical-variables" title="Permalink to this headline">¶</a></h4>
-<p>Categorical verification statistics are used to evaluate forecasts that are in the form of a discrete set of categories rather than on a continuous scale. Grid-Stat computes both 2x2 and multi-category contingency tables and their associated statistics, similar to Point-Stat. See <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 29</span></a> for more information.</p>
+<p>Categorical verification statistics are used to evaluate forecasts that are in the form of a discrete set of categories rather than on a continuous scale. Grid-Stat computes both 2x2 and multi-category contingency tables and their associated statistics, similar to Point-Stat. See <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 31</span></a> for more information.</p>
 </div>
 <div class="section" id="measures-for-continuous-variables">
 <h4><span class="section-number">8.2.1.2. </span>Measures for continuous variables<a class="headerlink" href="#measures-for-continuous-variables" title="Permalink to this headline">¶</a></h4>
-<p>For continuous variables, many verification measures are based on the forecast error (i.e., f - o). However, it also is of interest to investigate characteristics of the forecasts, and the observations, as well as their relationship. These concepts are consistent with the general framework for verification outlined by <a class="reference internal" href="refs.html#murphy-1987"><span class="std std-ref">Murphy and Winkler (1987)</span></a>. The statistics produced by MET for continuous forecasts represent this philosophy of verification, which focuses on a variety of aspects of performance rather than a single measure. See <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 29</span></a> for specific information.</p>
+<p>For continuous variables, many verification measures are based on the forecast error (i.e., f - o). However, it also is of interest to investigate characteristics of the forecasts, and the observations, as well as their relationship. These concepts are consistent with the general framework for verification outlined by <a class="reference internal" href="refs.html#murphy-1987"><span class="std std-ref">Murphy and Winkler (1987)</span></a>. The statistics produced by MET for continuous forecasts represent this philosophy of verification, which focuses on a variety of aspects of performance rather than a single measure. See <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 31</span></a> for specific information.</p>
 <p>A user may wish to eliminate certain values of the forecasts from the calculation of statistics, a process referred to here as “conditional verification”. For example, a user may eliminate all temperatures above freezing and then calculate the error statistics only for those forecasts of below freezing temperatures. Another common example involves verification of wind forecasts. Since wind direction is indeterminate at very low wind speeds, the user may wish to set a minimum wind speed threshold prior to calculating error statistics for wind direction. The user may specify these thresholds in the configuration file to specify the conditional verification. Thresholds can be specified using the usual Fortran conventions (&lt;, &lt;=, ==, !-, &gt;=, or &gt;) followed by a numeric value. The threshold type may also be specified using two letter abbreviations (lt, le, eq, ne, ge, gt). Further, more complex thresholds can be achieved by defining multiple thresholds and using &amp;&amp; or || to string together event definition logic. The forecast and observation threshold can be used together according to user preference by specifying one of: UNION, INTERSECTION, or SYMDIFF (symmetric difference).</p>
 </div>
 <div class="section" id="measures-for-probabilistic-forecasts-and-dichotomous-outcomes">
 <h4><span class="section-number">8.2.1.3. </span>Measures for probabilistic forecasts and dichotomous outcomes<a class="headerlink" href="#measures-for-probabilistic-forecasts-and-dichotomous-outcomes" title="Permalink to this headline">¶</a></h4>
-<p>For probabilistic forecasts, many verification measures are based on reliability, accuracy and bias. However, it also is of interest to investigate joint and conditional distributions of the forecasts and the observations, as in <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a>. See <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 29</span></a> for specific information.</p>
+<p>For probabilistic forecasts, many verification measures are based on reliability, accuracy and bias. However, it also is of interest to investigate joint and conditional distributions of the forecasts and the observations, as in <a class="reference internal" href="refs.html#wilks-2011"><span class="std std-ref">Wilks (2011)</span></a>. See <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 31</span></a> for specific information.</p>
 <p>Probabilistic forecast values are assumed to have a range of either 0 to 1 or 0 to 100. If the max data value is &gt; 1, we assume the data range is 0 to 100, and divide all the values by 100. If the max data value is &lt;= 1, then we use the values as is. Further, thresholds are applied to the probabilities with equality on the lower end. For example, with a forecast probability p, and thresholds t1 and t2, the range is defined as: t1 &lt;= p &lt; t2. The exception is for the highest set of thresholds, when the range includes 1: t1 &lt;= p &lt;= 1. To make configuration easier, since METv6.0, these probabilities may be specified in the configuration file as a list (&gt;0.00,&gt;0.25,&gt;0.50,&gt;0.75,&gt;1.00) or using shorthand notation (==0.25) for bins of equal width.</p>
 <p>Since METv6.0, when the “prob” entry is set as a dictionary to define the field of interest, setting “prob_as_scalar = TRUE” indicates that this data should be processed as regular scalars rather than probabilities.For example, this option can be used to compute traditional 2x2 contingency tables and neighborhood verification statistics for probability data. It can also be used to compare two probability fields directly.</p>
 </div>
@@ -259,7 +276,7 @@
 </div>
 <div class="section" id="statistical-confidence-intervals">
 <h3><span class="section-number">8.2.2. </span>Statistical confidence intervals<a class="headerlink" href="#statistical-confidence-intervals" title="Permalink to this headline">¶</a></h3>
-<p>The confidence intervals for the Grid-Stat tool are the same as those provided for the Point-Stat tool except that the scores are based on pairing grid points with grid points so that there are likely more values for each field making any assumptions based on the central limit theorem more likely to be valid. However, it should be noted that spatial (and temporal) correlations are not presently taken into account in the confidence interval calculations. Therefore, confidence intervals reported may be somewhat too narrow (e.g., <a class="reference internal" href="refs.html#efron-2007"><span class="std std-ref">Efron 2007</span></a>). See <a class="reference internal" href="appendixD.html#appendixd"><span class="std std-numref">Appendix D, Section 30</span></a> for details regarding confidence intervals provided by MET.</p>
+<p>The confidence intervals for the Grid-Stat tool are the same as those provided for the Point-Stat tool except that the scores are based on pairing grid points with grid points so that there are likely more values for each field making any assumptions based on the central limit theorem more likely to be valid. However, it should be noted that spatial (and temporal) correlations are not presently taken into account in the confidence interval calculations. Therefore, confidence intervals reported may be somewhat too narrow (e.g., <a class="reference internal" href="refs.html#efron-2007"><span class="std std-ref">Efron 2007</span></a>). See <a class="reference internal" href="appendixD.html#appendixd"><span class="std std-numref">Appendix D, Section 32</span></a> for details regarding confidence intervals provided by MET.</p>
 </div>
 <div class="section" id="grid-weighting">
 <h3><span class="section-number">8.2.3. </span>Grid weighting<a class="headerlink" href="#grid-weighting" title="Permalink to this headline">¶</a></h3>
@@ -268,7 +285,7 @@
 <div class="section" id="neighborhood-methods">
 <h3><span class="section-number">8.2.4. </span>Neighborhood methods<a class="headerlink" href="#neighborhood-methods" title="Permalink to this headline">¶</a></h3>
 <p>MET also incorporates several neighborhood methods to give credit to forecasts that are close to the observations, but not necessarily exactly matched up in space. Also referred to as “fuzzy” verification methods, these methods do not just compare a single forecast at each grid point to a single observation at each grid point; they compare the forecasts and observations in a neighborhood surrounding the point of interest. With the neighborhood method, the user chooses a distance within which the forecast event can fall from the observed event and still be considered a hit. In MET this is implemented by defining a square search window around each grid point. Within the search window, the number of observed events is compared to the number of forecast events. In this way, credit is given to forecasts that are close to the observations without requiring a strict match between forecasted events and observed events at any particular grid point. The neighborhood methods allow the user to see how forecast skill varies with neighborhood size and can help determine the smallest neighborhood size that can be used to give sufficiently accurate forecasts.</p>
-<p>There are several ways to present the results of the neighborhood approaches, such as the Fractions Skill Score (FSS) or the Fractions Brier Score (FBS). These scores are presented in <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 29</span></a>. One can also simply up-scale the information on the forecast verification grid by smoothing or resampling within a specified neighborhood around each grid point and recalculate the traditional verification metrics on the coarser grid. The MET output includes traditional contingency table statistics for each threshold and neighborhood window size.</p>
+<p>There are several ways to present the results of the neighborhood approaches, such as the Fractions Skill Score (FSS) or the Fractions Brier Score (FBS). These scores are presented in <a class="reference internal" href="appendixC.html#appendixc"><span class="std std-numref">Appendix C, Section 31</span></a>. One can also simply up-scale the information on the forecast verification grid by smoothing or resampling within a specified neighborhood around each grid point and recalculate the traditional verification metrics on the coarser grid. The MET output includes traditional contingency table statistics for each threshold and neighborhood window size.</p>
 <p>The user must specify several parameters in the grid_stat configuration file to utilize the neighborhood approach, such as the interpolation method, size of the smoothing window, and required fraction of valid data points within the smoothing window. For FSS-specific results, the user must specify the size of the neighborhood window, the required fraction of valid data points within the window, and the fractional coverage threshold from which the contingency tables are defined. These parameters are described further in the practical information section below.</p>
 </div>
 <div class="section" id="fourier-decomposition">
@@ -303,7 +320,7 @@
 <span id="grid-stat-fig4"></span><img alt="../_images/grid-stat_fig4.png" src="../_images/grid-stat_fig4.png" />
 <p class="caption"><span class="caption-number">Figure 8.4 </span><span class="caption-text">The absolute difference between the distance maps in the bottom row of <a class="reference internal" href="#grid-stat-fig3"><span class="std std-numref">Figure 8.3</span></a> (top left), the shortest distances from every grid point in B to the nearest grid point in A (top right), and the shortest distances from every grid point in A to the nearest grid points in B (bottom left). The latter two do not have axes in order to emphasize that the distances are now only considered from within the respective event sets. The top right graphic is the distance map of A conditioned on the presence of an event from B, and that in the bottom left is the distance map of B conditioned on the presence of an event from A.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>The statistics derived from these distance maps are described in <a class="reference internal" href="appendixC.html#app-c-distance-maps"><span class="std std-numref">Appendix C, Section 29.7</span></a>. For each combination of input field and categorical threshold requested in the configuration file, Grid-Stat applies that threshold to define events in the forecast and observation fields and computes distance maps for those binary fields. Statistics for all requested masking regions are derived from those distance maps. Note that the distance maps are computed only once over the full verification domain, not separately for each masking region. Events occurring outside of a masking region can affect the distance map values inside that masking region and, therefore, can also affect the distance maps statistics for that region.</p>
+<p>The statistics derived from these distance maps are described in <a class="reference internal" href="appendixC.html#app-c-distance-maps"><span class="std std-numref">Appendix C, Section 31.7</span></a>. For each combination of input field and categorical threshold requested in the configuration file, Grid-Stat applies that threshold to define events in the forecast and observation fields and computes distance maps for those binary fields. Statistics for all requested masking regions are derived from those distance maps. Note that the distance maps are computed only once over the full verification domain, not separately for each masking region. Events occurring outside of a masking region can affect the distance map values inside that masking region and, therefore, can also affect the distance maps statistics for that region.</p>
 </div>
 </div>
 <div class="section" id="practical-information">
@@ -1048,7 +1065,9 @@ version        = &quot;VN.N&quot;;
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -1057,7 +1076,7 @@ version        = &quot;VN.N&quot;;
         <a href="ensemble-stat.html" class="btn btn-neutral float-right" title="9. Ensemble-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="point-stat.html" class="btn btn-neutral float-left" title="7. Point-Stat Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="point-stat.html" class="btn btn-neutral" title="7. Point-Stat Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1066,19 +1085,11 @@ version        = &quot;VN.N&quot;;
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
      
 <script>var version_json_loc = "../../versions.json";</script>
 
@@ -1093,15 +1104,34 @@ version        = &quot;VN.N&quot;;
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/pop_ver.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>

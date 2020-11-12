@@ -1,7 +1,8 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -11,11 +12,6 @@
   
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
-
-  
   
   
   
@@ -23,45 +19,54 @@
   
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+  
   
     
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
-        <script src="../_static/pop_ver.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-    
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. MET Data I/O" href="data_io.html" />
-    <link rel="prev" title="1. Overview of MET" href="overview.html" /> 
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MET develop documentation" href="../index.html"/>
+        <link rel="up" title="User’s Guide" href="index.html"/>
+        <link rel="next" title="3. MET Data I/O" href="data_io.html"/>
+        <link rel="prev" title="1. Overview of MET" href="overview.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav" role="document">
 
    
   <div class="wy-grid-for-nav">
+
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search">
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> MET
+            <a href="../index.html" class="icon icon-home"> MET
           
 
           
             
-            <img src="../_static/met_logo_2019_09.png" class="logo" alt="Logo"/>
+            <img src="../_static/met_logo_2019_09.png" class="logo" />
           
           </a>
 
@@ -69,7 +74,20 @@
             
             
               <div class="version">
-                develop
+                
+                  <div class="version-dropdown">
+                    <select class="version-list" id="version-list">
+                      <option value=''>develop</option>
+                      
+                        
+                          <option value="../latest">latest</option>
+                        
+                      
+                        
+                      
+                    </select>
+                  </div>
+                
               </div>
             
           
@@ -86,7 +104,6 @@
           
         </div>
 
-        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -140,14 +157,16 @@
 <li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="refs.html">26. References</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixA.html">27. Appendix A FAQs &amp; How do I … ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixB.html">28. Appendix B Map Projections, Grids, and Polylines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixC.html">29. Appendix C Verification Measures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixD.html">30. Appendix D Confidence Intervals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixE.html">31. Appendix E WWMCA Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixF.html">32. Appendix F Python Embedding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="appendixG.html">33. Appendix G Vectors and Vector Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration file overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixC.html">31. Appendix C Verification Measures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixD.html">32. Appendix D Confidence Intervals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixE.html">33. Appendix E WWMCA Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixF.html">34. Appendix F Python Embedding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appendixG.html">35. Appendix G Vectors and Vector Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
 </ul>
 </li>
@@ -157,14 +176,13 @@
             
           
         </div>
-        
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" aria-label="top navigation">
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">MET</a>
@@ -172,10 +190,9 @@
       </nav>
 
 
+      
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
           
 
 
@@ -196,7 +213,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="../index.html">Docs</a> &raquo;</li>
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
@@ -303,7 +320,7 @@ ar crv libbufr.a *.o
 <div class="section" id="met-directory-structure">
 <span id="id1"></span><h2><span class="section-number">2.8. </span>MET directory structure<a class="headerlink" href="#met-directory-structure" title="Permalink to this headline">¶</a></h2>
 <p>The top-level MET directory consists of a README file, Makefiles, configuration files, and several subdirectories. The top-level Makefile and configuration files control how the entire toolkit is built. Instructions for using these files to build MET can be found in <a class="reference internal" href="#install-building-the-met"><span class="std std-numref">Section 2.9</span></a>.</p>
-<p>When MET has been successfully built and installed, the installation directory contains two subdirectories. The bin/ directory contains executables for each module of MET as well as several plotting utilities. The share/met/ directory contains many subdirectories with data required at runtime and a subdirectory of sample R scripts utilities. The colortables/, map/, and ps/ subdirectories contain data used in creating PostScript plots for several MET tools. The poly/ subdirectory contains predefined lat/lon polyline regions for use in selecting regions over which to verify. The polylines defined correspond to verification regions used by NCEP as described in <a class="reference internal" href="appendixB.html#appendixb"><span class="std std-numref">Appendix B, Section 28</span></a>. The config/ directory contains default configuration files for the MET tools. The python/ subdirectory contains sample scripts used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 32</span></a>). The table_files/ and tc_data/ subdirectories contain GRIB table definitions and tropical cyclone data, respectively. The Rscripts/ subdirectory contains a handful of plotting graphic utilities for MET-TC. These are the same Rscripts that reside under the top-level MET scripts/Rscripts directory, other than it is the installed location. The wrappers/ subdirectory contains code used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 32</span></a>).</p>
+<p>When MET has been successfully built and installed, the installation directory contains two subdirectories. The bin/ directory contains executables for each module of MET as well as several plotting utilities. The share/met/ directory contains many subdirectories with data required at runtime and a subdirectory of sample R scripts utilities. The colortables/, map/, and ps/ subdirectories contain data used in creating PostScript plots for several MET tools. The poly/ subdirectory contains predefined lat/lon polyline regions for use in selecting regions over which to verify. The polylines defined correspond to verification regions used by NCEP as described in <a class="reference internal" href="appendixB.html#appendixb"><span class="std std-numref">Appendix B, Section 30</span></a>. The config/ directory contains default configuration files for the MET tools. The python/ subdirectory contains sample scripts used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>). The table_files/ and tc_data/ subdirectories contain GRIB table definitions and tropical cyclone data, respectively. The Rscripts/ subdirectory contains a handful of plotting graphic utilities for MET-TC. These are the same Rscripts that reside under the top-level MET scripts/Rscripts directory, other than it is the installed location. The wrappers/ subdirectory contains code used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>).</p>
 <p>The data/ directory contains several configuration and static data files used by MET. The sample_fcst/ and sample_obs/ subdirectories contain sample data used by the test scripts provided in the scripts/ directory.</p>
 <p>The docs/ directory contains the Sphinx documentation for MET.</p>
 <p>The out/ directory will be populated with sample output from the test cases described in the next section.</p>
@@ -337,7 +354,7 @@ ar crv libbufr.a *.o
 </div></blockquote>
 <p>MET_PYTHON_CC=’-I/usr/include/python3.6’</p>
 <p>MET_PYTHON_LD=’-L/usr/lib/python3.6/config-x86_64-linux-gnu -lpython3.6m’</p>
-<p>For more information about Python support in MET, please refer to <a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 32</span></a>.</p>
+<p>For more information about Python support in MET, please refer to <a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>.</p>
 <blockquote>
 <div><p>- If compiling MODIS-Regrid and/or lidar2nc, set $MET_HDF to point to the main HDF4 directory, or set $MET_HDFINC to point to the directory with the HDF4 include files and set $MET_HDFLIB to point to the directory with the HDF4 library files. Also, set $MET_HDFEOS to point to the main HDF EOS directory, or set $MET_HDFEOSINC to point to the directory with the HDF EOS include files and set $MET_HDFEOSLIB to point to the directory with the HDF EOS library files.</p>
 <p>- If compiling MODE Graphics, set $MET_CAIRO to point to the main Cairo directory, or set$MET_CAIROINC to point to the directory with the Cairo include files and set $MET_CAIROLIB to point to the directory with the Cairo library files. Also, set $MET_FREETYPE to point to the main FreeType directory, or set $MET_FREETYPEINC to point to the directory with the FreeType include files and set $MET_FREETYPELIB to point to the directory with the FreeType library files.</p>
@@ -394,24 +411,24 @@ ar crv libbufr.a *.o
 - wwmca_regrid
 </pre></div>
 </div>
-<p>NOTE: Several compilation warnings may occur which are expected. If any errors occur, please refer to <a class="reference internal" href="appendixA.html#troubleshooting"><span class="std std-numref">Appendix A, Section 27.2</span></a> on troubleshooting for common problems.</p>
+<p>NOTE: Several compilation warnings may occur which are expected. If any errors occur, please refer to <a class="reference internal" href="appendixA.html#troubleshooting"><span class="std std-numref">Appendix A, Section 29.2</span></a> on troubleshooting for common problems.</p>
 <p><strong>-help</strong> and <strong>-version</strong> command line options are available for all of the MET tools. Typing the name of the tool with no command line options also produces the usage statement.</p>
 <p>The configure script has command line options to specify where to install MET and which MET utilities to install. Include any of the following options that apply to your system:</p>
-<p><strong>-\-prefix=PREFIX</strong></p>
+<p><strong>--prefix=PREFIX</strong></p>
 <p>By default, MET will install all the files in “/usr/local/bin”. You can specify an installation prefix other than “/usr/local” using “–prefix”, for instance “–prefix=$HOME” or “–prefix=`pwd`”.</p>
-<p><strong>-\-enable-grib2</strong></p>
+<p><strong>--enable-grib2</strong></p>
 <p>Enable compilation of utilities using GRIB2. Requires $MET_GRIB2C.</p>
-<p><strong>-\-enable-python</strong></p>
+<p><strong>--enable-python</strong></p>
 <p>Enable compilation of python interface. Requires $MET_PYTHON_CC and $MET_PYTHON_LD.</p>
-<p><strong>-\-enable-lidar2nc</strong></p>
-<p>Enable compilation of utilities using lidar2nc.</p>
-<p><strong>-\-enable-modis</strong></p>
-<p>Enable compilation of modis_regrid. Requires $MET_HDF, $MET_HDFEOSINC, and $MET_HDFEOSLIB.</p>
-<p><strong>-\-enable-mode_graphics</strong></p>
-<p>Enable compilation of mode_graphics. Requires $MET_CAIRO and $MET_FREETYPE.</p>
-<p><strong>-\-disable-block4</strong></p>
+<p><strong>--enable-lidar2nc</strong></p>
+<p>Enable compilation of utilities using the LIDAR2NC tool.</p>
+<p><strong>--enable-modis</strong></p>
+<p>Enable compilation of the Modis-Regrid tool. Requires $MET_HDF, $MET_HDFEOSINC, and $MET_HDFEOSLIB.</p>
+<p><strong>--enable-mode_graphics</strong></p>
+<p>Enable compilation of the MODE-Graphics tool. Requires $MET_CAIRO and $MET_FREETYPE.</p>
+<p><strong>--disable-block4</strong></p>
 <p>Disable use of BLOCK4 in the compilation. Use this if you have trouble using PrepBUFR files.</p>
-<p>Run the configure script with the –help argument to see the full list of configuration options.</p>
+<p>Run the configure script with the <strong>–help</strong> argument to see the full list of configuration options.</p>
 </div>
 <div class="section" id="make-targets">
 <h3><span class="section-number">2.10.3. </span>Make Targets<a class="headerlink" href="#make-targets" title="Permalink to this headline">¶</a></h3>
@@ -435,14 +452,16 @@ ar crv libbufr.a *.o
 <li><p>Type ‘make test &gt;&amp; make_test.log &amp;’ to run all of the test scripts in the directory. These test scripts use test data supplied with the tarball. For instructions on running your own data, please refer to the MET User’s Guide.</p></li>
 <li><p>Type ‘tail -f make_test.log’ to view the execution of the test script.</p></li>
 <li><p>When the test script is finished, type ‘CTRL-C’ to quit the tail. Look in “out” to find the output files for these tests. Each tool has a separate, appropriately named subdirectory for its output files.</p></li>
-<li><p>In particular, check that the PB2NC tool ran without error. If there was an error, run “make clean” then rerun your configure command adding “–disable-block4” to your configure command line and rebuild MET.</p></li>
+<li><p>In particular, check that the PB2NC tool ran without error. If there was an error, run “make clean” then rerun your configure command adding <strong>–disable-block4</strong> to your configure command line and rebuild MET.</p></li>
 </ol>
 </div>
 </div>
 
 
            </div>
-           
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
@@ -451,7 +470,7 @@ ar crv libbufr.a *.o
         <a href="data_io.html" class="btn btn-neutral float-right" title="3. MET Data I/O" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="overview.html" class="btn btn-neutral float-left" title="1. Overview of MET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="overview.html" class="btn btn-neutral" title="1. Overview of MET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -460,19 +479,11 @@ ar crv libbufr.a *.o
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES
+        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>
-    
-    
-    
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
      
 <script>var version_json_loc = "../../versions.json";</script>
 
@@ -487,15 +498,34 @@ ar crv libbufr.a *.o
   </div>
   
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/pop_ver.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
 
   
   
-    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
    
 
 </body>
