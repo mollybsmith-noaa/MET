@@ -41,7 +41,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="4. Re-Formatting of Point Observations" href="reformat_point.html"/>
+        <link rel="next" title="4. Configuration File Overview" href="config_options.html"/>
         <link rel="prev" title="2. Software Installation/Getting Started" href="installation.html"/> 
 
   
@@ -121,37 +121,33 @@
 <li class="toctree-l3"><a class="reference internal" href="#intermediate-data-formats">3.2. Intermediate data formats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-data-formats">3.3. Output data formats</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-format-summary">3.4. Data format summary</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-file-details">3.5. Configuration File Details</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#met-configuration-file-options">3.5.1. MET Configuration File Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#met-tc-configuration-file-options">3.5.2. MET-TC Configuration File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-file-details">3.5. Configuration File Details</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -231,7 +227,7 @@
             
   <div class="section" id="met-data-i-o">
 <span id="data-io"></span><h1><span class="section-number">3. </span>MET Data I/O<a class="headerlink" href="#met-data-i-o" title="Permalink to this headline">¶</a></h1>
-<p>Data must often be preprocessed prior to using it for verification. Several MET tools exist for this purpose. In addition to preprocessing observations, some plotting utilities for data checking are also provided and described at the end of this section. Both the input and output file formats are described in this section. <a class="reference internal" href="#input-data-formats"><span class="std std-numref">Section 3.1</span></a> and <a class="reference internal" href="#intermediate-data-formats"><span class="std std-numref">Section 3.2</span></a> are primarily concerned with re-formatting input files into the intermediate files required by some MET modules. These steps are represented by the first three columns in the MET flowchart depicted in <a class="reference internal" href="overview.html#overview-figure"><span class="std std-numref">Figure 1.1</span></a>. Output data formats are described in <a class="reference internal" href="#output-data-formats"><span class="std std-numref">Section 3.3</span></a>. Common configuration files options are described in <a class="reference internal" href="#configuration-file-details"><span class="std std-numref">Section 3.5</span></a>. Description of software modules used to reformat the data may now be found in <a class="reference internal" href="reformat_point.html#reformat-point"><span class="std std-numref">Section 4</span></a>  and <a class="reference internal" href="reformat_grid.html#reformat-grid"><span class="std std-numref">Section 5</span></a>.</p>
+<p>Data must often be preprocessed prior to using it for verification. Several MET tools exist for this purpose. In addition to preprocessing observations, some plotting utilities for data checking are also provided and described at the end of this section. Both the input and output file formats are described in this section. <a class="reference internal" href="#input-data-formats"><span class="std std-numref">Section 3.1</span></a> and <a class="reference internal" href="#intermediate-data-formats"><span class="std std-numref">Section 3.2</span></a> are primarily concerned with re-formatting input files into the intermediate files required by some MET modules. These steps are represented by the first three columns in the MET flowchart depicted in <a class="reference internal" href="overview.html#overview-figure"><span class="std std-numref">Figure 1.1</span></a>. Output data formats are described in <a class="reference internal" href="#output-data-formats"><span class="std std-numref">Section 3.3</span></a>. Common configuration files options are described in <a class="reference internal" href="#configuration-file-details"><span class="std std-numref">Section 3.5</span></a>. Description of software modules used to reformat the data may now be found in <a class="reference internal" href="reformat_point.html#reformat-point"><span class="std std-numref">Section 6</span></a>  and <a class="reference internal" href="reformat_grid.html#reformat-grid"><span class="std std-numref">Section 7</span></a>.</p>
 <div class="section" id="input-data-formats">
 <span id="id1"></span><h2><span class="section-number">3.1. </span>Input data formats<a class="headerlink" href="#input-data-formats" title="Permalink to this headline">¶</a></h2>
 <p>The MET package can handle gridded input data in one of four formats: GRIB version 1, GRIB version 2, NetCDF files following the Climate and Forecast (CF) conventions, and NetCDF files produced by the MET tools themselves. MET supports standard NCEP, USAF, UKMet Office and ECMWF grib tables along with custom, user-defined GRIB tables and the extended PDS including ensemble member metadata. See <a class="reference internal" href="#configuration-file-details"><span class="std std-numref">Section 3.5</span></a> for more information. Point observation files may be supplied in either PrepBUFR, ASCII, or MADIS format. Note that MET does not require the Unified Post-Processor to be used, but does require that the input GRIB data be on a standard, de-staggered grid on pressure or regular levels in the vertical. While the Grid-Stat, Wavelet-Stat, MODE, and MTD tools can be run on a gridded field at virtually any level, the Point-Stat tool can only be used to verify forecasts at the surface or on pressure or height levels. MET does not interpolate between native model vertical levels.</p>
@@ -518,19 +514,9 @@
 </div>
 <div class="section" id="configuration-file-details">
 <span id="id5"></span><h2><span class="section-number">3.5. </span>Configuration File Details<a class="headerlink" href="#configuration-file-details" title="Permalink to this headline">¶</a></h2>
-<p>Part of the strength of MET is the leveraging of capability across tools. There are several config options that are common to many of the tools. They are described in this section.</p>
+<p>Part of the strength of MET is the leveraging of capability across tools. There are several configuration options that are common to many of the tools.</p>
 <p>Many of the MET tools use a configuration file to set parameters. This prevents the command line from becoming too long and cumbersome and makes the output easier to duplicate.</p>
-<p>Settings common to multiple tools are described in the following sections while those specific to individual tools are explained in the sections for those tools. In addition, these configuration settings are described in the <em>share/met/config/README</em> file and the <em>share/met/config/README-TC</em> file for the MET-Tropical Cyclone tools.</p>
-<div class="section" id="met-configuration-file-options">
-<span id="data-io-met-configuration-file-options"></span><h3><span class="section-number">3.5.1. </span>MET Configuration File Options<a class="headerlink" href="#met-configuration-file-options" title="Permalink to this headline">¶</a></h3>
-<p>The information listed below may also be found in the <em>data/config/README</em> file.</p>
-<p><a class="reference internal" href="README.html#readme"><span class="std std-ref">README - Configuration File Overview</span></a></p>
-</div>
-<div class="section" id="met-tc-configuration-file-options">
-<span id="data-io-met-tc-configuration-file-options"></span><h3><span class="section-number">3.5.2. </span>MET-TC Configuration File Options<a class="headerlink" href="#met-tc-configuration-file-options" title="Permalink to this headline">¶</a></h3>
-<p>The information listed below may also be found in the <em>data/config/README_TC</em> file.</p>
-<p><a class="reference internal" href="README_TC.html#readme-tc"><span class="std std-ref">README_TC Configuration File Overview</span></a></p>
-</div>
+<p>The configuration file details are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-ref">Configuration File Overview</span></a> and <a class="reference internal" href="config_options_tc.html#config-options-tc"><span class="std std-ref">Tropical Cyclone Configuration Options</span></a>.</p>
 </div>
 </div>
 
@@ -544,7 +530,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reformat_point.html" class="btn btn-neutral float-right" title="4. Re-Formatting of Point Observations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="config_options.html" class="btn btn-neutral float-right" title="4. Configuration File Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installation.html" class="btn btn-neutral" title="2. Software Installation/Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

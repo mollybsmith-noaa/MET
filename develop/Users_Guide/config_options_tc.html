@@ -8,14 +8,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>27. README_TC Configuration File Overview &mdash; MET develop documentation</title>
+  <title>5. Tropical Cyclone Configuration Options &mdash; MET develop documentation</title>
   
 
   
   
   
   
-    <link rel="canonical" href="https://dtcenter.github.io/MET/latest/Users_Guide/README_TC.html"/>
+    <link rel="canonical" href="https://dtcenter.github.io/MET/latest/Users_Guide/config_options_tc.html"/>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="28. References" href="refs.html"/>
-        <link rel="prev" title="26. README - Configuration File Overview" href="README.html"/> 
+        <link rel="next" title="6. Re-Formatting of Point Observations" href="reformat_point.html"/>
+        <link rel="prev" title="4. Configuration File Overview" href="config_options.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,43 +117,43 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">27. README_TC Configuration File Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-settings-common-to-multiple-tools">27.1. Configuration settings common to multiple tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#settings-specific-to-individual-tools">27.2. Settings specific to individual tools</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#tcpairsconfig-default">27.2.1. TCPairsConfig_default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Tropical Cyclone Configuration Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-settings-common-to-multiple-tools">5.1. Configuration settings common to multiple tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings-specific-to-individual-tools">5.2. Settings specific to individual tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tcpairsconfig-default">5.2.1. TCPairsConfig_default</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#tcstatconfig-default">27.3. TCStatConfig_default</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tcgenconfig-default">27.4. TCGenConfig_default</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#track-filtering-options-which-may-be-specified-separately-in-each-filter-array-entry">27.4.1. Track filtering options which may be specified separately in each filter array entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcstatconfig-default">5.3. TCStatConfig_default</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcgenconfig-default">5.4. TCGenConfig_default</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#track-filtering-options-which-may-be-specified-separately-in-each-filter-array-entry">5.4.1. Track filtering options which may be specified separately in each filter array entry</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#global-settings">27.5. Global settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-settings">5.5. Global settings</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -212,13 +212,13 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">27. </span>README_TC Configuration File Overview</li>
+      <li><span class="section-number">5. </span>Tropical Cyclone Configuration Options</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/Users_Guide/README_TC.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Users_Guide/config_options_tc.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -231,11 +231,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="readme-tc-configuration-file-overview">
-<span id="readme-tc"></span><h1><span class="section-number">27. </span>README_TC Configuration File Overview<a class="headerlink" href="#readme-tc-configuration-file-overview" title="Permalink to this headline">¶</a></h1>
-<p>See <a class="reference internal" href="README.html#readme"><span class="std std-ref">README - Configuration File Overview</span></a></p>
+  <div class="section" id="tropical-cyclone-configuration-options">
+<span id="config-options-tc"></span><h1><span class="section-number">5. </span>Tropical Cyclone Configuration Options<a class="headerlink" href="#tropical-cyclone-configuration-options" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a> for a description of the configuration file syntax.</p>
 <div class="section" id="configuration-settings-common-to-multiple-tools">
-<h2><span class="section-number">27.1. </span>Configuration settings common to multiple tools<a class="headerlink" href="#configuration-settings-common-to-multiple-tools" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Configuration settings common to multiple tools<a class="headerlink" href="#configuration-settings-common-to-multiple-tools" title="Permalink to this headline">¶</a></h2>
 <p><strong>storm_id</strong></p>
 <p>Specify a comma-separated list of storm id’s to be used:</p>
 <div class="line-block">
@@ -360,14 +360,14 @@ valid_mask = &quot;&quot;;
 <p><strong>version</strong></p>
 <p>Indicate the version number for the contents of this configuration file.
 The value should generally not be modified.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version = &quot;V10.0&quot;;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version = &quot;VN.N&quot;;
 </pre></div>
 </div>
 </div>
 <div class="section" id="settings-specific-to-individual-tools">
-<h2><span class="section-number">27.2. </span>Settings specific to individual tools<a class="headerlink" href="#settings-specific-to-individual-tools" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Settings specific to individual tools<a class="headerlink" href="#settings-specific-to-individual-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="tcpairsconfig-default">
-<h3><span class="section-number">27.2.1. </span>TCPairsConfig_default<a class="headerlink" href="#tcpairsconfig-default" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.2.1. </span>TCPairsConfig_default<a class="headerlink" href="#tcpairsconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>model</strong></p>
 <p>The “model” entry specifies an array of model names to be verified. If
 verifying multiple models, choose descriptive model names (no whitespace)
@@ -548,7 +548,7 @@ parameter will result in missed matches.</p>
 </div>
 </div>
 <div class="section" id="tcstatconfig-default">
-<h2><span class="section-number">27.3. </span>TCStatConfig_default<a class="headerlink" href="#tcstatconfig-default" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>TCStatConfig_default<a class="headerlink" href="#tcstatconfig-default" title="Permalink to this headline">¶</a></h2>
 <p><strong>amodel, bmodel</strong></p>
 <p>Stratify by the AMODEL or BMODEL columns.
 Specify comma-separated lists of model names to be used for all analyses
@@ -964,7 +964,7 @@ probability values greater than 0:</p>
 </div>
 </div>
 <div class="section" id="tcgenconfig-default">
-<h2><span class="section-number">27.4. </span>TCGenConfig_default<a class="headerlink" href="#tcgenconfig-default" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>TCGenConfig_default<a class="headerlink" href="#tcgenconfig-default" title="Permalink to this headline">¶</a></h2>
 <p><strong>int_freq</strong></p>
 <p>Model initialization frequency in hours, starting at 0.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>init_freq = 6;
@@ -1021,7 +1021,7 @@ time of the first track point where all of these criteria are met.</p>
 </pre></div>
 </div>
 <div class="section" id="track-filtering-options-which-may-be-specified-separately-in-each-filter-array-entry">
-<h3><span class="section-number">27.4.1. </span>Track filtering options which may be specified separately in each filter array entry<a class="headerlink" href="#track-filtering-options-which-may-be-specified-separately-in-each-filter-array-entry" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.4.1. </span>Track filtering options which may be specified separately in each filter array entry<a class="headerlink" href="#track-filtering-options-which-may-be-specified-separately-in-each-filter-array-entry" title="Permalink to this headline">¶</a></h3>
 <p><strong>filter</strong></p>
 <p>Filter is an array of dictionaries containing the track filtering options
 listed below.  If empty, a single filter is defined using the top-level
@@ -1099,7 +1099,7 @@ valid_end = &quot;&quot;;
 </div>
 </div>
 <div class="section" id="global-settings">
-<h2><span class="section-number">27.5. </span>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this headline">¶</a></h2>
 <p><strong>ci_alpha</strong></p>
 <p>Confidence interval alpha value</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ci_alpha = 0.05;
@@ -1127,10 +1127,10 @@ valid_end = &quot;&quot;;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="refs.html" class="btn btn-neutral float-right" title="28. References" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="reformat_point.html" class="btn btn-neutral float-right" title="6. Re-Formatting of Point Observations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="README.html" class="btn btn-neutral" title="26. README - Configuration File Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="config_options.html" class="btn btn-neutral" title="4. Configuration File Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,14 +8,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>26. README - Configuration File Overview &mdash; MET develop documentation</title>
+  <title>4. Configuration File Overview &mdash; MET develop documentation</title>
   
 
   
   
   
   
-    <link rel="canonical" href="https://dtcenter.github.io/MET/latest/Users_Guide/README.html"/>
+    <link rel="canonical" href="https://dtcenter.github.io/MET/latest/Users_Guide/config_options.html"/>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="27. README_TC Configuration File Overview" href="README_TC.html"/>
-        <link rel="prev" title="25. Plotting and Graphics Support" href="plotting.html"/> 
+        <link rel="next" title="5. Tropical Cyclone Configuration Options" href="config_options_tc.html"/>
+        <link rel="prev" title="3. MET Data I/O" href="data_io.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,37 +117,44 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">26. README - Configuration File Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-settings-used-by-the-met-tools">26.1. Configuration settings used by the MET tools</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#settings-common-to-multiple-tools">26.1.1. Settings common to multiple tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#settings-specific-to-individual-tools">26.1.2. Settings specific to individual tools</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Configuration File Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#settings-common-to-multiple-tools">4.1. Settings common to multiple tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#settings-specific-to-individual-tools">4.2. Settings specific to individual tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ensemblestatconfig-default">4.2.1. EnsembleStatConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modeanalysisconfig-default">4.2.2. MODEAnalysisConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modeconfig-default">4.2.3. MODEConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pb2ncconfig-default">4.2.4. PB2NCConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#seriesanalysisconfig-default">4.2.5. SeriesAnalysisConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#statanalysisconfig-default">4.2.6. STATAnalysisConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#waveletstatconfig-default">4.2.7. WaveletStatConfig_default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wwmcaregridconfig-default">4.2.8. WWMCARegridConfig_default</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -206,13 +213,13 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">26. </span>README - Configuration File Overview</li>
+      <li><span class="section-number">4. </span>Configuration File Overview</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/Users_Guide/README.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/Users_Guide/config_options.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -225,15 +232,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="readme-configuration-file-overview">
-<span id="readme"></span><h1><span class="section-number">26. </span>README - Configuration File Overview<a class="headerlink" href="#readme-configuration-file-overview" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="configuration-file-overview">
+<span id="config-options"></span><h1><span class="section-number">4. </span>Configuration File Overview<a class="headerlink" href="#configuration-file-overview" title="Permalink to this headline">¶</a></h1>
 <p>The configuration files that control many of the MET tools contain formatted
 ASCII text. This format has been updated for MET version develop and
 continues to be used in subsequent releases.</p>
-<p>Settings common to multiple tools are described in the top part of this README
+<p>Settings common to multiple tools are described in the top part of this
 file and settings specific to individual tools are described beneath the common
-settings. Please refer to the MET User’s Guide in the “doc” directory for more
-details about the settings if necessary.</p>
+settings. Please refer to the MET User’s Guide for more details about the
+settings if necessary.</p>
 <p>A configuration file entry is an entry name, followed by an equal sign (=),
 followed by an entry value, and is terminated by a semicolon (;). The
 configuration file itself is one large dictionary consisting of entries, some of
@@ -486,10 +493,8 @@ The following lines consist of 8 integers followed by 3 strings.</p>
 <div class="line"><a class="reference external" href="http://www.nco.ncep.noaa.gov/pmb/docs/grib2/grib2_doc">NCEP WMO GRIB2 Documentation</a></div>
 <div class="line"><br /></div>
 </div>
-<div class="section" id="configuration-settings-used-by-the-met-tools">
-<h2><span class="section-number">26.1. </span>Configuration settings used by the MET tools<a class="headerlink" href="#configuration-settings-used-by-the-met-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="settings-common-to-multiple-tools">
-<h3><span class="section-number">26.1.1. </span>Settings common to multiple tools<a class="headerlink" href="#settings-common-to-multiple-tools" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">4.1. </span>Settings common to multiple tools<a class="headerlink" href="#settings-common-to-multiple-tools" title="Permalink to this headline">¶</a></h2>
 <p><strong>exit_on_warning</strong></p>
 <p>The “exit_on_warning” entry in ConfigConstants may be set to true or false.
 If set to true and a MET tool encounters a warning, it will immediately exit
@@ -613,16 +618,7 @@ string.</p>
 <li><p>to_grid = OBS;    To regrid forecasts to the observation grid.</p></li>
 <li><p>to_grid = “G218”; To regrid both to a named grid.</p></li>
 <li><p>to_grid = “path”; To regrid both to a grid defined by a file.</p></li>
-<li><p>to_grid = “spec”; To define a grid specified as follows:</p>
-<ul>
-<li><p>lambert Nx Ny lat_ll lon_ll lon_orient D_km R_km standard_parallel_1
-[standard_parallel_2] N|S</p></li>
-<li><p>stereo Nx Ny lat_ll lon_ll lon_orient D_km R_km lat_scale N|S</p></li>
-<li><p>latlon Nx Ny lat_ll lon_ll delta_lat delta_lon</p></li>
-<li><p>mercator Nx Ny lat_ll lon_ll lat_ur lon_ur</p></li>
-<li><p>gaussian lon_zero Nx Ny</p></li>
-</ul>
-</li>
+<li><p>to_grid = “spec”; To define a grid specification string, as described in <a class="reference internal" href="appendixB.html#appendixb"><span class="std std-ref">Appendix B Map Projections, Grids, and Polylines</span></a>.</p></li>
 </ul>
 </li>
 <li><p>The “vld_thresh” entry specifies a proportion between 0 and 1 to define
@@ -1997,11 +1993,14 @@ If they are both set to 0, the MET tools will automatically rescale
 the colortable to the range of values present in the data. If they
 are not both set to 0, the MET tools will rescale the colortable using
 their values.</p></li>
+<li><p>When applicable, the “colorbar_flag” enables the creation of a colorbar
+for this plot.</p></li>
 </ul>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fcst_raw_plot = {
-   color_table = &quot;MET_BASE/colortables/met_default.ctable&quot;;
-   plot_min = 0.0;
-   plot_max = 0.0;
+   color_table   = &quot;MET_BASE/colortables/met_default.ctable&quot;;
+   plot_min      = 0.0;
+   plot_max      = 0.0;
+   colorbar_flag = TRUE;
 }
 </pre></div>
 </div>
@@ -2026,7 +2025,7 @@ of the same tool.</p>
 <p>The “version” entry specifies the version number of the configuration file.
 The configuration file version number should match the version number of
 the MET code being run. This value should generally not be modified.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version = &quot;V6.0&quot;;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version = &quot;VN.N&quot;;
 </pre></div>
 </div>
 <p><strong>time_summary</strong></p>
@@ -2091,9 +2090,9 @@ are empty. Note: grib_code 11 is equivalent to obs_var “TMP”.</p>
 </div>
 </div>
 <div class="section" id="settings-specific-to-individual-tools">
-<h3><span class="section-number">26.1.2. </span>Settings specific to individual tools<a class="headerlink" href="#settings-specific-to-individual-tools" title="Permalink to this headline">¶</a></h3>
+<h2><span class="section-number">4.2. </span>Settings specific to individual tools<a class="headerlink" href="#settings-specific-to-individual-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="ensemblestatconfig-default">
-<h4><span class="section-number">26.1.2.1. </span>EnsembleStatConfig_default<a class="headerlink" href="#ensemblestatconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.1. </span>EnsembleStatConfig_default<a class="headerlink" href="#ensemblestatconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>ens</strong></p>
 <p>The “ens” entry is a dictionary that specifies the fields for which ensemble
 products should be generated. This is very similar to the “fcst” and “obs”
@@ -2328,7 +2327,7 @@ used for random assignment of ranks when they are tied.</p>
 </div>
 </div>
 <div class="section" id="modeanalysisconfig-default">
-<h4><span class="section-number">26.1.2.2. </span>MODEAnalysisConfig_default<a class="headerlink" href="#modeanalysisconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.2. </span>MODEAnalysisConfig_default<a class="headerlink" href="#modeanalysisconfig-default" title="Permalink to this headline">¶</a></h3>
 <p>MODE line options are used to create filters that determine which MODE output
 lines are read in and processed. The MODE line options are numerous. They
 fall into seven categories: toggles, multiple set string options, multiple
@@ -2582,7 +2581,7 @@ MET User’s Guide for a description of these attributes.</p>
 </div>
 </div>
 <div class="section" id="modeconfig-default">
-<h4><span class="section-number">26.1.2.3. </span>MODEConfig_default<a class="headerlink" href="#modeconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.3. </span>MODEConfig_default<a class="headerlink" href="#modeconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>quilt</strong></p>
 <p>The “quilt” entry is a boolean to indicate whether all permutations of
 convolution radii and thresholds should be run. If set to false, the number
@@ -2824,7 +2823,7 @@ much more flexible “regrid” option may be used instead.</p>
 </div>
 </div>
 <div class="section" id="pb2ncconfig-default">
-<h4><span class="section-number">26.1.2.4. </span>PB2NCConfig_default<a class="headerlink" href="#pb2ncconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.4. </span>PB2NCConfig_default<a class="headerlink" href="#pb2ncconfig-default" title="Permalink to this headline">¶</a></h3>
 <p>The PB2NC tool filters out observations from PREPBUFR or BUFR files using the
 following criteria:</p>
 <ol class="arabic">
@@ -3074,7 +3073,7 @@ stack (most quality controlled) or the bottom of the event stack (most raw).</p>
 </div>
 </div>
 <div class="section" id="seriesanalysisconfig-default">
-<h4><span class="section-number">26.1.2.5. </span>SeriesAnalysisConfig_default<a class="headerlink" href="#seriesanalysisconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.5. </span>SeriesAnalysisConfig_default<a class="headerlink" href="#seriesanalysisconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>block_size</strong></p>
 <p>Computation may be memory intensive, especially for large grids.
 The “block_size” entry sets the number of grid points to be processed
@@ -3113,7 +3112,7 @@ grid is large.</p>
 </div>
 </div>
 <div class="section" id="statanalysisconfig-default">
-<h4><span class="section-number">26.1.2.6. </span>STATAnalysisConfig_default<a class="headerlink" href="#statanalysisconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.6. </span>STATAnalysisConfig_default<a class="headerlink" href="#statanalysisconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>jobs</strong></p>
 <p>The “jobs” entry is an array of STAT-Analysis jobs to be performed.
 Each element in the array contains the specifications for a single analysis
@@ -3528,7 +3527,7 @@ confidence intervals computed for the aggregated statistics.</p>
 </div>
 </div>
 <div class="section" id="waveletstatconfig-default">
-<h4><span class="section-number">26.1.2.7. </span>WaveletStatConfig_default<a class="headerlink" href="#waveletstatconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.7. </span>WaveletStatConfig_default<a class="headerlink" href="#waveletstatconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>grid_decomp_flag</strong></p>
 <p>The “grid_decomp_flag” entry specifies how the grid should be decomposed in
 Wavelet-Stat into dyadic (2^n x 2^n) tiles:</p>
@@ -3597,22 +3596,9 @@ similar to the “fcst_raw_plot” described in the “Settings common to multip
 tools” section.</p>
 </div>
 <div class="section" id="wwmcaregridconfig-default">
-<h4><span class="section-number">26.1.2.8. </span>WWMCARegridConfig_default<a class="headerlink" href="#wwmcaregridconfig-default" title="Permalink to this headline">¶</a></h4>
+<h3><span class="section-number">4.2.8. </span>WWMCARegridConfig_default<a class="headerlink" href="#wwmcaregridconfig-default" title="Permalink to this headline">¶</a></h3>
 <p><strong>to_grid</strong></p>
-<p>Specify the grid to which the data should be interpolated in one of the
-following ways:</p>
-<ul class="simple">
-<li><p>Name (“GNNN” where NNN indicates the three digit NCEP grid number)</p></li>
-<li><p>lambert Nx Ny lat_ll lon_ll lon_orient D_km R_km standard_parallel_1
-[standard_parallel_2] N|S</p></li>
-<li><p>stereo Nx Ny lat_ll lon_ll lon_orient D_km R_km lat_scale N|S</p></li>
-<li><p>latlon Nx Ny lat_ll lon_ll delta_lat delta_lon</p></li>
-<li><p>mercator Nx Ny lat_ll lon_ll lat_ur lon_ur</p></li>
-<li><p>gaussian lon_zero Nx Ny</p></li>
-</ul>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>to_grid = &quot;lambert 614 428 12.190 -133.459 -95.0 12.19058 6367.47 25.0 N&quot;;
-</pre></div>
-</div>
+<p>Please see the description of the “to_grid” entry in the “regrid” dictionary above.</p>
 <p><strong>NetCDF output information</strong></p>
 <p>Supply the NetCDF output information.  For example:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>variable_name = &quot;Cloud_Pct&quot;;
@@ -3649,7 +3635,6 @@ in minutes, to the output file instead.</p>
 </div>
 </div>
 </div>
-</div>
 
 
            </div>
@@ -3661,10 +3646,10 @@ in minutes, to the output file instead.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="README_TC.html" class="btn btn-neutral float-right" title="27. README_TC Configuration File Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="config_options_tc.html" class="btn btn-neutral float-right" title="5. Tropical Cyclone Configuration Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="plotting.html" class="btn btn-neutral" title="25. Plotting and Graphics Support" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_io.html" class="btn btn-neutral" title="3. MET Data I/O" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Re-Formatting of Point Observations &mdash; MET develop documentation</title>
+  <title>6. Re-Formatting of Point Observations &mdash; MET develop documentation</title>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="5. Re-Formatting of Gridded Fields" href="reformat_grid.html"/>
-        <link rel="prev" title="3. MET Data I/O" href="data_io.html"/> 
+        <link rel="next" title="7. Re-Formatting of Gridded Fields" href="reformat_grid.html"/>
+        <link rel="prev" title="5. Tropical Cyclone Configuration Options" href="config_options_tc.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,60 +117,60 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Re-Formatting of Point Observations</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pb2nc-tool">4.1. PB2NC tool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pb2nc-usage">4.1.1. pb2nc usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pb2nc-configuration-file">4.1.2. pb2nc configuration file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pb2nc-output">4.1.3. pb2nc output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Re-Formatting of Point Observations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pb2nc-tool">6.1. PB2NC tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pb2nc-usage">6.1.1. pb2nc usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pb2nc-configuration-file">6.1.2. pb2nc configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pb2nc-output">6.1.3. pb2nc output</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#ascii2nc-tool">4.2. ASCII2NC tool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ascii2nc-usage">4.2.1. ascii2nc usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ascii2nc-configuration-file">4.2.2. ascii2nc configuration file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ascii2nc-output">4.2.3. ascii2nc output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii2nc-tool">6.2. ASCII2NC tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ascii2nc-usage">6.2.1. ascii2nc usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ascii2nc-configuration-file">6.2.2. ascii2nc configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ascii2nc-output">6.2.3. ascii2nc output</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#madis2nc-tool">4.3. MADIS2NC tool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#madis2nc-usage">4.3.1. madis2nc usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#madis2nc-configuration-file">4.3.2. madis2nc configuration file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#madis2nc-output">4.3.3. madis2nc output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#madis2nc-tool">6.3. MADIS2NC tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#madis2nc-usage">6.3.1. madis2nc usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#madis2nc-configuration-file">6.3.2. madis2nc configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#madis2nc-output">6.3.3. madis2nc output</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#lidar2nc-tool">4.4. LIDAR2NC tool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#lidar2nc-usage">4.4.1. lidar2nc usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#lidar2nc-output">4.4.2. lidar2nc output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lidar2nc-tool">6.4. LIDAR2NC tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lidar2nc-usage">6.4.1. lidar2nc usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lidar2nc-output">6.4.2. lidar2nc output</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#point2grid-tool">4.5. Point2Grid tool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#point2grid-usage">4.5.1. point2grid usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#point2grid-output">4.5.2. point2grid output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#point2grid-tool">6.5. Point2Grid tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#point2grid-usage">6.5.1. point2grid usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#point2grid-output">6.5.2. point2grid output</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -229,7 +229,7 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">4. </span>Re-Formatting of Point Observations</li>
+      <li><span class="section-number">6. </span>Re-Formatting of Point Observations</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -249,13 +249,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="re-formatting-of-point-observations">
-<span id="reformat-point"></span><h1><span class="section-number">4. </span>Re-Formatting of Point Observations<a class="headerlink" href="#re-formatting-of-point-observations" title="Permalink to this headline">¶</a></h1>
+<span id="reformat-point"></span><h1><span class="section-number">6. </span>Re-Formatting of Point Observations<a class="headerlink" href="#re-formatting-of-point-observations" title="Permalink to this headline">¶</a></h1>
 <p>There are several formats of point observations that may be preprocessed using the suite of reformatting tools in MET. These include PrepBUFR data from NCEP, SURFRAD data from NOAA, AERONET data from NASA, MADIS data from NOAA, little_r from WRF simulations, and user-defined data in a generic ASCII format. These steps are represented by the first columns in the MET flowchart depicted in <a class="reference internal" href="overview.html#overview"><span class="std std-numref">Section 1</span></a>. The software tools used to reformat point data are described in this section.</p>
 <div class="section" id="pb2nc-tool">
-<span id="id1"></span><h2><span class="section-number">4.1. </span>PB2NC tool<a class="headerlink" href="#pb2nc-tool" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2><span class="section-number">6.1. </span>PB2NC tool<a class="headerlink" href="#pb2nc-tool" title="Permalink to this headline">¶</a></h2>
 <p>This section describes how to configure and run the PB2NC tool. The PB2NC tool is used to stratify the contents of an input PrepBUFR point observation file and reformat it into NetCDF format for use by other MET tools. The PB2NC tool must be run on the input PrepBUFR point observation file prior to performing verification with the MET statistics tools.</p>
 <div class="section" id="pb2nc-usage">
-<span id="id2"></span><h3><span class="section-number">4.1.1. </span>pb2nc usage<a class="headerlink" href="#pb2nc-usage" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3><span class="section-number">6.1.1. </span>pb2nc usage<a class="headerlink" href="#pb2nc-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for the PB2NC tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: pb2nc
        prepbufr_file
@@ -274,7 +274,7 @@
 </div>
 <p>pb2nc has both required and optional arguments.</p>
 <div class="section" id="required-arguments-for-pb2nc">
-<h4><span class="section-number">4.1.1.1. </span>Required arguments for pb2nc<a class="headerlink" href="#required-arguments-for-pb2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.1.1.1. </span>Required arguments for pb2nc<a class="headerlink" href="#required-arguments-for-pb2nc" title="Permalink to this headline">¶</a></h4>
 <p>1.
 The <strong>prepbufr_file</strong> argument is the input PrepBUFR file to be processed.</p>
 <p>2.
@@ -283,7 +283,7 @@ The <strong>netcdf_file</strong> argument is the output NetCDF file to be writte
 The <strong>config_file</strong> argument is the configuration file to be used. The contents of the configuration file are discussed below.</p>
 </div>
 <div class="section" id="optional-arguments-for-pb2nc">
-<h4><span class="section-number">4.1.1.2. </span>Optional arguments for pb2nc<a class="headerlink" href="#optional-arguments-for-pb2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.1.1.2. </span>Optional arguments for pb2nc<a class="headerlink" href="#optional-arguments-for-pb2nc" title="Permalink to this headline">¶</a></h4>
 <p>1.
 The <strong>-pbfile prepbufr_file</strong> option is used to pass additional input PrepBUFR files.</p>
 <p>2.
@@ -312,7 +312,7 @@ PB2NCConfig
 </div>
 </div>
 <div class="section" id="pb2nc-configuration-file">
-<span id="id3"></span><h3><span class="section-number">4.1.2. </span>pb2nc configuration file<a class="headerlink" href="#pb2nc-configuration-file" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3><span class="section-number">6.1.2. </span>pb2nc configuration file<a class="headerlink" href="#pb2nc-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>The default configuration file for the PB2NC tool named <strong>PB2NCConfig_default</strong> can be found in the installed <em>share/met/config</em> directory. The version used for the example run in <a class="reference internal" href="installation.html#sample-test-cases"><span class="std std-numref">Section 2.11</span></a> is available in <em>scripts/config</em>. It is recommended that users make a copy of configuration files prior to modifying their contents.</p>
 <p>When editing configuration files, environment variables may be used for setting the configurable parameters if convenient. The configuration file parser expands any environment variables to their full value before proceeding. Within the configuration file, environment variables must be specified in the form: <strong>${VAR_NAME}</strong>.</p>
 <p>For example, using an environment variable to set the <strong>message_type</strong> (see below) parameter to use ADPUPA and ADPSFC message types might consist of the following:</p>
@@ -328,12 +328,12 @@ tmp_dir    = &quot;/tmp&quot;;
 version    = &quot;VN.N&quot;;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>message_type = [];
 </pre></div>
 </div>
-<p>Each PrepBUFR message is tagged with one of eighteen message types as listed in the <em>share/met/config/README</em> file. The <strong>message_type</strong> refers to the type of observation from which the observation value (or ‘report’) was derived. The user may specify a comma-separated list of message types to be retained. Providing an empty list indicates that all message types should be retained.</p>
+<p>Each PrepBUFR message is tagged with one of eighteen message types as listed in the <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a> file. The <strong>message_type</strong> refers to the type of observation from which the observation value (or ‘report’) was derived. The user may specify a comma-separated list of message types to be retained. Providing an empty list indicates that all message types should be retained.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>message_type_map = [ { key = “AIRCAR”; val = “AIRCAR_PROFILES”; } ];
 </pre></div>
@@ -375,10 +375,10 @@ level_category = [];
 </pre></div>
 </div>
 <p>The <strong>beg</strong> and <strong>end</strong> variables are used to stratify the model level of observations to be retained. The range shown above is 1 to 255.</p>
-<p>The <strong>level_category</strong> variable is used to specify a comma-separated list of PrepBUFR data level categories to retain. An empty string indicates that all level categories should be retained. Accepted values and their meanings are described in <a class="reference internal" href="#table-reform-point-pb2nc-level-category"><span class="std std-numref">Table 4.1</span></a>. See the following for more details:</p>
+<p>The <strong>level_category</strong> variable is used to specify a comma-separated list of PrepBUFR data level categories to retain. An empty string indicates that all level categories should be retained. Accepted values and their meanings are described in <a class="reference internal" href="#table-reform-point-pb2nc-level-category"><span class="std std-numref">Table 6.1</span></a>. See the following for more details:</p>
 <p><a class="reference external" href="https://www.emc.ncep.noaa.gov/mmb/data_processing/prepbufr.doc/table_1.htm">PrepBUFR mnemonic table.</a></p>
 <span id="table-reform-point-pb2nc-level-category"></span><table class="colwidths-auto docutils align-default" id="id5">
-<caption><span class="caption-number">Table 4.1 </span><span class="caption-text">Values for the level_category option.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Values for the level_category option.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Level category value</p></th>
 <th class="head"><p>Description</p></th>
@@ -473,10 +473,10 @@ vld_thresh = 0.0;
 <p>The <strong>vld_freq</strong> and <strong>vld_thresh</strong> entries specify the required ratio of valid data for an output time summary value to be computed. This option is only applied when these entries are set to non-zero values. The <strong>vld_freq</strong> entry specifies the expected frequency of observations in seconds. The width of the time window is divided by this frequency to compute the expected number of observations for the time window. The actual number of valid observations is divided by the expected number to compute the ratio of valid data. An output time summary value will only be written if that ratio is greater than or equal to the <strong>vld_thresh</strong> entry. Detailed information about which observations are excluded is provided at debug level 4.</p>
 </div>
 <div class="section" id="pb2nc-output">
-<span id="id4"></span><h3><span class="section-number">4.1.3. </span>pb2nc output<a class="headerlink" href="#pb2nc-output" title="Permalink to this headline">¶</a></h3>
-<p>Each NetCDF file generated by the PB2NC tool contains the dimensions and variables shown in <a class="reference internal" href="#table-reform-point-pb2nc-output-dim"><span class="std std-numref">Table 4.2</span></a> and <a class="reference internal" href="#table-reform-point-pb2nc-output-vars"><span class="std std-numref">Table 4.3</span></a>.</p>
+<span id="id4"></span><h3><span class="section-number">6.1.3. </span>pb2nc output<a class="headerlink" href="#pb2nc-output" title="Permalink to this headline">¶</a></h3>
+<p>Each NetCDF file generated by the PB2NC tool contains the dimensions and variables shown in <a class="reference internal" href="#table-reform-point-pb2nc-output-dim"><span class="std std-numref">Table 6.2</span></a> and <a class="reference internal" href="#table-reform-point-pb2nc-output-vars"><span class="std std-numref">Table 6.3</span></a>.</p>
 <span id="table-reform-point-pb2nc-output-dim"></span><table class="colwidths-auto docutils align-default" id="id6">
-<caption><span class="caption-number">Table 4.2 </span><span class="caption-text">NetCDF file dimensions for pb2n output</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.2 </span><span class="caption-text">NetCDF file dimensions for pb2n output</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>pb2nc NetCDF DIMENSIONS</p></th>
 <th class="head"></th>
@@ -507,7 +507,7 @@ vld_thresh = 0.0;
 </tbody>
 </table>
 <span id="table-reform-point-pb2nc-output-vars"></span><table class="colwidths-auto docutils align-default" id="id7">
-<caption><span class="caption-number">Table 4.3 </span><span class="caption-text">NetCDF variables in pb2nc output</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.3 </span><span class="caption-text">NetCDF variables in pb2nc output</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>pb2nc NetCDF VARIABLES</p></th>
 <th class="head"></th>
@@ -608,13 +608,13 @@ vld_thresh = 0.0;
 </div>
 </div>
 <div class="section" id="ascii2nc-tool">
-<h2><span class="section-number">4.2. </span>ASCII2NC tool<a class="headerlink" href="#ascii2nc-tool" title="Permalink to this headline">¶</a></h2>
-<p>This section describes how to run the ASCII2NC tool. The ASCII2NC tool is used to reformat ASCII point observations into the NetCDF format expected by the Point-Stat tool. For those users wishing to verify against point observations that are not available in PrepBUFR format, the ASCII2NC tool provides a way of incorporating those observations into MET. If the ASCII2NC tool is used to perform a reformatting step, no configuration file is needed. However, for more complex processing, such as summarizing time series observations, a configuration file may be specified. For details on the configuration file options, see the <em>share/met/config/README</em> file and example configuration files distributed with the MET code.</p>
+<h2><span class="section-number">6.2. </span>ASCII2NC tool<a class="headerlink" href="#ascii2nc-tool" title="Permalink to this headline">¶</a></h2>
+<p>This section describes how to run the ASCII2NC tool. The ASCII2NC tool is used to reformat ASCII point observations into the NetCDF format expected by the Point-Stat tool. For those users wishing to verify against point observations that are not available in PrepBUFR format, the ASCII2NC tool provides a way of incorporating those observations into MET. If the ASCII2NC tool is used to perform a reformatting step, no configuration file is needed. However, for more complex processing, such as summarizing time series observations, a configuration file may be specified. For details on the configuration file options, see <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a> and example configuration files distributed with the MET code.</p>
 <p>Initial versions of the ASCII2NC tool supported only a simple 11 column ASCII point observation format. It currently supports point observation data in the following formats: the default 11 column format, little_r format, <a class="reference external" href="http://www.esrl.noaa.gov/gmd/grad/surfrad/">SURFace RADiation (SURFRAD)</a> and Integrated Surface Irradiance Study (ISIS) formats, the Western Wind and Solar Integration Study (WWSIS) format, and the <a class="reference external" href="http://aeronet.gsfc.nasa.gov/">AErosol RObotic NEtwork (AERONET) versions 2 and 3 format.</a>  WWSIS data are available by request from National Renewable Energy Laboratory (NREL) in Boulder, CO.</p>
 <p>MET version 9.0 adds support for the passing observations to ascii2nc using a Python script with the “-format python” option. An example of running ASCII2NC with Python embedding is included below.</p>
-<p>The default ASCII point observation format consists of one row of data per observation value. Each row of data consists of 11 columns as shown in <a class="reference internal" href="#table-reform-point-ascii2nc-format"><span class="std std-numref">Table 4.4</span></a>.</p>
+<p>The default ASCII point observation format consists of one row of data per observation value. Each row of data consists of 11 columns as shown in <a class="reference internal" href="#table-reform-point-ascii2nc-format"><span class="std std-numref">Table 6.4</span></a>.</p>
 <span id="table-reform-point-ascii2nc-format"></span><table class="colwidths-auto docutils align-default" id="id8">
-<caption><span class="caption-number">Table 4.4 </span><span class="caption-text">Input MET ascii2nc point observation format</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.4 </span><span class="caption-text">Input MET ascii2nc point observation format</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"></th>
@@ -673,7 +673,7 @@ vld_thresh = 0.0;
 </tbody>
 </table>
 <div class="section" id="ascii2nc-usage">
-<h3><span class="section-number">4.2.1. </span>ascii2nc usage<a class="headerlink" href="#ascii2nc-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.1. </span>ascii2nc usage<a class="headerlink" href="#ascii2nc-usage" title="Permalink to this headline">¶</a></h3>
 <p>Once the ASCII point observations have been formatted as expected, the ASCII file is ready to be processed by the ASCII2NC tool. The usage statement for ASCII2NC tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: ascii2nc
        ascii_file1 [ascii_file2 ... ascii_filen]
@@ -690,20 +690,20 @@ vld_thresh = 0.0;
 </div>
 <p>ascii2nc has two required arguments and can take several optional ones.</p>
 <div class="section" id="required-arguments-for-ascii2nc">
-<h4><span class="section-number">4.2.1.1. </span>Required arguments for ascii2nc<a class="headerlink" href="#required-arguments-for-ascii2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.2.1.1. </span>Required arguments for ascii2nc<a class="headerlink" href="#required-arguments-for-ascii2nc" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>ascii_file</strong> argument is the ASCII point observation file(s) to be processed. If using Python embedding with “-format python” provides a quoted string containing the Python script to be run followed by any command line arguments that script takes.</p></li>
 <li><p>The <strong>netcdf_file</strong> argument is the NetCDF output file to be written.</p></li>
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-ascii2nc">
-<h4><span class="section-number">4.2.1.2. </span>Optional arguments for ascii2nc<a class="headerlink" href="#optional-arguments-for-ascii2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.2.1.2. </span>Optional arguments for ascii2nc<a class="headerlink" href="#optional-arguments-for-ascii2nc" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="3">
 <li><p>The <strong>-format ASCII_format</strong> option may be set to “met_point”, “little_r”, “surfrad”, “wwsis”, “aeronet”, “aeronetv2”, “aeronetv3”, or “python”. If passing in ISIS data, use the “surfrad” format flag.</p></li>
 <li><p>The <strong>-config file</strong> option is the configuration file for generating time summaries.</p></li>
 <li><p>The <strong>-mask_grid</strong> string option is a named grid or a gridded data file to filter the point observations spatially.</p></li>
 <li><p>The <strong>-mask_poly</strong> file option is a polyline masking file to filter the point observations spatially.</p></li>
-<li><p>The <strong>-mask_sid</strong> file|list option is a station ID masking file or a comma-separated list of station ID’s to filter the point observations spatially. See the description of the “sid” entry in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p></li>
+<li><p>The <strong>-mask_sid</strong> file|list option is a station ID masking file or a comma-separated list of station ID’s to filter the point observations spatially. See the description of the “sid” entry in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p></li>
 <li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
 <li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The value of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
 <li><p>The <strong>-compress level</strong> option indicates the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. The value of “level” will override the default setting of 0 from the configuration file or the environment variable MET_NC_COMPRESS. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
@@ -716,7 +716,7 @@ sample_ascii_obs.nc
 <p>In this example, the ASCII2NC tool will reformat the input <strong>sample_ascii_obs.txt file</strong> into NetCDF format and write the output to a file named <strong>sample_ascii_obs.nc</strong>.</p>
 </div>
 <div class="section" id="python-embedding-for-point-observations">
-<span id="ascii2nc-pyembed"></span><h4><span class="section-number">4.2.1.3. </span>Python Embedding for Point Observations<a class="headerlink" href="#python-embedding-for-point-observations" title="Permalink to this headline">¶</a></h4>
+<span id="ascii2nc-pyembed"></span><h4><span class="section-number">6.2.1.3. </span>Python Embedding for Point Observations<a class="headerlink" href="#python-embedding-for-point-observations" title="Permalink to this headline">¶</a></h4>
 <p>Here is an example of processing the same set of observations but using Python embedding instead:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ascii2nc -format python \
 “MET_BASE/python/read_ascii_point.py sample_ascii_obs.txt&quot; \
@@ -727,19 +727,19 @@ sample_ascii_obs_python.nc
 </div>
 </div>
 <div class="section" id="ascii2nc-configuration-file">
-<h3><span class="section-number">4.2.2. </span>ascii2nc configuration file<a class="headerlink" href="#ascii2nc-configuration-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.2. </span>ascii2nc configuration file<a class="headerlink" href="#ascii2nc-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>The default configuration file for the ASCII2NC tool named <strong>Ascii2NcConfig_default</strong> can be found in the installed <em>share/met/config</em> directory. It is recommended that users make a copy of this file prior to modifying its contents.</p>
 <p>The ASCII2NC configuration file is optional and only necessary when defining time summaries or message type mapping for little_r data. The contents of the default ASCII2NC configuration file are described below.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version = &quot;VN.N&quot;;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>time_summary = { ... }
 </pre></div>
 </div>
-<p>The <strong>time_summary</strong> feature was implemented to allow additional processing of observations with high temporal resolution, such as SURFRAD data every 5 minutes. This option is described in <a class="reference internal" href="#pb2nc-configuration-file"><span class="std std-numref">Section 4.1.2</span></a>.</p>
+<p>The <strong>time_summary</strong> feature was implemented to allow additional processing of observations with high temporal resolution, such as SURFRAD data every 5 minutes. This option is described in <a class="reference internal" href="#pb2nc-configuration-file"><span class="std std-numref">Section 6.1.2</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        message_type_map = [
         { key = &quot;FM-12 SYNOP&quot;;  val = &quot;ADPSFC&quot;; },
@@ -757,16 +757,16 @@ sample_ascii_obs_python.nc
 <p>This entry is an array of dictionaries, each containing a <strong>key</strong> string and <strong>val</strong> string which define a mapping of input strings to output message types. This mapping is currently only applied when converting input little_r report types to output message types.</p>
 </div>
 <div class="section" id="ascii2nc-output">
-<h3><span class="section-number">4.2.3. </span>ascii2nc output<a class="headerlink" href="#ascii2nc-output" title="Permalink to this headline">¶</a></h3>
-<p>The NetCDF output of the ASCII2NC tool is structured in the same way as the output of the PB2NC tool described in <a class="reference internal" href="#pb2nc-output"><span class="std std-numref">Section 4.1.3</span></a>.</p>
+<h3><span class="section-number">6.2.3. </span>ascii2nc output<a class="headerlink" href="#ascii2nc-output" title="Permalink to this headline">¶</a></h3>
+<p>The NetCDF output of the ASCII2NC tool is structured in the same way as the output of the PB2NC tool described in <a class="reference internal" href="#pb2nc-output"><span class="std std-numref">Section 6.1.3</span></a>.</p>
 <p>“obs_vid” variable is replaced with “obs_gc” when the GRIB code is given instead of the variable names. In this case, the global variable “use_var_id” does not exist or set to false (use_var_id = “false” ;). Three variables (obs_var, obs_units, and obs_desc) related with variable names are not added.</p>
 </div>
 </div>
 <div class="section" id="madis2nc-tool">
-<h2><span class="section-number">4.3. </span>MADIS2NC tool<a class="headerlink" href="#madis2nc-tool" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>MADIS2NC tool<a class="headerlink" href="#madis2nc-tool" title="Permalink to this headline">¶</a></h2>
 <p>This section describes how to run the MADIS2NC tool. The MADIS2NC tool is used to reformat <a class="reference external" href="http://madis.noaa.gov">Meteorological Assimilation Data Ingest System (MADIS)</a> point observations into the NetCDF format expected by the MET statistics tools. Since the MADIS2NC tool simply performs a reformatting step, no configuration file is needed. The MADIS2NC tool supports many of the MADIS data types, as listed in the usage statement below. Support for additional MADIS data types may be added in the future based on user feedback.</p>
 <div class="section" id="madis2nc-usage">
-<h3><span class="section-number">4.3.1. </span>madis2nc usage<a class="headerlink" href="#madis2nc-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1. </span>madis2nc usage<a class="headerlink" href="#madis2nc-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for MADIS2NC tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: madis2nc
        madis_file [madis_file2 ... madis_filen]
@@ -787,7 +787,7 @@ sample_ascii_obs_python.nc
 </div>
 <p>madis2nc has required arguments and can also take optional ones.</p>
 <div class="section" id="required-arguments-for-madis2nc">
-<h4><span class="section-number">4.3.1.1. </span>Required arguments for madis2nc<a class="headerlink" href="#required-arguments-for-madis2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.3.1.1. </span>Required arguments for madis2nc<a class="headerlink" href="#required-arguments-for-madis2nc" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>madis_file</strong> argument is one or more input MADIS point observation files to be processed.</p></li>
 <li><p>The <strong>netcdf_file</strong> argument is the NetCDF output file to be written.</p></li>
@@ -795,7 +795,7 @@ sample_ascii_obs_python.nc
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-madis2nc">
-<h4><span class="section-number">4.3.1.2. </span>Optional arguments for madis2nc<a class="headerlink" href="#optional-arguments-for-madis2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.3.1.2. </span>Optional arguments for madis2nc<a class="headerlink" href="#optional-arguments-for-madis2nc" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="4">
 <li><p>The <strong>-config file</strong> option specifies the configuration file to generate summaries of the fields in the ASCII files.</p></li>
 <li><p>The <strong>-qc_dd list</strong> option specifies a comma-separated list of QC flag values to be accepted(Z,C,S,V,X,Q,K,G,B).</p></li>
@@ -803,7 +803,7 @@ sample_ascii_obs_python.nc
 <li><p>To specify the exact records to be processed, the <strong>-rec_beg n</strong> specifies the index of the first MADIS record to process and <strong>-rec_end n</strong> specifies the index of the last MADIS record to process. Both are zero-based.</p></li>
 <li><p>The <strong>-mask_grid string</strong> option specifies a named grid or a gridded data file for filtering the point observations spatially.</p></li>
 <li><p>The <strong>-mask_poly file</strong> option defines a polyline masking file for filtering the point observations spatially.</p></li>
-<li><p>The <strong>-mask_sid file|list</strong> option is a station ID masking file or a comma-separated list of station ID’s for filtering the point observations spatially. See the description of the “sid” entry in  <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p></li>
+<li><p>The <strong>-mask_sid file|list</strong> option is a station ID masking file or a comma-separated list of station ID’s for filtering the point observations spatially. See the description of the “sid” entry in  <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p></li>
 <li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
 <li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The value of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity will increase the amount of logging.</p></li>
 <li><p>The <strong>-compress level</strong> option specifies the desired level of compression (deflate level) for NetCDF variables. The valid level is between 0 and 9. Setting the compression level to 0 will make no compression for the NetCDF output. Lower number is for fast compression and higher number is for better compression.</p></li>
@@ -817,31 +817,31 @@ sample_madis_obs_met.nc -log madis.log -v 3
 </div>
 </div>
 <div class="section" id="madis2nc-configuration-file">
-<h3><span class="section-number">4.3.2. </span>madis2nc configuration file<a class="headerlink" href="#madis2nc-configuration-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>madis2nc configuration file<a class="headerlink" href="#madis2nc-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>The default configuration file for the MADIS2NC tool named <strong>Madis2NcConfig_default</strong> can be found in the installed <em>share/met/config</em> directory. It is recommended that users make a copy of this file prior to modifying its contents.</p>
 <p>The MADIS2NC configuration file is optional and only necessary when defining time summaries. The contents of the default MADIS2NC configuration file are described below.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>version = &quot;VN.N&quot;;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>time_summary = { ... }
 </pre></div>
 </div>
-<p>The <strong>time_summary</strong> dictionary is described in <a class="reference internal" href="#pb2nc-configuration-file"><span class="std std-numref">Section 4.1.2</span></a>.</p>
+<p>The <strong>time_summary</strong> dictionary is described in <a class="reference internal" href="#pb2nc-configuration-file"><span class="std std-numref">Section 6.1.2</span></a>.</p>
 </div>
 <div class="section" id="madis2nc-output">
-<h3><span class="section-number">4.3.3. </span>madis2nc output<a class="headerlink" href="#madis2nc-output" title="Permalink to this headline">¶</a></h3>
-<p>The NetCDF output of the MADIS2NC tool is structured in the same way as the output of the PB2NC tool described in <a class="reference internal" href="#pb2nc-output"><span class="std std-numref">Section 4.1.3</span></a>.</p>
+<h3><span class="section-number">6.3.3. </span>madis2nc output<a class="headerlink" href="#madis2nc-output" title="Permalink to this headline">¶</a></h3>
+<p>The NetCDF output of the MADIS2NC tool is structured in the same way as the output of the PB2NC tool described in <a class="reference internal" href="#pb2nc-output"><span class="std std-numref">Section 6.1.3</span></a>.</p>
 <p>“obs_vid” variable is replaced with “obs_gc” when the GRIB code is given instead of the variable names. In this case, the global variable “use_var_id” does not exist or set to false (use_var_id = “false” ;). Three variables (obs_var, obs_units, and obs_desc) related with variable names are not added.</p>
 </div>
 </div>
 <div class="section" id="lidar2nc-tool">
-<h2><span class="section-number">4.4. </span>LIDAR2NC tool<a class="headerlink" href="#lidar2nc-tool" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4. </span>LIDAR2NC tool<a class="headerlink" href="#lidar2nc-tool" title="Permalink to this headline">¶</a></h2>
 <p>The LIDAR2NC tool creates a NetCDF point observation file from a CALIPSO HDF data file. Not all of the data present in the CALIPSO file is reproduced in the output, however. Instead, the output focuses mostly on information about clouds (as opposed to aerosols) as seen by the satellite along its ground track.</p>
 <div class="section" id="lidar2nc-usage">
-<h3><span class="section-number">4.4.1. </span>lidar2nc usage<a class="headerlink" href="#lidar2nc-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.4.1. </span>lidar2nc usage<a class="headerlink" href="#lidar2nc-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for LIDAR2NC tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: lidar2nc
        lidar_file
@@ -853,14 +853,14 @@ sample_madis_obs_met.nc -log madis.log -v 3
 </div>
 <p>Unlike most of the MET tools, lidar2nc does not use a config file. Currently, the options needed to run lidar2nc are not complex enough to require one.</p>
 <div class="section" id="required-arguments-for-lidar2nc">
-<h4><span class="section-number">4.4.1.1. </span>Required arguments for lidar2nc<a class="headerlink" href="#required-arguments-for-lidar2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.4.1.1. </span>Required arguments for lidar2nc<a class="headerlink" href="#required-arguments-for-lidar2nc" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>lidar_file</strong> argument is the input HDF lidar data file to be processed. Currently, CALIPSO files are supported but support for additional file types will be added in future releases.</p></li>
 <li><p>The <strong>out_file</strong> argument is the NetCDF output file to be written.</p></li>
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-lidar2nc">
-<h4><span class="section-number">4.4.1.2. </span>Optional arguments for lidar2nc<a class="headerlink" href="#optional-arguments-for-lidar2nc" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.4.1.2. </span>Optional arguments for lidar2nc<a class="headerlink" href="#optional-arguments-for-lidar2nc" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="3">
 <li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
 <li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The value of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
@@ -869,12 +869,12 @@ sample_madis_obs_met.nc -log madis.log -v 3
 </div>
 </div>
 <div class="section" id="lidar2nc-output">
-<h3><span class="section-number">4.4.2. </span>lidar2nc output<a class="headerlink" href="#lidar2nc-output" title="Permalink to this headline">¶</a></h3>
-<p>Each observation type in the lidar2nc output is assigned a GRIB code. These are outlined in <a class="reference internal" href="#lidar2nc-grib-code-table"><span class="std std-numref">Table 4.5</span></a>. GRIB codes were assigned to these fields arbitrarily, with GRIB codes in the 600s denoting individual bit fields taken from the feature classification flag field in the CALIPSO file.</p>
+<h3><span class="section-number">6.4.2. </span>lidar2nc output<a class="headerlink" href="#lidar2nc-output" title="Permalink to this headline">¶</a></h3>
+<p>Each observation type in the lidar2nc output is assigned a GRIB code. These are outlined in <a class="reference internal" href="#lidar2nc-grib-code-table"><span class="std std-numref">Table 6.5</span></a>. GRIB codes were assigned to these fields arbitrarily, with GRIB codes in the 600s denoting individual bit fields taken from the feature classification flag field in the CALIPSO file.</p>
 <p>We will not give a detailed description of each CALIPSO data product that lidar2nc reads. Users should refer to existing CALIPSO documentation for this information. We will, however, give some explanation of how the cloud layer base and top information is encoded in the lidar2nc NetCDF output file.</p>
 <p><strong>Layer_Base</strong> gives the elevation in meters above ground level of the cloud base for each cloud level at each observation location. Similarly, <strong>Layer_Top</strong> gives the elevation of the top of each cloud layer. Note that if there are multiple cloud layers at a particular location, then there will be more than one base (or top) given for that location. For convenience, <strong>Min_Base</strong> and <strong>Max_Top</strong> give, respectively, the base elevation for the bottom cloud layer, and the top elevation for the top cloud layer. For these data types, there will be only one value per observation location regardless of how many cloud layers there are at that location.</p>
 <span id="lidar2nc-grib-code-table"></span><table class="colwidths-auto docutils align-default" id="id9">
-<caption><span class="caption-number">Table 4.5 </span><span class="caption-text">lidar2nc GRIB codes and their meaning, units, and abbreviations</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 6.5 </span><span class="caption-text">lidar2nc GRIB codes and their meaning, units, and abbreviations</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>GRIB Code</p></th>
 <th class="head"><p>Meaning</p></th>
@@ -948,10 +948,10 @@ sample_madis_obs_met.nc -log madis.log -v 3
 </div>
 </div>
 <div class="section" id="point2grid-tool">
-<h2><span class="section-number">4.5. </span>Point2Grid tool<a class="headerlink" href="#point2grid-tool" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5. </span>Point2Grid tool<a class="headerlink" href="#point2grid-tool" title="Permalink to this headline">¶</a></h2>
 <p>The Point2Grid tool takes point observations from a NetCDF output file from one of the four previously mentioned MET tools (ascii2nc, madis2nc, pb2nc, lidar2nc) and creates a gridded NetCDF file. The other point observations are GOES-16/17 input files in NetCDF format (especially, Aerosol Optical Depth. Future development will include support for reading input files not produced from MET tools.</p>
 <div class="section" id="point2grid-usage">
-<h3><span class="section-number">4.5.1. </span>point2grid usage<a class="headerlink" href="#point2grid-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.1. </span>point2grid usage<a class="headerlink" href="#point2grid-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for the Point2Grid tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: point2grid
        input_filename
@@ -973,16 +973,16 @@ sample_madis_obs_met.nc -log madis.log -v 3
 </pre></div>
 </div>
 <div class="section" id="required-arguments-for-point2grid">
-<h4><span class="section-number">4.5.1.1. </span>Required arguments for point2grid<a class="headerlink" href="#required-arguments-for-point2grid" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.5.1.1. </span>Required arguments for point2grid<a class="headerlink" href="#required-arguments-for-point2grid" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>input_filename</strong> argument indicates the name of the input NetCDF file to be processed. Currently, only NetCDF files produced from the ascii2nc, madis2nc, pb2nc, and lidar2nc are supported. And AOD dataset from GOES16/17 are supported, too. Support for additional file types will be added in future releases.</p></li>
 <li><p>The <strong>to_grid</strong> argument defines the output grid as: (1) a named grid, (2) the path to a gridded data file, or (3) an explicit grid specification string.</p></li>
 <li><p>The <strong>output_filename</strong> argument is the name of the output NetCDF file to be written.</p></li>
-<li><p>The <strong>-field string</strong> argument is a string that defines the data to be regridded. It may be used multiple times. If <strong>-adp</strong> option is given (for AOD data from GOES16/17), the name consists with the variable name from the input data file and the variable name from ADP data file (for example, “AOD_Smoke” or “AOD_Dust”: getting AOD variable from the input data and applying smoke or dust variable from ADP data file).</p></li>
+<li><p>The <strong>-field</strong> string argument is a string that defines the data to be regridded. It may be used multiple times. If <strong>-adp</strong> option is given (for AOD data from GOES16/17), the name consists with the variable name from the input data file and the variable name from ADP data file (for example, “AOD_Smoke” or “AOD_Dust”: getting AOD variable from the input data and applying smoke or dust variable from ADP data file).</p></li>
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-point2grid">
-<h4><span class="section-number">4.5.1.2. </span>Optional arguments for point2grid<a class="headerlink" href="#optional-arguments-for-point2grid" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">6.5.1.2. </span>Optional arguments for point2grid<a class="headerlink" href="#optional-arguments-for-point2grid" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="5">
 <li><p>The <strong>-config</strong> file option is the configuration file to be used.</p></li>
 <li><p>The <strong>-qc</strong> flags option specifies a comma-separated list of quality control (QC) flags, for example “0,1”. This should only be applied if grid_mapping is set to “goes_imager_projection” and the QC variable exists.</p></li>
@@ -990,9 +990,7 @@ sample_madis_obs_met.nc -log madis.log -v 3
 <li><p>The <strong>-method type</strong> option specifies the regridding method. The default method is UW_MEAN.</p></li>
 <li><p>The <strong>-gaussian_dx n</strong> option defines the distance interval for Gaussian smoothing. The default is 81.271 km. Ignored if the method is not GAUSSIAN or MAXGAUSS.</p></li>
 <li><p>The <strong>-gaussian_radius</strong> n option defines the radius of influence for Gaussian interpolation. The default is 120. Ignored if the method is not GAUSSIAN or MAXGAUSS.</p></li>
-</ol>
-<p>11.The <strong>-prob_cat_thresh string</strong> option sets the threshold to compute the probability of occurrence. The default is set to disabled. This option is relevant when calculating practically perfect forecasts.</p>
-<ol class="arabic simple" start="12">
+<li><p>The <strong>-prob_cat_thresh string</strong> option sets the threshold to compute the probability of occurrence. The default is set to disabled. This option is relevant when calculating practically perfect forecasts.</p></li>
 <li><p>The <strong>-vld_thresh n</strong> option sets the required ratio of valid data for regridding. The default is 0.5.</p></li>
 <li><p>The <strong>-name list</strong> option specifies a comma-separated list of output variable names for each field specified.</p></li>
 <li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
@@ -1014,7 +1012,7 @@ regrid_data_plane_GOES-16_AOD_TO_G212.nc \
 </div>
 </div>
 <div class="section" id="point2grid-output">
-<h3><span class="section-number">4.5.2. </span>point2grid output<a class="headerlink" href="#point2grid-output" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.2. </span>point2grid output<a class="headerlink" href="#point2grid-output" title="Permalink to this headline">¶</a></h3>
 <p>The point2grid tool will output a gridded NetCDF file containing the following:</p>
 <ol class="arabic simple">
 <li><p>Latitude</p></li>
@@ -1039,10 +1037,10 @@ regrid_data_plane_GOES-16_AOD_TO_G212.nc \
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="reformat_grid.html" class="btn btn-neutral float-right" title="5. Re-Formatting of Gridded Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="reformat_grid.html" class="btn btn-neutral float-right" title="7. Re-Formatting of Gridded Fields" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="data_io.html" class="btn btn-neutral" title="3. MET Data I/O" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="config_options_tc.html" class="btn btn-neutral" title="5. Tropical Cyclone Configuration Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

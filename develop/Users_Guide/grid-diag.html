@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>14. Grid-Diag Tool &mdash; MET develop documentation</title>
+  <title>16. Grid-Diag Tool &mdash; MET develop documentation</title>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="15. MODE Tool" href="mode.html"/>
-        <link rel="prev" title="13. Series-Analysis Tool" href="series-analysis.html"/> 
+        <link rel="next" title="17. MODE Tool" href="mode.html"/>
+        <link rel="prev" title="15. Series-Analysis Tool" href="series-analysis.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,39 +117,39 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">14. Grid-Diag Tool</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">14.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#practical-information">14.2. Practical information</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#grid-diag-usage">14.2.1. grid_diag usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#grid-diag-configuration-file">14.2.2. grid_diag configuration file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#grid-diag-output-file">14.2.3. grid_diag output file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">16. Grid-Diag Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">16.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">16.2. Practical information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#grid-diag-usage">16.2.1. grid_diag usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-diag-configuration-file">16.2.2. grid_diag configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#grid-diag-output-file">16.2.3. grid_diag output file</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -208,7 +208,7 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">14. </span>Grid-Diag Tool</li>
+      <li><span class="section-number">16. </span>Grid-Diag Tool</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -228,15 +228,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="grid-diag-tool">
-<span id="grid-diag"></span><h1><span class="section-number">14. </span>Grid-Diag Tool<a class="headerlink" href="#grid-diag-tool" title="Permalink to this headline">¶</a></h1>
+<span id="grid-diag"></span><h1><span class="section-number">16. </span>Grid-Diag Tool<a class="headerlink" href="#grid-diag-tool" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The Grid-Diag tool creates histograms (probability distributions when normalized) for an arbitrary collection of data fields and levels. Joint histograms will be created for all possible pairs of variables. Masks can be used to subset the data fields spatially. The histograms are accumulated over a time series of input data files, similar to Series-Analysis.</p>
 </div>
 <div class="section" id="practical-information">
-<h2><span class="section-number">14.2. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">16.2. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="grid-diag-usage">
-<h3><span class="section-number">14.2.1. </span>grid_diag usage<a class="headerlink" href="#grid-diag-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.2.1. </span>grid_diag usage<a class="headerlink" href="#grid-diag-usage" title="Permalink to this headline">¶</a></h3>
 <p>The following sections describe the usage statement, required arguments, and optional arguments for <strong>grid_diag</strong>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: grid_diag
        -data file_1 ... file_n | data_file_list
@@ -251,7 +251,7 @@
 </div>
 <p>grid_diag has required arguments and can accept several optional arguments.</p>
 <div class="section" id="required-arguments-for-grid-diag">
-<h4><span class="section-number">14.2.1.1. </span>Required arguments for grid_diag<a class="headerlink" href="#required-arguments-for-grid-diag" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.1.1. </span>Required arguments for grid_diag<a class="headerlink" href="#required-arguments-for-grid-diag" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>-data file_1 … file_n | data_file_list</strong> options specify the gridded data files or an ASCII file containing a list of file names to be used.</p></li>
 </ol>
@@ -262,7 +262,7 @@
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-grid-diag">
-<h4><span class="section-number">14.2.1.2. </span>Optional arguments for grid_diag<a class="headerlink" href="#optional-arguments-for-grid-diag" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">16.2.1.2. </span>Optional arguments for grid_diag<a class="headerlink" href="#optional-arguments-for-grid-diag" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="4">
 <li><p>The <strong>-log file</strong> option directs output and errors to the specified log file. All messages will be written to that file as well as standard out and error. Thus, users can save the messages without having to redirect the output on the command line. The default behavior is no log file.</p></li>
 <li><p>The <strong>-v level</strong> option indicates the desired level of verbosity. The contents of “level” will override the default setting of 2. Setting the verbosity to 0 will make the tool run with no log messages, while increasing the verbosity above 1 will increase the amount of logging.</p></li>
@@ -271,8 +271,8 @@
 </div>
 </div>
 <div class="section" id="grid-diag-configuration-file">
-<h3><span class="section-number">14.2.2. </span>grid_diag configuration file<a class="headerlink" href="#grid-diag-configuration-file" title="Permalink to this headline">¶</a></h3>
-<p>The default configuration file for the Grid-Diag tool named ‘GridDiagConfig_default’ can be found in the installed <strong>share/met/config/ directory</strong>. It is encouraged for users to copy these default files before modifying their contents. The contents of the configuration file are described in the subsections below.</p>
+<h3><span class="section-number">16.2.2. </span>grid_diag configuration file<a class="headerlink" href="#grid-diag-configuration-file" title="Permalink to this headline">¶</a></h3>
+<p>The default configuration file for the Grid-Diag tool named <strong>GridDiagConfig_default</strong> can be found in the installed <em>share/met/config/</em> directory. It is encouraged for users to copy these default files before modifying their contents. The contents of the configuration file are described in the subsections below.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>desc          = &quot;GFS&quot;;
 regrid        = { ... }
@@ -282,7 +282,7 @@ mask          = { grid = &quot;&quot;; poly = &quot;&quot;; }
 version       = &quot;VN.N&quot;;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data = {
  field = [
@@ -305,7 +305,7 @@ version       = &quot;VN.N&quot;;
 <p>The <strong>name</strong> and <strong>level</strong> entries in the <strong>data</strong> dictionary define the data to be processed. The <strong>n_bins</strong> parameter specifies the number of histogram bins for that variable, and the <strong>range</strong> parameter the lower and upper bounds of the histogram. The interval length is the upper and lower difference divided by <strong>n_bins</strong>.</p>
 </div>
 <div class="section" id="grid-diag-output-file">
-<h3><span class="section-number">14.2.3. </span>grid_diag output file<a class="headerlink" href="#grid-diag-output-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">16.2.3. </span>grid_diag output file<a class="headerlink" href="#grid-diag-output-file" title="Permalink to this headline">¶</a></h3>
 <p>The NetCDF file has a dimension for each of the specified data variable and level combinations, e.g. APCP_L0 and PWAT_L0. The bin minimum, midpoint, and maximum values are indicated with an _min, _mid, or _max appended to the variable/level.</p>
 <p>For each variable/level combination in the data dictionary, a corresponding histogram will be written to the NetCDF output file. For example, hist_APCP_L0 and hist_PWAT_L0 are the counts of all data values falling within the bin. Data values below the minimum or above the maximum are included in the lowest and highest bins, respectively. A warning message is printed when the range of the data falls outside the range defined in the configuration file. In addition to 1D histograms, 2D histograms for all variable/level pairs are written. For example, hist_APCP_L0_PWAT_L0 is the joint histogram for those two variables/levels. The output variables for grid_size, mask_size, and n_series specify the number of points in the grid, the number of grid points in the mask, and the number of files that were processed, respectively. The range of the initialization, valid, and lead times processed is written to the global attributes.</p>
 </div>
@@ -322,10 +322,10 @@ version       = &quot;VN.N&quot;;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mode.html" class="btn btn-neutral float-right" title="15. MODE Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mode.html" class="btn btn-neutral float-right" title="17. MODE Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="series-analysis.html" class="btn btn-neutral" title="13. Series-Analysis Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="series-analysis.html" class="btn btn-neutral" title="15. Series-Analysis Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

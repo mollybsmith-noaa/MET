@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. Regional Verification using Spatial Masking &mdash; MET develop documentation</title>
+  <title>8. Regional Verification using Spatial Masking &mdash; MET develop documentation</title>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="7. Point-Stat Tool" href="point-stat.html"/>
-        <link rel="prev" title="5. Re-Formatting of Gridded Fields" href="reformat_grid.html"/> 
+        <link rel="next" title="9. Point-Stat Tool" href="point-stat.html"/>
+        <link rel="prev" title="7. Re-Formatting of Gridded Fields" href="reformat_grid.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,37 +117,37 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">6. Regional Verification using Spatial Masking</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gen-vx-mask-tool">6.1. Gen-Vx-Mask tool</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gen-vx-mask-usage">6.1.1. gen_vx_mask usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">8. Regional Verification using Spatial Masking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gen-vx-mask-tool">8.1. Gen-Vx-Mask tool</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gen-vx-mask-usage">8.1.1. gen_vx_mask usage</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#feature-relative-methods">6.2. Feature-Relative Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feature-relative-methods">8.2. Feature-Relative Methods</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -206,7 +206,7 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">6. </span>Regional Verification using Spatial Masking</li>
+      <li><span class="section-number">8. </span>Regional Verification using Spatial Masking</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,13 +226,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="regional-verification-using-spatial-masking">
-<span id="masking"></span><h1><span class="section-number">6. </span>Regional Verification using Spatial Masking<a class="headerlink" href="#regional-verification-using-spatial-masking" title="Permalink to this headline">¶</a></h1>
+<span id="masking"></span><h1><span class="section-number">8. </span>Regional Verification using Spatial Masking<a class="headerlink" href="#regional-verification-using-spatial-masking" title="Permalink to this headline">¶</a></h1>
 <p>Verification over a particular region or area of interest may be performed using “masking”. Defining a masking region is simply selecting the desired set of grid points to be used. The Gen-Vx-Mask tool automates this process and replaces the Gen-Poly-Mask and Gen-Circle-Mask tools from previous releases. It may be run to create a bitmap verification masking region to be used by many of the statistical tools. This tool enables the user to generate a masking region once for a domain and apply it to many cases. It has been enhanced to support additional types of masking region definition (e.g. tropical-cyclone track over water only). An iterative approach may be used to define complex areas by combining multiple masking regions together.</p>
 <div class="section" id="gen-vx-mask-tool">
-<h2><span class="section-number">6.1. </span>Gen-Vx-Mask tool<a class="headerlink" href="#gen-vx-mask-tool" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Gen-Vx-Mask tool<a class="headerlink" href="#gen-vx-mask-tool" title="Permalink to this headline">¶</a></h2>
 <p>The Gen-Vx-Mask tool may be run to create a bitmap verification masking region to be used by the MET statistics tools. This tool enables the user to generate a masking region once for a domain and apply it to many cases. While the MET statistics tools can define some masking regions on the fly using polylines, doing so can be slow, especially for complex polylines containing hundreds of vertices. Using the Gen-Vx-Mask tool to create a bitmap masking region before running the other MET tools will make them run more efficiently.</p>
 <div class="section" id="gen-vx-mask-usage">
-<h3><span class="section-number">6.1.1. </span>gen_vx_mask usage<a class="headerlink" href="#gen-vx-mask-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.1. </span>gen_vx_mask usage<a class="headerlink" href="#gen-vx-mask-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for the Gen-Vx-Mask tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: gen_vx_mask
        input_grid
@@ -256,7 +256,7 @@
 </div>
 <p>gen_vx_mask has three required arguments and can take optional ones.</p>
 <div class="section" id="required-arguments-for-gen-vx-mask">
-<h4><span class="section-number">6.1.1.1. </span>Required arguments for gen_vx_mask<a class="headerlink" href="#required-arguments-for-gen-vx-mask" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">8.1.1.1. </span>Required arguments for gen_vx_mask<a class="headerlink" href="#required-arguments-for-gen-vx-mask" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>input_file</strong> argument is a gridded data file which specifies the grid definition for the domain over which the masking bitmap is to be defined. If output from gen_vx_mask, automatically read mask data as the <strong>input_field</strong>.</p></li>
 <li><p>The <strong>mask_file</strong> argument defines the masking information, see below.</p></li>
@@ -273,7 +273,7 @@
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-gen-vx-mask">
-<h4><span class="section-number">6.1.1.2. </span>Optional arguments for gen_vx_mask<a class="headerlink" href="#optional-arguments-for-gen-vx-mask" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">8.1.1.2. </span>Optional arguments for gen_vx_mask<a class="headerlink" href="#optional-arguments-for-gen-vx-mask" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="4">
 <li><p>The <strong>-type string</strong> option can be used to override the default masking type (poly). See description of supported types below.</p></li>
 <li><p>The <strong>-input_field string</strong> option can be used to read existing mask data from “input_file”.</p></li>
@@ -353,8 +353,8 @@ CONUS.poly CONUS_poly.nc
 </div>
 </div>
 <div class="section" id="feature-relative-methods">
-<h2><span class="section-number">6.2. </span>Feature-Relative Methods<a class="headerlink" href="#feature-relative-methods" title="Permalink to this headline">¶</a></h2>
-<p>This section contains a description of several methods that may be used to perform feature-relative (or event -based) evaluation. The methodology pertains to examining the environment surrounding a particular feature or event such as a tropical, extra-tropical cyclone, convective cell, snow-band, etc. Several approaches are available for these types of investigations including applying masking described above (e.g. circle or box) or using the “FORCE” interpolation method in the regrid configuration option (see <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>). These methods generally require additional scripting, including potentially storm-track identification, outside of MET to be paired with the features of the MET tools. METplus may be used to execute this type of analysis.  Please refer to the <a class="reference external" href="https://dtcenter.github.io/METplus/">METplus User’s Guide</a>.</p>
+<h2><span class="section-number">8.2. </span>Feature-Relative Methods<a class="headerlink" href="#feature-relative-methods" title="Permalink to this headline">¶</a></h2>
+<p>This section contains a description of several methods that may be used to perform feature-relative (or event -based) evaluation. The methodology pertains to examining the environment surrounding a particular feature or event such as a tropical, extra-tropical cyclone, convective cell, snow-band, etc. Several approaches are available for these types of investigations including applying masking described above (e.g. circle or box) or using the “FORCE” interpolation method in the regrid configuration option (see <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>). These methods generally require additional scripting, including potentially storm-track identification, outside of MET to be paired with the features of the MET tools. METplus may be used to execute this type of analysis.  Please refer to the <a class="reference external" href="https://dtcenter.github.io/METplus/">METplus User’s Guide</a>.</p>
 </div>
 </div>
 
@@ -368,10 +368,10 @@ CONUS.poly CONUS_poly.nc
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="point-stat.html" class="btn btn-neutral float-right" title="7. Point-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="point-stat.html" class="btn btn-neutral float-right" title="9. Point-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="reformat_grid.html" class="btn btn-neutral" title="5. Re-Formatting of Gridded Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="reformat_grid.html" class="btn btn-neutral" title="7. Re-Formatting of Gridded Fields" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

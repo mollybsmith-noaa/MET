@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9. Ensemble-Stat Tool &mdash; MET develop documentation</title>
+  <title>11. Ensemble-Stat Tool &mdash; MET develop documentation</title>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="10. Wavelet-Stat Tool" href="wavelet-stat.html"/>
-        <link rel="prev" title="8. Grid-Stat Tool" href="grid-stat.html"/> 
+        <link rel="next" title="12. Wavelet-Stat Tool" href="wavelet-stat.html"/>
+        <link rel="prev" title="10. Grid-Stat Tool" href="grid-stat.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,45 +117,45 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9. Ensemble-Stat Tool</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">9.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scientific-and-statistical-aspects">9.2. Scientific and statistical aspects</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-forecasts-derived-from-a-set-of-deterministic-ensemble-members">9.2.1. Ensemble forecasts derived from a set of deterministic ensemble members</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-statistics">9.2.2. Ensemble statistics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-observation-error">9.2.3. Ensemble observation error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11. Ensemble-Stat Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">11.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scientific-and-statistical-aspects">11.2. Scientific and statistical aspects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-forecasts-derived-from-a-set-of-deterministic-ensemble-members">11.2.1. Ensemble forecasts derived from a set of deterministic ensemble members</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-statistics">11.2.2. Ensemble statistics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-observation-error">11.2.3. Ensemble observation error</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#practical-information">9.3. Practical Information</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-stat-usage">9.3.1. ensemble_stat usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-stat-configuration-file">9.3.2. ensemble_stat configuration file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-stat-output">9.3.3. ensemble_stat output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">11.3. Practical Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-stat-usage">11.3.1. ensemble_stat usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-stat-configuration-file">11.3.2. ensemble_stat configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-stat-output">11.3.3. ensemble_stat output</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-td.html">17. MODE Time Domain Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-td.html">19. MODE Time Domain Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -214,7 +214,7 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">9. </span>Ensemble-Stat Tool</li>
+      <li><span class="section-number">11. </span>Ensemble-Stat Tool</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -234,39 +234,39 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ensemble-stat-tool">
-<span id="ensemble-stat"></span><h1><span class="section-number">9. </span>Ensemble-Stat Tool<a class="headerlink" href="#ensemble-stat-tool" title="Permalink to this headline">¶</a></h1>
+<span id="ensemble-stat"></span><h1><span class="section-number">11. </span>Ensemble-Stat Tool<a class="headerlink" href="#ensemble-stat-tool" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The Ensemble-Stat tool may be run to create simple ensemble forecasts (mean, probability, spread, etc) from a set of several forecast model files to be used by the MET statistics tools. If observations are also included, ensemble statistics such as rank histograms, probability integral transform histograms, spread/skill variance, relative position and continuous ranked probability score are produced. A climatology file may also be provided, and will be used as a reference forecast in several of the output statistics. Finally, observation error perturbations can be included prior to calculation of statistics. Details about and equations for the statistics produced for ensembles are given in <a class="reference internal" href="appendixC.html#app-c-ensemble"><span class="std std-numref">Appendix C, Section 31.5</span></a>.</p>
 </div>
 <div class="section" id="scientific-and-statistical-aspects">
-<h2><span class="section-number">9.2. </span>Scientific and statistical aspects<a class="headerlink" href="#scientific-and-statistical-aspects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">11.2. </span>Scientific and statistical aspects<a class="headerlink" href="#scientific-and-statistical-aspects" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="ensemble-forecasts-derived-from-a-set-of-deterministic-ensemble-members">
-<h3><span class="section-number">9.2.1. </span>Ensemble forecasts derived from a set of deterministic ensemble members<a class="headerlink" href="#ensemble-forecasts-derived-from-a-set-of-deterministic-ensemble-members" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.1. </span>Ensemble forecasts derived from a set of deterministic ensemble members<a class="headerlink" href="#ensemble-forecasts-derived-from-a-set-of-deterministic-ensemble-members" title="Permalink to this headline">¶</a></h3>
 <p>Ensemble forecasts are often created as a set of deterministic forecasts. The ensemble members are rarely used separately. Instead, they can be combined in various ways to produce a forecast. MET can combine the ensemble members into some type of summary forecast according to user specifications. Ensemble means are the most common, and can be paired with the ensemble variance or spread. Maximum, minimum and other summary values are also available, with details in the practical information section.</p>
 <p>The ensemble relative frequency is the simplest method for turning a set of deterministic forecasts into something resembling a probability forecast. MET will create the ensemble relative frequency as the proportion of ensemble members forecasting some event. For example, if 5 out of 10 ensemble members predict measurable precipitation at a grid location, then the ensemble relative frequency of precipitation will be <span class="math notranslate nohighlight">\(5/10=0.5\)</span>. If the ensemble relative frequency is calibrated (unlikely) then this could be thought of as a probability of precipitation.</p>
 <p>The neighborhood ensemble probability (NEP) and neighborhood maximum ensemble probability (NMEP) methods are described in <a class="reference internal" href="refs.html#schwartz-2017"><span class="std std-ref">Schwartz and Sobash (2017)</span></a>. They are an extension of the ensemble relative frequencies described above. The NEP value is computed by averaging the relative frequency of the event within the neighborhood over all ensemble members. The NMEP value is computed as the fraction of ensemble members for which the event is occurring somewhere within the surrounding neighborhood. The NMEP output is typically smoothed using a Gaussian kernel filter. The neighborhood sizes and smoothing options can be customized in the configuration file.</p>
 <p>The Ensemble-Stat tool writes the gridded relative frequencies, NEP, and NMEP fields to a NetCDF output file. Probabilistic verification methods can then be applied to those fields by evaluating them with the Grid-Stat and/or Point-Stat tools.</p>
 </div>
 <div class="section" id="ensemble-statistics">
-<h3><span class="section-number">9.2.2. </span>Ensemble statistics<a class="headerlink" href="#ensemble-statistics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.2. </span>Ensemble statistics<a class="headerlink" href="#ensemble-statistics" title="Permalink to this headline">¶</a></h3>
 <p>Rank histograms and probability integral transform (PIT) histograms are used to determine if the distribution of ensemble values is the same as the distribution of observed values for any forecast field (<a class="reference internal" href="refs.html#hamill-2001"><span class="std std-ref">Hamill, 2001</span></a>). The rank histogram is a tally of the rank of the observed value when placed in order with each of the ensemble values from the same location. If the distributions are identical, then the rank of the observation will be uniformly distributed. In other words, it will fall among the ensemble members randomly in equal likelihood. The PIT histogram applies this same concept, but transforms the actual rank into a probability to facilitate ensembles of differing sizes or with missing members.</p>
-<p>Often, the goal of ensemble forecasting is to reproduce the distribution of observations using a set of many forecasts. In other words, the ensemble members represent the set of all possible outcomes. When this is true, the spread of the ensemble is identical to the error in the mean forecast. Though this rarely occurs in practice, the spread / skill relationship is still typically assessed for ensemble forecasts (<a class="reference internal" href="refs.html#barker-1991"><span class="std std-ref">Barker, 1991</span></a>; <a class="reference internal" href="refs.html#buizza-1997"><span class="std std-ref">Buizza, 1997</span></a>). MET calculates the spread and skill in user defined categories according to <a class="reference internal" href="refs.html#eckel-2012"><span class="std std-ref">Eckel et al, 2012</span></a>.</p>
+<p>Often, the goal of ensemble forecasting is to reproduce the distribution of observations using a set of many forecasts. In other words, the ensemble members represent the set of all possible outcomes. When this is true, the spread of the ensemble is identical to the error in the mean forecast. Though this rarely occurs in practice, the spread / skill relationship is still typically assessed for ensemble forecasts (<a class="reference internal" href="refs.html#barker-1991"><span class="std std-ref">Barker, 1991</span></a>; <a class="reference internal" href="refs.html#buizza-1997"><span class="std std-ref">Buizza,1997</span></a>). MET calculates the spread and skill in user defined categories according to <a class="reference internal" href="refs.html#eckel-2012"><span class="std std-ref">Eckel et al. (2012)</span></a>.</p>
 <p>The relative position (RELP) is a count of the number of times each ensemble member is closest to the observation. For stochastic or randomly derived ensembles, this statistic is meaningless. For specified ensemble members, however, it can assist users in determining if any ensemble member is performing consistently better or worse than the others.</p>
-<p>The ranked probability score (RPS) is included in the Ranked Probability Score (RPS) line type. It is the mean of the Brier scores computed from ensemble probabilities derived for each probability category threshold (prob_cat_thresh) specified in the configuration file. The continuous ranked probability score (CRPS) is the average the distance between the forecast (ensemble) cumulative distribution function and the observation cumulative distribution function. It is an analog of the Brier score, but for continuous forecast and observation fields. (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al, 2004</span></a>). The CRPS statistic is included in the Ensemble Continuous Statistics (ECNT) line type, along with other statistics quantifying the ensemble spread and ensemble mean skill.</p>
+<p>The ranked probability score (RPS) is included in the Ranked Probability Score (RPS) line type. It is the mean of the Brier scores computed from ensemble probabilities derived for each probability category threshold (prob_cat_thresh) specified in the configuration file. The continuous ranked probability score (CRPS) is the average the distance between the forecast (ensemble) cumulative distribution function and the observation cumulative distribution function. It is an analog of the Brier score, but for continuous forecast and observation fields. (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al., 2004</span></a>). The CRPS statistic is included in the Ensemble Continuous Statistics (ECNT) line type, along with other statistics quantifying the ensemble spread and ensemble mean skill.</p>
 </div>
 <div class="section" id="ensemble-observation-error">
-<h3><span class="section-number">9.2.3. </span>Ensemble observation error<a class="headerlink" href="#ensemble-observation-error" title="Permalink to this headline">¶</a></h3>
-<p>In an attempt to ameliorate the effect of observation errors on the verification of forecasts, a random perturbation approach has been implemented. A great deal of user flexibility has been built in, but the methods detailed in <a class="reference internal" href="refs.html#candille-2008"><span class="std std-ref">Candile and Talagrand (2008)</span></a>. can be replicated using the appropriate options. The user selects a distribution for the observation error, along with parameters for that distribution. Rescaling and bias correction can also be specified prior to the perturbation. Random draws from the distribution can then be added to either, or both, of the forecast and observed fields, including ensemble members. Details about the effects of the choices on verification statistics should be considered, with many details provided in the literature (<em>e.g.</em> <a class="reference internal" href="refs.html#candille-2008"><span class="std std-ref">Candille and Talagrand, 2008</span></a>; <a class="reference internal" href="refs.html#saetra-2004"><span class="std std-ref">Saetra et al., 2004</span></a>; <a class="reference internal" href="refs.html#santos-2012"><span class="std std-ref">Santos and Ghelli, 2012</span></a>). Generally, perturbation makes verification statistics better when applied to ensemble members, and worse when applied to the observations themselves.</p>
+<h3><span class="section-number">11.2.3. </span>Ensemble observation error<a class="headerlink" href="#ensemble-observation-error" title="Permalink to this headline">¶</a></h3>
+<p>In an attempt to ameliorate the effect of observation errors on the verification of forecasts, a random perturbation approach has been implemented. A great deal of user flexibility has been built in, but the methods detailed in <a class="reference internal" href="refs.html#candille-2008"><span class="std std-ref">Candille and Talagrand (2008)</span></a>. can be replicated using the appropriate options. The user selects a distribution for the observation error, along with parameters for that distribution. Rescaling and bias correction can also be specified prior to the perturbation. Random draws from the distribution can then be added to either, or both, of the forecast and observed fields, including ensemble members. Details about the effects of the choices on verification statistics should be considered, with many details provided in the literature (<em>e.g.</em> <a class="reference internal" href="refs.html#candille-2008"><span class="std std-ref">Candille and Talagrand, 2008</span></a>; <a class="reference internal" href="refs.html#saetra-2004"><span class="std std-ref">Saetra et al., 2004</span></a>; <a class="reference internal" href="refs.html#santos-2012"><span class="std std-ref">Santos and Ghelli, 2012</span></a>). Generally, perturbation makes verification statistics better when applied to ensemble members, and worse when applied to the observations themselves.</p>
 <p>Normal and uniform are common choices for the observation error distribution. The uniform distribution provides the benefit of being bounded on both sides, thus preventing the perturbation from taking on extreme values. Normal is the most common choice for observation error. However, the user should realize that with the very large samples typical in NWP, some large outliers will almost certainly be introduced with the perturbation. For variables that are bounded below by 0, and that may have inconsistent observation errors (e.g. larger errors with larger measurements), a lognormal distribution may be selected. Wind speeds and precipitation measurements are the most common of this type of NWP variable. The lognormal error perturbation prevents measurements of 0 from being perturbed, and applies larger perturbations when measurements are larger. This is often the desired behavior in these cases, but this distribution can also lead to some outliers being introduced in the perturbation step.</p>
 <p>Observation errors differ according to instrument, temporal and spatial representation, and variable type. Unfortunately, many observation errors have not been examined or documented in the literature. Those that have usually lack information regarding their distributions and approximate parameters. Instead, a range or typical value of observation error is often reported and these are often used as an estimate of the standard deviation of some distribution. Where possible, it is recommended to use the appropriate type and size of perturbation for the observation to prevent spurious results.</p>
 </div>
 </div>
 <div class="section" id="practical-information">
-<h2><span class="section-number">9.3. </span>Practical Information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
-<p>This section contains information about configuring and running the Ensemble-Stat tool. The Ensemble-Stat tool creates or verifies gridded model data. For verification, this tool can accept either gridded or point observations. If provided, the climatology file must be gridded. The input gridded model, observation, and climatology datasets must be on the same grid prior to calculation of any statistics, and in one of the MET supported gridded file formats. If gridded files are not on the same grid, MET will do the regridding for you if you specify the desired output grid. The point observations must be formatted as the NetCDF output of the point reformatting tools described in <a class="reference internal" href="reformat_point.html#reformat-point"><span class="std std-numref">Section 4</span></a>.</p>
+<h2><span class="section-number">11.3. </span>Practical Information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<p>This section contains information about configuring and running the Ensemble-Stat tool. The Ensemble-Stat tool creates or verifies gridded model data. For verification, this tool can accept either gridded or point observations. If provided, the climatology file must be gridded. The input gridded model, observation, and climatology datasets must be on the same grid prior to calculation of any statistics, and in one of the MET supported gridded file formats. If gridded files are not on the same grid, MET will do the regridding for you if you specify the desired output grid. The point observations must be formatted as the NetCDF output of the point reformatting tools described in <a class="reference internal" href="reformat_point.html#reformat-point"><span class="std std-numref">Section 6</span></a>.</p>
 <div class="section" id="ensemble-stat-usage">
-<h3><span class="section-number">9.3.1. </span>ensemble_stat usage<a class="headerlink" href="#ensemble-stat-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.3.1. </span>ensemble_stat usage<a class="headerlink" href="#ensemble-stat-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for the Ensemble Stat tool is shown below:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: ensemble_stat
        n_ens ens_file_1 ... ens_file_n | ens_file_list
@@ -284,7 +284,7 @@
 </div>
 <p>ensemble_stat has three required arguments and accepts several optional ones.</p>
 <div class="section" id="required-arguments-ensemble-stat">
-<h4><span class="section-number">9.3.1.1. </span>Required arguments ensemble_stat<a class="headerlink" href="#required-arguments-ensemble-stat" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.3.1.1. </span>Required arguments ensemble_stat<a class="headerlink" href="#required-arguments-ensemble-stat" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p>The <strong>n_ens ens_file_1 … ens_file_n</strong> is the number of ensemble members followed by a list of ensemble member file names. This argument is not required when ensemble files are specified in the <strong>ens_file_list</strong>, detailed below.</p></li>
 <li><p>The <strong>ens_file_list</strong> is an ASCII file containing a list of ensemble member file names. This is not required when a file list is included on the command line, as described above.</p></li>
@@ -292,7 +292,7 @@
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-ensemble-stat">
-<h4><span class="section-number">9.3.1.2. </span>Optional arguments for ensemble_stat<a class="headerlink" href="#optional-arguments-for-ensemble-stat" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">11.3.1.2. </span>Optional arguments for ensemble_stat<a class="headerlink" href="#optional-arguments-for-ensemble-stat" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="4">
 <li><p>To produce ensemble statistics using gridded observations, use the <strong>-grid_obs file</strong> option to specify a gridded observation file. This option may be used multiple times if your observations are in several files.</p></li>
 <li><p>To produce ensemble statistics using point observations, use the <strong>-point_obs file</strong> to specify a NetCDF point observation file. This option may be used multiple times if your observations are in several files.</p></li>
@@ -317,9 +317,9 @@ config/EnsembleStatConfig \
 </div>
 </div>
 <div class="section" id="ensemble-stat-configuration-file">
-<h3><span class="section-number">9.3.2. </span>ensemble_stat configuration file<a class="headerlink" href="#ensemble-stat-configuration-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.3.2. </span>ensemble_stat configuration file<a class="headerlink" href="#ensemble-stat-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>The default configuration file for the Ensemble-Stat tool named <strong>EnsembleStatConfig_default</strong> can be found in the installed <em>share/met/config</em> directory. Another version is located in scripts/config. We encourage users to make a copy of these files prior to modifying their contents. Each configuration file (both the default and sample) contains many comments describing its contents. The contents of the configuration file are also described in the subsections below.</p>
-<p>Note that environment variables may be used when editing configuration files, as described in the <a class="reference internal" href="reformat_point.html#pb2nc-configuration-file"><span class="std std-numref">Section 4.1.2</span></a> for the PB2NC tool.</p>
+<p>Note that environment variables may be used when editing configuration files, as described in the <a class="reference internal" href="reformat_point.html#pb2nc-configuration-file"><span class="std std-numref">Section 6.1.2</span></a> for the PB2NC tool.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model          = &quot;WRF&quot;;
 desc           = &quot;NA&quot;;
@@ -344,7 +344,7 @@ output_prefix  = &quot;&quot;;
 version        = &quot;VN.N&quot;;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ens = {
 ens_thresh = 1.0;
@@ -407,7 +407,7 @@ ens_phist_bin_size = 0.05;
 prob_cat_thresh    = [];
 </pre></div>
 </div>
-<p>Setting up the <strong>fcst</strong> and <strong>obs</strong> dictionaries of the configuration file is described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>. The following are some special considerations for the Ensemble-Stat tool.</p>
+<p>Setting up the <strong>fcst</strong> and <strong>obs</strong> dictionaries of the configuration file is described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>. The following are some special considerations for the Ensemble-Stat tool.</p>
 <p>The <strong>ens</strong> and <strong>fcst</strong> dictionaries do not need to include the same fields. Users may specify any number of ensemble fields to be summarized, but generally there are many fewer fields with verifying observations available. The <strong>ens</strong> dictionary specifies the fields to be summarized while the <strong>fcst</strong> dictionary specifies the fields to be verified.</p>
 <p>The <strong>obs</strong> dictionary looks very similar to the <strong>fcst</strong> dictionary. If verifying against point observations which are assigned GRIB1 codes, the observation section must be defined following GRIB1 conventions. When verifying GRIB1 forecast data, one can easily copy over the forecast settings to the observation dictionary using <strong>obs = fcst;</strong>. However, when verifying non-GRIB1 forecast data, users will need to specify the <strong>fcst</strong> and <strong>obs</strong> sections separately.</p>
 <p>The <strong>ens_ssvar_bin_size</strong> and <strong>ens_phist_bin_size</strong> specify the width of the categorical bins used to accumulate frequencies for spread-skill-variance or probability integral transform statistics, respectively.</p>
@@ -500,10 +500,10 @@ relp  = NONE;
 </div>
 <p>The <strong>rng</strong> group defines the random number generator <strong>type</strong> and <strong>seed</strong> to be used. In the case of a tie when determining the rank of an observation, the rank is randomly chosen from all available possibilities. The randomness is determined by the random number generator specified.</p>
 <p>The <strong>seed</strong> variable may be set to a specific value to make the assignment of ranks fully repeatable. When left empty, as shown above, the random number generator seed is chosen automatically which will lead to slightly different bootstrap confidence intervals being computed each time the data is run.</p>
-<p>Refer to the description of the <strong>boot</strong> entry in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a> for more details on the random number generator.</p>
+<p>Refer to the description of the <strong>boot</strong> entry in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a> for more details on the random number generator.</p>
 </div>
 <div class="section" id="ensemble-stat-output">
-<h3><span class="section-number">9.3.3. </span>ensemble_stat output<a class="headerlink" href="#ensemble-stat-output" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.3.3. </span>ensemble_stat output<a class="headerlink" href="#ensemble-stat-output" title="Permalink to this headline">¶</a></h3>
 <p>ensemble_stat can produce output in STAT, ASCII, and NetCDF formats. The ASCII output duplicates the STAT output but has the data organized by line type. The output files are written to the default output directory or the directory specified by the -outdir command line option.</p>
 <p>The output STAT file is named using the following naming convention:</p>
 <p>ensemble_stat_PREFIX_YYYYMMDD_HHMMSSV.stat where PREFIX indicates the user-defined output prefix and YYYYMMDD_HHMMSSV indicates the forecast valid time. Note that the forecast lead time is not included in the output file names since it would not be well-defined for time-lagged ensembles. When verifying multiple lead times for the same valid time, users should either write the output to separate directories or specify an output prefix to ensure unique file names.</p>
@@ -531,7 +531,7 @@ relp  = NONE;
 <p>Ensemble Matched Pair information</p>
 <p>The format of the STAT and ASCII output of the Ensemble-Stat tool are described below.</p>
 <span id="table-es-header-info-es-out"></span><table class="colwidths-auto docutils align-default" id="id1">
-<caption><span class="caption-number">Table 9.1 </span><span class="caption-text">Header information for each file ensemble-stat outputs</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.1 </span><span class="caption-text">Header information for each file ensemble-stat outputs</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>HEADER</p></th>
 <th class="head"></th>
@@ -637,12 +637,12 @@ relp  = NONE;
 </tr>
 <tr class="row-even"><td><p>24</p></td>
 <td><p>LINE_TYPE</p></td>
-<td><p>Output line types are listed in <a class="reference internal" href="#table-es-header-info-es-out-rhist"><span class="std std-numref">Table 9.4</span></a> through <a class="reference internal" href="#table-es-header-info-es-out-ssvar"><span class="std std-numref">Table 9.8</span></a>.</p></td>
+<td><p>Output line types are listed in <a class="reference internal" href="#table-es-header-info-es-out-rhist"><span class="std std-numref">Table 11.4</span></a> through <a class="reference internal" href="#table-es-header-info-es-out-ssvar"><span class="std std-numref">Table 11.8</span></a>.</p></td>
 </tr>
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-ecnt"></span><table class="colwidths-auto docutils align-default" id="id2">
-<caption><span class="caption-number">Table 9.2 </span><span class="caption-text">Format information for ECNT (Ensemble Continuous Statistics) output line type.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.2 </span><span class="caption-text">Format information for ECNT (Ensemble Continuous Statistics) output line type.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ECNT OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -709,7 +709,7 @@ relp  = NONE;
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-rps"></span><table class="colwidths-auto docutils align-default" id="id3">
-<caption><span class="caption-number">Table 9.3 </span><span class="caption-text">Format information for RPS (Ranked Probability Score) output line type.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.3 </span><span class="caption-text">Format information for RPS (Ranked Probability Score) output line type.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>RPS OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -760,7 +760,7 @@ relp  = NONE;
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-rhist"></span><table class="colwidths-auto docutils align-default" id="id4">
-<caption><span class="caption-number">Table 9.4 </span><span class="caption-text">Format information for RHIST (Ranked Histogram) output line type.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.4 </span><span class="caption-text">Format information for RHIST (Ranked Histogram) output line type.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>RHIST OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -791,7 +791,7 @@ relp  = NONE;
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-phist"></span><table class="colwidths-auto docutils align-default" id="id5">
-<caption><span class="caption-number">Table 9.5 </span><span class="caption-text">Format information for PHIST (Probability Integral Transform Histogram) output line type.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.5 </span><span class="caption-text">Format information for PHIST (Probability Integral Transform Histogram) output line type.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>PHIST OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -826,7 +826,7 @@ relp  = NONE;
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-relp"></span><table class="colwidths-auto docutils align-default" id="id6">
-<caption><span class="caption-number">Table 9.6 </span><span class="caption-text">Format information for RELP (Relative Position) output line type.</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.6 </span><span class="caption-text">Format information for RELP (Relative Position) output line type.</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>RELP OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -857,7 +857,7 @@ relp  = NONE;
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-orank"></span><table class="colwidths-auto docutils align-default" id="id7">
-<caption><span class="caption-number">Table 9.7 </span><span class="caption-text">Format information for ORANK (Observation Rank) output line type.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.7 </span><span class="caption-text">Format information for ORANK (Observation Rank) output line type.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ORANK OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -956,7 +956,7 @@ relp  = NONE;
 </tbody>
 </table>
 <span id="table-es-header-info-es-out-ssvar"></span><table class="colwidths-auto docutils align-default" id="id8">
-<caption><span class="caption-number">Table 9.8 </span><span class="caption-text">Format information for SSVAR (Spread/Skill Variance) output line type.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 11.8 </span><span class="caption-text">Format information for SSVAR (Spread/Skill Variance) output line type.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>SSVAR OUTPUT FORMAT</p></th>
 <th class="head"></th>
@@ -1080,10 +1080,10 @@ relp  = NONE;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="wavelet-stat.html" class="btn btn-neutral float-right" title="10. Wavelet-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="wavelet-stat.html" class="btn btn-neutral float-right" title="12. Wavelet-Stat Tool" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="grid-stat.html" class="btn btn-neutral" title="8. Grid-Stat Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="grid-stat.html" class="btn btn-neutral" title="10. Grid-Stat Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

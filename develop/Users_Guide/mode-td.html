@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>17. MODE Time Domain Tool &mdash; MET develop documentation</title>
+  <title>19. MODE Time Domain Tool &mdash; MET develop documentation</title>
   
 
   
@@ -41,8 +41,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="MET develop documentation" href="../index.html"/>
         <link rel="up" title="User’s Guide" href="index.html"/>
-        <link rel="next" title="18. MET-TC Overview" href="met-tc_overview.html"/>
-        <link rel="prev" title="16. MODE-Analysis Tool" href="mode-analysis.html"/> 
+        <link rel="next" title="20. MET-TC Overview" href="met-tc_overview.html"/>
+        <link rel="prev" title="18. MODE-Analysis Tool" href="mode-analysis.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -117,52 +117,52 @@
 <li class="toctree-l2"><a class="reference internal" href="overview.html">1. Overview of MET</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html">2. Software Installation/Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_io.html">3. MET Data I/O</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">4. Re-Formatting of Point Observations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">5. Re-Formatting of Gridded Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="masking.html">6. Regional Verification using Spatial Masking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="point-stat.html">7. Point-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">8. Grid-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">9. Ensemble-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">10. Wavelet-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">11. GSI Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">12. Stat-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">13. Series-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">14. Grid-Diag Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode.html">15. MODE Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">16. MODE-Analysis Tool</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">17. MODE Time Domain Tool</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">17.1. Introduction</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#motivation">17.1.1. Motivation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options.html">4. Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_options_tc.html">5. Tropical Cyclone Configuration Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_point.html">6. Re-Formatting of Point Observations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reformat_grid.html">7. Re-Formatting of Gridded Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="masking.html">8. Regional Verification using Spatial Masking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="point-stat.html">9. Point-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-stat.html">10. Grid-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensemble-stat.html">11. Ensemble-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wavelet-stat.html">12. Wavelet-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gsi-tools.html">13. GSI Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stat-analysis.html">14. Stat-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="series-analysis.html">15. Series-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-diag.html">16. Grid-Diag Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode.html">17. MODE Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mode-analysis.html">18. MODE-Analysis Tool</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">19. MODE Time Domain Tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">19.1. Introduction</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#motivation">19.1.1. Motivation</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#scientific-and-statistical-aspects">17.2. Scientific and statistical aspects</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#attributes">17.2.1. Attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#convolution">17.2.2. Convolution</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#d-single-attributes">17.2.3. 3D Single Attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#d-pair-attributes">17.2.4. 3D Pair Attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#d-constant-time-attributes">17.2.5. 2D Constant-Time Attributes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#matching-and-merging">17.2.6. Matching and Merging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scientific-and-statistical-aspects">19.2. Scientific and statistical aspects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#attributes">19.2.1. Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#convolution">19.2.2. Convolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-single-attributes">19.2.3. 3D Single Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-pair-attributes">19.2.4. 3D Pair Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#d-constant-time-attributes">19.2.5. 2D Constant-Time Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#matching-and-merging">19.2.6. Matching and Merging</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#practical-information">17.3. Practical information</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mtd-input">17.3.1. MTD input</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mtd-usage">17.3.2. MTD usage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mtd-configuration-file">17.3.3. MTD configuration file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mtd-output">17.3.4. mtd output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#practical-information">19.3. Practical information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mtd-input">19.3.1. MTD input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mtd-usage">19.3.2. MTD usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mtd-configuration-file">19.3.3. MTD configuration file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mtd-output">19.3.4. mtd output</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">18. MET-TC Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">19. TC-Dland Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">20. TC-Pairs Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">21. TC-Stat Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">22. TC-Gen Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">23. TC-RMW Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">24. RMW-Analysis Tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="plotting.html">25. Plotting and Graphics Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html">26. README - Configuration File Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README_TC.html">27. README_TC Configuration File Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="met-tc_overview.html">20. MET-TC Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-dland.html">21. TC-Dland Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-pairs.html">22. TC-Pairs Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-stat.html">23. TC-Stat Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-gen.html">24. TC-Gen Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tc-rmw.html">25. TC-RMW Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rmw-analysis.html">26. RMW-Analysis Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plotting.html">27. Plotting and Graphics Support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="refs.html">28. References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixA.html">29. Appendix A FAQs &amp; How do I … ?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="appendixB.html">30. Appendix B Map Projections, Grids, and Polylines</a></li>
@@ -221,7 +221,7 @@
         
           <li><a href="index.html">User’s Guide</a> &raquo;</li>
         
-      <li><span class="section-number">17. </span>MODE Time Domain Tool</li>
+      <li><span class="section-number">19. </span>MODE Time Domain Tool</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -241,17 +241,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mode-time-domain-tool">
-<span id="mode-td"></span><h1><span class="section-number">17. </span>MODE Time Domain Tool<a class="headerlink" href="#mode-time-domain-tool" title="Permalink to this headline">¶</a></h1>
+<span id="mode-td"></span><h1><span class="section-number">19. </span>MODE Time Domain Tool<a class="headerlink" href="#mode-time-domain-tool" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">17.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="motivation">
-<h3><span class="section-number">17.1.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.1.1. </span>Motivation<a class="headerlink" href="#motivation" title="Permalink to this headline">¶</a></h3>
 <p>MODE Time Domain (MTD) is an extension of the MODE object-based approach to verification. In addition to incorporating spatial information, MTD utilizes the time dimension to get at temporal aspects of forecast verification. Since the two spatial dimensions of traditional meteorological forecasts are retained in addition to the time dimension, the method is inherently three dimensional. Given that, however, the overall methodology has deliberately been kept as similar as possible to that of traditional MODE.</p>
 <div class="figure align-default" id="id1">
 <span id="mtd-3d-color"></span><img alt="../_images/mtd-3d_color.png" src="../_images/mtd-3d_color.png" />
-<p class="caption"><span class="caption-number">Figure 17.1 </span><span class="caption-text">MTD Spacetime Objects</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.1 </span><span class="caption-text">MTD Spacetime Objects</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>A plot of some MTD precipitation objects is shown over the United States in <a class="reference internal" href="#mtd-3d-color"><span class="std std-numref">Figure 17.1</span></a>. The colors indicate longitude, with red in the east moving through the spectrum to blue in the west. Time increases vertically in this plot (and in most of the spacetime diagrams in this users’ guide). A few things are worthy of note in this figure. First, the tendency of storm systems to move from west to east over time shows up clearly. Second, tracking of storm objects over time is easily done: if we want to know if a storm at one time is a later version of a storm at an earlier time, we need only see if they are part of the same 3D spacetime object. Lastly, storms splitting up or merging over time are handled easily by this method.</p>
+<p>A plot of some MTD precipitation objects is shown over the United States in <a class="reference internal" href="#mtd-3d-color"><span class="std std-numref">Figure 19.1</span></a>. The colors indicate longitude, with red in the east moving through the spectrum to blue in the west. Time increases vertically in this plot (and in most of the spacetime diagrams in this users’ guide). A few things are worthy of note in this figure. First, the tendency of storm systems to move from west to east over time shows up clearly. Second, tracking of storm objects over time is easily done: if we want to know if a storm at one time is a later version of a storm at an earlier time, we need only see if they are part of the same 3D spacetime object. Lastly, storms splitting up or merging over time are handled easily by this method.</p>
 <p>The 2D (or traditional) MODE approach to object-base verification enabled users to analyze forecasts in terms of location errors, intensity errors and shape, size and orientation errors. MTD retains all of that capability, and adds new classes of forecast errors involving time information: speed and direction errors, buildup and decay errors, and timing and duration errors. This opens up new ways of analyzing forecast quality.</p>
 <p>In the past, many MET users have performed separate MODE runs at a series of forecast valid times and analyzed the resulting object attributes, matches and merges as functions of time in an effort to incorporate temporal information in assessments of forecast quality. MTD was developed as a way to address this need in a more systematic way. Most of the information obtained from such multiple coordinated MODE runs can be obtained more simply from MTD.</p>
 <p>At first glance, the addition of a third dimension would seem to entail no difficulties other than increased memory and processing requirements to handle the three-dimensional datasets and objects, and that would indeed be largely true of an extension of MODE that used three spatial dimensions. In fact, the implementation of MTD entailed both conceptual difficulties (mostly due to the fact that there is no distance function in spacetime, so some MODE attributes, such as centroid distance, no longer even made sense), and engineering difficulties brought on by the need to redesign several core MODE algorithms for speed. It is planned that in the future some of these improved algorithms will be incorporated into MODE.</p>
@@ -259,38 +259,38 @@
 </div>
 </div>
 <div class="section" id="scientific-and-statistical-aspects">
-<h2><span class="section-number">17.2. </span>Scientific and statistical aspects<a class="headerlink" href="#scientific-and-statistical-aspects" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.2. </span>Scientific and statistical aspects<a class="headerlink" href="#scientific-and-statistical-aspects" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="attributes">
-<h3><span class="section-number">17.2.1. </span>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.1. </span>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <p>Object attributes are, for the most part, calculated in much the same way in MTD as they are in MODE, although the fact that one of the dimensions is non-spatial introduces a few quirks. Several of the object attributes that traditional MODE calculates assume that distances, angles and areas can be calculated in grid coordinates via the usual Euclidean/Cartesian methods. That is no longer the case in spacetime, since there is no distance function (more precisely, no <em>metric</em>) there. Given two points in this spacetime, say <span class="math notranslate nohighlight">\((x_1, y_1, t_1)\)</span> and <span class="math notranslate nohighlight">\((x_2, y_2, t_2)\)</span>, there is no way to measure their separation with a single nonnegative number in a physically meaningful way. If all three of our dimensions were spatial, there would be no difficulties.</p>
 <p>This means that some care must be taken both in determining how to generalize the calculation of a geometric attribute to three-dimensional spacetime, and also in interpreting the attributes even in the case where the generalization is straightforward.</p>
 </div>
 <div class="section" id="convolution">
-<h3><span class="section-number">17.2.2. </span>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.2. </span>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h3>
 <p>As in MODE, MTD applies a convolution filter to the raw data as a preliminary step in resolving the field into objects. The convolution step in MTD differs in several respects from that performed in MODE, however.</p>
 <p>First, MTD typically reads in several planes of data for each data field—one plane for each time step, and there is really no limit to the number of time steps. So MTD is convolving much more data than it would be if it were simply analyzing a 2D data field. Secondly, MTD convolves in time as well as space, which again increases the amount of data needing to be processed. The net effect of all this is to greatly increase the time needed to perform the convolution step.</p>
 <p>Because of this, the developers decided to make several changes in the way convolution was performed in MTD. Most of the differences come from the need to make the convolution step as fast as possible.</p>
-<p>The most basic change is to use a square convolution filter rather than the circular one that MODE uses. The overall “size” of the filter is still determined by one parameter (denoted <span class="math notranslate nohighlight">\(R\)</span>, as in MODE), but this should not be thought of as a radius. Instead, the size of the square is <span class="math notranslate nohighlight">\((2 R + 1) \times (2 R + 1)\)</span>, as shown in <a class="reference internal" href="#mtd-two-r-plus-one"><span class="std std-numref">Figure 17.2</span></a>.</p>
+<p>The most basic change is to use a square convolution filter rather than the circular one that MODE uses. The overall “size” of the filter is still determined by one parameter (denoted <span class="math notranslate nohighlight">\(R\)</span>, as in MODE), but this should not be thought of as a radius. Instead, the size of the square is <span class="math notranslate nohighlight">\((2 R + 1) \times (2 R + 1)\)</span>, as shown in <a class="reference internal" href="#mtd-two-r-plus-one"><span class="std std-numref">Figure 19.2</span></a>.</p>
 <div class="figure align-default" id="id2">
 <span id="mtd-two-r-plus-one"></span><img alt="../_images/mtd-two_r_plus_one.png" src="../_images/mtd-two_r_plus_one.png" />
-<p class="caption"><span class="caption-number">Figure 17.2 </span><span class="caption-text">Convolution Region</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.2 </span><span class="caption-text">Convolution Region</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Another change is that we do not allow any bad data in the convolution square. In MODE, the user may specify what percentage of bad data in the convolution region is permissible, and it will rescale the value of the filter accordingly for each data point. For the sake of speed, MTD requires that there be no bad data in the convolution region. If any bad data exists in the region, the convolved value there is set to a bad data flag.</p>
 </div>
 <div class="section" id="d-single-attributes">
-<h3><span class="section-number">17.2.3. </span>3D Single Attributes<a class="headerlink" href="#d-single-attributes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.3. </span>3D Single Attributes<a class="headerlink" href="#d-single-attributes" title="Permalink to this headline">¶</a></h3>
 <p>MTD calculates several 3D attributes for single objects. The object could come from either the forecast field or the observed field.</p>
 <p>A 3D spacetime <strong>centroid</strong> <span class="math notranslate nohighlight">\((\bar{x}, \bar{y}, \bar{t})\)</span> is calculated. There are no statistical overtones here. The number <span class="math notranslate nohighlight">\(\bar{x}\)</span>, for example, is just the average value of the <span class="math notranslate nohighlight">\(x\)</span> coordinate over the object.</p>
-<p>The vector <strong>velocity</strong> <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> is obtained by fitting a line to a 3D object. The requirement for fitting the line is to minimize the sum of the squares of the spatial distances from each point of the object to the line to be minimized. (We can’t measure distances in spacetime but at each fixed time t we can measure purely spatial distances.) See <a class="reference internal" href="#mtd-velocity"><span class="std std-numref">Figure 17.3</span></a> for an illustration, where the solid line is the fitted axis, and the inclination of the axis from the vertical is a measure of object speed. Thus, from this velocity we get the <strong>speed</strong> and <strong>direction</strong> of movement of the object. As in MODE, where spatial separation is in units of the grid resolution, so here in MTD the unit of length is the grid resolution, and the unit of time is whatever the time separation between the input files is. Speed and velocity are thus in grid units per time unit.</p>
+<p>The vector <strong>velocity</strong> <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> is obtained by fitting a line to a 3D object. The requirement for fitting the line is to minimize the sum of the squares of the spatial distances from each point of the object to the line to be minimized. (We can’t measure distances in spacetime but at each fixed time t we can measure purely spatial distances.) See <a class="reference internal" href="#mtd-velocity"><span class="std std-numref">Figure 19.3</span></a> for an illustration, where the solid line is the fitted axis, and the inclination of the axis from the vertical is a measure of object speed. Thus, from this velocity we get the <strong>speed</strong> and <strong>direction</strong> of movement of the object. As in MODE, where spatial separation is in units of the grid resolution, so here in MTD the unit of length is the grid resolution, and the unit of time is whatever the time separation between the input files is. Speed and velocity are thus in grid units per time unit.</p>
 <div class="figure align-default" id="id3">
 <span id="mtd-velocity"></span><img alt="../_images/mtd-velocity.png" src="../_images/mtd-velocity.png" />
-<p class="caption"><span class="caption-number">Figure 17.3 </span><span class="caption-text">Velocity</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.3 </span><span class="caption-text">Velocity</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The spatial orientation of an object (what traditional MODE calls the <strong>axis angle</strong> of an object) is gotten by fitting a plane to an object. As with the case of velocity, our optimization criterion is that the sum of the squares of the spatial distances from each point of the object to the plane be minimized.</p>
-<p><a class="reference internal" href="#mtd-axis-3d"><span class="std std-numref">Figure 17.4</span></a> gives some idea of the reason for fitting a plane, rather than a line, as MODE does. On the left in the figure, we see an object (in blue shaped like an “A”) at several time steps moving through the grid. For simplicity, the object is not rotating as it moves (though of course real objects can certainly do this). At each time step, the 2D MODE spatial axis of the object is indicated by the red line. In the center of the figure, we see the same thing, just with more time steps. And on the right, even more time steps. We see that the axis lines at each time step sweep out a plane in three dimensions, shown in red on the right. This plane is the same one that MTD would calculate for this 3D object to determine its spatial orientation, <em>i.e.,</em> axis angle. Indeed, for the special case of an object that is not moving at all, the MTD calculation of axis angle reduces to the same one that traditional MODE uses, as it should.</p>
+<p><a class="reference internal" href="#mtd-axis-3d"><span class="std std-numref">Figure 19.4</span></a> gives some idea of the reason for fitting a plane, rather than a line, as MODE does. On the left in the figure, we see an object (in blue shaped like an “A”) at several time steps moving through the grid. For simplicity, the object is not rotating as it moves (though of course real objects can certainly do this). At each time step, the 2D MODE spatial axis of the object is indicated by the red line. In the center of the figure, we see the same thing, just with more time steps. And on the right, even more time steps. We see that the axis lines at each time step sweep out a plane in three dimensions, shown in red on the right. This plane is the same one that MTD would calculate for this 3D object to determine its spatial orientation, <em>i.e.,</em> axis angle. Indeed, for the special case of an object that is not moving at all, the MTD calculation of axis angle reduces to the same one that traditional MODE uses, as it should.</p>
 <div class="figure align-default" id="id4">
 <span id="mtd-axis-3d"></span><img alt="../_images/mtd-axis_3d.png" src="../_images/mtd-axis_3d.png" />
-<p class="caption"><span class="caption-number">Figure 17.4 </span><span class="caption-text">3D axis</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.4 </span><span class="caption-text">3D axis</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>A simple integer count of the number of grid squares in an object for all of it’s lifetime gives the <strong>volume</strong> of the object. Remember that while we’re working in three dimensions, one of the dimensions is non-spatial, so one should not attempt to convert this to a volume in, e.g., <span class="math notranslate nohighlight">\(\text{km}^3\)</span>.</p>
 <p>The <strong>start time</strong> and <strong>end time</strong> of an object are attributes as well. These are integers reflecting at which time step an object starts and ends. These values are zero-based, so for example, if an object comes into existence at the <span class="math notranslate nohighlight">\(\text{3}^{rd}\)</span> time step and lasts until the <span class="math notranslate nohighlight">\(\text{9}^{th}\)</span> time step, then the start time and end time will be listed as 2 and 8, respectively. Note that this object has a lifetime of 7 time steps, not 6.</p>
@@ -298,14 +298,14 @@
 <p>Finally, MTD calculates several <strong>intensity percentiles</strong> of the raw data values inside each object. Not all of the attributes are purely geometrical.</p>
 </div>
 <div class="section" id="d-pair-attributes">
-<h3><span class="section-number">17.2.4. </span>3D Pair Attributes<a class="headerlink" href="#d-pair-attributes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.4. </span>3D Pair Attributes<a class="headerlink" href="#d-pair-attributes" title="Permalink to this headline">¶</a></h3>
 <p>The next category of spatial attributes is for pairs of objects — one of the pair coming from the collection of forecast objects, the other coming from the observation objects.</p>
 <p>Note: whenever a pair attribute is described below as a <em>delta</em>, that means it’s a simple difference of two single-object attributes. The difference is always taken as “forecast minus observed”.</p>
 <p>The <strong>spatial centroid distance</strong> is the purely spatial part of the centroid separation of two objects. If one centroid is at <span class="math notranslate nohighlight">\((\bar{x}_1, \bar{y}_1, \bar{t}_1)\)</span> and the other is at <span class="math notranslate nohighlight">\((\bar{x}_2, \bar{y}_2, \bar{t}_2)\)</span> then the distance is calculated as</p>
 <div class="math notranslate nohighlight">
 \[\sqrt{(\bar{x_1} - \bar{x_2})^2 + (\bar{y_1} - \bar{y_2})^2 }\]</div>
 <p>The <strong>time centroid delta</strong> is the difference between the time coordinates of the centroid. Since this is a simple difference, it can be either positive or negative.</p>
-<p>The <strong>axis difference</strong> is smaller of the two angles that the two spatial axis planes make with each other. <a class="reference internal" href="#mtd-axis-diff"><span class="std std-numref">Figure 17.5</span></a> shows the idea. In the figure, the axis angle would be reported as angle <span class="math notranslate nohighlight">\(\alpha\)</span>, not angle <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>The <strong>axis difference</strong> is smaller of the two angles that the two spatial axis planes make with each other. <a class="reference internal" href="#mtd-axis-diff"><span class="std std-numref">Figure 19.5</span></a> shows the idea. In the figure, the axis angle would be reported as angle <span class="math notranslate nohighlight">\(\alpha\)</span>, not angle <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
 <p><strong>Speed delta</strong> and <strong>direction difference</strong> are obtained from the velocity vectors of the two objects. Speed delta is the difference in the lengths of the vectors, and direction difference is the angle that the two vectors make with each other.</p>
 <p><strong>Volume ratio</strong> is the volume of the forecast object divided by the volume of the observed object. Note that any 3D object must necessarily have a nonzero volume, so there’s no chance of zeros in the denominator.</p>
 <p><strong>Start time delta</strong> and <strong>end time delta</strong> are the differences in the corresponding time steps associated with the two objects and are computed as “forecast minus obs”.</p>
@@ -314,13 +314,13 @@
 <p>Finally, the <strong>total interest</strong>  gives the result of the fuzzy-logic matching and merging calculation for this pair of objects. Note that this is provided only for simple objects, not for clusters.</p>
 <div class="figure align-default" id="id5">
 <span id="mtd-axis-diff"></span><img alt="../_images/mtd-axis_diff.png" src="../_images/mtd-axis_diff.png" />
-<p class="caption"><span class="caption-number">Figure 17.5 </span><span class="caption-text">Axis Angle Difference</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.5 </span><span class="caption-text">Axis Angle Difference</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="d-constant-time-attributes">
-<h3><span class="section-number">17.2.5. </span>2D Constant-Time Attributes<a class="headerlink" href="#d-constant-time-attributes" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.5. </span>2D Constant-Time Attributes<a class="headerlink" href="#d-constant-time-attributes" title="Permalink to this headline">¶</a></h3>
 <p>The final category of object attributes calculated by MTD are two-dimensional spatial attributes for horizontal (<em>i.e.</em>, constant-time) slices of a spacetime object. This is so that the behavior of these attributes over time can be examined. These 2D constant-time attributes are written out for both simple and cluster objects.</p>
-<p>For example, in our earlier discussion relating to <a class="reference internal" href="#mtd-axis-3d"><span class="std std-numref">Figure 17.4</span></a>, we mentioned that for simplicity, the object in the figure was not allowed to rotate as it moved. But what if the object (a hurricane, for example) is rotating over time? In that case, it’s probably not meaningful to assign a single spatial orientation to the object over its entire lifetime. If we had a spatial axis angle at each time, however, then we could fit a model such as <span class="math notranslate nohighlight">\(\theta = \theta_0 + \omega t\)</span> to the angles and test the goodness of fit.</p>
+<p>For example, in our earlier discussion relating to <a class="reference internal" href="#mtd-axis-3d"><span class="std std-numref">Figure 19.4</span></a>, we mentioned that for simplicity, the object in the figure was not allowed to rotate as it moved. But what if the object (a hurricane, for example) is rotating over time? In that case, it’s probably not meaningful to assign a single spatial orientation to the object over its entire lifetime. If we had a spatial axis angle at each time, however, then we could fit a model such as <span class="math notranslate nohighlight">\(\theta = \theta_0 + \omega t\)</span> to the angles and test the goodness of fit.</p>
 <p>For such reasons, having 2D spatial attributes (as in MODE) for each object at each time step can be useful. The list of the 2D attributes calculated is:</p>
 <p>◦ Centroid <span class="math notranslate nohighlight">\((x, y)\)</span></p>
 <p>◦ Centroid latitude and longitude</p>
@@ -328,16 +328,16 @@
 <p>◦ Axis Angle</p>
 </div>
 <div class="section" id="matching-and-merging">
-<h3><span class="section-number">17.2.6. </span>Matching and Merging<a class="headerlink" href="#matching-and-merging" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.2.6. </span>Matching and Merging<a class="headerlink" href="#matching-and-merging" title="Permalink to this headline">¶</a></h3>
 <p>Matching and merging operations in MTD are done in a simpler fashion than in MODE. In order to understand this operation, it is necessary to discuss some very basic notions of graph theory.</p>
-<p>A <strong>graph</strong> is a finite set of <strong>vertices</strong> (also called <strong>nodes</strong>) and <strong>edges</strong>, with each edge connecting two vertices. Conceptually, it is enough for our purposes to think of vertices as points and edges as lines connecting them. See <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 17.6</span></a> for an illustration. In the figure we see a collection of 11 nodes, indicated by the small circles, together with some edges indicated by straight line segments. A <strong>path</strong> is a sequence of vertices <span class="math notranslate nohighlight">\((v_1, v_2, \ldots, v_n)\)</span> such that for each <span class="math notranslate nohighlight">\(1 \leq i &lt; n\)</span> there is an edge connecting <span class="math notranslate nohighlight">\(v_i\)</span> to <span class="math notranslate nohighlight">\(v_{i + 1}\)</span>. For example, in <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 17.6</span></a>, there is no edge connecting vertices #6 and #7, but there is a path connecting them. In illustrations, graph vertices are often labelled with identifying information, such as the numbers in <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 17.6</span></a>.</p>
-<p>If we consider two distinct nodes in a graph to be related if there is a path connecting them, then it’s easy to see that this defines an equivalence relation on the set of nodes, partitioning the graph into equivalence classes. Any node, such as #10 in <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 17.6</span></a>, that has no edges emanating from it is in a class by itself.</p>
+<p>A <strong>graph</strong> is a finite set of <strong>vertices</strong> (also called <strong>nodes</strong>) and <strong>edges</strong>, with each edge connecting two vertices. Conceptually, it is enough for our purposes to think of vertices as points and edges as lines connecting them. See <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 19.6</span></a> for an illustration. In the figure we see a collection of 11 nodes, indicated by the small circles, together with some edges indicated by straight line segments. A <strong>path</strong> is a sequence of vertices <span class="math notranslate nohighlight">\((v_1, v_2, \ldots, v_n)\)</span> such that for each <span class="math notranslate nohighlight">\(1 \leq i &lt; n\)</span> there is an edge connecting <span class="math notranslate nohighlight">\(v_i\)</span> to <span class="math notranslate nohighlight">\(v_{i + 1}\)</span>. For example, in <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 19.6</span></a>, there is no edge connecting vertices #6 and #7, but there is a path connecting them. In illustrations, graph vertices are often labelled with identifying information, such as the numbers in <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 19.6</span></a>.</p>
+<p>If we consider two distinct nodes in a graph to be related if there is a path connecting them, then it’s easy to see that this defines an equivalence relation on the set of nodes, partitioning the graph into equivalence classes. Any node, such as #10 in <a class="reference internal" href="#mtd-basic-graph"><span class="std std-numref">Figure 19.6</span></a>, that has no edges emanating from it is in a class by itself.</p>
 <div class="figure align-default" id="id6">
 <span id="mtd-basic-graph"></span><img alt="../_images/mtd-basic_graph.png" src="../_images/mtd-basic_graph.png" />
-<p class="caption"><span class="caption-number">Figure 17.6 </span><span class="caption-text">Basic Graph Example</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.6 </span><span class="caption-text">Basic Graph Example</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>We have barely scratched the surface of the enormous subject of graph theory, but this will suffice for our purposes. How does MTD use graphs? Essentially the simple forecast and observed objects become nodes in a graph. Each pair of objects that have sufficiently high total interest (as determined by the fuzzy logic engine) generates an edge connecting the two corresponding nodes in the graph. The graph is then partitioned into equivalence classes using path connectivity (as explained above), and the resulting equivalence classes determine the matches and merges.</p>
-<p>An example will hopefully make this clear. In parts (a) and (b) of <a class="reference internal" href="#mtd-2d-example"><span class="std std-numref">Figure 17.7</span></a> we indicate the objects in the forecast and observed field for this simple example. We have used 2D rather than 3D objects in this example for simplicity. Also, to help distinguish the objects in each field, the forecast objects are labelled by numbers and the observed object by letters. Each forecast and each observed object become nodes in a graph as indicated in part (c) of the figure.</p>
+<p>An example will hopefully make this clear. In parts (a) and (b) of <a class="reference internal" href="#mtd-2d-example"><span class="std std-numref">Figure 19.7</span></a> we indicate the objects in the forecast and observed field for this simple example. We have used 2D rather than 3D objects in this example for simplicity. Also, to help distinguish the objects in each field, the forecast objects are labelled by numbers and the observed object by letters. Each forecast and each observed object become nodes in a graph as indicated in part (c) of the figure.</p>
 <p>For the purposes of this example, suppose that the MTD fuzzy engine reports that observed simple object B and forecast simple object 4 together have a total interest higher than the total interest threshold specified in the config file. Also, observed simple object C and forecast simple object 4 have high enough interest to pass the threshold. Furthermore, forecast simple objects 2 and 3 both have sufficiently high interest when paired with observed simple object A.</p>
 <p>These four pairings result in the 4 edges in the graph shown by the solid lines in part (c) of the figure. Partitioning this graph into equivalence classes results in the three sets indicated in part (d) of the figure. These three sets are the cluster objects determined by MTD. In this example, forecast objects 2 and 3 are merged into forecast cluster object #1 which is matched to observed cluster object #1, consisting of observed object A. (As in MODE, a cluster object may contain multiple simple objects, but may also consist of a single simple object.) Essentially, forecast simple objects 2 and 3 are merged because there is a path connecting them in the graph. This is indicated by the dashed line in the graph.</p>
 <p>Continuing this example, forecast cluster object #2 (consisting only of forecast simple object 4) is matched to observed cluster object #2 (consisting of observed simple objects B and C). Again, the merging of observed simple objects is indicated by the dashed line in the graph.</p>
@@ -345,19 +345,19 @@
 <p>To summarize: Any forecast simple objects that find themselves in the same equivalence class are merged. Similarly, any observed objects in the same class are merged. Any forecast and observed objects in the same class are matched.</p>
 <div class="figure align-default" id="id7">
 <span id="mtd-2d-example"></span><img alt="../_images/mtd-2d_example.png" src="../_images/mtd-2d_example.png" />
-<p class="caption"><span class="caption-number">Figure 17.7 </span><span class="caption-text">Match &amp; Merge Example</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 19.7 </span><span class="caption-text">Match &amp; Merge Example</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="practical-information">
-<h2><span class="section-number">17.3. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.3. </span>Practical information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mtd-input">
-<h3><span class="section-number">17.3.1. </span>MTD input<a class="headerlink" href="#mtd-input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.3.1. </span>MTD input<a class="headerlink" href="#mtd-input" title="Permalink to this headline">¶</a></h3>
 <p>The formats for two-dimensional data files used as input to MTD are the same ones supported by most of the MET tools. Generally speaking, if MODE can use a forecast or observation data file as input, then that file can also be used by MTD. The only difference is that while MODE takes only one forecast and one observed data file as input, MTD takes a series of files.</p>
 <p>As shown in the next section, filenames for each time used must be given. Thus, for example, if MTD is being used for verification over a period of 24 hours, and the data file valid times are separated by one hour, then a total of 48 filenames must be specified on the MTD command line — 24 filenames for the forecast files, and 24 for the observation files. Further, the filenames must be given in order of increasing valid time. Many users will prefer to write scripts to automate this, rather than type in a lengthy command line by hand.</p>
 </div>
 <div class="section" id="mtd-usage">
-<h3><span class="section-number">17.3.2. </span>MTD usage<a class="headerlink" href="#mtd-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.3.2. </span>MTD usage<a class="headerlink" href="#mtd-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for the MODE-TD tool is listed below: The command line switches may be given in any order.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: mtd
        -fcst    file_1 ... file_n | file_list
@@ -371,7 +371,7 @@
 </div>
 <p>The MODE-TD tool has three required arguments and can accept several optional arguments.</p>
 <div class="section" id="required-arguments-for-mtd">
-<h4><span class="section-number">17.3.2.1. </span>Required arguments for mtd<a class="headerlink" href="#required-arguments-for-mtd" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.3.2.1. </span>Required arguments for mtd<a class="headerlink" href="#required-arguments-for-mtd" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple">
 <li><p><strong>-fcst file_list</strong> gives a list of forecast 2D data files to be processed by MTD. The files should have equally-spaced intervals of valid time.</p></li>
 <li><p><strong>-obs file_list</strong> gives a list of observation 2D data files to be processed by MTD. As with the {cb -fcst} option, the files should have equally-spaced intervals of valid time. This valid time spacing should be the same as for the forecast files.</p></li>
@@ -379,7 +379,7 @@
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-mtd">
-<h4><span class="section-number">17.3.2.2. </span>Optional arguments for mtd<a class="headerlink" href="#optional-arguments-for-mtd" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">19.3.2.2. </span>Optional arguments for mtd<a class="headerlink" href="#optional-arguments-for-mtd" title="Permalink to this headline">¶</a></h4>
 <ol class="arabic simple" start="4">
 <li><p><strong>-single file_list</strong> may be used instead of <strong>-fcst</strong> and <strong>-obs</strong> to define objects in a single field.</p></li>
 <li><p><strong>-log file</strong> gives the name of a file where a log of this MTD run will be written. All output that appears on the screen during a MTD run will be duplicated in the log file.</p></li>
@@ -398,7 +398,7 @@
 </div>
 </div>
 <div class="section" id="mtd-configuration-file">
-<h3><span class="section-number">17.3.3. </span>MTD configuration file<a class="headerlink" href="#mtd-configuration-file" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.3.3. </span>MTD configuration file<a class="headerlink" href="#mtd-configuration-file" title="Permalink to this headline">¶</a></h3>
 <p>The default configuration file for the MODE tool, MODEConfig_default, can be found in the installed share/met/config directory. Another version of the configuration file is provided in scripts/config. We encourage users to make a copy of the configuration files prior to modifying their contents.Most of the entries in the MTD configuration file should be familiar from the corresponding file for MODE. This initial beta release of MTD does not offer all the tunable options that MODE has accumulated over the years, however. In this section, we will not bother to repeat explanations of config file details that are exactly the same as those in MODE; we will only explain those elements that are different from MODE, and those that are unique to MTD.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model          = &quot;WRF&quot;;
@@ -410,7 +410,7 @@ output_prefix  = &quot;&quot;;
 version        = &quot;VN.N&quot;;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="data_io.html#data-io-met-configuration-file-options"><span class="std std-numref">Section 3.5.1</span></a>.</p>
+<p>The configuration options listed above are common to many MET tools and are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>grid_res = 4;
 fcst = {
@@ -426,7 +426,7 @@ obs = fcst;
 total_interest_thresh = 0.7;
 </pre></div>
 </div>
-<p>The configuration options listed above are common to many MODE and are described in <a class="reference internal" href="mode.html#mode-configuration-file"><span class="std std-numref">Section 15.3.2</span></a>.</p>
+<p>The configuration options listed above are common to many MODE and are described in <a class="reference internal" href="mode.html#mode-configuration-file"><span class="std std-numref">Section 17.3.2</span></a>.</p>
 <p>The <strong>conv_time_window</strong> entry is a dictionary defining how much smoothing in time should be done. The <strong>beg</strong> and <strong>end</strong> entries are integers defining how many time steps should be used before and after the current time. The default setting of <strong>beg = -1; end = 1;</strong> uses one time step before and after. Setting them both to 0 effectively disables smoothing in time.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>inten_perc_value = 99;
@@ -437,7 +437,7 @@ total_interest_thresh = 0.7;
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>min_volume = 2000;
 </pre></div>
 </div>
-<p>The <strong>min_volume</strong> entry tells MTD to throw away objects whose “volume” (as described elsewhere in this section) is smaller than the given value. Spacetime objects whose volume is less than this will not participate in the matching and merging process, and no attribute information will be written to the ASCII output files. The default value is 10,000. If this seems rather large, consider the following example: Suppose the user is running MTD on a <span class="math notranslate nohighlight">\(600 \times 400\)</span> grid, using 24 time steps. Then the volume of the whole data field is 600 <span class="math notranslate nohighlight">\(\times\)</span> 400 <span class="math notranslate nohighlight">\(\times\)</span> 24 = 5,760,000 cells. An object of volume 10,000 represents only 10,000/5,760,000 = 1/576 of the total data field. Setting <strong>min_volume</strong> too small will typically produce a very large number of small objects, slowing down the MTD run and increasing the size of the output files.The configuration options listed above are common to many MODE and are described in <a class="reference internal" href="mode.html#mode-configuration-file"><span class="std std-numref">Section 15.3.2</span></a>.</p>
+<p>The <strong>min_volume</strong> entry tells MTD to throw away objects whose “volume” (as described elsewhere in this section) is smaller than the given value. Spacetime objects whose volume is less than this will not participate in the matching and merging process, and no attribute information will be written to the ASCII output files. The default value is 10,000. If this seems rather large, consider the following example: Suppose the user is running MTD on a <span class="math notranslate nohighlight">\(600 \times 400\)</span> grid, using 24 time steps. Then the volume of the whole data field is 600 <span class="math notranslate nohighlight">\(\times\)</span> 400 <span class="math notranslate nohighlight">\(\times\)</span> 24 = 5,760,000 cells. An object of volume 10,000 represents only 10,000/5,760,000 = 1/576 of the total data field. Setting <strong>min_volume</strong> too small will typically produce a very large number of small objects, slowing down the MTD run and increasing the size of the output files.The configuration options listed above are common to many MODE and are described in <a class="reference internal" href="mode.html#mode-configuration-file"><span class="std std-numref">Section 17.3.2</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>weight = {
    space_centroid_dist  = 1.0;
@@ -451,7 +451,7 @@ total_interest_thresh = 0.7;
 }
 </pre></div>
 </div>
-<p>The <strong>weight</strong> entries listed above control how much weight is assigned to each pairwise attribute when computing a total interest value for object pairs. See <a class="reference internal" href="#table-mtd-3d-pair-attribute"><span class="std std-numref">Table 17.4</span></a> for a description of each weight option. When the total interest value is computed, the weighted sum is normalized by the sum of the weights listed above.</p>
+<p>The <strong>weight</strong> entries listed above control how much weight is assigned to each pairwise attribute when computing a total interest value for object pairs. See <a class="reference internal" href="#table-mtd-3d-pair-attribute"><span class="std std-numref">Table 19.4</span></a> for a description of each weight option. When the total interest value is computed, the weighted sum is normalized by the sum of the weights listed above.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>interest_function = {
    space_centroid_dist = ( ... );
@@ -465,7 +465,7 @@ total_interest_thresh = 0.7;
 };
 </pre></div>
 </div>
-<p>The <strong>interest_function</strong> entries listed above control how much weight is assigned to each pairwise attribute when computing a total interest value for object pairs. See <a class="reference internal" href="#table-mtd-3d-pair-attribute"><span class="std std-numref">Table 17.4</span></a> for a description of each weight option. The interest functions may be defined as a piecewise linear function or as an algebraic expression. A piecewise linear function is defined by specifying the corner points of its graph. An algebraic function may be defined in terms of several built-in mathematical functions. See <a class="reference internal" href="mode.html#mode-scientific-and-statistical"><span class="std std-numref">Section 15.2</span></a> for how interest values are used by the fuzzy logic engine. By default, many of these functions are defined in terms of the previously defined <strong>grid_res</strong> entry.</p>
+<p>The <strong>interest_function</strong> entries listed above control how much weight is assigned to each pairwise attribute when computing a total interest value for object pairs. See <a class="reference internal" href="#table-mtd-3d-pair-attribute"><span class="std std-numref">Table 19.4</span></a> for a description of each weight option. The interest functions may be defined as a piecewise linear function or as an algebraic expression. A piecewise linear function is defined by specifying the corner points of its graph. An algebraic function may be defined in terms of several built-in mathematical functions. See <a class="reference internal" href="mode.html#mode-scientific-and-statistical"><span class="std std-numref">Section 17.2</span></a> for how interest values are used by the fuzzy logic engine. By default, many of these functions are defined in terms of the previously defined <strong>grid_res</strong> entry.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nc_output = {
    latlon     = true;
@@ -486,7 +486,7 @@ total_interest_thresh = 0.7;
 <p>The <strong>txt_output</strong> dictionary also contains a collection of boolean flags, in this case controlling the output of ASCII attribute files. The <strong>attributes_2d</strong> flag controls the output of the 2D object attributes for constant-time slices of 3D objects, while the <strong>attributes_3d</strong> flag controls the output of single and pair 3D spacetime object attributes.</p>
 </div>
 <div class="section" id="mtd-output">
-<h3><span class="section-number">17.3.4. </span>mtd output<a class="headerlink" href="#mtd-output" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">19.3.4. </span>mtd output<a class="headerlink" href="#mtd-output" title="Permalink to this headline">¶</a></h3>
 <p>MTD creates several output files after each run in ASCII and NetCDF formats. There are text files giving 2D and 3D attributes of spacetime objects and information on matches and merges, as well as a NetCDF file giving the objects themselves, in case any further or specialized analysis of the objects needs to be done.</p>
 <p>MODE, along with several other of the MET tools (wavelet_stat for example, and a few others), provides PostScript-based graphics output to help visualize the output. Unfortunately, no similar graphics capabilities are provided with MTD, mainly because of the complexity of producing 3D plots. This should not discourage the user from making their own plots, however. There is enough information in the various output files created by MTD to make a wide variety of plots. Highly motivated users who write their own plotting scripts are encouraged to submit them to the user-contributed code area of the MET website. Due credit will be given, and others will benefit from their creations.</p>
 <p><strong>ASCII output</strong></p>
@@ -499,10 +499,10 @@ total_interest_thresh = 0.7;
 <li><p>2D spatial attributes for single simple objects for each time index of their existence.</p></li>
 </ul>
 <p>Each ASCII file is laid out in tabular format, with the first line consisting of text strings giving names for each column. The first 15 columns of each file are identical, and give information on timestamps, model names, and the convolution radius and threshold used for the forecast and observation input data.</p>
-<p>These columns are explained in <a class="reference internal" href="#table-mtd-header-columns"><span class="std std-numref">Table 17.1</span></a>. Each file contains additional columns that come after these. Columns for 2D constant-time attributes are shown in <a class="reference internal" href="#table-mtd-2d-attributes"><span class="std std-numref">Table 17.2</span></a>. Columns for 3D single and pair attributes are shown in <a class="reference internal" href="#table-mtd-3d-single-attributes"><span class="std std-numref">Table 17.3</span></a> and <a class="reference internal" href="#table-mtd-3d-pair-attribute"><span class="std std-numref">Table 17.4</span></a> respectively.</p>
+<p>These columns are explained in <a class="reference internal" href="#table-mtd-header-columns"><span class="std std-numref">Table 19.1</span></a>. Each file contains additional columns that come after these. Columns for 2D constant-time attributes are shown in <a class="reference internal" href="#table-mtd-2d-attributes"><span class="std std-numref">Table 19.2</span></a>. Columns for 3D single and pair attributes are shown in <a class="reference internal" href="#table-mtd-3d-single-attributes"><span class="std std-numref">Table 19.3</span></a> and <a class="reference internal" href="#table-mtd-3d-pair-attribute"><span class="std std-numref">Table 19.4</span></a> respectively.</p>
 <p>The contents of the OBJECT_ID and OBJECT_CAT columns identify the objects using the same logic as the MODE tool. In these columns, the F and O prefixes are used to indicate simple forecast and observation objects, respectively. Similarly, the CF and CO prefixes indicate cluster forecast and observation objects, respectively. Each prefix is followed by a 3-digit number, using leading zeros, to indicate the object number (as in <strong>F001, O001, CF001</strong>, or <strong>CO000</strong>). Pairs of objects are indicated by listing the forecast object information followed by the observation object information, separated by an underscore (as in <strong>F001_O001</strong> or <strong>CF001_CO001</strong>). The OBJECT_ID column indicates the single object or pair of objects being described in that line. The OBJECT_CAT column indicates the cluster or pair of clusters to which these object(s) belong. A simple object that is not part of a cluster is assigned a cluster number of zero (as in <strong>CF000</strong> or <strong>CO000</strong>). When pairs of objects belong to the same matching cluster, the OBJECT_CAT column indicates the matching cluster number (as in <strong>CF001_CO001</strong>). When they do not, the OBJECT_CAT column is set to <strong>CF000_CO000</strong>.</p>
 <span id="table-mtd-header-columns"></span><table class="colwidths-auto docutils align-default" id="id8">
-<caption><span class="caption-number">Table 17.1 </span><span class="caption-text">Text Header Columns</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 19.1 </span><span class="caption-text">Text Header Columns</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"></th>
@@ -605,7 +605,7 @@ total_interest_thresh = 0.7;
 </tbody>
 </table>
 <span id="table-mtd-2d-attributes"></span><table class="colwidths-auto docutils align-default" id="id9">
-<caption><span class="caption-number">Table 17.2 </span><span class="caption-text">2D Attribute</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 19.2 </span><span class="caption-text">2D Attribute</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"></th>
@@ -680,7 +680,7 @@ total_interest_thresh = 0.7;
 </tbody>
 </table>
 <span id="table-mtd-3d-single-attributes"></span><table class="colwidths-auto docutils align-default" id="id10">
-<caption><span class="caption-number">Table 17.3 </span><span class="caption-text">3D Single Attribute</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 19.3 </span><span class="caption-text">3D Single Attribute</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"></th>
@@ -775,7 +775,7 @@ total_interest_thresh = 0.7;
 </tbody>
 </table>
 <span id="table-mtd-3d-pair-attribute"></span><table class="colwidths-auto docutils align-default" id="id11">
-<caption><span class="caption-number">Table 17.4 </span><span class="caption-text">3D Pair Attribute</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 19.4 </span><span class="caption-text">3D Pair Attribute</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"></th>
@@ -863,10 +863,10 @@ total_interest_thresh = 0.7;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="met-tc_overview.html" class="btn btn-neutral float-right" title="18. MET-TC Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="met-tc_overview.html" class="btn btn-neutral float-right" title="20. MET-TC Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mode-analysis.html" class="btn btn-neutral" title="16. MODE-Analysis Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mode-analysis.html" class="btn btn-neutral" title="18. MODE-Analysis Tool" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
