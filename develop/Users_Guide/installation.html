@@ -320,13 +320,13 @@ ar crv libbufr.a *.o
 <div class="section" id="met-directory-structure">
 <span id="id1"></span><h2><span class="section-number">2.8. </span>MET directory structure<a class="headerlink" href="#met-directory-structure" title="Permalink to this headline">¶</a></h2>
 <p>The top-level MET directory consists of  Makefiles, configuration files, and several subdirectories. The top-level Makefile and configuration files control how the entire toolkit is built. Instructions for using these files to build MET can be found in <a class="reference internal" href="#install-building-the-met"><span class="std std-numref">Section 2.9</span></a>.</p>
-<p>When MET has been successfully built and installed, the installation directory contains two subdirectories. The bin/ directory contains executables for each module of MET as well as several plotting utilities. The share/met/ directory contains many subdirectories with data required at runtime and a subdirectory of sample R scripts utilities. The colortables/, map/, and ps/ subdirectories contain data used in creating PostScript plots for several MET tools. The poly/ subdirectory contains predefined lat/lon polyline regions for use in selecting regions over which to verify. The polylines defined correspond to verification regions used by NCEP as described in <a class="reference internal" href="appendixB.html#appendixb"><span class="std std-numref">Appendix B, Section 30</span></a>. The config/ directory contains default configuration files for the MET tools. The python/ subdirectory contains sample scripts used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>). The table_files/ and tc_data/ subdirectories contain GRIB table definitions and tropical cyclone data, respectively. The Rscripts/ subdirectory contains a handful of plotting graphic utilities for MET-TC. These are the same Rscripts that reside under the top-level MET scripts/Rscripts directory, other than it is the installed location. The wrappers/ subdirectory contains code used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>).</p>
-<p>The data/ directory contains several configuration and static data files used by MET. The sample_fcst/ and sample_obs/ subdirectories contain sample data used by the test scripts provided in the scripts/ directory.</p>
-<p>The docs/ directory contains the Sphinx documentation for MET.</p>
-<p>The out/ directory will be populated with sample output from the test cases described in the next section.</p>
-<p>The src/ directory contains the source code for each of the tools in MET.</p>
-<p>The scripts/ directory contains test scripts that are run by make test after MET has been successfully built, and a directory of sample configuration files used in those tests located in the scripts/config/ subdirectory. The output from the test scripts in this directory will be written to the out/ directory. Users are encouraged to copy sample configuration files to another location and modify them for their own use.</p>
-<p>The share/met/Rscripts directory contains a handful of sample R scripts, including plot_tcmpr.R, which provides graphic utilities for MET-TC. For more information on the graphics capabilities, see <a class="reference internal" href="plotting.html#tc-stat-tool-example"><span class="std std-numref">Section 27.2.3</span></a> of this User’s Guide.</p>
+<p>When MET has been successfully built and installed, the installation directory contains two subdirectories. The <em>bin/</em> directory contains executables for each module of MET as well as several plotting utilities. The <em>share/met/</em> directory contains many subdirectories with data required at runtime and a subdirectory of sample R scripts utilities. The <em>colortables/</em>, <em>map/</em>, and <em>ps/</em> subdirectories contain data used in creating PostScript plots for several MET tools. The <em>poly/</em> subdirectory contains predefined lat/lon polyline regions for use in selecting regions over which to verify. The polylines defined correspond to verification regions used by NCEP as described in <a class="reference internal" href="appendixB.html#appendixb"><span class="std std-numref">Appendix B, Section 30</span></a>. The <em>config/</em> directory contains default configuration files for the MET tools. The <em>python/</em> subdirectory contains sample scripts used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>). The <em>table_files/</em> and <em>tc_data/</em> subdirectories contain GRIB table definitions and tropical cyclone data, respectively. The <em>Rscripts/</em> subdirectory contains a handful of plotting graphic utilities for MET-TC. These are the same Rscripts that reside under the top-level MET <em>scripts/Rscripts</em> directory, other than it is the installed location. The <em>wrappers/</em> subdirectory contains code used in Python embedding (<a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>).</p>
+<p>The <em>data/</em> directory contains several configuration and static data files used by MET. The <em>sample_fcst/</em> and <em>sample_obs/</em> subdirectories contain sample data used by the test scripts provided in the <em>scripts/</em> directory.</p>
+<p>The <em>docs/</em> directory contains the Sphinx documentation for MET.</p>
+<p>The <em>out/</em> directory will be populated with sample output from the test cases described in the next section.</p>
+<p>The <em>src/</em> directory contains the source code for each of the tools in MET.</p>
+<p>The <em>scripts/</em> directory contains test scripts that are run by make test after MET has been successfully built, and a directory of sample configuration files used in those tests located in the <em>scripts/config/</em> subdirectory. The output from the test scripts in this directory will be written to the <em>out/</em> directory. Users are encouraged to copy sample configuration files to another location and modify them for their own use.</p>
+<p>The <em>share/met/Rscripts</em> directory contains a handful of sample R scripts, including plot_tcmpr.R, which provides graphic utilities for MET-TC. For more information on the graphics capabilities, see <a class="reference internal" href="plotting.html#tc-stat-tool-example"><span class="std std-numref">Section 27.2.3</span></a> of this User’s Guide.</p>
 </div>
 <div class="section" id="building-the-met-package">
 <span id="install-building-the-met"></span><h2><span class="section-number">2.9. </span>Building the MET package<a class="headerlink" href="#building-the-met-package" title="Permalink to this headline">¶</a></h2>
@@ -341,25 +341,26 @@ ar crv libbufr.a *.o
 <div class="section" id="set-environment-variables">
 <h3><span class="section-number">2.10.1. </span>Set Environment Variables<a class="headerlink" href="#set-environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>The MET build uses environment variables to specify the locations of the needed external libraries. For each library, there is a set of three environment variables to describe the locations: $MET_&lt;lib&gt;, $MET_&lt;lib&gt;INC and $MET_&lt;lib&gt;LIB.</p>
-<p>The $MET_&lt;lib&gt; environment variable can be used if the external library is installed such that there is a main directory which has a subdirectory called “lib” containing the library files and another subdirectory called “include” containing the include files. For example, if the NetCDF library files are installed in /opt/netcdf/lib and the include files are in /opt/netcdf/include, you can just define the $MET_NETCDF environment variable to be “/opt/netcdf”.</p>
-<p>The $MET_&lt;lib&gt;INC and $MET_&lt;lib&gt;LIB environment variables are used if the library and include files for an external library are installed in separate locations. In this case, both environment variables must be specified and the associated $MET_&lt;lib&gt; variable will be ignored. For example, if the NetCDF include files are installed in /opt/include/netcdf and the library files are in /opt/lib/netcdf, then you would set $MET_NETCDFINC to “/opt/include/netcdf” and $MET_NETCDFLIB to “/opt/lib/netcdf”.</p>
+<p>The $MET_&lt;lib&gt; environment variable can be used if the external library is installed such that there is a main directory which has a subdirectory called “lib” containing the library files and another subdirectory called “include” containing the include files. For example, if the NetCDF library files are installed in <em>/opt/netcdf/lib</em> and the include files are in <em>/opt/netcdf/include</em>, you can just define the $MET_NETCDF environment variable to be “<em>/opt/netcdf</em>”.</p>
+<p>The $MET_&lt;lib&gt;INC and $MET_&lt;lib&gt;LIB environment variables are used if the library and include files for an external library are installed in separate locations. In this case, both environment variables must be specified and the associated $MET_&lt;lib&gt; variable will be ignored. For example, if the NetCDF include files are installed in <em>/opt/include/netcdf</em> and the library files are in <em>/opt/lib/netcdf</em>, then you would set $MET_NETCDFINC to “<em>/opt/include/netcdf</em>” and $MET_NETCDFLIB to “<em>/opt/lib/netcdf</em>”.</p>
 <p>The following environment variables should also be set:</p>
-<blockquote>
-<div><p>- Set $MET_NETCDF to point to the main NetCDF directory, or set $MET_NETCDFINC to point to the directory with the NetCDF include files and set $MET_NETCDFLIB to point to the directory with the NetCDF library files. Note that the files for both NetCDF-C and NetCDF-CXX must be installed in the same include and library directories.</p>
-<p>- Set $MET_HDF5 to point to the main HDF5 directory.</p>
-<p>- Set $MET_BUFR to point to the main BUFR directory, or set $MET_BUFRLIB to point to the directory with the BUFR library files. Because we don’t use any BUFR library include files, you don’t need to specify $MET_BUFRINC.</p>
-<p>- Set $MET_GSL to point to the main GSL directory, or set $MET_GSLINC to point to the directory with the GSL include files and set $MET_GSLLIB to point to the directory with the GSL library files.</p>
-<p>- If compiling support for GRIB2, set $MET_GRIB2CINC and $MET_GRIB2CLIB to point to the main GRIB2C directory which contains both the include and library files. These are used instead of $MET_GRIB2C since the main GRIB2C directory does not contain include and lib subdirectories.</p>
-<p>- If compiling support for PYTHON, set $MET_PYTHON_CC and $MET_PYTHON_LD to specify the compiler (-I) and linker (-L) flags required for python. Set $MET_PYTHON_CC for the directory containing the “Python.h” header file. Set $MET_PYTHON_LD for the directory containing the python library file and indicate the name of that file. For example:</p>
-</div></blockquote>
-<p>MET_PYTHON_CC=’-I/usr/include/python3.6’</p>
-<p>MET_PYTHON_LD=’-L/usr/lib/python3.6/config-x86_64-linux-gnu -lpython3.6m’</p>
+<ul>
+<li><p>Set $MET_NETCDF to point to the main NetCDF directory, or set $MET_NETCDFINC to point to the directory with the NetCDF include files and set $MET_NETCDFLIB to point to the directory with the NetCDF library files. Note that the files for both NetCDF-C and NetCDF-CXX must be installed in the same include and library directories.</p></li>
+<li><p>Set $MET_HDF5 to point to the main HDF5 directory.</p></li>
+<li><p>Set $MET_BUFR to point to the main BUFR directory, or set $MET_BUFRLIB to point to the directory with the BUFR library files. Because we don’t use any BUFR library include files, you don’t need to specify $MET_BUFRINC.</p></li>
+<li><p>Set $MET_GSL to point to the main GSL directory, or set $MET_GSLINC to point to the directory with the GSL include files and set $MET_GSLLIB to point to the directory with the GSL library files.</p></li>
+<li><p>If compiling support for GRIB2, set $MET_GRIB2CINC and $MET_GRIB2CLIB to point to the main GRIB2C directory which contains both the include and library files. These are used instead of $MET_GRIB2C since the main GRIB2C directory does not contain include and lib subdirectories.</p></li>
+<li><p>If compiling support for PYTHON, set $MET_PYTHON_CC and $MET_PYTHON_LD to specify the compiler (-I) and linker (-L) flags required for python. Set $MET_PYTHON_CC for the directory containing the “Python.h” header file. Set $MET_PYTHON_LD for the directory containing the python library file and indicate the name of that file. For example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>MET_PYTHON_CC=&#39;-I/usr/include/python3.6&#39;
+MET_PYTHON_LD=&#39;-L/usr/lib/python3.6/config-x86_64-linux-gnu -lpython3.6m&#39;
+</pre></div>
+</div>
 <p>For more information about Python support in MET, please refer to <a class="reference internal" href="appendixF.html#appendixf"><span class="std std-numref">Appendix F, Section 34</span></a>.</p>
-<blockquote>
-<div><p>- If compiling MODIS-Regrid and/or lidar2nc, set $MET_HDF to point to the main HDF4 directory, or set $MET_HDFINC to point to the directory with the HDF4 include files and set $MET_HDFLIB to point to the directory with the HDF4 library files. Also, set $MET_HDFEOS to point to the main HDF EOS directory, or set $MET_HDFEOSINC to point to the directory with the HDF EOS include files and set $MET_HDFEOSLIB to point to the directory with the HDF EOS library files.</p>
-<p>- If compiling MODE Graphics, set $MET_CAIRO to point to the main Cairo directory, or set$MET_CAIROINC to point to the directory with the Cairo include files and set $MET_CAIROLIB to point to the directory with the Cairo library files. Also, set $MET_FREETYPE to point to the main FreeType directory, or set $MET_FREETYPEINC to point to the directory with the FreeType include files and set $MET_FREETYPELIB to point to the directory with the FreeType library files.</p>
-<p>- When running MODE Graphics, set $MET_FONT_DIR to the directory containing font data required at runtime. A link to the tarball containing this font data can be found on the MET website.</p>
-</div></blockquote>
+</li>
+<li><p>If compiling MODIS-Regrid and/or lidar2nc, set $MET_HDF to point to the main HDF4 directory, or set $MET_HDFINC to point to the directory with the HDF4 include files and set $MET_HDFLIB to point to the directory with the HDF4 library files. Also, set $MET_HDFEOS to point to the main HDF EOS directory, or set $MET_HDFEOSINC to point to the directory with the HDF EOS include files and set $MET_HDFEOSLIB to point to the directory with the HDF EOS library files.</p></li>
+<li><p>If compiling MODE Graphics, set $MET_CAIRO to point to the main Cairo directory, or set$MET_CAIROINC to point to the directory with the Cairo include files and set $MET_CAIROLIB to point to the directory with the Cairo library files. Also, set $MET_FREETYPE to point to the main FreeType directory, or set $MET_FREETYPEINC to point to the directory with the FreeType include files and set $MET_FREETYPELIB to point to the directory with the FreeType library files.</p></li>
+<li><p>When running MODE Graphics, set $MET_FONT_DIR to the directory containing font data required at runtime. A link to the tarball containing this font data can be found on the MET website.</p></li>
+</ul>
 <p>For ease of use, you should define these in your .cshrc or equivalent file.</p>
 </div>
 <div class="section" id="configure-and-execute-the-build">
@@ -372,7 +373,7 @@ ar crv libbufr.a *.o
 4. When make is finished, type &#39;CTRL-C&#39; to quit the tail.
 </pre></div>
 </div>
-<p>If all tools are enabled and the build is successful, the “&lt;prefix&gt;/bin” directory (where &lt;prefix&gt; is the prefix you specified on your configure command line) will contain 36 executables:</p>
+<p>If all tools are enabled and the build is successful, the “<em>&lt;prefix&gt;/bin</em>” directory (where <em>&lt;prefix&gt;</em> is the prefix you specified on your configure command line) will contain 36 executables:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- ascii2nc
 - ensemble_stat
 - gen_vx_mask
@@ -415,7 +416,7 @@ ar crv libbufr.a *.o
 <p><strong>-help</strong> and <strong>-version</strong> command line options are available for all of the MET tools. Typing the name of the tool with no command line options also produces the usage statement.</p>
 <p>The configure script has command line options to specify where to install MET and which MET utilities to install. Include any of the following options that apply to your system:</p>
 <p><strong>--prefix=PREFIX</strong></p>
-<p>By default, MET will install all the files in “/usr/local/bin”. You can specify an installation prefix other than “/usr/local” using “–prefix”, for instance “–prefix=$HOME” or “–prefix=`pwd`”.</p>
+<p>By default, MET will install all the files in “<em>/usr/local/bin</em>”. You can specify an installation prefix other than “<em>/usr/local</em>” using “–prefix”, for instance “–prefix=$HOME” or “–prefix=`pwd`”.</p>
 <p><strong>--enable-grib2</strong></p>
 <p>Enable compilation of utilities using GRIB2. Requires $MET_GRIB2C.</p>
 <p><strong>--enable-python</strong></p>
@@ -441,7 +442,7 @@ ar crv libbufr.a *.o
 </ol>
 <p>MET also has the following non-standard targets:</p>
 <ol class="arabic simple" start="5">
-<li><p><strong>test</strong> - runs the scripts/test_all.sh script. You must run “make install” before using this target.</p></li>
+<li><p><strong>test</strong> - runs the <em>scripts/test_all.sh</em> script. You must run “make install” before using this target.</p></li>
 </ol>
 </div>
 </div>

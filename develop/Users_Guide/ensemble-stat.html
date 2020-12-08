@@ -288,7 +288,7 @@
 <ol class="arabic simple">
 <li><p>The <strong>n_ens ens_file_1 … ens_file_n</strong> is the number of ensemble members followed by a list of ensemble member file names. This argument is not required when ensemble files are specified in the <strong>ens_file_list</strong>, detailed below.</p></li>
 <li><p>The <strong>ens_file_list</strong> is an ASCII file containing a list of ensemble member file names. This is not required when a file list is included on the command line, as described above.</p></li>
-<li><p>The <strong>config_file</strong> is an EnsembleStatConfig file containing the desired configuration settings.</p></li>
+<li><p>The <strong>config_file</strong> is an <strong>EnsembleStatConfig</strong> file containing the desired configuration settings.</p></li>
 </ol>
 </div>
 <div class="section" id="optional-arguments-for-ensemble-stat">
@@ -318,7 +318,7 @@ config/EnsembleStatConfig \
 </div>
 <div class="section" id="ensemble-stat-configuration-file">
 <h3><span class="section-number">11.3.2. </span>ensemble_stat configuration file<a class="headerlink" href="#ensemble-stat-configuration-file" title="Permalink to this headline">¶</a></h3>
-<p>The default configuration file for the Ensemble-Stat tool named <strong>EnsembleStatConfig_default</strong> can be found in the installed <em>share/met/config</em> directory. Another version is located in scripts/config. We encourage users to make a copy of these files prior to modifying their contents. Each configuration file (both the default and sample) contains many comments describing its contents. The contents of the configuration file are also described in the subsections below.</p>
+<p>The default configuration file for the Ensemble-Stat tool named <strong>EnsembleStatConfig_default</strong> can be found in the installed <em>share/met/config</em> directory. Another version is located in <em>scripts/config</em>. We encourage users to make a copy of these files prior to modifying their contents. Each configuration file (both the default and sample) contains many comments describing its contents. The contents of the configuration file are also described in the subsections below.</p>
 <p>Note that environment variables may be used when editing configuration files, as described in the <a class="reference internal" href="reformat_point.html#pb2nc-configuration-file"><span class="std std-numref">Section 6.1.2</span></a> for the PB2NC tool.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model          = &quot;WRF&quot;;

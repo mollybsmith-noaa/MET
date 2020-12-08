@@ -383,15 +383,15 @@ behavior.</p>
 integer types have been defined in the ConfigConstants file. These integer
 names may be used on the right-hand side for many configuration file entries.</p>
 <p>Each of the configurable MET tools expects a certain set of configuration
-entries. Examples of the MET configuration files can be found in data/config
-and scripts/config.</p>
+entries. Examples of the MET configuration files can be found in <em>data/config</em>
+and <em>scripts/config</em>.</p>
 <p>When you pass a configuration file to a MET tool, the tool actually parses up
 to four different configuration files in the following order:</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Reads share/met/config/ConfigConstants to define constants.</p></li>
-<li><p>If the tool produces PostScript output, it reads share/met/config/ConfigMapData to define the map data to be plotted.</p></li>
-<li><p>Reads the default configuration file for the tool from share/met/config.</p></li>
+<li><p>Reads <em>share/met/config/ConfigConstants</em> to define constants.</p></li>
+<li><p>If the tool produces PostScript output, it reads <em>share/met/config/ConfigMapData</em> to define the map data to be plotted.</p></li>
+<li><p>Reads the default configuration file for the tool from <em>share/met/config</em>.</p></li>
 <li><p>Reads the user-specified configuration file from the command line.</p></li>
 </ol>
 </div></blockquote>
@@ -401,7 +401,7 @@ line really only needs to contain entries that differ from the defaults.</p>
 <p>Any of the configuration entries may be overwritten by the user-specified
 configuration file. For example, the map data to be plotted may be included in
 the user-specified configuration file and override the default settings defined
-in the share/met/config/ConfigMapData file.</p>
+in the <em>share/met/config/ConfigMapData</em> file.</p>
 <p>The configuration file language supports the use of environment variables. They
 are specified as ${ENV_VAR}, where ENV_VAR is the name of the environment
 variable. When scripting up many calls to the MET tools, you may find it
@@ -420,7 +420,7 @@ If MET_BASE is defined as an environment variable, its value will be used
 instead of the one defined at compilation time.</p>
 <p>The MET_OBS_ERROR_TABLE environment variable can be set to specify the location
 of an ASCII file defining observation error information. The default table can
-be found in the installed share/met/table_files/obs_error_table.txt. This
+be found in the installed <em>share/met/table_files/obs_error_table.txt</em>. This
 observation error logic is applied in Ensemble-Stat to perturb ensemble member
 values and/or define observation bias corrections.</p>
 <p>When processing point and gridded observations, Ensemble-Stat searches the table
@@ -451,7 +451,7 @@ match the format used by the default MET GRIB table files, described below.
 The custom GRIB tables are read prior to the default tables and their settings
 take precedence.</p>
 <p>At runtime, the MET tools read default GRIB tables from the installed
-share/met/table_files directory, and their file formats are described below:</p>
+<em>share/met/table_files</em> directory, and their file formats are described below:</p>
 <p>GRIB1 table files begin with “grib1” prefix and end with a “.txt” suffix.
 The first line of the file must contain “GRIB1”.
 The following lines consist of 4 integers followed by 3 strings:</p>
@@ -752,7 +752,7 @@ is applied prior to regridding or thresholding. This function may
 include any of the built-in math functions (e.g. sqrt, log10)
 described above.
 Several standard unit conversion functions are already defined in
-data/config/ConfigConstants.
+<em>data/config/ConfigConstants</em>.
 Examples of user-defined conversion functions include:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>convert(x) = 2*x;
 convert(x) = x^2;
@@ -1352,7 +1352,7 @@ The first and last polygon points are connected.
 For example, “MET_BASE/poly/EAST.poly” which consists of n points:
 “poly_name lat1 lon1 lat2 lon2… latn lonn”</p>
 <p>Several masking polygons used by NCEP are predefined in the
-installed share/met/poly directory. Creating a new polygon is as
+installed <em>share/met/poly</em> directory. Creating a new polygon is as
 simple as creating a text file with a name for the polygon followed
 by the lat/lon points which define its boundary. Adding a new masking
 polygon requires no code changes and no recompiling. Internally, the
@@ -1976,7 +1976,7 @@ an array of strings, even if the values themselves are numeric.</p>
 <p><strong>met_data_dir</strong></p>
 <p>The “met_data_dir” entry specifies the location of the internal MET data
 sub-directory which contains data files used when generating plots. It
-should be set to the installed share/met directory so the MET tools can
+should be set to the installed <em>share/met</em> directory so the MET tools can
 locate the static data files they need at run time.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>met_data_dir = &quot;MET_BASE&quot;;
 </pre></div>
@@ -2239,7 +2239,7 @@ May be set separately in each “obs.field” entry.
 The obs_error dictionary controls how observation error information should be
 handled. Observation error information can either be specified directly in
 the configuration file or by parsing information from an external table file.
-By default, the MET_BASE/data/table_files/obs_error_table.txt file is read
+By default, the <em>MET_BASE/data/table_files/obs_error_table.txt</em> file is read
 but this may be overridden by setting the $MET_OBS_ERROR_TABLE environment
 variable at runtime.</p>
 <p>The flag entry toggles the observation error logic on (TRUE) and off (FALSE).

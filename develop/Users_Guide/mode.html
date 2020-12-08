@@ -343,7 +343,7 @@ sample_obs.grb \
 MODEConfig_grb
 </pre></div>
 </div>
-<p>In Example 1, the MODE tool will verify the model data in the sample_fcst.grb GRIB file using the observations in the sample_obs.grb GRIB file applying the configuration options specified in the MODEConfig_grb file.</p>
+<p>In Example 1, the MODE tool will verify the model data in the sample_fcst.grb GRIB file using the observations in the sample_obs.grb GRIB file applying the configuration options specified in the <strong>MODEConfig_grb</strong> file.</p>
 <p>A second example of the MODE calling sequence is presented below:</p>
 <p><strong>Example 2:</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mode sample_fcst.nc \
@@ -351,12 +351,12 @@ sample_obs.nc \
 MODEConfig_nc
 </pre></div>
 </div>
-<p>In Example 2, the MODE tool will verify the model data in the sample_fcst.nc NetCDF output of pcp_combine using the observations in the sample_obs.nc NetCDF output of pcp_combine, using the configuration options specified in the MODEConfig_nc file. Since the model and observation files contain only a single field of accumulated precipitation, the MODEConfig_nc file should specify that accumulated precipitation be verified.</p>
+<p>In Example 2, the MODE tool will verify the model data in the sample_fcst.nc NetCDF output of pcp_combine using the observations in the sample_obs.nc NetCDF output of pcp_combine, using the configuration options specified in the <strong>MODEConfig_nc</strong> file. Since the model and observation files contain only a single field of accumulated precipitation, the <strong>MODEConfig_nc</strong> file should specify that accumulated precipitation be verified.</p>
 </div>
 </div>
 <div class="section" id="mode-configuration-file">
 <span id="id1"></span><h3><span class="section-number">17.3.2. </span>mode configuration file<a class="headerlink" href="#mode-configuration-file" title="Permalink to this headline">¶</a></h3>
-<p>The default configuration file for the MODE tool, MODEConfig_default, can be found in the installed share/met/config directory. Another version of the configuration file is provided in scripts/config. We encourage users to make a copy of the configuration files prior to modifying their contents. Descriptions of MODEConfig_default and the required variables for any MODE configuration file are also provided below. While the configuration file contains many entries, most users will only need to change a few for their use. Specific options are described in the following subsections.</p>
+<p>The default configuration file for the MODE tool, <strong>MODEConfig_default</strong>, can be found in the installed <em>share/met/config</em> directory. Another version of the configuration file is provided in <em>scripts/config</em>. We encourage users to make a copy of the configuration files prior to modifying their contents. Descriptions of <strong>MODEConfig_default</strong> and the required variables for any MODE configuration file are also provided below. While the configuration file contains many entries, most users will only need to change a few for their use. Specific options are described in the following subsections.</p>
 <p>Note that environment variables may be used when editing configuration files, as described in <a class="reference internal" href="reformat_point.html#pb2nc-configuration-file"><span class="std std-numref">Section 6.1.2</span></a> for the PB2NC tool.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model          = &quot;WRF&quot;;
