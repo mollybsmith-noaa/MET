@@ -107,15 +107,11 @@ GP.initialize();
    //   redirect stdout and stderr
    //
 
-PyObject* MainModule = PyImport_AddModule("__main__");
+mlog << Debug(1) << "Redirecting stdout and stderr from Python3_Script()";
 
 PyRun_SimpleString(stdout_redirect_code);
 
 PyRun_SimpleString(stderr_redirect_code);
-
-StdoutStream = PyObject_GetAttrString(MainModule, "stdout_stream");
-
-StderrStream = PyObject_GetAttrString(MainModule, "stderr_stream");
 
    //
    //   import the python script as a module
