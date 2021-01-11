@@ -41,6 +41,9 @@ class Python3_Script {
 
       PyObject * Dict;     //  script dictionary, not allocated
 
+      PyObject * StdoutStream;
+      PyObject * StderrStream;
+
       ConcatString Script_Filename;
 
 

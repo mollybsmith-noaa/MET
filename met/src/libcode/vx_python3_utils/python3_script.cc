@@ -104,6 +104,20 @@ fflush(stderr);
 GP.initialize();
 
    //
+   //   redirect stdout and stderr
+   //
+
+PyObject* MainModule = PyImport_AddModule("__main__");
+
+PyRun_SimpleString(stdout_redirect_code);
+
+PyRun_SimpleString(stderr_redirect_code);
+
+StdoutStream = PyObject_GetAttrString(MainModule, "stdout_stream");
+
+StderrStream = PyObject_GetAttrString(MainModule, "stderr_stream");
+
+   //
    //   import the python script as a module
    //
 
