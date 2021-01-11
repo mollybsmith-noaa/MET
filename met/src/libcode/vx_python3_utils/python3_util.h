@@ -30,6 +30,27 @@ static const char user_python_path_env [] = "MET_PYTHON_EXE";
 
 static const char wrappers_dir         [] = "MET_BASE/wrappers";
 
+////////////////////////////////////////////////////////////////////////
+
+static const char stdout_redirect_code [] =
+   "import sys\n"
+   "class StdoutStream:\n"
+   "    def __init__(self):\n"
+   "        self.buffer = ''\n"
+   "    def write(self, text):\n"
+   "        self.buffer = self.buffer + text\n"
+   "stdout_stream = StdoutStream()\n"
+   "sys.stdout = stdout_stream";
+
+static const char stderr_redirect_code [] =
+   "import sys\n"
+   "class StderrStream:\n"
+   "    def __init__(self):\n"
+   "        self.buffer = ''\n"
+   "    def write(self, text):\n"
+   "        self.buffer = self.buffer + text\n"
+   "stderr_stream = StderrStream()\n"
+   "sys.stderr = stderr_stream";
 
 ////////////////////////////////////////////////////////////////////////
 
