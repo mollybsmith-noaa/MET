@@ -31,6 +31,8 @@ GlobalPython GP;   //  this needs external linkage
 
 static const char * user_ppath            = 0;
 
+static const char redirect_stdout_err  [] = "MET_BASE/wrappers/redirect_stdout_stderr.py";
+
 static const char write_pickle         [] = "MET_BASE/wrappers/write_pickle_dataplane.py";
 
 static const char read_pickle          [] = "read_pickle_dataplane";   //  NO ".py" suffix
