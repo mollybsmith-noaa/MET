@@ -152,23 +152,24 @@
 <li class="toctree-l4"><a class="reference internal" href="#mean-forecast">31.2.3. Mean forecast</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#accuracy">31.2.4. Accuracy</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#frequency-bias">31.2.5. Frequency Bias</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#probability-of-detection-pod">31.2.6. Probability of Detection (POD)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#probability-of-false-detection-pofd">31.2.7. Probability of False Detection (POFD)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#probability-of-detection-of-the-non-event-podn">31.2.8. Probability of Detection of the non-event (PODn)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#false-alarm-ratio-far">31.2.9. False Alarm Ratio (FAR)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#critical-success-index-csi">31.2.10. Critical Success Index (CSI)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gilbert-skill-score-gss">31.2.11. Gilbert Skill Score (GSS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#hanssen-kuipers-discriminant-hk">31.2.12. Hanssen-Kuipers Discriminant (HK)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#heidke-skill-score-hss">31.2.13. Heidke Skill Score (HSS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#odds-ratio-or">31.2.14. Odds Ratio (OR)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#logarithm-of-the-odds-ratio-lodds">31.2.15. Logarithm of the Odds Ratio (LODDS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#odds-ratio-skill-score-orss">31.2.16. Odds Ratio Skill Score (ORSS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#extreme-dependency-score-eds">31.2.17. Extreme Dependency Score (EDS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#extreme-dependency-index-edi">31.2.18. Extreme Dependency Index (EDI)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#symmetric-extreme-dependency-score-seds">31.2.19. Symmetric Extreme Dependency Score (SEDS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#symmetric-extremal-dependency-index-sedi">31.2.20. Symmetric Extremal Dependency Index (SEDI)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#bias-adjusted-gilbert-skill-score-gss">31.2.21. Bias Adjusted Gilbert Skill Score (GSS)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#economic-cost-loss-relative-value-eclv">31.2.22. Economic Cost Loss Relative Value (ECLV)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#h-rate">31.2.6. H_RATE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#probability-of-detection-pod">31.2.7. Probability of Detection (POD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#probability-of-false-detection-pofd">31.2.8. Probability of False Detection (POFD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#probability-of-detection-of-the-non-event-podn">31.2.9. Probability of Detection of the non-event (PODn)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#false-alarm-ratio-far">31.2.10. False Alarm Ratio (FAR)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#critical-success-index-csi">31.2.11. Critical Success Index (CSI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gilbert-skill-score-gss">31.2.12. Gilbert Skill Score (GSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hanssen-kuipers-discriminant-hk">31.2.13. Hanssen-Kuipers Discriminant (HK)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#heidke-skill-score-hss">31.2.14. Heidke Skill Score (HSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#odds-ratio-or">31.2.15. Odds Ratio (OR)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logarithm-of-the-odds-ratio-lodds">31.2.16. Logarithm of the Odds Ratio (LODDS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#odds-ratio-skill-score-orss">31.2.17. Odds Ratio Skill Score (ORSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extreme-dependency-score-eds">31.2.18. Extreme Dependency Score (EDS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extreme-dependency-index-edi">31.2.19. Extreme Dependency Index (EDI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#symmetric-extreme-dependency-score-seds">31.2.20. Symmetric Extreme Dependency Score (SEDS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#symmetric-extremal-dependency-index-sedi">31.2.21. Symmetric Extremal Dependency Index (SEDI)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bias-adjusted-gilbert-skill-score-gss">31.2.22. Bias Adjusted Gilbert Skill Score (GSS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#economic-cost-loss-relative-value-eclv">31.2.23. Economic Cost Loss Relative Value (ECLV)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#met-verification-measures-for-continuous-variables">31.3. MET verification measures for continuous variables</a><ul>
@@ -456,17 +457,24 @@
 \[\text{Bias } = \frac{n_{11} + n_{10}}{n_{11} + n_{01}} = \frac{n_{1.}}{n_1}.\]</div>
 <p>A “good” value of Frequency Bias is close to 1; a value greater than 1 indicates the event was forecasted too frequently and a value less than 1 indicates the event was not forecasted frequently enough.</p>
 </div>
-<div class="section" id="probability-of-detection-pod">
-<h3><span class="section-number">31.2.6. </span>Probability of Detection (POD)<a class="headerlink" href="#probability-of-detection-pod" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="h-rate">
+<h3><span class="section-number">31.2.6. </span>H_RATE<a class="headerlink" href="#h-rate" title="Permalink to this headline">¶</a></h3>
 <p>Called “H_RATE” in FHO output <a class="reference internal" href="point-stat.html#table-ps-format-info-fho"><span class="std std-numref">Table 9.2</span></a></p>
+<p>H_RATE is defined as</p>
+<div class="math notranslate nohighlight">
+\[\text{H_RATE } = \frac{n_{11}}{T}.\]</div>
+<p>H_RATE is equivalent to the H value computed by the NCEP verification system. H_RATE ranges from 0 to 1; a perfect forecast would have H_RATE = 1.</p>
+</div>
+<div class="section" id="probability-of-detection-pod">
+<h3><span class="section-number">31.2.7. </span>Probability of Detection (POD)<a class="headerlink" href="#probability-of-detection-pod" title="Permalink to this headline">¶</a></h3>
 <p>Called “PODY” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>POD is defined as</p>
 <div class="math notranslate nohighlight">
 \[\text{POD } = \frac{n_{11}}{n_{11} + n_{01}} = \frac{n_{11}}{n_1}.\]</div>
-<p>It is the fraction of events that were correctly forecasted to occur. POD is equivalent to the H value computed by the NCEP verification system and is also known as the hit rate. POD ranges from 0 to 1; a perfect forecast would have POD = 1.</p>
+<p>It is the fraction of events that were correctly forecasted to occur. POD is also known as the hit rate. POD ranges from 0 to 1; a perfect forecast would have POD = 1.</p>
 </div>
 <div class="section" id="probability-of-false-detection-pofd">
-<h3><span class="section-number">31.2.7. </span>Probability of False Detection (POFD)<a class="headerlink" href="#probability-of-false-detection-pofd" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.8. </span>Probability of False Detection (POFD)<a class="headerlink" href="#probability-of-false-detection-pofd" title="Permalink to this headline">¶</a></h3>
 <p>Called “POFD” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>POFD is defined as</p>
 <div class="math notranslate nohighlight">
@@ -474,7 +482,7 @@
 <p>It is the proportion of non-events that were forecast to be events. POFD is also often called the False Alarm Rate. POFD ranges from 0 to 1; a perfect forecast would have POFD = 0.</p>
 </div>
 <div class="section" id="probability-of-detection-of-the-non-event-podn">
-<h3><span class="section-number">31.2.8. </span>Probability of Detection of the non-event (PODn)<a class="headerlink" href="#probability-of-detection-of-the-non-event-podn" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.9. </span>Probability of Detection of the non-event (PODn)<a class="headerlink" href="#probability-of-detection-of-the-non-event-podn" title="Permalink to this headline">¶</a></h3>
 <p>Called “PODN” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>PODn is defined as</p>
 <div class="math notranslate nohighlight">
@@ -482,7 +490,7 @@
 <p>It is the proportion of non-events that were correctly forecasted to be non-events. Note that PODn = 1 - POFD. PODn ranges from 0 to 1. Like POD, a perfect forecast would have PODn = 1.</p>
 </div>
 <div class="section" id="false-alarm-ratio-far">
-<h3><span class="section-number">31.2.9. </span>False Alarm Ratio (FAR)<a class="headerlink" href="#false-alarm-ratio-far" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.10. </span>False Alarm Ratio (FAR)<a class="headerlink" href="#false-alarm-ratio-far" title="Permalink to this headline">¶</a></h3>
 <p>Called “FAR” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>FAR is defined as</p>
 <div class="math notranslate nohighlight">
@@ -490,7 +498,7 @@
 <p>It is the proportion of forecasts of the event occurring for which the event did not occur. FAR ranges from 0 to 1; a perfect forecast would have FAR = 0.</p>
 </div>
 <div class="section" id="critical-success-index-csi">
-<h3><span class="section-number">31.2.10. </span>Critical Success Index (CSI)<a class="headerlink" href="#critical-success-index-csi" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.11. </span>Critical Success Index (CSI)<a class="headerlink" href="#critical-success-index-csi" title="Permalink to this headline">¶</a></h3>
 <p>Called “CSI” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>CSI is defined as</p>
 <div class="math notranslate nohighlight">
@@ -498,7 +506,7 @@
 <p>It is the ratio of the number of times the event was correctly forecasted to occur to the number of times it was either forecasted or occurred. CSI ignores the “correct rejections” category (i.e., <span class="math notranslate nohighlight">\(\mathbf{n_{00}}\)</span>). CSI is also known as the Threat Score (TS). CSI can also be written as a nonlinear combination of POD and FAR, and is strongly related to Frequency Bias and the Base Rate.</p>
 </div>
 <div class="section" id="gilbert-skill-score-gss">
-<h3><span class="section-number">31.2.11. </span>Gilbert Skill Score (GSS)<a class="headerlink" href="#gilbert-skill-score-gss" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.12. </span>Gilbert Skill Score (GSS)<a class="headerlink" href="#gilbert-skill-score-gss" title="Permalink to this headline">¶</a></h3>
 <p>Called “GSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>GSS is based on the CSI, corrected for the number of hits that would be expected by chance. In particular,</p>
 <div class="math notranslate nohighlight">
@@ -509,7 +517,7 @@
 <p>GSS is also known as the Equitable Threat Score (ETS). GSS values range from -1/3 to 1. A no-skill forecast would have GSS = 0; a perfect forecast would have GSS = 1.</p>
 </div>
 <div class="section" id="hanssen-kuipers-discriminant-hk">
-<h3><span class="section-number">31.2.12. </span>Hanssen-Kuipers Discriminant (HK)<a class="headerlink" href="#hanssen-kuipers-discriminant-hk" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.13. </span>Hanssen-Kuipers Discriminant (HK)<a class="headerlink" href="#hanssen-kuipers-discriminant-hk" title="Permalink to this headline">¶</a></h3>
 <p>Called “HK” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>HK is defined as</p>
 <div class="math notranslate nohighlight">
@@ -518,7 +526,7 @@
 <p>HK is also known as the True Skill Statistic (TSS) and less commonly (although perhaps more properly) as the Peirce Skill Score. HK measures the ability of the forecast to discriminate between (or correctly classify) events and non-events. HK values range between -1 and 1. A value of 0 indicates no skill; a perfect forecast would have HK = 1.</p>
 </div>
 <div class="section" id="heidke-skill-score-hss">
-<h3><span class="section-number">31.2.13. </span>Heidke Skill Score (HSS)<a class="headerlink" href="#heidke-skill-score-hss" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.14. </span>Heidke Skill Score (HSS)<a class="headerlink" href="#heidke-skill-score-hss" title="Permalink to this headline">¶</a></h3>
 <p>Called “HSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>HSS is a skill score based on Accuracy, where the Accuracy is corrected by the number of correct forecasts that would be expected by chance. In particular,</p>
 <div class="math notranslate nohighlight">
@@ -529,7 +537,7 @@
 <p>HSS can range from minus infinity to 1. A perfect forecast would have HSS = 1.</p>
 </div>
 <div class="section" id="odds-ratio-or">
-<h3><span class="section-number">31.2.14. </span>Odds Ratio (OR)<a class="headerlink" href="#odds-ratio-or" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.15. </span>Odds Ratio (OR)<a class="headerlink" href="#odds-ratio-or" title="Permalink to this headline">¶</a></h3>
 <p>Called “ODDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>OR measures the ratio of the odds of a forecast of the event being correct to the odds of a forecast of the event being wrong. OR is defined as</p>
 <div class="math notranslate nohighlight">
@@ -537,12 +545,12 @@
 <p>OR can range from 0 to <span class="math notranslate nohighlight">\(\infty\)</span>. A perfect forecast would have a value of OR = infinity. OR is often expressed as the log Odds Ratio or as the Odds Ratio Skill Score (<a class="reference internal" href="refs.html#stephenson-2000"><span class="std std-ref">Stephenson, 2000</span></a>).</p>
 </div>
 <div class="section" id="logarithm-of-the-odds-ratio-lodds">
-<h3><span class="section-number">31.2.15. </span>Logarithm of the Odds Ratio (LODDS)<a class="headerlink" href="#logarithm-of-the-odds-ratio-lodds" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.16. </span>Logarithm of the Odds Ratio (LODDS)<a class="headerlink" href="#logarithm-of-the-odds-ratio-lodds" title="Permalink to this headline">¶</a></h3>
 <p>Called “LODDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>LODDS transforms the odds ratio via the logarithm, which tends to normalize the statistic for rare events (<a class="reference internal" href="refs.html#stephenson-2000"><span class="std std-ref">Stephenson, 2000</span></a>). However, it can take values of <span class="math notranslate nohighlight">\(\pm\infty\)</span> when any of the contingency table counts is 0. LODDS is defined as <span class="math notranslate nohighlight">\(\text{LODDS} = ln(OR)\)</span>.</p>
 </div>
 <div class="section" id="odds-ratio-skill-score-orss">
-<h3><span class="section-number">31.2.16. </span>Odds Ratio Skill Score (ORSS)<a class="headerlink" href="#odds-ratio-skill-score-orss" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.17. </span>Odds Ratio Skill Score (ORSS)<a class="headerlink" href="#odds-ratio-skill-score-orss" title="Permalink to this headline">¶</a></h3>
 <p>Called “ORSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>ORSS is a skill score based on the odds ratio. ORSS is defined as</p>
 <div class="math notranslate nohighlight">
@@ -550,7 +558,7 @@
 <p>ORSS is sometimes also referred to as Yule’s Q. (<a class="reference internal" href="refs.html#stephenson-2000"><span class="std std-ref">Stephenson, 2000</span></a>).</p>
 </div>
 <div class="section" id="extreme-dependency-score-eds">
-<h3><span class="section-number">31.2.17. </span>Extreme Dependency Score (EDS)<a class="headerlink" href="#extreme-dependency-score-eds" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.18. </span>Extreme Dependency Score (EDS)<a class="headerlink" href="#extreme-dependency-score-eds" title="Permalink to this headline">¶</a></h3>
 <p>Called “EDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>The extreme dependency score measures the association between forecast and observed rare events. EDS is defined as</p>
 <div class="math notranslate nohighlight">
@@ -558,7 +566,7 @@
 <p>EDS can range from -1 to 1, with 0 representing no skill. A perfect forecast would have a value of EDS = 1. EDS is independent of bias, so should be presented along with the frequency bias statistic (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Stephenson et al., 2008</span></a>).</p>
 </div>
 <div class="section" id="extreme-dependency-index-edi">
-<h3><span class="section-number">31.2.18. </span>Extreme Dependency Index (EDI)<a class="headerlink" href="#extreme-dependency-index-edi" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.19. </span>Extreme Dependency Index (EDI)<a class="headerlink" href="#extreme-dependency-index-edi" title="Permalink to this headline">¶</a></h3>
 <p>Called “EDI” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>The extreme dependency index measures the association between forecast and observed rare events. EDI is defined as</p>
 <div class="math notranslate nohighlight">
@@ -567,7 +575,7 @@
 <p>EDI can range from <span class="math notranslate nohighlight">\(-\infty\)</span> to 1, with 0 representing no skill. A perfect forecast would have a value of EDI = 1 (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Ferro and Stephenson, 2011</span></a>).</p>
 </div>
 <div class="section" id="symmetric-extreme-dependency-score-seds">
-<h3><span class="section-number">31.2.19. </span>Symmetric Extreme Dependency Score (SEDS)<a class="headerlink" href="#symmetric-extreme-dependency-score-seds" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.20. </span>Symmetric Extreme Dependency Score (SEDS)<a class="headerlink" href="#symmetric-extreme-dependency-score-seds" title="Permalink to this headline">¶</a></h3>
 <p>Called “SEDS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>The symmetric extreme dependency score measures the association between forecast and observed rare events. SEDS is defined as</p>
 <div class="math notranslate nohighlight">
@@ -575,7 +583,7 @@
 <p>SEDS can range from <span class="math notranslate nohighlight">\(-\infty\)</span> to 1, with 0 representing no skill. A perfect forecast would have a value of SEDS = 1 (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Ferro and Stephenson, 2011</span></a>).</p>
 </div>
 <div class="section" id="symmetric-extremal-dependency-index-sedi">
-<h3><span class="section-number">31.2.20. </span>Symmetric Extremal Dependency Index (SEDI)<a class="headerlink" href="#symmetric-extremal-dependency-index-sedi" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.21. </span>Symmetric Extremal Dependency Index (SEDI)<a class="headerlink" href="#symmetric-extremal-dependency-index-sedi" title="Permalink to this headline">¶</a></h3>
 <p>Called “SEDI” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>The symmetric extremal dependency index measures the association between forecast and observed rare events. SEDI is defined as</p>
 <div class="math notranslate nohighlight">
@@ -584,12 +592,12 @@
 <p>SEDI can range from <span class="math notranslate nohighlight">\(-\infty\)</span> to 1, with 0 representing no skill. A perfect forecast would have a value of SEDI = 1. SEDI approaches 1 only as the forecast approaches perfection (<a class="reference internal" href="refs.html#stephenson-2008"><span class="std std-ref">Ferro and Stephenson, 2011</span></a>).</p>
 </div>
 <div class="section" id="bias-adjusted-gilbert-skill-score-gss">
-<h3><span class="section-number">31.2.21. </span>Bias Adjusted Gilbert Skill Score (GSS)<a class="headerlink" href="#bias-adjusted-gilbert-skill-score-gss" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.22. </span>Bias Adjusted Gilbert Skill Score (GSS)<a class="headerlink" href="#bias-adjusted-gilbert-skill-score-gss" title="Permalink to this headline">¶</a></h3>
 <p>Called “BAGSS” in CTS output <a class="reference internal" href="point-stat.html#table-ps-format-info-cts"><span class="std std-numref">Table 9.4</span></a></p>
 <p>BAGSS is based on the GSS, but is corrected as much as possible for forecast bias (<a class="reference internal" href="refs.html#brill-2009"><span class="std std-ref">Brill and Mesinger, 2009</span></a>).</p>
 </div>
 <div class="section" id="economic-cost-loss-relative-value-eclv">
-<h3><span class="section-number">31.2.22. </span>Economic Cost Loss Relative Value (ECLV)<a class="headerlink" href="#economic-cost-loss-relative-value-eclv" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">31.2.23. </span>Economic Cost Loss Relative Value (ECLV)<a class="headerlink" href="#economic-cost-loss-relative-value-eclv" title="Permalink to this headline">¶</a></h3>
 <p>Included in ECLV output <a class="reference internal" href="point-stat.html#table-ps-format-info-eclv"><span class="std std-numref">Table 9.14</span></a></p>
 <p>The Economic Cost Loss Relative Value (ECLV) applies a weighting to the contingency table counts to determine the relative value of a forecast based on user-specific information. The cost is incurred to protect against an undesirable outcome, whether that outcome occurs or not. No cost is incurred if no protection is undertaken. Then, if the event occurs, the user sustains a loss. If the event does not occur, there is neither a cost nor a loss. The maximum forecast value is achieved when the cost/loss ratio equals the climatological probability. When this occurs, the ECLV is equal to the Hanssen and Kuipers discriminant. The Economic Cost Loss Relative Value is defined differently depending on whether the cost / loss ratio is lower than the base rate or higher. The ECLV is a function of the cost / loss ratio (cl), the hit rate (h), the false alarm rate (f), the miss rate (m), and the base rate (b).</p>
 <p>For cost / loss ratio below the base rate, the ECLV is defined as:</p>
@@ -1153,7 +1161,7 @@ output <a class="reference internal" href="grid-stat.html#table-gs-format-info-d
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
+        &copy; Copyright 2021, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>

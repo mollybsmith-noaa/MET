@@ -255,7 +255,9 @@
 <ol class="arabic simple">
 <li><p>The <strong>-data file_1 … file_n | data_file_list</strong> options specify the gridded data files or an ASCII file containing a list of file names to be used.</p></li>
 </ol>
-<p>When <strong>-data</strong> is used once, all fields are read from each input file. When used multiple times, it must match the number of fields to be processed.</p>
+<p>When <strong>-data</strong> is used once, all fields are read from each input file. When used multiple times, it must match the number of fields to be processed.
+In this case the first field in the config data field list is read from the files designated by the first <strong>-data</strong>, the second field in the field list is read from files designated by the second <strong>-data</strong>, and so forth.  All files within each set must be of the same file type, but the file types of each set may differ.
+A typical use case for this option is for the first <strong>-data</strong> to specify forecast data files and the second <strong>-data</strong> the observation data files.</p>
 <ol class="arabic simple" start="2">
 <li><p>The <strong>-out</strong> argument is the NetCDF output file.</p></li>
 <li><p>The <strong>-config file</strong> is the configuration file to be used. The contents of the configuration file are discussed below.</p></li>
@@ -334,7 +336,7 @@ version       = &quot;VN.N&quot;;
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
+        &copy; Copyright 2021, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>

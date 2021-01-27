@@ -293,6 +293,14 @@
 
    field = [];
 
+   regrid = {
+      to_grid    = NONE;
+      method     = NEAREST;
+      width      = 1;
+      vld_thresh = 0.5;
+      shape      = SQUARE;
+   }
+
    grid_plot_info = {
       color_table   = &quot;MET_BASE/colortables/met_default.ctable&quot;;
       plot_min      = 0.0;
@@ -303,6 +311,7 @@
 </pre></div>
 </div>
 <p>The <strong>grid_data</strong> dictionary defines a gridded field of data to be plotted as a base image prior to plotting point locations on top of it. The data to be plotted is specified by the <strong>field</strong> array. If <strong>field</strong> is empty, no base image will be plotted. If <strong>field</strong> has length one, the requested data will be read from the input file specified by the <strong>-plot_grid</strong> command line argument.</p>
+<p>The <strong>to_grid</strong> entry in the <strong>regrid</strong> dictionary specifies if and how the requested gridded data should be regridded prior to plotting. Please see <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a> for a description of the <strong>regrid</strong> dictionary options.</p>
 <p>The <strong>grid_plot_info</strong> dictionary inside <strong>grid_data</strong> specifies the options for for plotting the gridded data. The options within <strong>grid_plot_info</strong> are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>point_data = [
@@ -393,7 +402,7 @@ fill_plot_info = { // Overrides fill_color
 </pre></div>
 </div>
 <p>The <strong>grid_data</strong> dictionary defines a gridded field of data to be plotted as a base image prior to plotting point locations on top of it. The data to be plotted is specified by the <strong>field</strong> array. If <strong>field</strong> is empty, no base image will be plotted. If <strong>field</strong> has length one, the requested data will be read from the input file specified by the <strong>-plot_grid</strong> command line argument.</p>
-<p>The <strong>grid_plot_info</strong> dictionary inside <strong>grid_data</strong> specifies the options for for plotting the gridded data. The options within <strong>grid_plot_info</strong> are described in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Data</span> <span class="pre">IO</span> <span class="pre">MET</span> <span class="pre">Configuration</span> <span class="pre">File</span> <span class="pre">Options</span></code>.</p>
+<p>The <strong>grid_plot_info</strong> dictionary inside <strong>grid_data</strong> specifies the options for for plotting the gridded data. The options within <strong>grid_plot_info</strong> are described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>point_data = [
   { fill_color = [ 255, 0, 0 ]; }
@@ -437,7 +446,7 @@ censor_thresh = [];
 censor_val    = [];
 </pre></div>
 </div>
-<p>The <strong>convert(x)</strong> function, <strong>censor_thresh</strong> option, and <strong>censor_val</strong> option may be specified separately for each <strong>point_data</strong> array entry to transform the observation values prior to plotting. These options are further described in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Data</span> <span class="pre">IO</span> <span class="pre">MET</span> <span class="pre">Configuration</span> <span class="pre">File</span> <span class="pre">Options</span></code>.</p>
+<p>The <strong>convert(x)</strong> function, <strong>censor_thresh</strong> option, and <strong>censor_val</strong> option may be specified separately for each <strong>point_data</strong> array entry to transform the observation values prior to plotting. These options are further described in <a class="reference internal" href="config_options.html#config-options"><span class="std std-numref">Section 4</span></a>.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>dotsize(x) = 10;
 </pre></div>
@@ -612,7 +621,7 @@ plotMODEconfig mode_120000L_20050807_120000V_000000A_obj.nc
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
+        &copy; Copyright 2021, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>

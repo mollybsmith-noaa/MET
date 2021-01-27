@@ -120,7 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#met-goals-and-design-philosophy">1.3. MET goals and design philosophy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#met-components">1.4. MET components</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#met-release-notes">1.5. MET release notes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#version-version-release-notes-release-date">1.5.1. Version develop release notes (20201207)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#version-version-release-notes-release-date">1.5.1. Version develop release notes (20210126)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#future-development-plans">1.6. Future development plans</a></li>
@@ -254,9 +254,9 @@
 <h2><span class="section-number">1.4. </span>MET components<a class="headerlink" href="#met-components" title="Permalink to this headline">¶</a></h2>
 <p>The major components of the MET package are represented in <a class="reference internal" href="#overview-figure"><span class="std std-numref">Figure 1.1</span></a>. The main stages represented are input, reformatting, plotting, intermediate output, statistical analyses, and output and aggregation/analysis. The MET-TC package functions independently of the other MET modules, as indicated in the Figure. Each of these stages is described further in later sections. For example, the input and output formats are discussed in <a class="reference internal" href="data_io.html#data-io"><span class="std std-numref">Section 3</span></a> as well as in the sections associated with each of the statistics modules. MET input files are represented on the far left.</p>
 <p>The reformatting stage of MET consists of the Gen-Vx-Mask, PB2NC, ASCII2NC, Pcp-Combine, MADIS2NC, MODIS regrid, WWMCA Regrid, and Ensemble-Stat tools. The PB2NC tool is used to create NetCDF files from input PrepBUFR files containing point observations. Likewise, the ASCII2NC tool is used to create NetCDF files from input ASCII point observations. Many types of data from the MADIS network can be formatted for use in MET by the MADIS2NC tool. MODIS and WWMCA files are regridded and formatted into NetCDF files by their respective tools. These NetCDF files are then used in the statistical analysis step. The Gen-Vx-Mask and Pcp-Combine tools are optional. The Gen-Vx-Mask tool will create a bitmapped masking area in a variety of ways. The output mask can then be used to efficiently limit verification to the interior of a user specified region. The Pcp-Combine tool can be used to add, subtract, or derive fields across multiple time steps. Often it is run to accumulate precipitation amounts into the time interval selected by the user - if a user would like to verify over a different time interval than is included in their forecast or observational dataset. The Ensemble-Stat tool will combine many forecasts into an ensemble mean or probability forecast. Additionally, if gridded or point observations are included, ensemble verification statistics are produced.</p>
-<div class="figure align-default" id="id40">
+<div class="figure align-default" id="id58">
 <span id="overview-figure"></span><img alt="../_images/overview-figure.png" src="../_images/overview-figure.png" />
-<p class="caption"><span class="caption-number">Figure 1.1 </span><span class="caption-text">Basic representation of current MET structure and modules. Gray areas represent input and output files. Dark green areas represent reformatting and pre-processing tools. Light green areas represent plotting utilities. Blue areas represent statistical tools. Yellow areas represent aggregation and analysis tools.</span><a class="headerlink" href="#id40" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Figure 1.1 </span><span class="caption-text">Basic representation of current MET structure and modules. Gray areas represent input and output files. Dark green areas represent reformatting and pre-processing tools. Light green areas represent plotting utilities. Blue areas represent statistical tools. Yellow areas represent aggregation and analysis tools.</span><a class="headerlink" href="#id58" title="Permalink to this image">¶</a></p>
 </div>
 <p>Several optional plotting utilities are provided to assist users in checking their output from the data preprocessing step. Plot-Point-Obs creates a postscript plot showing the locations of point observations. This can be quite useful for assessing whether the latitude and longitude of observation stations was specified correctly. Plot-Data-Plane produces a similar plot for gridded data. For users of the MODE object based verification methods, the Plot-MODE-Field utility will create graphics of the MODE object output. Finally, WWMCA-Plot produces a plot of the raw WWMCA data file.</p>
 <p>The main statistical analysis components of the current version of MET are: Point-Stat, Grid-Stat, Series-Analysis, Ensemble-Stat, MODE, MODE-TD (MTD), Grid-Diag, and Wavelet-Stat. The Point-Stat tool is used for grid-to-point verification, or verification of a gridded forecast field against a point-based observation (i.e., surface observing stations, ACARS, rawinsondes, and other observation types that could be described as a point observation). In addition to providing traditional forecast verification scores for both continuous and categorical variables, confidence intervals are also produced using parametric and non-parametric methods. Confidence intervals take into account the uncertainty associated with verification statistics due to sampling variability and limitations in sample size. These intervals provide more meaningful information about forecast performance. For example, confidence intervals allow credible comparisons of performance between two models when a limited number of model runs is available.</p>
@@ -277,21 +277,93 @@
 <p>When applicable, release notes are followed by the GitHub issue number which
 describes the bugfix, enhancement, or new feature: <a class="reference external" href="https://github.com/dtcenter/MET/issues">MET Git-Hub issues.</a></p>
 <div class="section" id="version-version-release-notes-release-date">
-<h3><span class="section-number">1.5.1. </span>Version develop release notes (20201207)<a class="headerlink" href="#version-version-release-notes-release-date" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="version-10-0-beta2-release-notes-20201207">
-<h4><span class="section-number">1.5.1.1. </span>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/24">10.0-beta2</a> release notes (20201207)<a class="headerlink" href="#version-10-0-beta2-release-notes-20201207" title="Permalink to this headline">¶</a></h4>
-<ul class="simple">
+<h3><span class="section-number">1.5.1. </span>Version develop release notes (20210126)<a class="headerlink" href="#version-version-release-notes-release-date" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="version-10-0-0-beta3-release-notes-20210126">
+<h4><span class="section-number">1.5.1.1. </span>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/25">10.0.0-beta3</a> release notes (20210126)<a class="headerlink" href="#version-10-0-0-beta3-release-notes-20210126" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Bugfixes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Correct the climatological CDF values in the Grid-Stat NetCDF matched pairs output files, and correct the climatological probability values for climatgological distribution percentile (CDP) threshold types (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1638">#1638</a>).</p></li>
+<li><p>Apply the GRIB ensemble filtering option (GRIB_ens) whenever specified by the user (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1604">#1604</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Repository and build:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Update the MET unit test logic by unsetting environment variables after each test to provide a clean environment for the next (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1624">#1624</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Documentation:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Update the Grid-Diag documentation to clarify the -data command line option (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1611">#1611</a>).</p></li>
+<li><p>Documentation updates to correct typos and apply consistent formatting (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1455">#1455</a>).</p></li>
+<li><p>Correct the definition of H_RATE and PODY in MET User’s Guide Appendix C (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1631">#1631</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Library code:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When reading MET NetCDF files, parse the “init_time” and “valid_time” attributes (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1346">#1346</a>).</p></li>
 <li><dl class="simple">
-<dt>Repository and build:</dt><dd><ul>
-<li><p>Switch from tagging releases as met-X.Y.Z to vX.Y.Z instead (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1541">#1541</a>).</p></li>
-<li><p>Switch to consistent vX.Y.Z version numbering, from v10.0 to v10.0.0 (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1590">#1590</a>).</p></li>
-<li><p>Run the nightly build as the shared met_test user (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1116">#1116</a>).</p></li>
+<dt>Python embedding enhancements:</dt><dd><ul>
+<li><p>Complete support for Python XArray embedding (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1534">#1534</a>).</p></li>
+<li><p>Correct error messages from Python embedding (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1473">#1473</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Application code:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Enhance Plot-Point-Obs to support regridding in the config file (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1627">#1627</a>).</p></li>
+<li><p>Update ASCII2NC and Point2Grid to create empty output files for zero input observations instead of erroring out (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1630">#1630</a>).</p></li>
+<li><dl class="simple">
+<dt>Point2Grid Tool:</dt><dd><ul>
+<li><p>Improve the Point2Grid runtime performance (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1421">#1421</a>).</p></li>
+<li><p>Process point observations by variable name instead of GRIB code (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1408">#1408</a>).</p></li>
+<li><p>Support the 2-dimensional time variable in Himawari data files (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1580">#1580</a>).</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Documentation:</dt><dd><ul>
+<dt>TC-Gen Tool:</dt><dd><ul>
+<li><p>Overhaul the Tropical Cyclone genesis matching logic, add the development and operational scoring algorithms, and add many config file options (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1448">#1448</a>).</p></li>
+<li><p>Add config file options to filter data by initialization time (init_inc and init_exc) and hurricane basin (basin_mask) (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1626">#1626</a>).</p></li>
+<li><p>Add the genesis matched pair (GENMPR) output line type (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1597">#1597</a>).</p></li>
+<li><p>Add a gridded NetCDF output file with counts for genesis events and track points (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1430">#1430</a>).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="version-10-0-0-beta2-release-notes-20201207">
+<h4><span class="section-number">1.5.1.2. </span>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/24">10.0.0-beta2</a> release notes (20201207)<a class="headerlink" href="#version-10-0-0-beta2-release-notes-20201207" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p>Repository and build:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Switch from tagging releases as met-X.Y.Z to vX.Y.Z instead (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1541">#1541</a>).</p></li>
+<li><p>Switch to consistent vX.Y.Z version numbering, from v10.0 to v10.0.0 (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1590">#1590</a>).</p></li>
+<li><p>Run the nightly build as the shared met_test user (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1116">#1116</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Documentation:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Update comments at the top of each MET config file directing users to the MET User’s Guide (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1598">#1598</a>).</p></li>
 <li><p>Migrate content from README and README_TC in data/config to the MET User’s Guide (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1474">#1474</a>).</p></li>
 <li><p>Add version selector to the Sphinx documentation page (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1461">#1461</a>).</p></li>
@@ -299,32 +371,31 @@ describes the bugfix, enhancement, or new feature: <a class="reference external"
 <li><p>Implement hanging indents for references (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1457">#1457</a>).</p></li>
 <li><p>Correct typos and spelling errors (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1456">#1456</a>).</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt>Library code:</dt><dd><ul>
+<li><p>Library code:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Enhance support for rotated latlon grids and update related documentation (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1574">#1574</a>).</p></li>
 <li><p>Update the NCL-derived color tables (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1568">#1568</a>).</p></li>
 <li><p>Parse the -v and -log options prior to application-specific command line options (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1527">#1527</a>).</p></li>
 <li><p>Treat gridded fields of entirely missing data as missing files and fix python embedding to call common data processing code (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1494">#1494</a>).</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
-<li><dl class="simple">
-<dt>Application code:</dt><dd><ul>
+<li><p>Application code:</p>
+<blockquote>
+<div><ul class="simple">
 <li><p>Overhaul the plot_point_obs tool to make it highly configurable (<a class="reference external" href="http://github.com/dtcenter/MET/issues/213">#213</a>, <a class="reference external" href="http://github.com/dtcenter/MET/issues/1528">#1528</a>, and <a class="reference external" href="http://github.com/dtcenter/MET/issues/1052">#1052</a>).</p></li>
 <li><p>Add new ioda2nc tool (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1355">#1355</a>).</p></li>
 <li><p>Incremental development toward the Multivariate MODE tool (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1282">#1282</a>, <a class="reference external" href="http://github.com/dtcenter/MET/issues/1284">#1284</a>, and <a class="reference external" href="http://github.com/dtcenter/MET/issues/1290">#1290</a>).</p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 </li>
 </ul>
 </div>
-<div class="section" id="version-10-0-beta1-release-notes-20201022">
-<h4><span class="section-number">1.5.1.2. </span>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/20">10.0-beta1</a> release notes (20201022)<a class="headerlink" href="#version-10-0-beta1-release-notes-20201022" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="version-10-0-0-beta1-release-notes-20201022">
+<h4><span class="section-number">1.5.1.3. </span>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/20">10.0.0-beta1</a> release notes (20201022)<a class="headerlink" href="#version-10-0-0-beta1-release-notes-20201022" title="Permalink to this headline">¶</a></h4>
 <ul>
 <li><p>Bugfixes since the version 9.1 release:</p>
 <blockquote>
@@ -414,7 +485,7 @@ describes the bugfix, enhancement, or new feature: <a class="reference external"
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
+        &copy; Copyright 2021, UCAR/NCAR, NOAA, CSU/CIRA, and CU/CIRES.
 
     </p>
   </div>
