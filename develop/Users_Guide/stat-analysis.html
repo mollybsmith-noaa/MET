@@ -487,23 +487,35 @@ obs_lead  = [];
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fcst_valid_beg  = &quot;&quot;;
 fcst_valid_end  = &quot;&quot;;
-fcst_valid_hour = &quot;&quot;;
+fcst_valid_inc  = [];
+fcst_valid_exc  = [];
+fcst_valid_hour = [];
+
 obs_valid_beg   = &quot;&quot;;
-obs_valid_end   = &quot;&quot;
-obs_valid_hour  = &quot;&quot;;
+obs_valid_end   = &quot;&quot;;
+obs_valid_inc   = [];
+obs_valid_exc   = [];
+obs_valid_hour  = [];
 </pre></div>
 </div>
-<p>The user may specify the beginning, ending, and instantaneous valid times in YYYYMMDD[_HH[MMSS]] format to be used for all analyses performed. If multiple valid times fall within the valid time window, the analyses will be performed on their union. These selections may be further refined by using the <strong>“-fcst_valid_beg”, “-fcst_valid_end”, “-obs_valid_beg”, “-obs_valid_end”, “fcst_valid_hour”</strong> and <strong>“-obs_valid_hour”</strong> options within the job command line.</p>
+<p>The user may filter data based on its valid time. The fcst/obs_valid_beg and fcst/obs_valid_end options are strings in YYYYMMDD[_HH[MMSS]] format which define retention time windows for all analyses to be performed. The analyses are performed on all data whose valid time falls within these windows. If left as empty strings, no valid time window filtering is applied.</p>
+<p>The fcst/obs_valid_hour options are arrays of strings in HH format which define the valid hour(s) of the data to be used. If specified, only data whose valid hour appears in the list of hours is used. The fcst/obs_valid_inc/exc options are arrays of strings in YYYYMMDD[_HH[MMSS]] format which explicitly define the valid times for data to be included or excluded from all analyses.</p>
+<p>These selections may be further refined by using the <strong>“-fcst_valid_beg”, “-fcst_valid_end”, “-fcst_valid_inc”, “-fcst_valid_exc”, “-fcst_valid_hour”, “-obs_valid_beg”, “-obs_valid_end”, “-obs_valid_inc”, “-obs_valid_exc”,</strong> and <strong>“-obs_valid_hour”</strong> options within the job command line.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fcst_init_beg  = &quot;&quot;;
 fcst_init_end  = &quot;&quot;;
-fcst_init_hour = &quot;&quot;;
+fcst_init_inc  = [];
+fcst_init_exc  = [];
+fcst_init_hour = [];
+
 obs_init_beg   = &quot;&quot;;
 obs_init_end   = &quot;&quot;;
-obs_init_hour  = &quot;&quot;;
+obs_init_inc   = [];
+obs_init_exc   = [];
+obs_init_hour  = [];
 </pre></div>
 </div>
-<p>The user may specify the beginning, ending, or exact model initialization times in YYYYMMDD[_HH[MMSS]] format to be used for all analyses performed. If multiple init times fall within the init time window, the analyses will be performed on their union. These selections may be further refined by using the <strong>“-fcst_init_beg”, “-fcst_init_end”, “-obs_init_beg”, “-obs_init_end”, fcst_init_hour”</strong> and <strong>“-obs_init_hour”</strong> options within the job command line.</p>
+<p>These time filtering options are the same as described above but applied to initialization times rather than valid times. These selections may be further refined by using the <strong>“-fcst_init_beg”, “-fcst_init_end”, “-fcst_init_inc”, “-fcst_init_exc”, “-fcst_init_hour”,” “-obs_init_beg”, “-obs_init_end”, “-obs_init_inc”, “-obs_init_exc”</strong> and <strong>“-obs_init_hour”</strong> options within the job command line.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fcst_var = [];
 obs_var  = [];

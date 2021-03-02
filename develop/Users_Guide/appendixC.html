@@ -971,8 +971,8 @@
 <span id="app-c-ensemble"></span><h2><span class="section-number">31.5. </span>MET verification measures for ensemble forecasts<a class="headerlink" href="#met-verification-measures-for-ensemble-forecasts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="crps">
 <h3><span class="section-number">31.5.1. </span>CRPS<a class="headerlink" href="#crps" title="Permalink to this headline">¶</a></h3>
-<p>Called “CRPS” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 11.2</span></a></p>
-<p>The continuous ranked probability score (CRPS) is the integral, over all possible thresholds, of the Brier scores (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al., 2004</span></a>). In MET, the CRPS calculation uses a normal distribution fit to the ensemble forecasts. In many cases, use of other distributions would be better.</p>
+<p>Called “CRPS”, “CRPSCL”, “CRPS_EMP”, and “CRPSCL_EMP” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 11.2</span></a></p>
+<p>The continuous ranked probability score (CRPS) is the integral, over all possible thresholds, of the Brier scores (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al., 2004</span></a>). In MET, the CRPS is calculated two ways: using a normal distribution fit to the ensemble forecasts (CRPS and CRPSCL), and using the empirical ensemble distribution (CRPS_EMP and CRPSCL_EMP). In some cases, use of other distributions would be better.</p>
 <p>WARNING: The normal distribution is probably a good fit for temperature and pressure, and possibly a not horrible fit for winds. However, the normal approximation will not work on most precipitation forecasts and may fail for many other atmospheric variables.</p>
 <p>Closed form expressions for the CRPS are difficult to define when using data rather than distribution functions. However, if a normal distribution can be assumed, then the following equation gives the CRPS for each individual observation (denoted by a lowercase crps) and the corresponding distribution of forecasts.</p>
 <div class="math notranslate nohighlight">
@@ -983,10 +983,11 @@
 </div>
 <div class="section" id="crps-skill-score">
 <h3><span class="section-number">31.5.2. </span>CRPS Skill Score<a class="headerlink" href="#crps-skill-score" title="Permalink to this headline">¶</a></h3>
-<p>Called “CRPSS” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 11.2</span></a></p>
+<p>Called “CRPSS” and “CRPSS_EMP” in ECNT output <a class="reference internal" href="ensemble-stat.html#table-es-header-info-es-out-ecnt"><span class="std std-numref">Table 11.2</span></a></p>
 <p>The continuous ranked probability skill score (CRPSS) is similar to the MSESS and the BSS, in that it compares its namesake score to that of a reference forecast to produce a positively oriented score between 0 and 1.</p>
 <div class="math notranslate nohighlight">
 \[\text{CRPSS} = 1 - \frac{\text{CRPS}_{fcst}}{ \text{CRPS}_{ref}}\]</div>
+<p>For the normal distribution fit (CRPSS), the reference CRPS is computed using the climatological mean and standard deviation. For the empirical distribution (CRPSS_EMP), the reference CRPS is computed by sampling from the assumed normal climatological distribution defined by the mean and standard deviation.</p>
 </div>
 <div class="section" id="ign">
 <h3><span class="section-number">31.5.3. </span>IGN<a class="headerlink" href="#ign" title="Permalink to this headline">¶</a></h3>

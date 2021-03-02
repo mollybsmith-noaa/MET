@@ -129,7 +129,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#scientific-and-statistical-aspects">11.2. Scientific and statistical aspects</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ensemble-forecasts-derived-from-a-set-of-deterministic-ensemble-members">11.2.1. Ensemble forecasts derived from a set of deterministic ensemble members</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ensemble-statistics">11.2.2. Ensemble statistics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ensemble-observation-error">11.2.3. Ensemble observation error</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#climatology-data">11.2.3. Climatology data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ensemble-observation-error">11.2.4. Ensemble observation error</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#practical-information">11.3. Practical Information</a><ul>
@@ -237,7 +238,7 @@
 <span id="ensemble-stat"></span><h1><span class="section-number">11. </span>Ensemble-Stat Tool<a class="headerlink" href="#ensemble-stat-tool" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2><span class="section-number">11.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The Ensemble-Stat tool may be run to create simple ensemble forecasts (mean, probability, spread, etc) from a set of several forecast model files to be used by the MET statistics tools. If observations are also included, ensemble statistics such as rank histograms, probability integral transform histograms, spread/skill variance, relative position and continuous ranked probability score are produced. A climatology file may also be provided, and will be used as a reference forecast in several of the output statistics. Finally, observation error perturbations can be included prior to calculation of statistics. Details about and equations for the statistics produced for ensembles are given in <a class="reference internal" href="appendixC.html#app-c-ensemble"><span class="std std-numref">Appendix C, Section 31.5</span></a>.</p>
+<p>The Ensemble-Stat tool may be run to create simple ensemble forecasts (mean, probability, spread, etc) from a set of several forecast model files to be used by the MET statistics tools. If observations are also included, ensemble statistics such as rank histograms, probability integral transform histograms, spread/skill variance, relative position and continuous ranked probability score are produced. Climatological mean and standard deviation data may also be provided, and will be used as a reference forecast in several of the output statistics. Finally, observation error perturbations can be included prior to calculation of statistics. Details about and equations for the statistics produced for ensembles are given in <a class="reference internal" href="appendixC.html#app-c-ensemble"><span class="std std-numref">Appendix C, Section 31.5</span></a>.</p>
 </div>
 <div class="section" id="scientific-and-statistical-aspects">
 <h2><span class="section-number">11.2. </span>Scientific and statistical aspects<a class="headerlink" href="#scientific-and-statistical-aspects" title="Permalink to this headline">¶</a></h2>
@@ -253,10 +254,16 @@
 <p>Rank histograms and probability integral transform (PIT) histograms are used to determine if the distribution of ensemble values is the same as the distribution of observed values for any forecast field (<a class="reference internal" href="refs.html#hamill-2001"><span class="std std-ref">Hamill, 2001</span></a>). The rank histogram is a tally of the rank of the observed value when placed in order with each of the ensemble values from the same location. If the distributions are identical, then the rank of the observation will be uniformly distributed. In other words, it will fall among the ensemble members randomly in equal likelihood. The PIT histogram applies this same concept, but transforms the actual rank into a probability to facilitate ensembles of differing sizes or with missing members.</p>
 <p>Often, the goal of ensemble forecasting is to reproduce the distribution of observations using a set of many forecasts. In other words, the ensemble members represent the set of all possible outcomes. When this is true, the spread of the ensemble is identical to the error in the mean forecast. Though this rarely occurs in practice, the spread / skill relationship is still typically assessed for ensemble forecasts (<a class="reference internal" href="refs.html#barker-1991"><span class="std std-ref">Barker, 1991</span></a>; <a class="reference internal" href="refs.html#buizza-1997"><span class="std std-ref">Buizza,1997</span></a>). MET calculates the spread and skill in user defined categories according to <a class="reference internal" href="refs.html#eckel-2012"><span class="std std-ref">Eckel et al. (2012)</span></a>.</p>
 <p>The relative position (RELP) is a count of the number of times each ensemble member is closest to the observation. For stochastic or randomly derived ensembles, this statistic is meaningless. For specified ensemble members, however, it can assist users in determining if any ensemble member is performing consistently better or worse than the others.</p>
-<p>The ranked probability score (RPS) is included in the Ranked Probability Score (RPS) line type. It is the mean of the Brier scores computed from ensemble probabilities derived for each probability category threshold (prob_cat_thresh) specified in the configuration file. The continuous ranked probability score (CRPS) is the average the distance between the forecast (ensemble) cumulative distribution function and the observation cumulative distribution function. It is an analog of the Brier score, but for continuous forecast and observation fields. (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al., 2004</span></a>). The CRPS statistic is included in the Ensemble Continuous Statistics (ECNT) line type, along with other statistics quantifying the ensemble spread and ensemble mean skill.</p>
+<p>The ranked probability score (RPS) is included in the Ranked Probability Score (RPS) line type. It is the mean of the Brier scores computed from ensemble probabilities derived for each probability category threshold (prob_cat_thresh) specified in the configuration file. The continuous ranked probability score (CRPS) is the average the distance between the forecast (ensemble) cumulative distribution function and the observation cumulative distribution function. It is an analog of the Brier score, but for continuous forecast and observation fields. The CRPS statistic is computed using two methods: assuming a normal distribution defined by the ensemble mean and spread (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al., 2004</span></a>) and using the empirical ensemble distribution (<a class="reference internal" href="refs.html#hersbach-2000"><span class="std std-ref">Hersbach, 2000</span></a>). The CRPS statistic is included in the Ensemble Continuous Statistics (ECNT) line type, along with other statistics quantifying the ensemble spread and ensemble mean skill.</p>
+</div>
+<div class="section" id="climatology-data">
+<h3><span class="section-number">11.2.3. </span>Climatology data<a class="headerlink" href="#climatology-data" title="Permalink to this headline">¶</a></h3>
+<p>The Ensemble-Stat output includes at least three statistics computed relative to external climatology data. The climatology is defined by mean and standard deviation fields, and typically both are required in the computation of ensemble skill score statistics. MET assumes that the climatology follows a normal distribution, defined by the mean and standard deviation at each point.</p>
+<p>When computing the CRPS skill score for (<a class="reference internal" href="refs.html#gneiting-2004"><span class="std std-ref">Gneiting et al., 2004</span></a>) the reference CRPS statistic is computed using the climatological mean and standard deviation directly. When computing the CRPS skill score for (<a class="reference internal" href="refs.html#hersbach-2000"><span class="std std-ref">Hersbach, 2000</span></a>) the reference CRPS statistic is computed by selecting equal-area-spaced values from the assumed normal climatological distribution. The number of points selected is determined by the <em>cdf_bins</em> setting in the <em>climo_cdf</em> dictionary. The reference CRPS is computed empirically from this ensemble of climatology values. If the number bins is set to 1, the climatological CRPS is computed using only the climatological mean value. In this way, the empirical CRPSS may be computed relative to a single model rather than a climatological distribution.</p>
+<p>The climatological distribution is also used for the RPSS. The forecast RPS statistic is computed from a probabilistic contingency table in which the probabilities are derived from the ensemble member values. In a simliar fashion, the climatogical probability for each observed value is derived from the climatological distribution. The area of the distribution to the left of the observed value is interpreted as the climatological probability. These climatological probabilities are also evaluated using a probabilistic contingency table from which the reference RPS score is computed. The skill scores are derived by comparing the forecast statistic to the reference climatology statistic.</p>
 </div>
 <div class="section" id="ensemble-observation-error">
-<h3><span class="section-number">11.2.3. </span>Ensemble observation error<a class="headerlink" href="#ensemble-observation-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">11.2.4. </span>Ensemble observation error<a class="headerlink" href="#ensemble-observation-error" title="Permalink to this headline">¶</a></h3>
 <p>In an attempt to ameliorate the effect of observation errors on the verification of forecasts, a random perturbation approach has been implemented. A great deal of user flexibility has been built in, but the methods detailed in <a class="reference internal" href="refs.html#candille-2008"><span class="std std-ref">Candille and Talagrand (2008)</span></a>. can be replicated using the appropriate options. The user selects a distribution for the observation error, along with parameters for that distribution. Rescaling and bias correction can also be specified prior to the perturbation. Random draws from the distribution can then be added to either, or both, of the forecast and observed fields, including ensemble members. Details about the effects of the choices on verification statistics should be considered, with many details provided in the literature (<em>e.g.</em> <a class="reference internal" href="refs.html#candille-2008"><span class="std std-ref">Candille and Talagrand, 2008</span></a>; <a class="reference internal" href="refs.html#saetra-2004"><span class="std std-ref">Saetra et al., 2004</span></a>; <a class="reference internal" href="refs.html#santos-2012"><span class="std std-ref">Santos and Ghelli, 2012</span></a>). Generally, perturbation makes verification statistics better when applied to ensemble members, and worse when applied to the observations themselves.</p>
 <p>Normal and uniform are common choices for the observation error distribution. The uniform distribution provides the benefit of being bounded on both sides, thus preventing the perturbation from taking on extreme values. Normal is the most common choice for observation error. However, the user should realize that with the very large samples typical in NWP, some large outliers will almost certainly be introduced with the perturbation. For variables that are bounded below by 0, and that may have inconsistent observation errors (e.g. larger errors with larger measurements), a lognormal distribution may be selected. Wind speeds and precipitation measurements are the most common of this type of NWP variable. The lognormal error perturbation prevents measurements of 0 from being perturbed, and applies larger perturbations when measurements are larger. This is often the desired behavior in these cases, but this distribution can also lead to some outliers being introduced in the perturbation step.</p>
 <p>Observation errors differ according to instrument, temporal and spatial representation, and variable type. Unfortunately, many observation errors have not been examined or documented in the literature. Those that have usually lack information regarding their distributions and approximate parameters. Instead, a range or typical value of observation error is often reported and these are often used as an estimate of the standard deviation of some distribution. Where possible, it is recommended to use the appropriate type and size of perturbation for the observation to prevent spurious results.</p>
@@ -264,7 +271,7 @@
 </div>
 <div class="section" id="practical-information">
 <h2><span class="section-number">11.3. </span>Practical Information<a class="headerlink" href="#practical-information" title="Permalink to this headline">¶</a></h2>
-<p>This section contains information about configuring and running the Ensemble-Stat tool. The Ensemble-Stat tool creates or verifies gridded model data. For verification, this tool can accept either gridded or point observations. If provided, the climatology file must be gridded. The input gridded model, observation, and climatology datasets must be on the same grid prior to calculation of any statistics, and in one of the MET supported gridded file formats. If gridded files are not on the same grid, MET will do the regridding for you if you specify the desired output grid. The point observations must be formatted as the NetCDF output of the point reformatting tools described in <a class="reference internal" href="reformat_point.html#reformat-point"><span class="std std-numref">Section 6</span></a>.</p>
+<p>This section contains information about configuring and running the Ensemble-Stat tool. The Ensemble-Stat tool creates or verifies gridded model data. For verification, this tool can accept either gridded or point observations. If provided, the climatology data files must be gridded. The input gridded model, observation, and climatology datasets must be on the same grid prior to calculation of any statistics, and in one of the MET supported gridded file formats. If gridded files are not on the same grid, MET will do the regridding for you if you specify the desired output grid. The point observations must be formatted as the NetCDF output of the point reformatting tools described in <a class="reference internal" href="reformat_point.html#reformat-point"><span class="std std-numref">Section 6</span></a>.</p>
 <div class="section" id="ensemble-stat-usage">
 <h3><span class="section-number">11.3.1. </span>ensemble_stat usage<a class="headerlink" href="#ensemble-stat-usage" title="Permalink to this headline">¶</a></h3>
 <p>The usage statement for the Ensemble Stat tool is shown below:</p>
@@ -411,7 +418,7 @@ prob_cat_thresh    = [];
 <p>The <strong>ens</strong> and <strong>fcst</strong> dictionaries do not need to include the same fields. Users may specify any number of ensemble fields to be summarized, but generally there are many fewer fields with verifying observations available. The <strong>ens</strong> dictionary specifies the fields to be summarized while the <strong>fcst</strong> dictionary specifies the fields to be verified.</p>
 <p>The <strong>obs</strong> dictionary looks very similar to the <strong>fcst</strong> dictionary. If verifying against point observations which are assigned GRIB1 codes, the observation section must be defined following GRIB1 conventions. When verifying GRIB1 forecast data, one can easily copy over the forecast settings to the observation dictionary using <strong>obs = fcst;</strong>. However, when verifying non-GRIB1 forecast data, users will need to specify the <strong>fcst</strong> and <strong>obs</strong> sections separately.</p>
 <p>The <strong>ens_ssvar_bin_size</strong> and <strong>ens_phist_bin_size</strong> specify the width of the categorical bins used to accumulate frequencies for spread-skill-variance or probability integral transform statistics, respectively.</p>
-<p>The <strong>prob_cat_thresh</strong> entry is an array of thresholds to be applied in the computation of the RPS line type. Since these thresholds can change for each variable, they can be specified separately for each <strong>fcst.field</strong> entry. If left empty but climatology data is provided, the <strong>climo_cdf</strong> thresholds will be used instead. If no climatology data is provided, and the RPS output line type is requested, then the <strong>prob_cat_thresh</strong> array must be defined.</p>
+<p>The <strong>prob_cat_thresh</strong> entry is an array of thresholds to be applied in the computation of the RPS line type. Since these thresholds can change for each variable, they can be specified separately for each <strong>fcst.field</strong> entry. If left empty but climatological mean and standard deviation data is provided, the <strong>climo_cdf</strong> thresholds will be used instead. If no climatology data is provided, and the RPS output line type is requested, then the <strong>prob_cat_thresh</strong> array must be defined.</p>
 <hr class="docutils" />
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>obs_error = {
 flag             = FALSE;
@@ -668,11 +675,11 @@ relp  = NONE;
 </tr>
 <tr class="row-even"><td><p>27</p></td>
 <td><p>CRPS</p></td>
-<td><p>The Continuous Ranked Probability Score</p></td>
+<td><p>The Continuous Ranked Probability Score (normal distribution)</p></td>
 </tr>
 <tr class="row-odd"><td><p>28</p></td>
 <td><p>CRPSS</p></td>
-<td><p>The Continuous Ranked Probability Skill Score</p></td>
+<td><p>The Continuous Ranked Probability Skill Score (normal distribution)</p></td>
 </tr>
 <tr class="row-even"><td><p>29</p></td>
 <td><p>IGN</p></td>
@@ -705,6 +712,22 @@ relp  = NONE;
 <tr class="row-odd"><td><p>36</p></td>
 <td><p>SPREAD_PLUS_OERR</p></td>
 <td><p>The square root of the sum of unperturbed ensemble variance and the observation error variance</p></td>
+</tr>
+<tr class="row-even"><td><p>37</p></td>
+<td><p>CRPSCL</p></td>
+<td><p>Climatological Continuous Ranked Probability Score (normal distribution)</p></td>
+</tr>
+<tr class="row-odd"><td><p>38</p></td>
+<td><p>CRPS_EMP</p></td>
+<td><p>The Continuous Ranked Probability Score (empirical distribution)</p></td>
+</tr>
+<tr class="row-even"><td><p>39</p></td>
+<td><p>CRPSCL_EMP</p></td>
+<td><p>Climatological Continuous Ranked Probability Score (empirical distribution)</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>CRPSS_EMP</p></td>
+<td><p>The Continuous Ranked Probability Skill Score (empirical distribution)</p></td>
 </tr>
 </tbody>
 </table>
@@ -925,33 +948,37 @@ relp  = NONE;
 <td><p>ENS_i</p></td>
 <td><p>Value of the ith ensemble member (repeated)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Last-6</p></td>
+<tr class="row-odd"><td><p>Last-7</p></td>
 <td><p>OBS_QC</p></td>
 <td><p>Quality control string for the observation</p></td>
 </tr>
-<tr class="row-even"><td><p>Last-5</p></td>
+<tr class="row-even"><td><p>Last-6</p></td>
 <td><p>ENS_MEAN</p></td>
 <td><p>The unperturbed ensemble mean value</p></td>
 </tr>
-<tr class="row-odd"><td><p>Last-4</p></td>
-<td><p>CLIMO</p></td>
-<td><p>The value of the included climatology</p></td>
+<tr class="row-odd"><td><p>Last-5</p></td>
+<td><p>CLIMO_MEAN</p></td>
+<td><p>Climatological mean value (named CLIMO prior to met-10.0.0)</p></td>
 </tr>
-<tr class="row-even"><td><p>Last-3</p></td>
+<tr class="row-even"><td><p>Last-4</p></td>
 <td><p>SPREAD</p></td>
 <td><p>The spread (standard deviation) of the unperturbed ensemble member values</p></td>
 </tr>
-<tr class="row-odd"><td><p>Last-2</p></td>
+<tr class="row-odd"><td><p>Last-3</p></td>
 <td><p>ENS_MEAN _OERR</p></td>
 <td><p>The PERTURBED ensemble mean (e.g. with Observation Error).</p></td>
 </tr>
-<tr class="row-even"><td><p>Last-1</p></td>
+<tr class="row-even"><td><p>Last-2</p></td>
 <td><p>SPREAD_OERR</p></td>
 <td><p>The spread (standard deviation) of the PERTURBED ensemble member values (e.g. with Observation Error).</p></td>
 </tr>
-<tr class="row-odd"><td><p>Last</p></td>
+<tr class="row-odd"><td><p>Last-1</p></td>
 <td><p>SPREAD_PLUS_OERR</p></td>
 <td><p>The square root of the sum of the unperturbed ensemble variance and the observation error variance.</p></td>
+</tr>
+<tr class="row-even"><td><p>Last</p></td>
+<td><p>CLIMO_STDEV</p></td>
+<td><p>Climatological standard deviation value</p></td>
 </tr>
 </tbody>
 </table>

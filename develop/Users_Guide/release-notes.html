@@ -178,11 +178,101 @@
   <div class="section" id="met-release-notes">
 <h1>MET release notes<a class="headerlink" href="#met-release-notes" title="Permalink to this headline">¶</a></h1>
 <p>When applicable, release notes are followed by the GitHub issue number which
-describes the bugfix, enhancement, or new feature: <a class="reference external" href="https://github.com/dtcenter/MET/issues">MET Git-Hub issues.</a></p>
+describes the bugfix, enhancement, or new feature: <a class="reference external" href="https://github.com/dtcenter/MET/issues">MET GitHub issues.</a></p>
 <div class="section" id="version-version-release-notes-release-date">
-<h2>Version develop release notes (20210127)<a class="headerlink" href="#version-version-release-notes-release-date" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="version-10-0-0-beta3-release-notes-20210126">
-<h3>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/25">10.0.0-beta3</a> release notes (20210126)<a class="headerlink" href="#version-10-0-0-beta3-release-notes-20210126" title="Permalink to this headline">¶</a></h3>
+<h2>Version develop release notes (20210302)<a class="headerlink" href="#version-version-release-notes-release-date" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-10-0-0-beta4-release-notes-20210302">
+<h3>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/26">10.0.0-beta4</a> release notes (20210302)<a class="headerlink" href="#version-10-0-0-beta4-release-notes-20210302" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Bugfixes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fix the set_attr_accum option to set the accumulation time instead of the lead time (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1646">#1646</a>).</p></li>
+<li><p>Correct the time offset for tests in unit_plot_data_plane.xml (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1677">#1677</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Repository and build:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Enhance the sample plotting R-script to read output from different versions of MET (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1653">#1653</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Library code:</p>
+<blockquote>
+<div><ul>
+<li><p>Miscellaneous:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Update GRIB1/2 table entries for the MXUPHL, MAXREF, MAXUVV, and MAXDVV variables (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1658">#1658</a>).</p></li>
+<li><p>Update the Air Force GRIB tables to reflect current AF usage (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1519">#1519</a>).</p></li>
+<li><p>Enhance the DataLine::get_item() error message to include the file name, line number, and column (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1429">#1429</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>NetCDF library:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add support for the NetCDF-CF conventions time bounds option (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1657">#1657</a>).</p></li>
+<li><p>Error out when reading CF-compliant NetCDF data with incomplete grid definition (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1454">#1454</a>).</p></li>
+<li><p>Reformat and simplify the magic_str() printed for NetCDF data files (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1655">#1655</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Statistics computations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add support for the Hersbach CRPS algorithm by add new columns to the ECNT line type (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1450">#1450</a>).</p></li>
+<li><p>Enhance MET to derive the Hersbach CRPSCL_EMP and CRPSS_EMP statistics from a single deterministic reference model (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1685">#1685</a>).</p></li>
+<li><p>Correct the climatological CRPS computation to match the NOAA/EMC VSDB method (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1451">#1451</a>).</p></li>
+<li><p>Modify the climatological Brier Score computation to match the NOAA/EMC VSDB method (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1684">#1684</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Application code:</p>
+<blockquote>
+<div><ul>
+<li><p>ASCII2NC and Point2Grid:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Enhance ascii2nc and point2grid to gracefully process zero input observations rather than erroring out (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1630">#1630</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Point-Stat Tool:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Enhance the validation of masking regions to check for non-unique masking region names (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1439">#1439</a>).</p></li>
+<li><p>Print the Point-Stat rejection code reason count log messages at verbosity level 2 for zero matched pairs (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1644">#1644</a>).</p></li>
+<li><p>Add detailed log messages to Point-Stat when discarding observations (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1588">#1588</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Stat-Analysis Tool:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Add -fcst_init_inc/_exc and -fcst_valid_inc/_exc job command filtering options to Stat-Analysis (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1135">#1135</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>MODE Tool:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Update the MODE AREA_RATIO output column to list the forecast area divided by the observation area (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1643">#1643</a>).</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="version-10-0-0-beta3-release-notes-20210127">
+<h3>Version <a class="reference external" href="https://github.com/dtcenter/MET/projects/25">10.0.0-beta3</a> release notes (20210127)<a class="headerlink" href="#version-10-0-0-beta3-release-notes-20210127" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><p>Bugfixes:</p>
 <blockquote>
@@ -212,13 +302,11 @@ describes the bugfix, enhancement, or new feature: <a class="reference external"
 <blockquote>
 <div><ul class="simple">
 <li><p>When reading MET NetCDF files, parse the “init_time” and “valid_time” attributes (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1346">#1346</a>).</p></li>
-<li><dl class="simple">
-<dt>Python embedding enhancements:</dt><dd><ul>
+<li><p>Python embedding enhancements:</p>
+<ul>
 <li><p>Complete support for Python XArray embedding (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1534">#1534</a>).</p></li>
 <li><p>Correct error messages from Python embedding (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1473">#1473</a>).</p></li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </div></blockquote>
@@ -228,24 +316,20 @@ describes the bugfix, enhancement, or new feature: <a class="reference external"
 <div><ul class="simple">
 <li><p>Enhance Plot-Point-Obs to support regridding in the config file (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1627">#1627</a>).</p></li>
 <li><p>Update ASCII2NC and Point2Grid to create empty output files for zero input observations instead of erroring out (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1630">#1630</a>).</p></li>
-<li><dl class="simple">
-<dt>Point2Grid Tool:</dt><dd><ul>
+<li><p>Point2Grid Tool:</p>
+<ul>
 <li><p>Improve the Point2Grid runtime performance (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1421">#1421</a>).</p></li>
 <li><p>Process point observations by variable name instead of GRIB code (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1408">#1408</a>).</p></li>
 <li><p>Support the 2-dimensional time variable in Himawari data files (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1580">#1580</a>).</p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><dl class="simple">
-<dt>TC-Gen Tool:</dt><dd><ul>
+<li><p>TC-Gen Tool:</p>
+<ul>
 <li><p>Overhaul the Tropical Cyclone genesis matching logic, add the development and operational scoring algorithms, and add many config file options (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1448">#1448</a>).</p></li>
 <li><p>Add config file options to filter data by initialization time (init_inc and init_exc) and hurricane basin (basin_mask) (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1626">#1626</a>).</p></li>
 <li><p>Add the genesis matched pair (GENMPR) output line type (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1597">#1597</a>).</p></li>
 <li><p>Add a gridded NetCDF output file with counts for genesis events and track points (<a class="reference external" href="http://github.com/dtcenter/MET/issues/1430">#1430</a>).</p></li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </div></blockquote>
