@@ -64,11 +64,11 @@ if [ ! -e $TAR_DIR ]; then
 fi
 
 # Update library linker path
-export LD_LIBRARY_PATH=${TEST_BASE}/external_libs/lib:${MET_PYTHON}/lib:${MET_NETCDF}/lib:${MET_HDF5}/lib:${MET_BUFRLIB}:${MET_GRIB2CLIB}:${LIB_JASPER}:${LIB_LIBPNG}:${LIB_Z}:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${TEST_BASE}/external_libs/lib${MET_PYTHON:+:$MET_PYTHON/lib}${MET_NETCDF:+:$MET_NETCDF/lib}${MET_HDF5:+:$MET_HDF5/lib}${MET_BUFRLIB:+:$MET_BUFRLIB}${MET_GRIB2CLIB:+:$MET_GRIB2CLIB}${LIB_JASPER:+$LIB_JASPER}${LIB_LIBPNG:+:$LIB_JASPER}${LIB_Z:+$LIB_Z}:${LD_LIBRARY_PATH}
 echo "LD_LIBRARY_PATH = ${LD_LIBRARY_PATH}"
 
 # Constants
-if [ -z ${MET_GRIB2CLIB} ]; then
+if [[ -z ${MET_GRIB2CLIB} ]] && [[ -z ${MET_GRIB2C} ]]; then
     COMPILE_ZLIB=1
     COMPILE_LIBPNG=1
     COMPILE_JASPER=1
@@ -128,18 +128,18 @@ COMPILER_VERSION=`echo $COMPILER | cut -d'_' -f2`
 
 echo "USE_MODULES = ${USE_MODULES}"
 
-if [ ${USE_MODULES} == "TRUE" ]; then 
+if [ ${USE_MODULES} = "TRUE" ]; then 
     echo "module load ${COMPILER_FAMILY}/${COMPILER_VERSION}"
     echo ${COMPILER_FAMILY}/${COMPILER_VERSION}
 
     module load ${COMPILER_FAMILY}/${COMPILER_VERSION}
-    if [ ${COMPILER_FAMILY} ==  "PrgEnv-intel" ]; then
+    if [ ${COMPILER_FAMILY} =  "PrgEnv-intel" ]; then
 	module load craype
 	module switch craype craype-sandybridge
     fi
 fi
 
-if [ ${COMPILER_FAMILY} == "gnu" ]; then
+if [ ${COMPILER_FAMILY} = "gnu" ]; then
     if [ -z ${CC} ]; then
 	export CC=`which gcc`
     else
@@ -165,7 +165,7 @@ if [ ${COMPILER_FAMILY} == "gnu" ]; then
     else
 	export F90=${F90}
     fi
-elif [ ${COMPILER_FAMILY} == "pgi" ]; then
+elif [ ${COMPILER_FAMILY} = "pgi" ]; then
     if [ -z ${CC} ]; then
 	export CC=`which pgcc`
     else
@@ -185,7 +185,7 @@ elif [ ${COMPILER_FAMILY} == "pgi" ]; then
 	export F77=${F90}
 	export FC=${F90}
     fi
-elif [[ ${COMPILER_FAMILY} == "intel" ]] || [[ ${COMPILER_FAMILY} == "ics" ]] || [[ ${COMPILER_FAMILY} == "ips" ]] || [[ ${COMPILER_FAMILY} ==  "PrgEnv-intel" ]]; then
+elif [[ ${COMPILER_FAMILY} == "intel" ]] || [[ ${COMPILER_FAMILY} == "ics" ]] || [[ ${COMPILER_FAMILY} == "ips" ]] || [[ ${COMPILER_FAMILY} == "PrgEnv-intel" ]]; then
     if [ -z ${CC} ]; then
 	export CC=`which icc`
     else
@@ -225,7 +225,7 @@ echo "export F90=${F90}"
 
 # Load Python module
 
-if [ ${USE_MODULES} == "TRUE" ]; then
+if [ ${USE_MODULES} = "TRUE" ]; then
     if [ ! -z ${PYTHON_MODULE} ]; then
 	PYTHON_NAME=` echo $PYTHON_MODULE | cut -d'_' -f1`
 	PYTHON_VERSION_NUM=`echo $PYTHON_MODULE | cut -d'_' -f2`
@@ -241,7 +241,7 @@ python --version
 # Compile GSL
 if [ $COMPILE_GSL -eq 1 ]; then
 
-  if [ ${COMPILER_FAMILY} == "pgi" ]; then
+  if [ ${COMPILER_FAMILY} = "pgi" ]; then
     vrs="1.11";
   else
     vrs="2.1";
@@ -295,8 +295,8 @@ if [ $COMPILE_BUFRLIB -eq 1 ]; then
 
   # For GNU and Intel follow BUFRLIB11 instructions                                                                                                                                                    
   if [[ ${COMPILER_FAMILY} == "gnu" ]]; then
-    ${FC} -c -fno-second-underscore `./getdefflags_F.sh` modv*.F moda*.F `ls -1 *.F *.f | grep -v "mod[av]_"` >> make.log 2>&1
-  elif [[ ${COMPILER_FAMILY} == "intel" ]] || [[ ${COMPILER_FAMILY} == "ics" ]] || [[ ${COMPILER_FAMILY} == "ips" ]] || [[ ${COMPILER_FAMILY} == "ips" ]] || [[ ${COMPILER_FAMILY} ==  "PrgEnv-intel" ]]; then
+    ${FC} -c -fno-second-underscore -fallow-argument-mismatch `./getdefflags_F.sh` modv*.F moda*.F `ls -1 *.F *.f | grep -v "mod[av]_"` >> make.log 2>&1
+  elif [[ ${COMPILER_FAMILY} == "intel" ]] || [[ ${COMPILER_FAMILY} == "ics" ]] || [[ ${COMPILER_FAMILY} == "ips" ]] || [[ ${COMPILER_FAMILY} == "ips" ]] || [[ ${COMPILER_FAMILY} == "PrgEnv-intel" ]]; then
     ${FC} -c `./getdefflags_F.sh` modv*.F moda*.F `ls -1 *.F *.f | grep -v "mod[av]_"` >> make.log 2>&1
   elif [[ ${COMPILER_FAMILY} == "pgi" ]]; then
     ${FC} -c -Mnosecond_underscore `./getdefflags_F.sh` modv*.F moda*.F `ls -1 *.F *.f | grep -v "mod[av]_"` >> make.log 2>&1
@@ -353,8 +353,8 @@ if [[ $COMPILE_LIBPNG -eq 1 && $HOST != ys* ]]; then
   tar -xzf ${TAR_DIR}/libpng*.tar.gz
   cd libpng*
   echo "cd `pwd`"
-  echo "./configure --prefix=${LIB_DIR} LDFLAGS=-L/${LIB_DIR}/lib CPPFLAGS=-I/${LIB_DIR}/include > configure.log 2>&1"
-  ./configure --prefix=${LIB_DIR} LDFLAGS=-L/${LIB_DIR}/lib CPPFLAGS=-I/${LIB_DIR}/include > configure.log 2>&1
+  echo "./configure --prefix=${LIB_DIR} LDFLAGS=-L${LIB_DIR}/lib CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1"
+  ./configure --prefix=${LIB_DIR} LDFLAGS=-L${LIB_DIR}/lib CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1
   ret=$?
   if [ $ret != 0 ]; then
      echo "configure returned with non-zero ($ret) status"
@@ -460,8 +460,14 @@ if [ $COMPILE_HDF -eq 1 ]; then
      echo "configure returned with non-zero ($ret) status"
      exit 1
   fi
-  cat mfhdf/hdiff/Makefile | sed 's/LIBS = -ljpeg -lz/LIBS = -ljpeg -lz -lm/g' > Makefile_NEW
-  mv Makefile_NEW mfhdf/hdiff/Makefile
+  cat mfhdf/hdiff/Makefile | \
+    sed 's/LIBS = -ljpeg -lz/LIBS = -ljpeg -lz -lm/g' \
+    > Makefile_new
+  mv Makefile_new mfhdf/hdiff/Makefile
+  cat hdf/src/Makefile | \
+    sed 's/FFLAGS =  -O2/FFLAGS = -w -fallow-argument-mismatch -O2/g' \
+    > Makefile_new
+  mv Makefile_new hdf/src/Makefile
   echo "make > make.log 2>&1"
   make > make.log 2>&1
   ret=$?
@@ -524,8 +530,8 @@ if [ $COMPILE_NETCDF -eq 1 ]; then
   tar -xzf ${TAR_DIR}/hdf5*.tar.gz
   cd hdf5*
   echo "cd `pwd`"
-  echo "./configure --prefix=${LIB_DIR} --with-zlib=${LIB_DIR}/lib CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-L${LIB_DIR}/lib CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1"
-  ./configure --prefix=${LIB_DIR} --with-zlib=${LIB_Z} CFLAGS=-fPIC CXXFLAGS=-fPIC LDFLAGS=-L${LIB_DIR}/lib:{LIB_Z} CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1
+  echo "./configure --prefix=${LIB_DIR} --with-zlib=${LIB_DIR}/lib CFLAGS=-fPIC CXXFLAGS=-fPIC FFLAGS=-fPIC LDFLAGS=-L${LIB_DIR}/lib CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1"
+  ./configure --prefix=${LIB_DIR} --with-zlib=${LIB_Z} CFLAGS=-fPIC CXXFLAGS=-fPIC FFLAGS=-fPIC LDFLAGS=-L${LIB_DIR}/lib:${LIB_Z} CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1
   ret=$?
   if [ $ret != 0 ]; then
      echo "configure returned with non-zero ($ret) status"
@@ -624,7 +630,7 @@ fi
 if [ $COMPILE_CAIRO -eq 1 ]; then
 
     # If on Cray, compile PIXMAN                                                                                                                                                                                                
-    if [ ${COMPILER_FAMILY} ==  "PrgEnv-intel" ]; then
+    if [ ${COMPILER_FAMILY} =  "PrgEnv-intel" ]; then
 	echo
 	echo "Compiling pixman at `date`"
 	mkdir -p  ${LIB_DIR}/pixman
@@ -664,12 +670,12 @@ if [ $COMPILE_CAIRO -eq 1 ]; then
   tar -xf ${TAR_DIR}/cairo*.tar*
   cd cairo*
   export PKG_CONFIG=`which pkg-config`
-  if [ ${COMPILER_FAMILY} ==  "PrgEnv-intel" ]; then
+  if [ ${COMPILER_FAMILY} =  "PrgEnv-intel" ]; then
       export PKG_CONFIG_PATH=${LIB_DIR}/lib/pkgconfig/
   fi
   echo "cd `pwd`"
-  echo "./configure --prefix=${LIB_DIR} ax_cv_c_float_words_bigendian=no LDFLAGS=-L/${LIB_DIR}/lib CPPFLAGS=-I/${LIB_DIR}/include > configure.log 2>&1"
-  ./configure --prefix=${LIB_DIR} ax_cv_c_float_words_bigendian=no LDFLAGS=-L/${LIB_DIR}/lib CPPFLAGS=-I/${LIB_DIR}/include > configure.log 2>&1
+  echo "./configure --prefix=${LIB_DIR} ax_cv_c_float_words_bigendian=no LDFLAGS=-L${LIB_DIR}/lib CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1"
+  ./configure --prefix=${LIB_DIR} ax_cv_c_float_words_bigendian=no LDFLAGS=-L${LIB_DIR}/lib CPPFLAGS=-I${LIB_DIR}/include > configure.log 2>&1
   ret=$?
   if [ $ret != 0 ]; then
      echo "configure returned with non-zero ($ret) status"
@@ -699,7 +705,7 @@ if [ $COMPILE_MET -eq 1 ]; then
   cd ${MET_DIR}
   # If using source from a tar file remove everything and unpack the tar file
   # FALSE = compiling from github repo and we don't want to overwrite the files
-  if [ ${USE_MET_TAR_FILE} == "TRUE" ]; then
+  if [ ${USE_MET_TAR_FILE} = "TRUE" ]; then
     rm -rf met*
     tar -xzf ${MET_TARBALL}
   fi
@@ -712,7 +718,11 @@ if [ $COMPILE_MET -eq 1 ]; then
   fi
 
   if [ -z ${MET_GRIB2CLIB} ]; then
-      export MET_GRIB2C=${LIB_DIR}
+      export MET_GRIB2CLIB=${LIB_DIR}/lib
+      export MET_GRIB2CINC=${LIB_DIR}/include
+      export LIB_JASPER=${LIB_DIR}/lib
+      export LIB_LIBPNG=${LIB_DIR}/lib
+      export LIB_Z=${LIB_DIR}/lib
   else
       export MET_GRIB2CLIB=${MET_GRIB2CLIB}
       export MET_GRIB2CINC=${MET_GRIB2CINC}
@@ -738,13 +748,16 @@ if [ $COMPILE_MET -eq 1 ]; then
   export MET_PYTHON_LD=${MET_PYTHON_LD}
   export MET_PYTHON_CC=${MET_PYTHON_CC}
   export LDFLAGS="-Wl,--disable-new-dtags"
-  export LDFLAGS="${LDFLAGS} -Wl,-rpath,${LIB_DIR}/lib:${MET_NETCDF}/lib:${MET_HDF5}/lib:${MET_BUFRLIB}:${MET_GRIB2CLIB}:${MET_PYTHON}/lib:${MET_GSL}/lib"
-  export LDFLAGS="${LDFLAGS} -Wl,-rpath,${LIB_JASPER}:${LIB_LIBPNG}:${LIB_Z}"
-  export LDFLAGS="${LDFLAGS} -L${LIB_JASPER} -L${MET_HDF5}/lib"
+  # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+  # ${parameter:+word}
+  # If parameter is null or unset, nothing is substituted, otherwise the expansion of word is substituted.
+  export LDFLAGS="${LDFLAGS} -Wl,-rpath,${LIB_DIR}/lib${MET_NETCDF:+:$MET_NETCDF/lib}${MET_HDF5:+:$MET_HDF5/lib}${MET_BUFRLIB:+:$MET_BUFRLIB}${MET_GRIB2CLIB:+:$MET_GRIB2CLIB}${MET_PYTHON:+:$MET_PYTHON/lib}${MET_GSL:+$MET_GSL/lib}"
+  export LDFLAGS="${LDFLAGS} -Wl,-rpath,${LIB_JASPER:+$LIB_JASPER}${LIB_LIBPNG:+:$LIB_JASPER}${LIB_Z:+$LIB_Z}"
+  export LDFLAGS="${LDFLAGS} ${LIB_JASPER:+-L$LIB_JASPER} ${LIB_LIBPNG:+-L$LIB_LIBPNG} ${MET_HDF5:+-L$MET_HDF5/lib}"
   export LIBS="${LIBS} -lhdf5_hl -lhdf5 -lz"
   export MET_FONT_DIR=${TEST_BASE}/fonts
 
-  if [ ${SET_D64BIT} == "TRUE" ]; then
+  if [ ${SET_D64BIT} = "TRUE" ]; then
       export CFLAGS="-D__64BIT__"
       export CXXFLAGS="-D__64BIT__"
   fi

@@ -1,5 +1,5 @@
 // *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-// ** Copyright UCAR (c) 1992 - 2020
+// ** Copyright UCAR (c) 1992 - 2021
 // ** University Corporation for Atmospheric Research (UCAR)
 // ** National Center for Atmospheric Research (NCAR)
 // ** Research Applications Lab (RAL)
@@ -24,11 +24,6 @@ using namespace netCDF::exceptions;
 #include "vx_cal.h"
 
 ////////////////////////////////////////////////////////////////////////
-
-static const string  level_att_name         = "level";
-static const string  units_att_name         = "units";
-static const string  missing_value_att_name = "missing_value";
-static const string  fill_value_att_name    = "_FillValue";
 
 ////////////////////////////////////////////////////////////////////////
 

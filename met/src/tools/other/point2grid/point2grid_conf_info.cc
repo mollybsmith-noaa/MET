@@ -1,5 +1,5 @@
 // *=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-// ** Copyright UCAR (c) 1992 - 2020
+// ** Copyright UCAR (c) 1992 - 2021
 // ** University Corporation for Atmospheric Research (UCAR)
 // ** National Center for Atmospheric Research (NCAR)
 // ** Research Applications Lab (RAL)
@@ -50,7 +50,7 @@ void PointToGridConfInfo::clear() {
    quality_mark_thresh = bad_data_int;
    version.clear();
    valid_time = 0;
-   //def_var_name_map.clear();
+   def_var_name_map.clear();
    var_name_map.clear();
 
    return;
@@ -126,7 +126,7 @@ void PointToGridConfInfo::process_config() {
 
 ConcatString PointToGridConfInfo::get_var_id(const ConcatString var_name) {
    ConcatString var_id;
-   
+
    map<ConcatString,ConcatString>::iterator ptr;
    for (ptr=var_name_map.begin(); ptr != var_name_map.end(); ptr++) {
       if( ptr->second == var_name ) {
@@ -134,14 +134,16 @@ ConcatString PointToGridConfInfo::get_var_id(const ConcatString var_name) {
          break;
       }
    }
+   
    if( var_id.empty() ) {
-      for (ptr=def_var_name_map.begin(); ptr != var_name_map.end(); ptr++) {
+      for (ptr=def_var_name_map.begin(); ptr != def_var_name_map.end(); ptr++) {
          if( ptr->second == var_name ) {
             var_id = ptr->first;
             break;
          }
       }
    }
+
    return var_id;
 }
 
