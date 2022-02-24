@@ -695,10 +695,13 @@ void MetGrib2DataFile::read_grib2_record_list() {
               1 != gfld->ipdtnum &&     //  individual ensemble forecast, control and perturbed, at a horizontal level or in a horizontal layer at a point in time
               2 != gfld->ipdtnum &&     //  ensemble mean
               5 != gfld->ipdtnum &&     //  probability forecast
+              6 != gfld->ipdtnum &&     //  percentile forecast
               8 != gfld->ipdtnum &&     //  accumulation forecast
               9 != gfld->ipdtnum &&     //  probabilistic accumulation forecast
+             10 != gfld->ipdtnum &&     //  percentile forecast at a horizontal level or in a horizontal layer in a continuous or non-continuous time interval.  
              11 != gfld->ipdtnum &&     //  individual ensemble forecast, control and perturbed, at a horizontal level or in a horizontal layer, in a continuous or non-continuous time interval
              12 != gfld->ipdtnum &&     //  derived accumulation forecast (?)
+	     15 != gfld->ipdtnum &&     //  Average, accumulation, extreme values or other statistically-processed values over a spatial area at a horizontal level or in a horizontal layer at a point in time. 
              46 != gfld->ipdtnum &&     //  average, accumulation, and/or extreme values or other statistically processed values at a horizontal level or in a horizontal layer in a continuous or non-continuous time interval for aerosol.
              48 != gfld->ipdtnum ){     //  analysis or forecast at a horizontal level or in a horizontal layer at a point in time for aerosol.
             mlog << Error << "\nMetGrib2DataFile::data_plane() -> "
