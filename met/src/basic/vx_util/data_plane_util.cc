@@ -253,7 +253,7 @@ void fractional_coverage(const DataPlane &dp, DataPlane &frac_dp,
 
 #pragma omp parallel default(none)                 \
    shared(mlog, dp, frac_dp, width, wrap_lon, t)   \
-   shared(use_climo, cmn, csd, vld_t, bad)         \
+   shared(use_climo, cmn, csd, vld_t, bad, shape)  \
    private(x, y, n_vld, n_thr, gp, v)
    {
 
