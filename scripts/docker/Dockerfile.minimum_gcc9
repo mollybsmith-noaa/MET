@@ -1,6 +1,16 @@
 FROM centos:7
 MAINTAINER John Halley Gotway <johnhg@ucar.edu>
 
+RUN yum update -y
+RUN yum install -y centos-release-scl
+RUN yum install -y devtoolset-9
+
+# NOTE: Running "source /opt/rh/devtoolset-9/enable" puts GCC 9 into the path
+
+RUN echo "source /opt/rh/devtoolset-9/enable" >> /etc/bashrc
+SHELL ["/bin/bash", "--login", "-c"]
+RUN gcc --version
+
 #
 # Define the compilers.
 #
@@ -26,7 +36,6 @@ ENV GSFONT_URL     https://dtcenter.ucar.edu/dfiles/code/METplus/MET/docker_data
 #
 RUN yum -y update \
  && yum -y install file gcc gcc-gfortran gcc-c++ glibc.i686 libgcc.i686 \
-                   centos-release-scl devtoolset-9 \
                    libpng-devel jasper jasper-devel zlib zlib-devel \
                    cairo-devel freetype-devel epel-release \
                    hostname m4 make tar tcsh ksh time wget which \
@@ -37,9 +46,6 @@ RUN yum -y update \
  && pip3 install --upgrade pip \
  && python3 -m pip install numpy xarray netCDF4
 
-# NOTE: Running "source /opt/rh/devtoolset-9/enable" puts GCC 9 into the path
-# This may be needed to run in each RUN command if setting CC and CXX
-# environment variables is not sufficient
 
 #
 # Set the working directory.
